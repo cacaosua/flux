@@ -2,32 +2,35 @@
 
 git_repo="https://github.com/cacaosua/flux"
 
-IFS=', ' read -r -a array <<< "${git_repo}"
-git_repo_name = $array[$myarray[@]-1]
+IFS='/' read -r -a array <<< "${git_repo}"
+git_acc="${array[${#array[@]} - 2]}"
+git_repo_name="${array[${#array[@]} - 1]}"
 
+echo $git_acc
+echo $git_repo_name
 
-PS3="what's your position?"
+PS3="what's your position?... "
 options=("Frontend" "Backend" "Both")
 select opt in "${options[@]}"
 do
     case $opt in
         "Frontend")
-            echo "you chose choice 1"
-            url="${git_repo}/blob/tools/flux-app.code-workspace"
+            echo "\nyou chose choice 1"
+            workspace_filename="flux-app"
             git clone --single-branch --branch specs-develop "${git_repo}.git" "${git_repo_name}_specs"
             git clone --single-branch --branch app-develop "${git_repo}.git" "${git_repo_name}_app"
             break
             ;;
         "Backend")
-            echo "you chose choice 2"
-            url="${git_repo}/blob/tools/flux-app.code-workspace"
+            echo "\nyou chose choice 2"
+            workspace_filename="flux-api"
             git clone --single-branch --branch specs-develop "${git_repo}.git" "${git_repo_name}_specs"
             git clone --single-branch --branch api-develop "${git_repo}.git" "${git_repo_name}_api"
             break
             ;;
         "Both")
-            echo "you chose choice 3"
-            url="${git_repo}/blob/tools/flux-app.code-workspace"
+            echo "\nyou chose choice 3"
+            workspace_filename="flux"
             git clone --single-branch --branch specs-develop "${git_repo}.git" "${git_repo_name}_specs"
             git clone --single-branch --branch api-develop "${git_repo}.git" "${git_repo_name}_api"
             git clone --single-branch --branch app-develop "${git_repo}.git" "${git_repo_name}_app"
@@ -38,5 +41,6 @@ do
 done
 
 # download vscode workspace
-curl $url -O
-
+url="https://raw.githubusercontent.com/${git_acc}/${git_repo_name}/blob/tools/${workspace_filename}.code-workspace"
+echo "File ${url}\nis downloading..."
+curl "${url}?token=AAELFQDZXCBSVYH7J5G7N4LA74WYM" -o "${workspace_filename}.code-workspace"
