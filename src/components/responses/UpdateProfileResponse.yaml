@@ -1,0 +1,13 @@
+
+type: object
+description: UpdateProfileResponse
+properties:
+  errorCode:
+    $ref: ../../components/schemas/ErrorCode.yaml
+    nullable: true
+  errorMessage:
+    $ref: ../../components/schemas/.Common.yaml#/ErrorMessage
+  result:
+    $ref: ../schemas/User.yaml
+  successful:
+    $ref: ../../components/schemas/.Common.yaml#/Successful

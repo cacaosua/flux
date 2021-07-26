@@ -1,0 +1,20 @@
+
+type: string
+description: ThumbnailVariant
+enum:
+  - url_60
+  - url_120
+  - url_180
+  - url_240
+  - url_360
+  - url_480
+
+x-enum-varnames:
+  - url_60
+  - url_120
+  - url_180
+  - url_240
+  - url_360
+  - url_480
+
+example: https://s1.dmcdn.net/v/SqB6s1WI9z6Sli26z/x180

@@ -1,0 +1,9 @@
+type: string
+description: AdSource
+enum:
+  - AD_MANAGER
+  - AD_MOB
+
+x-enum-varnames:
+  - AdManager
+  - Admob

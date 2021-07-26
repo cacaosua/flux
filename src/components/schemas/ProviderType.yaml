@@ -1,0 +1,8 @@
+
+type: string
+description: ProviderType
+enum:
+  - facebook
+  - google
+  - apple
+  - manual

@@ -1,0 +1,8 @@
+
+type: object
+properties:
+  videoId:
+    type: string
+    default: ''
+required:
+  - videoId

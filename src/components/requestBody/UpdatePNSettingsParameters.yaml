@@ -1,0 +1,7 @@
+
+type: object
+description: UpdatePNSettingsParameters
+properties:
+  isReceiveNotification:
+    $ref: ../../components/schemas/.Common.yaml#/IsReceiveNotification
+required: [isReceiveNotification]

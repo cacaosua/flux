@@ -1,0 +1,103 @@
+
+
+DeepLink:
+  type: object
+  description: DeepLink
+  properties:
+    enabled:
+      type: boolean
+      default: false
+    type:
+      enum:
+        - attribution
+        - install
+        - deeplink
+        - push_notification
+    time:
+      type: string
+      format: date-time
+    data:
+      $ref: ../../components/schemas/DeepLink.yaml#/DeepLinkResultPayloadDeeplink
+
+DeepLinkStatus:
+  type: object
+  properties:
+    enabled:
+      type: boolean
+      default: false
+    deeplink:
+      $ref: ../../components/schemas/DeepLink.yaml#/DeepLink
+  required:
+    - enabled
+    - deeplink
+
+DeepLinkResult:
+  type: object
+  description: DeepLinkResult
+  properties:
+    status:
+      $ref: ../../components/schemas/DeepLink.yaml#/DeepLinkResultStatusEnum
+    payload:
+      $ref: ../../components/schemas/DeepLink.yaml#/DeepLinkResultPayload
+
+DeepLinkResultPayload:
+  type: object
+  properties:
+    status:
+      $ref: ../../components/schemas/DeepLink.yaml#/DeepLinkResultPayloadStatusEnum
+      default: NOTFOUND
+    deepLink:
+      type: string
+      # $ref: ../../components/schemas/DeepLink.yaml#/DeepLinkResultPayloadDeeplink
+
+DeepLinkResultStatusEnum:
+  type: string
+  enum:
+    - success
+    - failed
+
+DeepLinkResultPayloadStatusEnum:
+  type: string
+  enum:
+    - FOUND
+    - NOTFOUND
+  x-enum-varnames:
+    - found
+    - notFound
+  default: NOTFOUND
+
+DeepLinkResultPayloadDeeplinkTypeEnum:
+  type: string
+  enum:
+    - channel
+    - playlist
+    - video
+    - livestream
+
+
+DeepLinkResultPayloadDeeplink:
+  type: object
+  properties:
+    campaign:
+      type: string
+    media_source:
+      type: string
+    type:
+      $ref: ../../components/schemas/DeepLink.yaml#/DeepLinkResultPayloadDeeplinkTypeEnum
+    id:
+      type: string
+      description: >
+        value of channelId if type == "channel"
+        value of playlistId if type == "playlist"
+        value of videoId if type == "video"
+        value of livestreamId if type == "livestream"
+      default: ''
+    deep_link_value:
+      type: string
+      description: deeplink's value
+      default: ''
+    is_deferred:
+      type: boolean
+      default: false
+  
+

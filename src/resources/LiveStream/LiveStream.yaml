@@ -1,0 +1,44 @@
+
+get:
+  operationId: livestream
+  description: Get live stream details
+
+  tags:
+    - LiveStream
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+    - name: liveStreamId
+      in: path
+      required: true
+      schema:
+        type: string
+      example: 'asd2s'
+    - name: ticketCode
+      in: query
+      schema:
+        type: string
+      example: 'asd23'
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    200:
+      description: Get livestream schedules successful
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/LiveStreamModel.yaml
+    # 201:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 400:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 401:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 403:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 500:
+    #   $ref: ../../components/responses/UnexpectedError.yaml
+    # 503:
+    #   $ref: ../../components/responses/UnexpectedError.yaml

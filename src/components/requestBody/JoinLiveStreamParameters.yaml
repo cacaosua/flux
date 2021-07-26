@@ -1,0 +1,28 @@
+type: object
+properties:
+  liveStreamId:
+    type: string
+    default: ''
+  liveStreamName:
+    type: string
+    default: ''
+  liveStreamStartDate:
+    type: string
+    default: ''
+  deviceId:
+    type: string
+    default: ''
+  deviceName:
+    type: string
+    default: ''
+  user:
+    $ref: ../../components/requestBody/UserJoinLiveStreamParameters.yaml
+  createdAt:
+    type: string
+required:
+  - liveStreamId
+  - liveStreamName
+  - liveStreamStartDate
+  - deviceId
+  - deviceName
+  - user

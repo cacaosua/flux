@@ -1,0 +1,11 @@
+type: object
+description:  GetLiveStreamStatus
+properties:
+  liveStreamId:
+    type: string
+    default: ''
+  liveStreamStatus:
+    $ref: './LiveStreamStatus.yaml'
+  error:
+    type: string
+    default: ''

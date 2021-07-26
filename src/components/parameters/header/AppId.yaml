@@ -1,0 +1,7 @@
+
+name: appId
+in: header
+required: true
+schema:
+  type: string
+example: NetLove

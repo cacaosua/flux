@@ -1,0 +1,105 @@
+
+
+FirstName:
+  name: firstName
+  type: string
+  default: ''
+
+LastName:
+  name: lastName
+  type: string
+  default: ''
+
+UserName:
+  name: userName
+  type: string
+  default: ''
+
+PhoneNumber:
+  type: string
+  default: ''
+
+Email:
+  type: string
+  default: ''
+
+ClientId:
+  type: string
+  default: mobile
+  example: mobile
+  
+ClientSecret:
+  type: string
+  example: 5fv3v4v34vv4r3v4
+
+Scope:
+  type: string
+  default: openid offline_access
+  example: openid offline_access
+
+RefreshToken:
+  type: string
+  format: uuid
+  default: ''
+
+
+GrantType:
+  type: string
+  default: password
+  example: password
+
+DeviceId:
+  name: deviceId
+  type: string
+  format: uuid
+
+DeviceType:
+  name: deviceType
+  type: string
+  description: DeviceType
+  enum:
+    - IPHONE
+    - ANDROID
+    - TABLET
+    - WEB
+    - TV
+
+DevicePlatform:
+  name: platform
+  type: string
+  description: DevicePlatform
+  enum:
+    - ios
+    - android
+
+DeviceToken:
+  name: deviceToken
+  type: string
+  format: uuid
+
+VerifyCode:
+  type: string
+
+IsReceiveNotification:
+  type: boolean
+  default: false
+
+ErrorMessage:
+  name: errorMessage
+  type: string
+  default: ''
+
+Successful:
+  name: successful
+  type: boolean
+  default: false
+
+createdAt:
+  type: string
+  format: date-time
+
+ScreenCover:
+  type: string
+  enum:
+    - gethomebanner
+    - getchannelbanner

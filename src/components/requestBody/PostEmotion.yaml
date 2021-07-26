@@ -1,0 +1,11 @@
+
+type: object
+properties:
+  liveStreamId:
+    type: string
+  userId:
+    type: string
+  emoticonId:
+    type: string
+  count:
+    type: integer

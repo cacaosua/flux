@@ -1,0 +1,61 @@
+
+type: object
+description: FBSRemoteConfigs
+properties:
+
+  isDisablePhoneLogin:
+    type: boolean
+
+  serverDown:
+    type: boolean
+    default: false
+
+  # iOS
+  iOSBuildNumberForceUpdate:
+    type: integer
+    default: 0
+  iOSCurrentBuildNumber:
+    type: integer
+    default: 0
+
+  # Android
+  androidBuildNumberForceUpdate:
+    type: integer
+    default: 0
+  androidCurrentBuildNumber:
+    type: integer
+    default: 0
+
+  addtionalProperty1:
+    type: string
+
+  appstoreId:
+    type: string
+    example: id284882215
+
+  playstoreId:
+    type: string
+    example: com.facebook.katana
+
+  privacyAndPolicyLink:
+    type: string
+    example: https://www.new_project.ph/app/privacy-and-policy.html?hide-ui
+
+  termAndConditionsLink:
+    type: string
+    example: https://www.new_project.ph/app/terms-and-conditions.html?hide-ui
+
+  localizationVersion:
+    type: string
+    example: 1.3.5
+
+  dashboardBannerType:
+    type: string
+    description: Dashboard > Banner type
+    enum:
+      - 'type_1'
+      - 'type_2'
+      - 'type_3'
+    default: type_1
+
+    

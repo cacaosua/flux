@@ -1,0 +1,51 @@
+
+type: object
+description: CommentModel
+properties:
+  id:
+    type: string
+    format: uuid
+    default: 1
+  videoId:
+    type: string
+  userId:
+    type: string
+  userName:
+    $ref: ../../components/schemas/.Common.yaml#/UserName
+    default: ''
+  firstName:
+    $ref: ../../components/schemas/.Common.yaml#/FirstName
+  lastName:
+    $ref: ../../components/schemas/.Common.yaml#/LastName
+  email:
+    $ref: ../../components/schemas/.Common.yaml#/Email
+    default: ''
+  phoneNumber:
+    $ref: ../../components/schemas/.Common.yaml#/PhoneNumber
+    default: ''
+  commentContent:
+    type: string
+    default: ''
+  avatarUrl:
+    type: string
+    default: ''
+  createdAt:
+    type: string
+    format: date-time
+  updateAt:
+    type: string
+    format: date-time
+  fullName:
+    type: string
+    default: ''
+  isHidden:
+    type: boolean
+    default: false
+  editable:
+    type: boolean
+    default: false
+  isExpanding:
+    type: boolean
+    default: false
+
+

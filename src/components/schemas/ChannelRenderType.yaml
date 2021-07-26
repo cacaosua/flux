@@ -1,0 +1,12 @@
+
+type: integer
+description: ChannelRenderType
+enum:
+ - 0 # Banner
+ - 1 # LiveStream
+ - 2 # Card
+default: 2
+x-enum-varnames:
+  - Banner
+  - LiveStream
+  - Card

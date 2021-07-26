@@ -1,0 +1,26 @@
+
+type: string
+description: StreamAdModel
+properties:
+  adUnitID:
+    type: string
+    default: ''
+  # 0 is pre-roll
+  showTime:
+    type: number
+    format: double
+    default: 0.0
+    description: in seconds (x 60)
+  zone:
+    $ref: ../../components/schemas/StreamAdZone.yaml
+  format:
+    type:  = StreamAdFormat.Banner
+  type:
+    $ref: ../../components/schemas/StreamAdZone.yaml
+    default: OVERLAY_AUTO
+  adSource:
+    $ref: ../../components/schemas/AdSource.yaml
+    default: AD_MOB
+  didShow:
+    type: boolean
+    default: false

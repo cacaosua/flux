@@ -1,0 +1,56 @@
+get:
+  operationId: userInfo
+  summary: Get User Info
+  description: Get User Info
+
+  tags:
+    - Auth
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+    - name: deviceId
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 'deviceId'
+      default: ''
+    - name: deviceType
+      in: query
+      required: true
+      schema:
+        type: string
+      example: 'deviceType'
+      default: ''
+
+  responses:
+    default:
+      $ref: ../../components/responses/Error.yaml
+    200:
+      description: Get User Info
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              successful:
+                type: boolean
+                default: false
+              result:
+                $ref: ../../components/schemas/User.yaml
+              errorCode:
+                $ref: ../../components/schemas/ErrorCode.yaml
+              errorMessage:
+                type: string
+                default: ''
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

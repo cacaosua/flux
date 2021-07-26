@@ -1,0 +1,65 @@
+post:
+  summary: Register
+  operationId: registerByEmailOrPhone
+  description: Register
+  tags:
+    - Auth
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+
+  security:
+    - bearerAuth: []
+
+  requestBody:
+    description: Optional description in *Markdown*
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/requestBody/RegisterParameters.yaml
+
+  responses:
+    default:
+      $ref: ../../components/responses/ResponseDefault.yaml
+    # 200:
+    #   description: Expected response to a valid request
+    #   content:
+    #     application/json:
+    #       schema:
+    #         type: object
+    #         properties:
+    #           errorCode:
+    #             $ref: ../../components/schemas/ErrorCode.yaml
+    #           data:
+    #             type: object
+    #             properties:
+    #               result:
+    #                 type: object
+    #                 properties:
+    #                   unblockAt:
+    #                     type: string
+    #                     default: ''
+    
+    # 201:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 400:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 401:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 403:
+    #   $ref: ../../components/responses/UnauthorizedError.yaml
+    # 500:
+    #   $ref: ../../components/responses/UnexpectedError.yaml
+    # 503:
+    #   $ref: ../../components/responses/UnexpectedError.yaml
+
+
+
+# func login(_ params: NSDictionary, completionHandler: @escaping AFRequest.CompletionHandler ) {
+# 	AFRequest.post(endPoint: EndPoints.Auth.Login, params: params, completionHandler: completionHandler)
+# }
+
+# func loginFormEncoded(_ params: String?, completionHandler: @escaping AFRequest.CompletionHandler ) {
+# 		AFRequest.postEncoded(endPoint: EndPoints.Auth.LoginFormEncoded, params: params, completionHandler: completionHandler)
+# 	}

@@ -1,0 +1,26 @@
+
+type: integer
+description: LiveStreamState
+enum:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+
+x-enum-varnames:
+  - New # not get detail yet,
+  - Loading # loading data the 1st time
+  - LoadedMetadata # liveStream is not ready yet
+  - PlayingTrailer #
+  - NoTrailer #
+  - Streaming #
+  - Ended # // LiveStream has ended
+  - EndedWhenLaunchFromPN #
+  - Unpublished #
+  - Error #

@@ -1,0 +1,22 @@
+
+type: object
+description: SurveyModel
+properties:
+  id:
+    type: string
+    default: ''
+  title:
+    type: string 
+    default: ''
+  isActive:
+    type: boolean
+    default: false
+  imageUrl:
+    type: string
+    default: ''
+  registerUrl:
+    type: string
+    default: ''
+  createdAt:
+    type: string
+    format: date-time

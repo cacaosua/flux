@@ -1,0 +1,72 @@
+
+get:
+  operationId: getAds
+  description: Get Abs for home, channels and search
+
+  tags:
+    - Advertisement
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+    - name: orderBy
+      in: query
+      # required: true
+      schema:
+        type: string
+      example: 'zone'
+      default: 'zone'
+    - name: orderType
+      in: query
+      # required: true
+      schema:
+        type: string
+      example: 'ascend'
+      default: 'ascend'
+    - name: place
+      in: query
+      required: true
+      schema:
+        $ref: ../../components/schemas/AdsScreen.yaml
+      default: HOME
+    - name: platform
+      in: query
+      required: true
+      schema:
+        $ref: ../../components/schemas/.Common.yaml#/DevicePlatform
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    # default:
+    #   $ref: ../../components/responses/Error.yaml
+    200:
+      description: Get User Info
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              successful:
+                type: boolean
+                default: false
+              result:
+                type: array
+                items:
+                  $ref: ../../components/schemas/AdsModel.yaml
+              errorCode:
+                $ref: ../../components/schemas/ErrorCode.yaml
+              errorMessage:
+                $ref: ../../components/schemas/.Common.yaml#/ErrorMessage
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

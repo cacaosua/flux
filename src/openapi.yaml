@@ -1,0 +1,262 @@
+openapi: 3.0.0
+servers:
+  - url: https://{environment}.netlove.com.vn
+    variables:
+      environment:
+        default: api    # Production server
+        enum:
+          - api         # Production server
+          - api-dev     # Development server
+          - api-qa      # Testing server
+info:
+  description: >-
+    This is a sample server Petstore server. For this sample, you can use the api key
+    `special-key` to test the authorization filters.
+  version: 1.0.0
+  title: OpenAPI Petstore
+  license:
+    name: Apache-2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+
+paths:
+  # Auth
+  /identity/auth/status:
+    $ref: ./resources/Auth/Login.yaml
+  /connect/token:
+    $ref: ./resources/Auth/LoginFormEncoded.yaml
+  /identity/auth/login/oauth2:
+    $ref: ./resources/Auth/LoginWithSocialAccount.yaml
+  /identity/authenticated/auth/logout:
+    $ref: ./resources/Auth/Logout.yaml
+  /identity/auth/register:
+    $ref: ./resources/Auth/Register.yaml
+  /identity/account/verify:
+    $ref: ./resources/Auth/VerifyOTP.yaml
+  /identity/account/password/forgot:
+    $ref: ./resources/Auth/ForgotPassword.yaml
+  /identity/account/password/check-recovery-code:
+    $ref: ./resources/Auth/VerifyForgotPasswordCode.yaml
+  /identity/account/password/set-new-password:
+    $ref: ./resources/Auth/ChangePassword.yaml
+  /identity/account/resend-verify-code:
+    $ref: ./resources/Auth/ResendOTP.yaml
+  /identity/auth/refresh-token:
+    $ref: ./resources/Auth/RefreshToken.yaml
+  /users/users/profile/me:
+    $ref: ./resources/Auth/UserInfo.yaml
+  /identity/authenticated/auth/change-password:
+    $ref: ./resources/Auth/ProfileChangePassword.yaml
+  /users/users/profile:
+    $ref: ./resources/Auth/UpdateProfile.yaml
+  /users/users/settings:
+    $ref: ./resources/Auth/UpdatePNSetting.yaml
+
+  # Video
+  /video/video/home-screen:
+    $ref: ./resources/Video/Home.yaml
+  /video/video/{playlistId}/{videoId}/{videoOrderingCriteria}:
+    $ref: ./resources/Video/VideoDetail.yaml
+  /video/emotion/{videoId}:
+    $ref: ./resources/Video/MarkVideoEmotion.yaml
+  /video/channel/landing/200/1:
+    $ref: ./resources/Video/getChannel.yaml 
+  /video/channel/landing/{channelId}/200/1:
+    $ref: ./resources/Video/ChannelPlaylistDetail.yaml
+  /video/playlists/{playlistId}?sortBy={videoOrderingCriteria}:
+    $ref: ./resources/Video/PlaylistVideo.yaml
+  /video/comment/{videoId}/{pageSize}/{pageNumber}:
+    $ref: ./resources/Video/VideoComment.yaml
+  /video/comment:
+    $ref: ./resources/Video/CreateComment.yaml
+  /video/comment/{updateId}:
+    $ref: ./resources/Video/UpdateComment.yaml
+  /video/comment/{deleteId}:
+    $ref: ./resources/Video/DeleteComment.yaml
+  /video/video/delete-video-saved:
+    $ref: ./resources/Video/DeleteVideoSaved.yaml
+  /video/video/list-saved/100/1:
+    $ref: ./resources/Video/GetSaveVideo.yaml
+  /video/video/unsaved:
+    $ref: ./resources/Video/UnSaveVideo.yaml
+  /video/video/saved:
+    $ref: ./resources/Video/SaveVideo.yaml
+  /video/video/histories:
+    $ref: ./resources/Video/VideoHistories.yaml
+  /video/video/histories/clear-all:
+    $ref: ./resources/Video/DeleteVideoHistories.yaml
+  # /video/video/mobile/{pageSize}/{pageNumber}?search=%@:
+  /video/video/mobile/{pageSize}/{pageNumber}:
+    $ref: ./resources/Video/SearchVideo.yaml
+  /video/video/mobile/suggestion/{pageSize}:
+    $ref: ./resources/Video/SearchVideoAutoCompleted.yaml
+  /video/contents/{screenCover}:
+    $ref: ./resources/Video/Cover.yaml
+    
+
+  # Payment
+  /payment/transactions/me:
+    $ref: ./resources/Payment/TransactionHistories.yaml
+  /payment/tickets:
+    $ref: ./resources/Payment/sendNonce.yaml
+  /payment/currencies/convert:
+    $ref: ./resources/Payment/conversionRate.yaml
+  /payment/tokens/braintree:
+    $ref: ./resources/Payment/clientToken.yaml
+    
+    
+  # LiveStream
+  /live-stream/schedules:
+    $ref: ./resources/LiveStream/Schedules.yaml
+  /live-stream/schedules/{liveStreamId}:
+    $ref: ./resources/LiveStream/LiveStream.yaml
+  /interaction/views:
+    $ref: ./resources/LiveStream/JoinLiveStream.yaml
+  # /interaction/emoticons/%@" // get list of emoticon:
+  #   $ref: ./resources/LiveStream/GetEmoticons.yaml
+  /interaction/emoticons:
+    $ref: ./resources/LiveStream/PostEmoticons.yaml
+  /interaction/comments:
+    $ref: ./resources/LiveStream/CreateCommentLiveStream.yaml
+
+
+  # Notification
+  /notification/notification/register-device:
+    $ref: ./resources/Notification/RegisterDevice.yaml
+
+  # Advertisement
+  # /ads/advertisements/active?orderBy=%@&orderType=%@&place=%@:
+  /ads/advertisements/active:
+    $ref: ./resources/Advertisement/Ads.yaml
+  # /ads/in-stream-advertisements/active:
+  #   $ref: ./resources/Advertisement/StreamAds.yaml
+  # /ads/live-stream-advertisements/overlay-auto/%@/active:
+  #   $ref: ./resources/Advertisement/LiveStreamAds.yaml
+
+  # Survey
+  /survey/programs/active:
+    $ref: ./resources/Survey/Program.yaml
+
+
+components:
+  schemas:
+    AuthenError-ref:
+      $ref: ./components/schemas/ErrorDetails.yaml#/AuthenError
+    AdSource-ref:
+      $ref: ./components/schemas/AdSource.yaml
+    AdsScreen-ref:
+      $ref: ./components/schemas/AdsScreen.yaml
+    AppsFlyerEvent-ref:
+      $ref: ./components/schemas/AppsFlyerEvent.yaml
+    AppsFlyerEventParameters-ref:
+      $ref: ./components/schemas/AppsFlyerEventParameters.yaml
+    AppUpdateStatus-ref:
+      $ref: ./components/schemas/AppUpdateStatus.yaml
+    ChannelModel-ref:
+      $ref: ./components/schemas/ChannelModel.yaml
+    ChannelRenderType-ref:
+      $ref: ./components/schemas/ChannelRenderType.yaml
+    CommentModel-ref:
+      $ref: ./components/schemas/CommentModel.yaml
+    CoverModel-ref:
+      $ref: ./components/schemas/CoverModel.yaml
+    DeepLink-ref:
+      $ref: ./components/schemas/DeepLink.yaml#/DeepLink
+    DeepLinkResult-ref:
+      $ref: ./components/schemas/DeepLink.yaml#/DeepLinkResult
+    DeepLinkResultPayloadDeeplink-ref:
+      $ref: ./components/schemas/DeepLink.yaml#/DeepLinkResultPayloadDeeplink
+    DeepLinkStatus-ref:
+      $ref: ./components/schemas/DeepLink.yaml#/DeepLinkStatus
+    EmailCredentials-ref:
+      $ref: ./components/schemas/EmailCredentials.yaml
+    EmptyErrorResponse-ref:
+      $ref: ./components/schemas/EmptyErrorResponse.yaml
+    ErrorCode-ref:
+      $ref: ./components/schemas/ErrorCode.yaml
+    ErrorResponse-ref:
+      $ref: ./components/schemas/ErrorResponse.yaml
+    ExpandingState-ref:
+      $ref: ./components/schemas/ExpandingState.yaml
+    ExternalProvider-ref:
+      $ref: ./components/schemas/ExternalProvider.yaml
+    FBSRemoteConfigs-ref:
+      $ref: ./components/schemas/FBSRemoteConfigs.yaml
+    # FCMRemoteMessage-ref:
+    #   $ref: ./components/schemas/FCMRemoteMessage.yaml
+    FSLabel-ref:
+      $ref: ./components/schemas/FSLabel.yaml
+    HomeContent-ref:
+      $ref: ./components/schemas/HomeContent.yaml#/HomeContent
+    Keys-ref:
+      $ref: ./components/schemas/Keys.yaml
+    LiveStreamStatus-ref:
+      $ref: ./components/schemas/LiveStreamStatus.yaml
+    LiveStreamState-ref:
+      $ref: ./components/schemas/LiveStreamState.yaml
+    LiveStreamBanner-ref:
+      $ref: ./components/schemas/LiveStreamBanner.yaml
+    LoadingState-ref:
+      $ref: ./components/schemas/LoadingState.yaml
+    MobileCredentials-ref:
+      $ref: ./components/schemas/MobileCredentials.yaml
+    MomoPaymentParam-ref:
+      $ref: ./components/schemas/MomoPaymentParam.yaml
+    NotificationName-ref:
+      $ref: ./components/schemas/NotificationName.yaml
+    NetworkStateResult-ref:
+      $ref: ./components/schemas/NetworkState.yaml#/NetworkStateResult
+    OrderCriteria-ref:
+      $ref: ./components/schemas/OrderCriteria.yaml
+    PaymentModel-ref:
+      $ref: ./components/schemas/PaymentModel.yaml
+    PlatformParameter-ref:
+      $ref: ./components/schemas/PlatformParameter.yaml
+    PlaylistModel-ref:
+      $ref: ./components/schemas/PlaylistModel.yaml
+    PlaylistRenderType-ref:
+      $ref: ./components/schemas/PlaylistRenderType.yaml
+    ProviderType-ref:
+      $ref: ./components/schemas/ProviderType.yaml
+    # ReactionModel-ref:
+    #   $ref: ./components/schemas/ReactionModel.yaml
+    # ShareActivityItemProvider-ref:
+    #   $ref: ./components/schemas/ShareActivityItemProvider.yaml
+    StatusCode-ref:
+      $ref: ./components/schemas/StatusCode.yaml
+    TransactionModel-ref:
+      $ref: ./components/schemas/TransactionModel.yaml
+    ThumbnailVariant-ref:
+      $ref: ./components/schemas/ThumbnailVariant.yaml
+    User-ref:
+      $ref: ./components/schemas/User.yaml
+    UserState-ref:
+      $ref: ./components/schemas/UserState.yaml
+    VideoModal-ref:
+      $ref: ./components/schemas/VideoModel.yaml
+    VideoParamsModel-ref:
+      $ref: ./components/schemas/VideoParamsModel.yaml
+    ChannelListDetails-ref:
+      $ref: ./components/schemas/ChannelListDetails.yaml
+    PaymentError-ref:
+      $ref: ./components/schemas/ErrorDetails.yaml#/PaymentError
+    PaypalParameter-ref:
+      $ref: ./components/requestBody/PaypalParameter.yaml
+    MoMoParameters-ref:
+      $ref: ./components/requestBody/MoMoParameters.yaml
+    CommentState-ref:
+      $ref: ./components/schemas/CommentState.yaml
+    GetLiveStreamStatus-ref:
+      $ref: ./components/schemas/GetLiveStreamStatus.yaml
+    CommentLiveStreamModel-ref:
+      $ref: ./components/schemas/CommentLiveStreamModel.yaml
+    LiveStreamFireStoreParameters-ref:
+      $ref: ./components/schemas/LiveStreamFireStoreParameters.yaml
+    PostEmotion-ref:
+      $ref: ./components/requestBody/PostEmotion.yaml
+
+      
+
+  securitySchemes:
+    bearerAuth:
+      $ref: ./components/securitySchemes/BearerAuth.yaml
+    

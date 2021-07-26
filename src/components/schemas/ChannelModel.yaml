@@ -1,0 +1,31 @@
+type: object
+description: ChannelModel
+properties:
+  id:
+    type: string
+    default: ''
+  channelName:
+    type: string
+    default: ''
+  channelDescription:
+    type: string
+    default: ''
+  channelCovers:
+    type: object
+    properties:
+      cover_100:
+        type: string
+      cover_150:
+        type: string
+      cover_200:
+        type: string
+      cover_250:
+        type: string
+      cover_Url:
+        type: string
+      image:
+        type: string
+      link:
+        type: string
+    default: {}
+    

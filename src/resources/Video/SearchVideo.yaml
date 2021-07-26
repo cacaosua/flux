@@ -1,0 +1,86 @@
+
+get:
+  operationId: search
+  summary: Search data
+  description: Search video
+
+  tags:
+    - Video
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+    - name: pageSize
+      in: path
+      required: true
+      schema:
+        type: integer
+      example: 20
+    - name: pageNumber
+      in: path
+      required: true
+      schema:
+        type: integer
+      example: 1
+    - name: search
+      in: query
+      required: true
+      schema:
+        type: string
+      example: Cô Gái
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    default:
+      $ref: ../../components/responses/ResponseDefault.yaml
+    200:
+      description: Get video success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              result:
+                type: object
+                properties: 
+                  from: 
+                    type: integer
+                    example: 1
+                  index:
+                    type: integer
+                    example: 1
+                  size:
+                    type: integer
+                    default: 10
+                    example: 20
+                  count:
+                    type: integer
+                    example: 668
+                  pages:
+                    type: integer
+                    example: 34
+                  items:
+                    type: array
+                    items:
+                      $ref: ../../components/schemas/VideoModel.yaml
+                  hasPrevious:
+                    type: boolean
+                    default: false
+                    example: false
+                  hasNext:
+                    type: boolean
+                    default: false
+                    example: false
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

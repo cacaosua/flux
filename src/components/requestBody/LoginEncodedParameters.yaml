@@ -1,0 +1,32 @@
+
+type: object
+properties:
+  username:          # <!--- form field name
+    type: string
+    example:
+      - netlove-${email}
+      - netlove-${phoneNumber}
+  password:    # <!--- form field name
+    type: string
+  client_id:
+    $ref: ../../components/schemas/.Common.yaml#/ClientId
+  client_secret:
+    $ref: ../../components/schemas/.Common.yaml#/ClientSecret
+  scope:
+    $ref: ../../components/schemas/.Common.yaml#/Scope
+  grant_type:
+    $ref: ../../components/schemas/.Common.yaml#/GrantType
+  device_id:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceId
+  device_type:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceType
+required:
+  - username
+  - password
+  - client_id
+  - client_secret
+  - scope
+  - grant_type
+  - device_id
+  - device_type
+example: \(username=...)&password=\(password)&\(Keys.client_id)=\(Env.clientId)&\(Keys.client_secret)=\(Env.clientSecret)&\(Keys.scope)=\(Env.scopes)&\(Keys.grantType)=password&device_id=\(Utils.getDeviceUUID())&device_type=\(Utils.getDeviceType())"

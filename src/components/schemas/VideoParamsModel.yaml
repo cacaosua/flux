@@ -1,0 +1,12 @@
+
+type: object
+description: VideoParamsModel
+properties:
+  videoId:
+    type: string
+    default: ''
+  playlistId:
+    type: string
+    default: ''
+  videoOrderingCriteria:
+    $ref: ../../components/schemas/OrderCriteria.yaml

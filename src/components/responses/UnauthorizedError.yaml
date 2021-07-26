@@ -1,0 +1,6 @@
+
+description: Access token is missing or invalid
+headers:
+  WWW_Authenticate:
+    schema:
+      type: string

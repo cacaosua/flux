@@ -1,0 +1,9 @@
+
+type: object
+description:
+properties:
+  title:
+    type: String
+  url:
+    type: string
+    format: url

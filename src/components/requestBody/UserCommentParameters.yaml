@@ -1,0 +1,34 @@
+
+type: object
+properties:
+  id:
+    type: string
+    default: ''
+  username:
+    $ref: ../../components/schemas/.Common.yaml#/UserName
+    default: ''
+  firstName:
+    $ref: ../../components/schemas/.Common.yaml#/FirstName
+  lastName:
+    $ref: ../../components/schemas/.Common.yaml#/LastName
+  avatarUrl:
+    type: string
+    default: ''
+  displayName:
+    type: string
+    default: ''
+  email:
+    $ref: ../../components/schemas/.Common.yaml#/Email
+    default: ''
+  phoneNumber:
+    $ref: ../../components/schemas/.Common.yaml#/PhoneNumber
+    default: ''
+required:
+  - id
+  - username
+  - firstName
+  - lastName
+  - avatarUrl
+  - displayName
+  - email
+  - phoneNumber

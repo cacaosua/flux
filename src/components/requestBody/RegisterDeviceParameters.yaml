@@ -1,0 +1,14 @@
+
+type: object
+description: RegisterDeviceParameters
+properties:
+  deviceId:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceId
+  deviceToken:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceToken
+  platform:
+    $ref: ../../components/schemas/.Common.yaml#/DevicePlatform
+required:
+  - deviceId
+  - deviceToken
+  - platform

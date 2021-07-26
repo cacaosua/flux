@@ -1,0 +1,15 @@
+type: string
+description: MomoPaymentParam
+enum:
+  - merchantcode
+  - merchantname
+  - merchantnamelabel
+  - appScheme
+  - orderId
+  - amount
+  - orderLabel
+  - description
+  - fee
+  - username
+  - extra
+  - action

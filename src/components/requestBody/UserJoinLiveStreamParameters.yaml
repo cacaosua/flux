@@ -1,0 +1,24 @@
+
+type: object
+description: UserJoinLiveStreamParameters
+properties: 
+  id:
+    type: string
+    default: ''
+  username:
+    type: string
+    default: ''
+  firstName:
+    type: string
+    default: ''
+  lastName:
+    type: string
+    default: ''
+  phoneNumber:
+    type: string
+    default: ''
+required:
+  - id
+  - username
+  - firstName
+  - lastName

@@ -1,0 +1,13 @@
+
+type: object
+description: ChannelListDetails
+properties:
+  channelName:
+    type: string
+    default: ''
+  banner:
+    type: string
+    default: ''
+  description:
+    type: string
+    default: ''

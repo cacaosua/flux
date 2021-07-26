@@ -1,0 +1,6 @@
+
+name: api-version
+in: path
+required: true
+schema:
+  type: string

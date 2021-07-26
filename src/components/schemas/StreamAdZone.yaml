@@ -1,0 +1,22 @@
+
+type: string
+description: StreamAdModel
+enum:
+  # Pre-roll with full banner or video
+  - PRE_ROLL
+  # Mid-roll with full banner or video
+  - MID_ROLL
+  # banner 25% height at the bottom
+  - TEMPLATE_2
+  # a square on the bottom right
+  - TEMPLATE_1
+  # a banner at the center
+  - TEMPLATE_3
+default: TEMPLATE_2
+
+x-enum-varnames:
+  - PreRoll
+  - MidRoll
+  - OverlayBottom
+  - OverlayBottomRight
+  - OverlayCenter

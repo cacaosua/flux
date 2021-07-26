@@ -1,0 +1,7 @@
+
+type: object
+properties:
+  phoneNumber:
+    type: string
+  email:
+    type: string

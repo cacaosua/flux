@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    type: string
+    default: ''
+  videoId:
+    type: string
+    default: ''
+  commentContent:
+    type: string
+    default: ''
+  user:
+    $ref: ../../components/requestBody/UserCommentParameters.yaml
+required:
+  - id
+  - videoId
+  - commentContent
+  - user

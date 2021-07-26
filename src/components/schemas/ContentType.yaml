@@ -1,0 +1,11 @@
+
+type: integer
+description: ContentType
+enum:
+  - 0 # Playlist
+  - 1 # Channel
+default: 0
+
+x-enum-varnames:
+  - Playlist
+  - Channel

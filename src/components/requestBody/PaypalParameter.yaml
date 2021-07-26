@@ -1,0 +1,19 @@
+
+type: object
+properties:
+  nonce:
+    type: string
+    default: ''
+  amountUSD:
+    type: number
+    format: double
+    default: 0.0
+  username:
+    type: string
+    default: ''
+  liveStreamId:
+    type: string
+    default: ''
+  deviceId:
+    type: string
+    default: ''

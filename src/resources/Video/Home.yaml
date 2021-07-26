@@ -1,0 +1,52 @@
+
+get:
+  operationId: getHomeData
+  summary: Get data for Home Screen
+  description: Get all playlist for home screen
+
+  tags:
+    - Video
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    default:
+      $ref: ../../components/responses/ResponseDefault.yaml
+    200:
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../../components/schemas/PlaylistModel.yaml
+            # oneOf:
+            #   - type: array
+            #     items:
+            #       $ref: ../../components/schemas/ErrorCode.yaml
+            #   - 
+            #     type: object
+            #     properties:
+            #       errorCode:
+            #         $ref: ../../components/schemas/ErrorCode.yaml
+            #       data:
+            #         type: array
+            #         items:
+            #           $ref: ../../components/schemas/ErrorCode.yaml
+    
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

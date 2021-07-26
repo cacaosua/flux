@@ -1,0 +1,9 @@
+
+type: object
+properties:
+  phoneNumber:
+    type: string
+    default: ''
+  token:
+    type: string
+    default: ''

@@ -1,0 +1,37 @@
+post:
+  summary: Login status
+  operationId: showPetById
+  description: Info for a specific pet
+  tags:
+    - Auth
+  parameters:
+    # - $ref: "../parameters/path/petId.yaml"
+  responses:
+    '200':
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            # $ref: "../schemas/Pet.yaml"
+    default:
+      # $ref: "../responses/UnexpectedError.yaml"
+
+
+
+    post:
+      tags:
+        - Authentication
+      description: login
+      responses:
+        '200':
+          description: OK
+
+
+
+# func login(_ params: NSDictionary, completionHandler: @escaping AFRequest.CompletionHandler ) {
+# 	AFRequest.post(endPoint: EndPoints.Auth.Login, params: params, completionHandler: completionHandler)
+# }
+
+# func loginFormEncoded(_ params: String?, completionHandler: @escaping AFRequest.CompletionHandler ) {
+# 		AFRequest.postEncoded(endPoint: EndPoints.Auth.LoginFormEncoded, params: params, completionHandler: completionHandler)
+# 	}

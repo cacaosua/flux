@@ -1,0 +1,12 @@
+
+
+type: object
+description: RegisterDeviceResponse
+properties:
+  errorCode:
+    $ref: ../../components/schemas/ErrorCode.yaml
+    nullable: true
+  errorMessage:
+    $ref: ../../components/schemas/.Common.yaml#/ErrorMessage
+  successful:
+    $ref: ../../components/schemas/.Common.yaml#/Successful

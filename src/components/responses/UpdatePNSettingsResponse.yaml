@@ -1,0 +1,18 @@
+
+type: object
+description: UpdatePNSettingsResponse
+properties:
+  errorCode:
+    $ref: ../../components/schemas/ErrorCode.yaml
+    nullable: true
+  errorMessage:
+    $ref: ../../components/schemas/.Common.yaml#/ErrorMessage
+    default: ''
+  result:
+    type: object
+    properties:
+      userId:
+        type: string
+        format: uuid
+      isReceiveNotification:
+        $ref: ../../components/schemas/.Common.yaml#/IsReceiveNotification

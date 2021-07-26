@@ -1,0 +1,42 @@
+
+get:
+  operationId: getChannelPlayListDetails
+  summary: Get Channel Playlist Details
+  description: Get Channel Playlist Details
+
+  tags:
+    - Video
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+    - name: channelId
+      in: path
+      required: true
+      schema:
+        type: string
+      example: '2zx_s'
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    default:
+      $ref: ../../components/responses/ResponseDefault.yaml
+    200:
+      description: Get channel playlist success
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/responses/PlaylistResponse.yaml
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

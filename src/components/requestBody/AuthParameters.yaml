@@ -1,0 +1,18 @@
+
+
+type: object
+description: data
+properties:
+  password:
+    type: string
+  client_secret:
+    type: string
+  scope:
+    type: string
+  phoneNumber:
+    type: string
+  email:
+    type: string
+required: [password, client_secret, scope]
+
+

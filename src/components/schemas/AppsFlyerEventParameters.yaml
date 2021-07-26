@@ -1,0 +1,18 @@
+
+type: object
+description: AppsFlyerEventParameters
+properties:
+  af_channel:
+    type: string
+  af_content_id:
+    type: string
+  af_content_type:
+    type: string
+  af_content_title:
+    type: string
+  af_content_duration:
+    type: string
+  payment_method_type:
+    type: string
+  af_content_keyword:
+    type: string

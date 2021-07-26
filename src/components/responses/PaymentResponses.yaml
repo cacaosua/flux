@@ -1,0 +1,10 @@
+
+type: object
+description: PaymentResponses
+properties:
+  liveStreamId:
+    type: string
+    default: ''
+  ticketCode:
+    type: string
+    default: ''

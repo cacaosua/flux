@@ -1,0 +1,23 @@
+
+type: object
+description: ReactionData
+properties:
+  emojiId:
+    type: String
+  image:
+    type: object # UIImage?
+  totalReactions:
+    type: integer
+  totalUsersChosen:
+    type: integer
+  url:
+    type: String
+  name:
+    type: String
+
+  userInteractCount:
+    type: integer
+    default: 0
+  userInteractCountChange:
+    type: integer
+    default: 0

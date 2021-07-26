@@ -1,0 +1,36 @@
+
+type: string
+description: Keys
+enum:
+  - auth_token
+  - curDeviceToken
+  - refresh_token
+  - expires_in
+  - token
+  - client_id
+  - client_secret
+  - grant_type # = password, used in login by phone, email
+  # - GrantType # = external, used in login by external provider [Google, Facebook, Apple]
+  - ExternalToken
+  - Provider
+  - scope
+  - email
+  - phoneNumber
+  - password
+  - oldPassword
+  - newPassword
+  - confirmPassword
+  - firstName
+  - lastName
+  - avatarImage
+  - username
+  - access_token
+  - result
+  - lastAccessDate
+  - firstInstall
+  - device_id
+  - device_type
+  - source
+  - externalStreamId
+  - user_info
+

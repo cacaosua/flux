@@ -1,0 +1,63 @@
+
+type: object
+description: FCMRemoteMessage
+properties:
+  senderId:
+    type: string
+    description: The ID of the upstream sender location.
+
+  category:
+    type: string
+    description: The iOS category this notification is assigned to.
+
+  collapseKey:
+    type: string
+    description: >
+      The collapse key a message was sent with.
+      Used to override existing messages with the same key.
+
+  contentAvailable:
+    type: boolean
+    description: >
+      Whether the iOS APNs message was configured as a background update notification.
+
+  data:
+    type: object
+    additionalProperties:
+      type: object
+    description: Any additional data sent with the message.
+
+  from:
+    type: string
+    description: The topic name or message identifier.
+
+  messageId:
+    type: string
+    description: A unique ID assigned to every message.
+
+  messageType:
+    type: string
+    description: The message type of the message.
+
+  mutableContent:
+    type: boolean
+    description: >
+      Whether the iOS APNs `mutable-content` property on the message was set
+      allowing the app to modify the notification via app extensions.
+
+  notification:
+    type: RemoteNotification?
+    description: Additional Notification data sent with the message.
+
+  sentTime:
+    type: string
+    format: date-time
+    description: The time the message was sent, represented as a [DateTime].
+
+  threadId:
+    type: string
+    description: An iOS app specific identifier used for notification grouping.
+
+  ttl:
+    type: integer
+    description: The time to live for the message in seconds.

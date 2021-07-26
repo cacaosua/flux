@@ -1,0 +1,54 @@
+
+get:
+  operationId: getVideoDetail
+  summary: Video details
+  description: Get video details
+
+  tags:
+    - Video
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+    - name: playlistId
+      in: path
+      required: true
+      schema:
+        type: string
+      example: '2zx_s'
+    - name: videoId
+      in: path
+      required: true
+      schema:
+        type: string
+      example: '2zx_s'
+    - name: videoOrderingCriteria
+      in: path
+      required: true
+      schema:
+        $ref: ../../components/schemas/OrderCriteria.yaml
+      example: 1
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    default:
+      $ref: ../../components/responses/ResponseDefault.yaml
+    200:
+      description: Get video success
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/VideoModel.yaml
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

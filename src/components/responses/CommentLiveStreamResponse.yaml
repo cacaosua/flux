@@ -1,0 +1,10 @@
+
+type: object
+description: CommentLiveStreamResponse
+properties:
+  id:
+    type: string
+    default: ''
+  content:
+    type: string
+    default: ''

@@ -1,0 +1,39 @@
+
+HomeContentType:
+  type: object
+  properties:
+    contentType:
+      type: string
+      enum:
+        - livestream
+        - playlist
+        - ads
+
+HomeLiveStream:
+  allOf:
+    - $ref: ../../components/schemas/HomeContent.yaml#/HomeContentType
+    - $ref: ../../components/schemas/VideoModel.yaml
+
+HomeAds:
+  allOf:
+    - $ref: ../../components/schemas/HomeContent.yaml#/HomeContentType
+    - $ref: ../../components/schemas/AdsModel.yaml
+
+HomePlaylist:
+  allOf:
+    - $ref: ../../components/schemas/HomeContent.yaml#/HomeContentType
+    - $ref: ../../components/schemas/PlaylistModel.yaml
+
+HomeContent:
+  type: object
+  properties:
+  discriminator:
+    propertyName: contentType
+    mapping:
+      livestream: ../../components/schemas/HomeContent.yaml#/HomeLiveStream
+      playlist: ../../components/schemas/HomeContent.yaml#/HomeAds
+      ads: ../../components/schemas/HomeContent.yaml#/HomePlaylist
+  oneOf:
+    - $ref: ../../components/schemas/HomeContent.yaml#/HomeLiveStream
+    - $ref: ../../components/schemas/HomeContent.yaml#/HomeAds
+    - $ref: ../../components/schemas/HomeContent.yaml#/HomePlaylist

@@ -1,0 +1,12 @@
+
+type: integer
+description: ExpandingState
+enum:
+  - 0  # None
+  - 1  # Collapse
+  - 2  # Expand
+
+x-enum-varnames:
+  - None
+  - Collapse
+  - Expand

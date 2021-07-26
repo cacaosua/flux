@@ -1,0 +1,18 @@
+
+type: object
+description: RefreshTokenParameters
+properties:
+  client_id:
+    $ref: ../../components/schemas/.Common.yaml#/ClientId
+  client_secret:
+    $ref: ../../components/schemas/.Common.yaml#/ClientSecret
+  scope:
+    $ref: ../../components/schemas/.Common.yaml#/Scope
+  refresh_token:
+    $ref: ../../components/schemas/.Common.yaml#/RefreshToken
+required:
+  - client_id
+  - client_secret
+  - scope
+  - refresh_token
+

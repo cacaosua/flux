@@ -1,0 +1,33 @@
+
+type: object
+description: TransactionModel
+properties:
+  id:
+    type: string
+    default: ''
+  liveStreamId:
+    type: string
+    default: ''
+  title:
+    type: string
+    default: ''
+  paymentMethod:
+    type: string
+    default: ''
+  price:
+    type: integer
+    default: 0
+  thumbnailUrl:
+    type: string
+    default: ''
+  ticketImage:
+    type: string
+    default: ''
+  liveStreamStartTime:
+    type: string
+    format: date-time
+    # default: Date()
+  createdPurchase:
+    type: string
+    format: date-time
+    # default: Date()

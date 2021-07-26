@@ -1,0 +1,20 @@
+
+type: object
+description: CoverModel
+properties:
+  title:
+    type: string
+    default: ''
+  des:
+    type: string
+    default: ''
+  image:
+    type: string
+    default: ''
+  link:
+    type: string
+    default: ''
+  validLink:
+    type: boolean
+    default: false
+    description: computed field in run-time

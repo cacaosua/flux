@@ -1,0 +1,20 @@
+
+type: object
+description: Comment Status
+properties:
+  createComment:
+    type: boolean
+    default: false
+  loadmoreComment:
+    type: boolean
+    default: false
+  commentId:
+    type: string
+    default: ''
+  initCommentLiveStream:
+    type: boolean
+    default: false
+  addCommentLiveStream:
+    type: boolean
+    default: false
+  

@@ -1,0 +1,8 @@
+
+type: string
+description: AppUpdateStatus
+enum:
+  - no_update
+  - recommended_update
+  - forced_update
+  - skipped_update

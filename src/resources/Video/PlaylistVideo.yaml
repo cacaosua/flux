@@ -1,0 +1,62 @@
+
+get:
+  operationId: getPlayListVideo
+  summary: Get play list video
+  description: Get play list video
+
+  tags:
+    - Video
+
+  parameters:
+    - $ref: ../../components/parameters/header/AppId.yaml
+    - name: playlistId
+      in: path
+      required: true
+      schema:
+        type: string
+      example: '23ac'
+    - name: videoOrderingCriteria
+      in: path
+      required: true
+      schema:
+        $ref: ../../components/schemas/OrderCriteria.yaml
+      example: 1
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    default:
+      $ref: ../../components/responses/ResponseDefault.yaml
+    200:
+      description: Get play list video success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              successful:
+                type: boolean
+                default: false
+              result:
+                type: array
+                items:
+                  $ref: ../../components/schemas/VideoModel.yaml
+                default: []
+              errorCode:
+                $ref: ../../components/schemas/ErrorCode.yaml
+              errorMessage:
+                type: string
+                default: ''
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

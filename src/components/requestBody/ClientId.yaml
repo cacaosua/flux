@@ -1,0 +1,7 @@
+
+type: object
+description: client_id
+properties:
+  client_id:
+    type: string
+    example: mobile

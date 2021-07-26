@@ -1,0 +1,25 @@
+
+type: object
+description: ConvertionRateResponse
+properties:
+  exchangeRateId:
+    type: string
+    default: ''
+  currencyCode:
+    type: string
+    default: ''  
+  rates:
+    type: number
+    format: double
+    default: 0.0
+  amount:
+    type: number
+    format: double
+    default: 0.0
+  convertedValue:
+    type: number
+    format: double
+    default: 0.0
+  updatedTime:
+    type: string
+    format: date-time

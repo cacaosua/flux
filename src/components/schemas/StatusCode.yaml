@@ -1,0 +1,22 @@
+
+type: integer
+description: StatusCode
+enum:
+  - 200
+  - 201
+  - 400
+  - 401
+  - 403
+  - 404
+  - 500
+  - 503
+default: -1
+x-enum-varnames:
+  - success
+  - success201
+  - wrongParams
+  - wrongToken
+  - noRight
+  - notFound
+  - serverError
+  - serverDown
