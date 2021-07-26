@@ -1,0 +1,32 @@
+{
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "files.exclude": {
+        "**/.metadata": true,
+        "**/.packages": true,
+        "**/pubspec.lock": true,
+        "**/mason.yaml": true,
+        "**/.git": true,
+        "**/.github": true,
+        "**/.mason": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/bricks": true,
+        "**/LICENSE": true,
+    }
+}
