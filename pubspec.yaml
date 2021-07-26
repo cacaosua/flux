@@ -35,8 +35,8 @@ dependencies:
   hooks_riverpod: ^1.0.0-dev.6
   riverpod: ^1.0.0-dev.6
   logging: ^1.0.1
-  app_env: 
-    path: packages/app_env
+  app_config: 
+    path: packages/app_config
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +48,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  lints: ^1.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
