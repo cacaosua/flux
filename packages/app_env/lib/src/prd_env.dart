@@ -1,19 +1,19 @@
 import 'base_env.dart';
 
-class DevEnv extends BaseEnv {
-  const DevEnv();
+class PrdEnv extends BaseEnv {
+  const PrdEnv();
 
   @override
-  final type = EnvType.DEV;
+  final type = EnvType.PRO;
 
   @override
   final host = '';
 
   @override
-  final checkoutUrl = 'com.cacaosua.flux.dev.payments';
+  final checkoutUrl = 'com.cacaosua.flux.payments';
 
   @override
-  final paymentReturnURL = 'com.cacaosua.flux.dev.payments';
+  final paymentReturnURL = 'com.cacaosua.flux.payments';
 
   @override
   final appsFlyerDevKey = '';

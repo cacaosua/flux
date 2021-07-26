@@ -8,7 +8,7 @@ enum EnvType {
 abstract class BaseEnv {
   const BaseEnv();
 
-  final EnvType environmentType = EnvType.BASE;
+  final EnvType type = EnvType.BASE;
 
   // final String apiVersion = Feature.api_version;
 
