@@ -1,4 +1,4 @@
-package com.example.flux
+package com.cacaosua.flux
 
 import io.flutter.embedding.android.FlutterActivity
 
