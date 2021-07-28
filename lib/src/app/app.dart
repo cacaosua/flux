@@ -34,8 +34,12 @@ class _AppState extends State<App> {
     return MaterialApp(
       navigatorKey: _rootNavigatorKey,
       theme: ThemeData(
-        accentColor: const Color(0xFF13B9FF),
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.blue,
+        ).copyWith(
+          secondary: Colors.green,
+        ),
+        textTheme: const TextTheme(bodyText2: TextStyle(color: Colors.purple)),
       ),
       onGenerateRoute: AppRouter.router.generator,
       localizationsDelegates: const [
@@ -43,6 +47,9 @@ class _AppState extends State<App> {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppIntl.supportedLocales,
+      debugShowMaterialGrid: true,
+      showSemanticsDebugger: true,
+      debugShowCheckedModeBanner: true,
       builder: _buildNavigator,
     );
   }

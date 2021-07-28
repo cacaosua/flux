@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:isolate';
 
-import 'package:app_env/app_env.dart';
+import 'package:app_config/app_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,7 +10,7 @@ import 'package:flux/src/app/app_provider_observer.dart';
 
 class Runner {
   static Future<void> start({
-    required BaseEnv env,
+    required Environment env,
   }) async {
     WidgetsFlutterBinding.ensureInitialized();
     // MobileAds.instance.initialize();
