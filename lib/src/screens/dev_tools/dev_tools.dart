@@ -23,6 +23,7 @@ part 'widgets/bubble.dart';
 part 'widgets/scroll_animation.dart';
 part 'screen/features/live_scroll_animation.dart';
 part 'screen/features/create_feature.dart';
+part 'screen/card_payment/card_payment.dart';
 
 class DevTools {
   static void configureRoutes(AppRouter router) {
@@ -37,14 +38,16 @@ class DevTools {
       if (view.isNotEmpty) {
         switch (view) {
           case LocationKeys.LISTANIMATION:
-            return ListScrollAnimation();
+            return const ListScrollAnimation();
           case LocationKeys.CREATE_FEATURE:
-            return CreateFeature();
+            return const CreateFeature();
+          case LocationKeys.CARD_PAYMENT:
+            return const CardPayment();
 
           default:
         }
       }
-      return DevToolScreen();
+      return const DevToolScreen();
     },
   );
 }

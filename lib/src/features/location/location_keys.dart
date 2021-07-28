@@ -8,5 +8,7 @@ abstract class LocationKeys {
 
   static const LISTANIMATION = 'listAnimation';
   static const CREATE_FEATURE = 'createFeature';
+
+  static const CARD_PAYMENT = 'card_payment';
   static const BUBBLE = 'bubble';
 }

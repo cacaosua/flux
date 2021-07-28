@@ -34,7 +34,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Feature List'),
+        title: const Text('Feature List'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add),
@@ -47,15 +47,16 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
           ),
         ],
       ),
+      // body: Container(),
       body: Consumer(
         builder: (context, ref, _) {
           final data = ref.watch(fetchFeatureConfig);
 
           return data.when(
-            loading: () => Center(
+            loading: () => const Center(
               child: Text('loading'),
             ),
-            error: (err, stack) => Text('error'),
+            error: (err, stack) => const Text('error'),
             data: (data) {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -68,7 +69,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
                         itemBuilder: (context, item, index) {
                           if (index != 0) {
                             return Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black26,
@@ -96,7 +97,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
 
   Widget _buildCard(Character item) {
     return Card(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20.0),
           topRight: Radius.circular(20.0),

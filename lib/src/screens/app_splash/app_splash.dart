@@ -11,7 +11,7 @@ class AppSplash extends StatelessWidget {
         title: GestureDetector(
           child: Text(
             'Logo',
-            style: theme.textTheme.headline3,
+            style: theme.textTheme.headline5,
           ),
           onLongPress: () {
             AppRouter.router.navigateTo(

@@ -36,8 +36,8 @@ dependencies:
   riverpod: ^1.0.0-dev.6
   logging: ^1.0.1
   uuid: ^3.0.4
-  app_env: 
-    path: packages/app_env
+  # app_env: 
+  #   path: packages/app_env
   firebase_provider: 
     path: packages/firebase_provider
   app_config: 

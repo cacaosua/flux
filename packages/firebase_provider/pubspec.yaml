@@ -11,19 +11,19 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  cloud_firestore: ^2.2.0
-  firebase_auth: ^1.2.0
+  # firebase_auth: ^1.2.0
   firebase_core: ^1.2.0
+  cloud_firestore: ^2.2.0
   flutter:
     sdk: flutter
-  google_sign_in: ^5.0.3
+  # google_sign_in: ^5.0.3
   logging: ^1.0.1
   riverpod: ^1.0.0-dev.6
-  flutter_facebook_auth: ^3.4.0
-  firebase_messaging: ^10.0.2
-  flutter_local_notifications: ^6.0.0
   flutter_riverpod: ^1.0.0-dev.6
-  firebase_crashlytics: ^2.0.6
+  # flutter_facebook_auth: ^3.4.0
+  # firebase_messaging: ^10.0.2
+  # flutter_local_notifications: ^6.0.0
+  # firebase_crashlytics: ^2.0.6
 
 dev_dependencies:
   flutter_test:

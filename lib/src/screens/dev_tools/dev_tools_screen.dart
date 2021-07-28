@@ -59,10 +59,10 @@ class _DevToolState extends State<DevToolScreen> {
         title: 'List Scrool Animation',
         path: '${LocationKeys.DEV_TOOLS}/${LocationKeys.LISTANIMATION}',
       ),
-      // _DevMenuItem(
-      //   title: 'Bubble',
-      //   path: '${LocationKeys.DEV_TOOLS}/${LocationKeys.BUBBLE}',
-      // ),
+      _DevMenuItem(
+        title: 'Card Payment',
+        path: '${LocationKeys.DEV_TOOLS}/${LocationKeys.CARD_PAYMENT}',
+      ),
     ];
   }
 }

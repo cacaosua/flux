@@ -47,9 +47,9 @@ class _AppState extends State<App> {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppIntl.supportedLocales,
-      debugShowMaterialGrid: true,
-      showSemanticsDebugger: true,
-      debugShowCheckedModeBanner: true,
+      // debugShowMaterialGrid: true,
+      // showSemanticsDebugger: true,
+      // debugShowCheckedModeBanner: true,
       builder: _buildNavigator,
     );
   }

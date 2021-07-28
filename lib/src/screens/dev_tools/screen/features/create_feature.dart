@@ -48,10 +48,10 @@ class _CreateFeatureState extends State<CreateFeature> {
                     },
                     onShowPassword: () {},
                     onChanged: (String value) {
-                      final container = ProviderContainer();
+                      // final container = ProviderContainer();
 
-                      container.read(featureConfigProvider.notifier).title =
-                          value;
+                      // container.read(featureConfigProvider.notifier).title =
+                      //     value;
                     },
                   );
                 },
@@ -61,7 +61,7 @@ class _CreateFeatureState extends State<CreateFeature> {
               label: 'Description',
               require: true,
               textFormField: Consumer(
-                builder: (context, watch, _) {
+                builder: (context, ref, _) {
                   return FluxTextFormField(
                     controller: descriptionController,
                     placeholder: 'Description',
@@ -72,11 +72,11 @@ class _CreateFeatureState extends State<CreateFeature> {
                     },
                     onShowPassword: () {},
                     onChanged: (String value) {
-                      final container = ProviderContainer();
+                      // final container = ProviderContainer();
 
-                      container
-                          .read(featureConfigProvider.notifier)
-                          .description = value;
+                      // container
+                      //     .read(featureConfigProvider.notifier)
+                      //     .description = value;
 
                       // container
                       //     .read(featureConfigProvider.notifier)
@@ -90,11 +90,11 @@ class _CreateFeatureState extends State<CreateFeature> {
               width: double.infinity,
               child: XPrimaryButton.normal(
                 onPressed: () {
-                  final container = ProviderContainer();
+                  // final container = ProviderContainer();
 
-                  container
-                      .read(featureConfigProvider.notifier)
-                      .createFeature();
+                  // container
+                  //     .read(featureConfigProvider.notifier)
+                  //     .createFeature();
                 },
                 child: Text('Create'),
               ),
