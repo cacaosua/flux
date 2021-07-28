@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "360437650594",
+    "project_id": "flux-dev-7d354",
+    "storage_bucket": "flux-dev-7d354.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360437650594:android:4bf16f6e277db1da4933fb",
+        "android_client_info": {
+          "package_name": "com.cacaosua.flux.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360437650594-iqie8s2fu1et5gcshsk7rn6navme9075.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsEFNUDeXJQsPJFJCOnfQyR_zNGw9rEL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360437650594-iqie8s2fu1et5gcshsk7rn6navme9075.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "360437650594-09j7g458o75n80kick38lbnp1agsge68.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cacaosua.flux.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
