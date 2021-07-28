@@ -17,15 +17,22 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        accentColor: const Color(0xFF13B9FF),
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.blue,
+        ).copyWith(
+          secondary: Colors.green,
+        ),
+        textTheme: const TextTheme(bodyText2: TextStyle(color: Colors.purple)),
       ),
+      home: const AppSplash(),
       localizationsDelegates: const [
         AppIntl.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppIntl.supportedLocales,
-      home: const AppSplash(),
+      debugShowMaterialGrid: true,
+      showSemanticsDebugger: true,
+      debugShowCheckedModeBanner: true,
     );
   }
 }

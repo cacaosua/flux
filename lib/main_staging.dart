@@ -1,8 +1,11 @@
-import 'package:app_env/app_env.dart';
+import 'package:app_config/app_config.dart';
 import 'package:flux/src/runner.dart';
 
 void main() async {
   await Runner.start(
-    env: StgEnv(),
+    env: Environment(
+      type: EnvType.stg,
+      host: '',
+    ),
   );
 }

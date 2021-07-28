@@ -39,6 +39,8 @@ dependencies:
     path: packages/app_env
   api_provider: 
     path: packages/api_provider
+  app_config: 
+    path: packages/app_config
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +52,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  lints: ^1.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
