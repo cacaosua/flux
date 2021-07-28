@@ -37,6 +37,8 @@ dependencies:
   logging: ^1.0.1
   app_env: 
     path: packages/app_env
+  api_provider: 
+    path: packages/api_provider
 
 dev_dependencies:
   flutter_test:

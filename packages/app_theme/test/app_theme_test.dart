@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:app_theme/app_theme.dart';
+// import 'package:app_theme/app_theme.dart';
+
+import '../lib/app_theme.dart';
 
 void main() {
   test('adds one to input values', () {
