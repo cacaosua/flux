@@ -21,6 +21,12 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
@@ -35,17 +41,98 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.flux"
-        minSdkVersion 16
+        minSdkVersion 23 // android 6+
         targetSdkVersion 30
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
+        manifestPlaceholders.appName = "Flux"
+        // manifestPlaceholders.firebaseEmulatorSuiteEnabled = false
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storePassword keystoreProperties['storePassword']
+            // Warning: Keep your keystore and private key in a safe and secure place, and ensure that you have secure backups of them. If you publish an app to Google Play and then lose the key with which you signed your app, you will not be able to publish any updates to your app, since you must always sign all versions of your app with the same key.
+            // keyPassword System.getenv("KEYPWD")
+            // storePassword System.getenv("KSTOREPWD")
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+
+            // ndk.abiFilters 'armeabi-v7a','arm64-v8a', 'x86_64'
+        }
     }
 
     buildTypes {
         release {
+            debuggable = false
+            // Enables code shrinking, obfuscation, and optimization for only
+            // your project's release build type.
+            minifyEnabled true
+
+            // Enables resource shrinking, which is performed by the
+            // Android Gradle plugin.
+            shrinkResources true
+
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+            // signingConfig signingConfigs.release
+
+            matchingFallbacks = ['release']
+        }
+
+        debug {
+            debuggable = true
+
+
+            signingConfig signingConfigs.debug
+            // signingConfig signingConfigs.release // NOTE IT
+
+            matchingFallbacks = ['debug']
+        }
+    }
+
+    // Specifies one flavor dimension.
+    flavorDimensions "env"
+    productFlavors {
+        development {
+            // Assigns this product flavor to the "env" flavor dimension.
+            // If you are using only one dimension, this property is optional,
+            // and the plugin automatically assigns all the module's flavors to
+            // that dimension.
+            dimension = "env"
+            applicationIdSuffix = ".dev"
+            // versionNameSuffix = "-dev"
+
+            manifestPlaceholders.appNameSuffix = " DEV"
+            manifestPlaceholders.appSchemeUrl = "flux-dev"
+            manifestPlaceholders.appSchemeUrl2 = "flux-mcv"
+            manifestPlaceholders.firebaseEmulatorSuiteEnabled = true
+        }
+        staging {
+            dimension = "env"
+            applicationIdSuffix = ".stg"
+            // versionNameSuffix = "-stg"
+
+            manifestPlaceholders.appNameSuffix = " STG"
+            manifestPlaceholders.appSchemeUrl = "flux-qa"
+            manifestPlaceholders.appSchemeUrl2 = "flux-mcv"
+            manifestPlaceholders.firebaseEmulatorSuiteEnabled = true
+        }
+        production {
+            dimension = "env"
+            applicationIdSuffix = ""
+            // versionNameSuffix = ""
+
+            manifestPlaceholders.appNameSuffix = ""
+            manifestPlaceholders.appSchemeUrl = "flux"
+            manifestPlaceholders.appSchemeUrl2 = "flux-mcv"
+            manifestPlaceholders.firebaseEmulatorSuiteEnabled = false
         }
     }
 }
@@ -56,4 +143,13 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    // third-party implementation
+    // implementation 'com.facebook.android:facebook-login:9.1.1'
 }
+
+// apply plugin: 'com.google.gms.google-services'
+// apply plugin: 'com.google.firebase.crashlytics'

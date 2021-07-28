@@ -5,12 +5,14 @@ class AppSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        Center(
-          child: Text('Splash'),
+    final theme = Theme.of(context);
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Splash',
+          style: theme.textTheme.headline3,
         ),
-      ],
+      ),
     );
   }
 }
