@@ -53,4 +53,23 @@ class FireStoreService {
 
     return Future.value(false);
   }
+
+  Future<void> createFeatureConfig(
+    String uuid,
+    String title,
+    String description,
+  ) async {
+    try {
+      final documentSnapshot = await _fireStore.collection('featureConfig');
+      documentSnapshot.add({
+        'uuid': uuid,
+        'title': title,
+        'description': description,
+        'image': '',
+        'status': false,
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
 }

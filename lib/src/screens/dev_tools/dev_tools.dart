@@ -14,12 +14,15 @@ import 'package:flux/src/features/app_router/app_router.dart';
 import 'package:flux/src/features/location/location_keys.dart';
 import 'package:flux/src/features/theme/theme.dart';
 import 'package:flux/src/widgets/button.dart';
+import 'package:flux/src/widgets/form.dart';
+import 'package:uuid/uuid.dart';
 
 part 'dev_tools_screen.dart';
 part 'feature_config_provider.dart';
 part 'widgets/bubble.dart';
 part 'widgets/scroll_animation.dart';
-part 'screen/live_scroll_animation.dart';
+part 'screen/features/live_scroll_animation.dart';
+part 'screen/features/create_feature.dart';
 
 class DevTools {
   static void configureRoutes(AppRouter router) {
@@ -35,8 +38,8 @@ class DevTools {
         switch (view) {
           case LocationKeys.LISTANIMATION:
             return ListScrollAnimation();
-          // case LocationKeys.BUBBLE:
-          //   return BubbleCustomPaint();
+          case LocationKeys.CREATE_FEATURE:
+            return CreateFeature();
 
           default:
         }

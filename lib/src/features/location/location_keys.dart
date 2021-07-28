@@ -7,5 +7,6 @@ abstract class LocationKeys {
   static const ALICE = 'alice';
 
   static const LISTANIMATION = 'listAnimation';
+  static const CREATE_FEATURE = 'createFeature';
   static const BUBBLE = 'bubble';
 }

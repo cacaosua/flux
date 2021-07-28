@@ -1,4 +1,4 @@
-part of '../dev_tools.dart';
+part of '../../dev_tools.dart';
 
 class ListScrollAnimation extends StatefulWidget {
   const ListScrollAnimation({
@@ -35,6 +35,17 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Feature List'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: () {
+              AppRouter.router.navigateTo(
+                context,
+                '${LocationKeys.DEV_TOOLS}/${LocationKeys.CREATE_FEATURE}',
+              );
+            },
+          ),
+        ],
       ),
       body: Consumer(
         builder: (context, ref, _) {
@@ -50,9 +61,6 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 200,
-                    ),
                     Expanded(
                       child: ScrollAnimation<Character>(
                         items: Character.characters,
@@ -65,10 +73,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
                                   BoxShadow(
                                     color: Colors.black26,
                                     blurRadius: 20.0,
-                                    offset: Offset(
-                                      10.0,
-                                      10.0,
-                                    ),
+                                    offset: Offset(10.0, 10.0),
                                   ),
                                 ],
                               ),

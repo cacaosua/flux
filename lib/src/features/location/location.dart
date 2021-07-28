@@ -7,6 +7,7 @@ abstract class LocationX {
   static const DEV_TOOLS = 'dev-tools';
   static const DEV_TOOLS_BUBBLE = '$DEV_TOOLS/bubble';
   static const DEV_TOOLS_LIST_ANIMATION = '$DEV_TOOLS/listAnimation';
+  static const DEV_TOOLS_CREATE_FEATURE = '$DEV_TOOLS/createFeature';
 
   @visibleForTesting
   static List<String> get values {
@@ -15,6 +16,7 @@ abstract class LocationX {
       SPLASH,
       DEV_TOOLS,
       DEV_TOOLS_LIST_ANIMATION,
+      DEV_TOOLS_CREATE_FEATURE,
       DEV_TOOLS_BUBBLE,
     ];
   }
