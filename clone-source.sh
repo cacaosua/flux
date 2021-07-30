@@ -43,4 +43,11 @@ done
 # download vscode workspace
 url="https://raw.githubusercontent.com/${git_acc}/${git_repo_name}/blob/tools/${workspace_filename}.code-workspace"
 echo "File ${url}\nis downloading..."
-curl "${url}?token=AAELFQDZXCBSVYH7J5G7N4LA74WYM" -o "${workspace_filename}.code-workspace"
+curl "${url}" -o "${workspace_filename}.code-workspace"
+
+read -p "Do you want to open VS Code? [y/n]" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    code .
+fi
