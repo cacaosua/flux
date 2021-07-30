@@ -17,23 +17,24 @@ do
         "Frontend")
             echo "\nyou chose choice 1"
             workspace_filename="flux-app"
-            git clone --single-branch --branch specs-develop "${git_repo}.git" "${git_repo_name}_specs"
-            git clone --single-branch --branch app-develop "${git_repo}.git" "${git_repo_name}_app"
+            git clone --single-branch --branch specs-develop "${git_repo}.git" "specs"
+            git clone --single-branch --branch app-develop "${git_repo}.git" "app"
             break
             ;;
         "Backend")
             echo "\nyou chose choice 2"
             workspace_filename="flux-api"
-            git clone --single-branch --branch specs-develop "${git_repo}.git" "${git_repo_name}_specs"
-            git clone --single-branch --branch api-develop "${git_repo}.git" "${git_repo_name}_api"
+            git clone --single-branch --branch specs-develop "${git_repo}.git" "specs"
+            git clone --single-branch --branch api-develop "${git_repo}.git" "api"
             break
             ;;
         "Both")
             echo "\nyou chose choice 3"
             workspace_filename="flux"
-            git clone --single-branch --branch specs-develop "${git_repo}.git" "${git_repo_name}_specs"
-            git clone --single-branch --branch api-develop "${git_repo}.git" "${git_repo_name}_api"
-            git clone --single-branch --branch app-develop "${git_repo}.git" "${git_repo_name}_app"
+            git clone --single-branch --branch specs-develop "${git_repo}.git" "specs"
+            git clone --single-branch --branch api-develop "${git_repo}.git" "api"
+            git clone --single-branch --branch app-develop "${git_repo}.git" "app"
+            git clone --single-branch --branch tools "${git_repo}.git" "tools"
             break
             ;;
         *) echo "invalid option $REPLY";;

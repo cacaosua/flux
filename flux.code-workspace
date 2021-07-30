@@ -1,13 +1,16 @@
 {
-	"folders": [
-		{
-			"path": "flux_api"
-		},
-		{
-			"path": "flux_specs"
-		},
-		{
-			"path": "flux_app"
-		},
-	],
+  "folders": [
+    {
+      "path": "specs"
+    },
+    {
+      "path": "api"
+    },
+    {
+      "path": "app"
+    },
+    {
+      "path": "tools"
+    },
+  ],
 }

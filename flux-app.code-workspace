@@ -1,10 +1,10 @@
 {
-	"folders": [
-		{
-			"path": "flux_specs"
-		},
-		{
-			"path": "flux_app"
-		},
-	]
+  "folders": [
+    {
+      "path": "specs"
+    },
+    {
+      "path": "app"
+    },
+  ],
 }
