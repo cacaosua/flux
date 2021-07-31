@@ -40,6 +40,10 @@ dependencies:
   #   path: packages/app_env
   firebase_provider: 
     path: packages/firebase_provider
+  app_env: 
+    path: packages/app_env
+  api_provider: 
+    path: packages/api_provider
   app_config: 
     path: packages/app_config
 

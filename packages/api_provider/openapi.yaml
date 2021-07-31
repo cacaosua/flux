@@ -1,0 +1,146 @@
+openapi: 3.0.0
+servers:
+  - url: 'https://{environment}.netlove.com.vn'
+    variables:
+      environment:
+        default: api
+        enum:
+          - api
+          - api-dev
+          - api-qa
+info:
+  description: >-
+    This is a sample server Petstore server. For this sample, you can use the
+    api key `special-key` to test the authorization filters.
+  version: 1.0.0
+  title: OpenAPI Petstore
+  license:
+    name: Apache-2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /identity/auth/status:
+    post:
+      operationId: loginByEmailOrPhone
+      description: Login status
+      tags:
+        - Auth
+      # parameters:
+      #   - $ref: '#/components/parameters/AppId'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    ErrorCode:
+      type: integer
+      description: ErrorCode
+      enum:
+        - -999
+        - -2
+        - 1018
+        - 1011
+        - 1008
+        - 1007
+        - 1024
+        - 1025
+        - 40001
+        - 1015
+        - 1016
+        - 1001
+        - 1002
+        - 1003
+        - 1004
+        - 1010
+        - 1012
+        - 1021
+        - 1022
+        - 8000
+        - 8001
+        - -998
+        - -997
+        - 3001
+        - 88888
+      x-enum-varnames:
+        - SystemError
+        - NetworkUnavailable
+        - UserAlreadyExists
+        - PhoneNumberNotVerified
+        - LoginUserNotFound
+        - EmailOrPhoneNumberIsRequired
+        - UserSuspended
+        - UserLoggedInOnAnotherDevice
+        - RegisterExistAccount
+        - WrongOTP
+        - ExpiredOTP
+        - RegisterDuplicateUserName
+        - RegisterRequiredEmailOrPhone
+        - RegisterRequiredLastName
+        - RegisterRequiredFirstName
+        - EmailNotVerified
+        - UserIsBlocked
+        - PasswordNotCorrect
+        - NewPasswordSameOldPassword
+        - UserPurchasedThisTicket
+        - LiveStreamHasEnded
+        - PaypalError
+        - AdsError
+        - Cancel
+        - noError
+  parameters:
+    AppId:
+      name: appId
+      in: header
+      required: true
+      schema:
+        type: string
+      example: NetLove
+  responses:
+    ResponseDefault:
+      description: Response Default
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Error
+            properties:
+              errorCode:
+                $ref: '#/components/schemas/ErrorCode'
+                nullable: true
+              errorMessage:
+                type: string
+                nullable: true
+                default: ''
+              data:
+                type: object
+                additionalProperties: true
+                nullable: true
+                default: {}
+    UnauthorizedError:
+      description: Access token is missing or invalid
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string
+    UnexpectedError:
+      description: Unexpected error.
+    Error:
+      description: Error response
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Error
+            properties:
+              errorCode:
+                $ref: '#/components/schemas/ErrorCode'
+                nullable: true
+              errorMessage:
+                type: string
+                nullable: true
+                default: ''

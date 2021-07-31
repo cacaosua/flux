@@ -1,0 +1,11 @@
+generatorName: dart-dio-next
+outputDir: .
+inputSpec: openapi.yaml
+templateDir: bin/templates/dart/libraries/dio
+pubName: api_provider
+typeMappings:
+  Client: "ModelClient"
+  File: "ModelFile"
+  EnumClass: "ModelEnumClass"
+additionalProperties:
+  hideGenerationTimestamp: "true"
