@@ -1,0 +1,21 @@
+{{>header}}
+export 'package:{{pubName}}/src/api.dart';
+export 'package:{{pubName}}/src/auth/api_key_auth.dart';
+export 'package:{{pubName}}/src/auth/basic_auth.dart';
+export 'package:{{pubName}}/src/auth/oauth.dart';
+{{#useBuiltValue}}export 'package:{{pubName}}/src/serializers.dart';
+{{#useDateLibCore}}export 'package:{{pubName}}/src/model/date.dart';{{/useDateLibCore}}{{/useBuiltValue}}
+
+{{#apiInfo}}{{#apis}}export 'package:{{pubName}}/src/api/{{classFilename}}.dart';
+{{/apis}}{{/apiInfo}}
+{{#models}}{{#model}}export 'package:{{pubName}}/src/model/{{classFilename}}.dart';
+{{/model}}{{/models}}
+
+export 'package:{{pubName}}/consts.dart';
+export 'package:dio/dio.dart';
+export 'package:built_value/built_value.dart';
+export 'package:built_collection/built_collection.dart';
+export 'package:built_value/serializer.dart';
+export 'package:alice_lightweight/alice.dart';
+export 'package:alice_lightweight/ui/page/alice_calls_list_screen.dart';
+

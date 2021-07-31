@@ -1,0 +1,73 @@
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+import 'package:api_provider/src/serializers.dart';
+
+part '{{classFilename}}.g.dart';
+
+class {{classname}} extends EnumClass {
+
+  {{#allowableValues}}
+  @BuiltValueEnumConst(
+    fallback: true,
+    {{#isInteger}}wireNumber: -999999{{/isInteger}}{{^isInteger}}wireName: r'unsupported'{{/isInteger}}
+  )
+  static const {{classname}} unsupported = _$unsupported;
+  
+    {{#enumVars}}
+      {{#description}}
+  /// {{{description}}}
+      {{/description}}
+  @BuiltValueEnumConst({{#isInteger}}wireNumber: {{{value}}}{{/isInteger}}{{^isInteger}}wireName: r{{{value}}}{{/isInteger}})
+  static const {{classname}} {{name}} = _${{name}};
+    {{/enumVars}}
+
+  {{/allowableValues}}
+
+  static Serializer<{{classname}}> get serializer => _${{#lambda.camelcase}}{{{classname}}}{{/lambda.camelcase}}Serializer;
+
+  const {{classname}}._(String name): super(name);
+
+  static BuiltSet<{{classname}}> get values => _$values;
+  static {{classname}} valueOf(String name) => _$valueOf(name);
+  {{#isInteger}}
+  static {{classname}} fromWire(int wireNumber) {
+    {{classname}}? result;
+    try {
+      result = serializers.deserializeWith(serializer, wireNumber);
+    } catch (exception) {}
+    return result ?? _$unsupported;
+  }
+  {{/isInteger}}{{^isInteger}}
+  static {{classname}} fromWire(String wireName) {
+    {{classname}}? result;
+    try {
+      result = serializers.deserializeWith(serializer, wireName);
+    } catch (exception) {}
+    return result ?? _$unsupported;
+  }
+  {{/isInteger}}
+  {{#isInteger}}
+  int get toWireNumber {
+    int? result = 0;
+    try {
+      result = serializers.serializeWith(serializer, this) as int;
+    } catch (exception) {}
+    return result ?? _$unsupported.toWireNumber;
+  }
+  @override
+  String toString() {
+    return toWireNumber.toString();
+  }
+  {{/isInteger}}
+
+}
+
+/// Optionally, enum_class can generate a mixin to go with your enum for use
+/// with Angular. It exposes your enum constants as getters. So, if you mix it
+/// in to your Dart component class, the values become available to the
+/// corresponding Angular template.
+///
+/// Trigger mixin generation by writing a line like this one next to your enum.
+abstract class {{classname}}Mixin = Object with _${{classname}}Mixin;

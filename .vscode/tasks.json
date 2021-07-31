@@ -1,0 +1,97 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter build apk"
+    },
+    {
+      "label": "09. Bundle and build specs",
+      "type": "shell",
+      "group": "none",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        // "09....1. Bundle specs",
+        // "09....1. Copy bundle specs",
+        "09....2. Clean previous build",
+        "09....2. Build specs",
+        "09....3. Run Build_runner",
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "09....1. Bundle specs",
+      "type": "shell",
+      "group": "build",
+      "options": {
+        "cwd": "packages/project_spec"
+      },
+      "command": "npm run bundle"
+    },
+    {
+      "label": "09....1. Copy bundle specs",
+      "type": "shell",
+      "group": "build",
+      "options": {
+        "cwd": "packages/project_spec"
+      },
+      "command": "cp build/openapi.yaml ../api_provider"
+    },
+    {
+      "label": "09....2. Clean previous build",
+      "type": "shell",
+      "group": "build",
+      "options": {
+        "cwd": "packages/api_provider"
+      },
+      "command": "rm -rf doc && rm -rf lib/src && rm -rf test"
+    },
+    {
+      "label": "09....2. Build specs",
+      "type": "shell",
+      "group": "build",
+      "options": {
+        "cwd": "packages/api_provider"
+      },
+      "command": "npm run buildv --verbose",
+    },
+    {
+      "label": "09....3. Run Build_runner",
+      "type": "shell",
+      "group": "build",
+      "options": {
+        "cwd": "packages/api_provider"
+      },
+      "command": "flutter pub get && flutter packages pub run build_runner build --delete-conflicting-outputs"
+    },
+    {
+      "group": "build",
+      "label": "10.1 Build icon font",
+      "type": "shell",
+      // "command": "./tool/icon_font_generator.sh",
+      "command": "dart tool/icon_font_generator/bin/icon_font_generator.dart --from=assets/icons --class-name=XIcons --out-font=assets/fonts/x-icons.ttf --out-flutter=lib/src/features/app_assets/widgets/x_icons.dart",
+      "dependsOn": [
+        "[Flutter][Root] Run pub get"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "10.2. Run r_flutter",
+      "type": "shell",
+      "group": "build",
+      "command": "flutter pub get && flutter pub run r_flutter:generate"
+    },
+    {
+      "label": "11. Run Launcher-Icon tool",
+      "type": "shell",
+      "command": "flutter pub get && flutter pub run flutter_launcher_icons:main",
+    },
+  ]
+}
