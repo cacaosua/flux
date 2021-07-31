@@ -1,6 +1,7 @@
 part of 'dev_tools.dart';
 
-final fetchFeatureConfig = FutureProvider.autoDispose<bool>((ref) async {
+final fetchFeatureConfig =
+    FutureProvider.autoDispose<List<dynamic>>((ref) async {
   final fireStore = ref.read(fireStoreProvider);
   final data = await fireStore.fetchFeatureConfig();
   print(data);
@@ -17,6 +18,33 @@ final featureConfigProvider = StateNotifierProvider<FeatureConfig, bool>(
   ),
   name: 'featureConfigProvider',
 );
+
+final titleFeatureConfig = StateProvider.autoDispose<String>((ref) {
+  return '';
+});
+
+final descriptionFeatureConfig = StateProvider.autoDispose<String>((ref) {
+  return '';
+});
+
+final isLoadingCreate = StateProvider.autoDispose<bool>((ref) {
+  return false;
+});
+
+final createFeatureConfig = FutureProvider.autoDispose<bool>((ref) async {
+  final fireStore = ref.read(fireStoreProvider);
+  final title = ref.read(titleFeatureConfig).state;
+  final description = ref.read(descriptionFeatureConfig).state;
+  final requestData = {
+    'title': title,
+    'description': description,
+    'avatar': 'lib/assets/images/1.png',
+    'color': ''
+  };
+
+  final data = await fireStore.createFeatureConfig(requestData);
+  return data;
+});
 
 class FeatureConfig extends StateNotifier<bool> {
   final ProviderRefBase ref;

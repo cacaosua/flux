@@ -37,7 +37,9 @@ class _CreateFeatureState extends State<CreateFeature> {
               label: 'Title',
               require: true,
               textFormField: Consumer(
-                builder: (context, watch, _) {
+                builder: (context, ref, _) {
+                  ref.watch(titleFeatureConfig).state;
+
                   return FluxTextFormField(
                     controller: titleController,
                     placeholder: 'Title',
@@ -48,10 +50,7 @@ class _CreateFeatureState extends State<CreateFeature> {
                     },
                     onShowPassword: () {},
                     onChanged: (String value) {
-                      // final container = ProviderContainer();
-
-                      // container.read(featureConfigProvider.notifier).title =
-                      //     value;
+                      ref.read(titleFeatureConfig).state = value;
                     },
                   );
                 },
@@ -62,6 +61,8 @@ class _CreateFeatureState extends State<CreateFeature> {
               require: true,
               textFormField: Consumer(
                 builder: (context, ref, _) {
+                  ref.watch(descriptionFeatureConfig).state;
+
                   return FluxTextFormField(
                     controller: descriptionController,
                     placeholder: 'Description',
@@ -72,15 +73,7 @@ class _CreateFeatureState extends State<CreateFeature> {
                     },
                     onShowPassword: () {},
                     onChanged: (String value) {
-                      // final container = ProviderContainer();
-
-                      // container
-                      //     .read(featureConfigProvider.notifier)
-                      //     .description = value;
-
-                      // container
-                      //     .read(featureConfigProvider.notifier)
-                      //     .onChange('description', value);
+                      ref.read(descriptionFeatureConfig).state = value;
                     },
                   );
                 },
@@ -88,15 +81,23 @@ class _CreateFeatureState extends State<CreateFeature> {
             ),
             SizedBox(
               width: double.infinity,
-              child: XPrimaryButton.normal(
-                onPressed: () {
-                  // final container = ProviderContainer();
+              child: Consumer(
+                builder: (context, ref, _) {
+                  return XPrimaryButton.normal(
+                    onPressed: () {
+                      final title = ref.read(titleFeatureConfig).state;
+                      final description =
+                          ref.read(descriptionFeatureConfig).state;
 
-                  // container
-                  //     .read(featureConfigProvider.notifier)
-                  //     .createFeature();
+                      if (title.isEmpty || description.isEmpty) {
+                        return;
+                      }
+
+                      ref.watch(createFeatureConfig);
+                    },
+                    child: const Text('Create'),
+                  );
                 },
-                child: Text('Create'),
               ),
             ),
           ],

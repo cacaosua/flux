@@ -33,43 +33,52 @@ class FireStoreService {
     _initialized = true;
   }
 
-  Future<bool> fetchFeatureConfig() async {
+  Future<List<dynamic>> fetchFeatureConfig() async {
     try {
       final documentSnapshot =
           await _fireStore.collection('featureConfig').get();
       if (documentSnapshot.docs.isNotEmpty) {
-        print(documentSnapshot.docs);
-        // for (dynamic doc in documentSnapshot.docs) {
-        //   if (doc is QueryDocumentSnapshot<Map<String, dynamic>>) {
-        //     data.add(FeatureConfigModel.fromJson(
-        //       Map<String, Object>.from(doc.data()),
-        //     ));
-        //   }
-        // }
+        // return documentSnapshot.docs;
+        List<dynamic> data = [];
+
+        for (dynamic doc in documentSnapshot.docs) {
+          if (doc is QueryDocumentSnapshot<Map<String, dynamic>>) {
+            print('doc ${doc.data()}');
+            // data.add(FeatureConfigModel.fromJson(
+            //   Map<String, Object>.from(doc.data()),
+            // ));
+            data.add(doc.data());
+          }
+        }
+
+        return data.toList();
       }
+
+      return [];
     } catch (e) {
       print(e);
+      return [];
     }
-
-    return Future.value(false);
   }
 
-  Future<void> createFeatureConfig(
-    String uuid,
-    String title,
-    String description,
-  ) async {
+  Future<bool> createFeatureConfig(character) async {
     try {
-      final documentSnapshot = await _fireStore.collection('featureConfig');
-      documentSnapshot.add({
-        'uuid': uuid,
-        'title': title,
-        'description': description,
-        'image': '',
-        'status': false,
+      final documentSnapshot = _fireStore.collection('featureConfig');
+
+      var res = await documentSnapshot.add(character).then((value) {
+        print('User Added $value');
+
+        return true;
+      }).catchError((error) {
+        print("Failed to add user: $error");
+
+        return false;
       });
+
+      return res;
     } catch (e) {
       print(e);
+      return false;
     }
   }
 }
