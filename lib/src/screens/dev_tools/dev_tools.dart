@@ -14,7 +14,6 @@ import 'package:flux/src/features/app_router/app_router.dart';
 import 'package:flux/src/features/theme/theme.dart';
 import 'package:flux/src/widgets/button.dart';
 import 'package:flux/src/widgets/form.dart';
-import 'package:uuid/uuid.dart';
 
 part 'dev_tools_screen.dart';
 part 'feature_config_provider.dart';

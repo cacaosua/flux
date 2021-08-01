@@ -53,11 +53,13 @@ extension XPrimaryButton on ElevatedButton {
   }) {
     return Builder(builder: (context) {
       var buttonStyle = _defaultButtonStyle(style, context).copyWith(
-        textStyle: MaterialStateProperty.all(TextStyle(
-          fontSize: 16.0,
-        )),
+        textStyle: MaterialStateProperty.all(
+          const TextStyle(
+            fontSize: 16.0,
+          ),
+        ),
         padding: MaterialStateProperty.all(
-          EdgeInsets.symmetric(
+          const EdgeInsets.symmetric(
             vertical: 12.0,
             horizontal: Variables.kSize8,
           ),
@@ -102,7 +104,7 @@ extension XPrimaryButton on ElevatedButton {
     ButtonStyle? style,
     BuildContext context,
   ) {
-    return (style ?? ButtonStyle()).merge(
+    return (style ?? const ButtonStyle()).merge(
       ElevatedButtonTheme.of(context).style,
     );
   }

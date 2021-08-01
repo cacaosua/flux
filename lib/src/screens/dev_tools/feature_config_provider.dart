@@ -50,10 +50,10 @@ class FeatureConfig extends StateNotifier<bool> {
   }
 
   Future<void> _createFeature() async {
-    final uuid = Uuid();
-    final fireStore = ref.read(fireStoreProvider);
-    print(title);
-    print(description);
+    // final uuid = Uuid();
+    // final fireStore = ref.read(fireStoreProvider);
+    // print(title);
+    // print(description);
     // await fireStore.createFeatureConfig(
     //   uuid.v4().toString(),
     //   title,

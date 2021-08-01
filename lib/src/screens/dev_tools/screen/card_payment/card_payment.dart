@@ -37,7 +37,7 @@ class _CardPaymentState extends State<CardPayment> {
         title: const Text('Card Payment'),
       ),
       body: Column(
-        children: [],
+        children: const [],
       ),
     );
   }

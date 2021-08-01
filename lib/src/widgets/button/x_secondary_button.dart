@@ -40,7 +40,7 @@ extension XSecondaryButton on OutlinedButton {
     return Builder(builder: (context) {
       var buttonStyle = _defaultButtonStyle(style, context).copyWith(
         padding: MaterialStateProperty.all(
-          EdgeInsets.symmetric(
+          const EdgeInsets.symmetric(
             vertical: 12.0,
             horizontal: Variables.kSize8,
           ),
@@ -85,7 +85,7 @@ extension XSecondaryButton on OutlinedButton {
     ButtonStyle? style,
     BuildContext context,
   ) {
-    return (style ?? ButtonStyle()).merge(
+    return (style ?? const ButtonStyle()).merge(
       OutlinedButtonTheme.of(context).style,
     );
   }

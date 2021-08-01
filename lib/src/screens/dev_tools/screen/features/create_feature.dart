@@ -27,7 +27,7 @@ class _CreateFeatureState extends State<CreateFeature> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create feature'),
+        title: const Text('Create feature'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -96,7 +96,7 @@ class _CreateFeatureState extends State<CreateFeature> {
                   //     .read(featureConfigProvider.notifier)
                   //     .createFeature();
                 },
-                child: Text('Create'),
+                child: const Text('Create'),
               ),
             ),
           ],
