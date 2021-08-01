@@ -6,9 +6,7 @@ class Variables {
 
   // Bases
   static const double kSize4 = 4.0;
-  static const double kSize5 = 5.0;
   static const double kSize8 = 8.0;
-  static const double kSize10 = 10.0;
   static const double kSize12 = 12.0;
   static const double kSize16 = 16.0;
   static const double kSize18 = 18.0;
@@ -51,30 +49,14 @@ class Variables {
   static const double kHeightAppBar = kSize32;
   static const double kButtonRadiusDefault = kSize32;
 
-  static double LOGO_WIDTH = kSize210;
-  static double LOGO_HEIGHT = kSize100;
+  static double logoWidth = kSize210;
+  static double logoHeight = kSize100;
 
   // Animation duration
-  static const A_FRAME = const Duration(milliseconds: 200);
-  static const DURATION_DEFAULT = const Duration(milliseconds: 200);
+  static const aFrameDuration = Duration(milliseconds: 200);
+  static const defaultDuration = Duration(milliseconds: 200);
 
-  static double TABLET_RECOMMAND_NETWORK_WIDTH = kSize460;
-  static double RAFFLE_CONFIRMATION_MAX_HEIGH = kSize490;
-
-  static double EYE_GUIDE_HEIGHT = kSize142;
-
-  static const double CATALOG_MIN_WIDTH = kSize102;
-  static const double CATALOG_MIN_HEIGHT = kSize102;
-
-  static const CHANNEL_ITEM_OVERVIEW_HEIGHT = kSize276;
-  static const CHANNEL_ITEM_OVERVIEW_WIDTH = kSize335;
-
-  static const CHANNEL_ITEM_LIST_HEIGHT = kSize100;
-  static const CHANNEL_ITEM_LIST_WIDTH = kSize165;
-
-  static const MAX_HEIGHT_VIDEO_ON_CHANGE_DETAIL = kSize226;
-
-  static const int MAX_INT = 2 ^ 53;
+  static const int maxIntValue = 2 ^ 53;
 
   // from swift
   static const toastDuration = 5; // seconds;

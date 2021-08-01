@@ -16,7 +16,7 @@ class AppSplash extends StatelessWidget {
           onLongPress: () {
             AppRouter.router.navigateTo(
               context,
-              AppRoutes.DEV_TOOLS,
+              AppRoutes.devTools,
             );
           },
         ),
@@ -29,7 +29,7 @@ class AppSplash extends StatelessWidget {
             error: (err, stack) {
               return Text('Error: $err');
             },
-            orElse: () => Text('Home page'),
+            orElse: () => const Text('Home page'),
           );
         },
       ),

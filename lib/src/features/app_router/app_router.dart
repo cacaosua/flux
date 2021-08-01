@@ -4,13 +4,13 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flux/src/features/location/location_keys.dart';
 import 'package:flux/src/screens/app_splash/splash.dart';
 import 'package:flux/src/screens/dev_tools/dev_tools.dart';
 
 export 'package:fluro/fluro.dart';
 
 part './app_router_list.dart';
+part './app_router_constants.dart';
 part './app_router_observer.dart';
 part './app_router_provider.dart';
 part './widgets/app_router_widget.dart';
@@ -30,6 +30,7 @@ class AppRouter extends FluroRouter {
 
   AppRouter._();
 
+  @override
   Future navigateTo(
     BuildContext context,
     String path, {
@@ -77,7 +78,7 @@ class AppRouter extends FluroRouter {
 AppRouterHandler rootHandler(GlobalKey<NavigatorState> navigatorKey) {
   return AppRouterHandler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-      return AppSplash();
+      return const AppSplash();
     },
   );
 }

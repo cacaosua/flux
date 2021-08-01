@@ -23,7 +23,7 @@ class AppFormField extends StatelessWidget {
           label: label,
           require: require,
         ),
-        const SizedBox(height: Variables.kSize5),
+        const SizedBox(height: Variables.kSize4),
         textFormField,
       ],
     );
