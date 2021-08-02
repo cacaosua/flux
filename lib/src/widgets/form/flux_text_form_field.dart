@@ -19,7 +19,8 @@ class FluxTextFormField extends StatelessWidget {
   final Function()? onShowPassword;
   final Function()? onSubmit;
 
-  FluxTextFormField({
+  const FluxTextFormField(
+    Key key, {
     this.error,
     this.maxLength,
     this.placeholder,
@@ -37,7 +38,7 @@ class FluxTextFormField extends StatelessWidget {
     this.onChanged,
     this.onShowPassword,
     this.onSubmit,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +56,7 @@ class FluxTextFormField extends StatelessWidget {
       controller: controller,
       focusNode: focus,
       onChanged: (String value) => onChanged!(value),
-      style: TextStyle(),
+      style: const TextStyle(),
       keyboardType: textInputType,
       obscureText: obscureText!,
       autovalidateMode: autovalidateMode,

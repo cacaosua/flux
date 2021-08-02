@@ -1,7 +1,7 @@
 part of '../dev_tools.dart';
 
 class ScrollAnimation<T> extends StatelessWidget {
-  ScrollAnimation({
+   ScrollAnimation({
     Key? key,
     required this.items,
     this.itemSize = 200.0,
@@ -20,15 +20,15 @@ class ScrollAnimation<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       controller: scrollController,
       slivers: [
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: SizedBox(
             height: 10.0,
           ),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: SizedBox(
             height: 50.0,
           ),
@@ -65,7 +65,7 @@ class ScrollAnimation<T> extends StatelessWidget {
                 ),
               );
             },
-            childCount: Character.characters.length,
+            childCount: items.length,
           ),
         )
       ],

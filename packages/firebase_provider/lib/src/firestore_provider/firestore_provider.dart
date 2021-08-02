@@ -33,49 +33,23 @@ class FireStoreService {
     _initialized = true;
   }
 
-  Future<List<dynamic>> fetchFeatureConfig() async {
+  Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>>
+      fetchFeatureConfig() async {
     try {
       final documentSnapshot =
           await _fireStore.collection('featureConfig').get();
-      if (documentSnapshot.docs.isNotEmpty) {
-        // return documentSnapshot.docs;
-        List<dynamic> data = [];
-
-        for (dynamic doc in documentSnapshot.docs) {
-          if (doc is QueryDocumentSnapshot<Map<String, dynamic>>) {
-            print('doc ${doc.data()}');
-            // data.add(FeatureConfigModel.fromJson(
-            //   Map<String, Object>.from(doc.data()),
-            // ));
-            data.add(doc.data());
-          }
-        }
-
-        return data.toList();
-      }
-
-      return [];
+      return documentSnapshot.docs;
     } catch (e) {
       print(e);
       return [];
     }
   }
 
-  Future<bool> createFeatureConfig(character) async {
+  Future<bool> createFeatureConfig(Map<String, dynamic> character) async {
     try {
       final documentSnapshot = _fireStore.collection('featureConfig');
-
-      var res = await documentSnapshot.add(character).then((value) {
-        print('User Added $value');
-
-        return true;
-      }).catchError((error) {
-        print("Failed to add user: $error");
-
-        return false;
-      });
-
-      return res;
+      await documentSnapshot.add(character);
+      return true;
     } catch (e) {
       print(e);
       return false;

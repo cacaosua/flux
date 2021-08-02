@@ -92,6 +92,17 @@ components:
         - AdsError
         - Cancel
         - noError
+    Character:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        image:
+          type: string
+        status:
+          type: string
   parameters:
     AppId:
       name: appId

@@ -47,7 +47,6 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
           ),
         ],
       ),
-      // body: Container(),
       body: Consumer(
         builder: (context, ref, _) {
           final data = ref.watch(fetchFeatureConfig);
@@ -58,36 +57,40 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
             ),
             error: (err, stack) => const Text('error'),
             data: (data) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: ScrollAnimation<Character>(
-                        items: Character.characters,
-                        scrollController: scrollController,
-                        itemBuilder: (context, item, index) {
-                          if (index != 0) {
-                            return Container(
-                              decoration: const BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black26,
-                                    blurRadius: 20.0,
-                                    offset: Offset(10.0, 10.0),
-                                  ),
-                                ],
-                              ),
-                              child: _buildCard(item),
-                            );
-                          }
-                          return _buildCard(item);
-                        },
+              return Consumer(builder: (context, ref, _) {
+                final featureConfigList =
+                    ref.watch(featureConfigListProvider).state;
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ScrollAnimation<Character>(
+                          items: featureConfigList,
+                          scrollController: scrollController,
+                          itemBuilder: (context, item, index) {
+                            if (index != 0) {
+                              return Container(
+                                decoration: const BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      blurRadius: 20.0,
+                                      offset: Offset(10.0, 10.0),
+                                    ),
+                                  ],
+                                ),
+                                child: _buildCard(item),
+                              );
+                            }
+                            return _buildCard(item);
+                          },
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              );
+                    ],
+                  ),
+                );
+              });
             },
           );
         },
@@ -103,7 +106,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
           topRight: Radius.circular(20.0),
         ),
       ),
-      color: item.color,
+      color: Colors.black87,
       child: Container(
         height: itemSize,
         padding: const EdgeInsets.symmetric(
@@ -124,7 +127,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
               ),
             ),
             Image.asset(
-              item.avatar!,
+              'lib/assets/images/1.png',
             ),
           ],
         ),

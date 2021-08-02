@@ -13,6 +13,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:api_provider/src/date_serializer.dart';
 import 'package:api_provider/src/model/date.dart';
 
+import 'package:api_provider/src/model/character.dart';
 import 'package:api_provider/src/model/error_code.dart';
 
 import 'package:riverpod/riverpod.dart';
@@ -20,6 +21,7 @@ import 'package:riverpod/riverpod.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  Character,
   ErrorCode,
 ])
 Serializers serializers = (_$serializers.toBuilder()
