@@ -54,7 +54,7 @@ class Runner {
     return runZonedGuarded(() {
       runApp(
         ProviderScope(
-          overrides: [
+          overrides: const [
             // appEnvProvider.overrideWithValue(env),
             // appsFlyerProvider.overrideWithValue(appsFlyer),
             // crashlyticsProvider.overrideWithValue(crashlytics),

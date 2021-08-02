@@ -4,16 +4,14 @@ abstract class AppRoutes {
   AppRoutes._();
 
   static const root = '/';
-  static const SPLASH = '${LocationKeys.SPLASH}';
+  static const splash = '${RouteKeys.splash}';
 
-  static const DEV_TOOLS = '${LocationKeys.DEV_TOOLS}';
-  static const $DEV_TOOLS =
-      '${LocationKeys.DEV_TOOLS}/:${LocationKeys.devToolsView}';
+  static const devTools = '${RouteKeys.devTools}';
+  static const $devTools = '${RouteKeys.devTools}/:${RouteVars.devToolsView}';
 
-  static const DEV_TOOLS_LIST_ANIMATION =
-      '${LocationKeys.DEV_TOOLS}/${LocationKeys.LISTANIMATION}';
-  static const DEV_TOOLS_CREATE_FEATURE =
-      '${LocationKeys.DEV_TOOLS}/${LocationKeys.CREATE_FEATURE}';
-  static const DEV_TOOLS_BUBBLE =
-      '${LocationKeys.DEV_TOOLS}/${LocationKeys.BUBBLE}';
+  static const devToolsListAnimation =
+      '${RouteKeys.devTools}/${RouteKeys.listAnimation}';
+  static const devToolsCreateFeature =
+      '${RouteKeys.devTools}/${RouteKeys.createFeature}';
+  static const devToolsCubble = '${RouteKeys.devTools}/${RouteKeys.bubble}';
 }

@@ -19,8 +19,8 @@ class FluxTextFormField extends StatelessWidget {
   final Function()? onShowPassword;
   final Function()? onSubmit;
 
-  const FluxTextFormField(
-    Key key, {
+  const FluxTextFormField({
+    Key? key,
     this.error,
     this.maxLength,
     this.placeholder,
@@ -120,7 +120,7 @@ class FluxTextFormField extends StatelessWidget {
           borderRadius: const BorderRadius.all(Radius.circular(0)),
         ),
         contentPadding: contentPadding,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: XColors.secondary,
         ),
         hintText: placeholder,

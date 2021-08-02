@@ -22,7 +22,7 @@ class AppFormLabel extends StatelessWidget {
             text: label,
           ),
           if (require)
-            TextSpan(
+            const TextSpan(
               text: ' *',
               style: TextStyle(
                 color: XColors.primary,

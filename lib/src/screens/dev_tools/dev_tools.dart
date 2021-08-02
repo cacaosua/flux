@@ -12,7 +12,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flux/src/core/constant/variables.dart';
 import 'package:flux/src/features/app_router/app_router.dart';
-import 'package:flux/src/features/location/location_keys.dart';
 import 'package:flux/src/features/theme/theme.dart';
 import 'package:flux/src/widgets/button.dart';
 import 'package:flux/src/widgets/form.dart';
@@ -29,21 +28,21 @@ part 'screen/card_payment/card_payment.dart';
 
 class DevTools {
   static void configureRoutes(AppRouter router) {
-    router.define(AppRoutes.DEV_TOOLS, handler: _devToolsHandler);
-    router.define(AppRoutes.$DEV_TOOLS, handler: _devToolsHandler);
+    router.define(AppRoutes.devTools, handler: _devToolsHandler);
+    router.define(AppRoutes.$devTools, handler: _devToolsHandler);
   }
 
   static final _devToolsHandler = AppRouterHandler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-      final view = params[LocationKeys.devToolsView]?.first ?? '';
+      final view = params[RouteVars.devToolsView]?.first ?? '';
 
       if (view.isNotEmpty) {
         switch (view) {
-          case LocationKeys.LISTANIMATION:
+          case RouteKeys.listAnimation:
             return const ListScrollAnimation();
-          case LocationKeys.CREATE_FEATURE:
+          case RouteKeys.createFeature:
             return const CreateFeature();
-          case LocationKeys.CARD_PAYMENT:
+          case RouteKeys.cardPayment:
             return const CardPayment();
 
           default:

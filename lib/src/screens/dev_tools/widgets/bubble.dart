@@ -38,21 +38,21 @@ class _BubbleCustomPaintState extends State<BubbleCustomPaint>
   void initState() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(
+      duration: const Duration(
         seconds: 3,
       ),
     );
 
     progressAnimation = CurvedAnimation(
       parent: animationController,
-      curve: Interval(0.0, 0.65),
+      curve: const Interval(0.0, 0.65),
     );
     bubbles = List<Bubble>.generate(5, (index) {
-      final size = 20.0; //Random().nextInt(20) + 1.0;
+      const size = 20.0; //Random().nextInt(20) + 1.0;
       final speed = Random().nextInt(50) + 1.0;
       final direction = Random().nextInt(100) * -1.0;
       final startPosition = Random().nextInt(100);
-      final color = XColors.primary;
+      const color = XColors.primary;
       return Bubble(
         color: color,
         size: size,
@@ -106,13 +106,13 @@ class _BubbleCustomPaintState extends State<BubbleCustomPaint>
       appBar: AppBar(),
       body: Stack(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 300.0,
             width: double.infinity,
           ),
           TweenAnimationBuilder(
             tween: Tween(begin: 0.0, end: 1.0),
-            duration: Duration(seconds: 3),
+            duration: const Duration(seconds: 3),
             builder: (_, value, __) {
               return Opacity(
                 opacity: 1 - progressAnimation.value,
@@ -122,7 +122,7 @@ class _BubbleCustomPaintState extends State<BubbleCustomPaint>
                       bubbles: bubbles,
                       image: image,
                     ),
-                    child: AspectRatio(
+                    child: const AspectRatio(
                       aspectRatio: 16 / 9,
                     )),
               );

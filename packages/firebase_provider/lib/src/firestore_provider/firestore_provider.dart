@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:logging/logging.dart';
 import 'package:riverpod/riverpod.dart';
 
@@ -25,7 +28,7 @@ class FireStoreService {
       return;
     }
 
-    final settings = Settings(persistenceEnabled: false);
+    const settings = Settings(persistenceEnabled: false);
 
     _fireStore.settings = settings;
 

@@ -43,7 +43,7 @@ class _CreateFeatureState extends State<CreateFeature> {
                       ref.watch(titleFeatureConfig).state;
 
                       return FluxTextFormField(
-                        const Key(''),
+                        key: const Key(''),
                         controller: titleController,
                         placeholder: 'Title',
                         contentPadding:
@@ -67,7 +67,7 @@ class _CreateFeatureState extends State<CreateFeature> {
                       ref.watch(descriptionFeatureConfig).state;
 
                       return FluxTextFormField(
-                        const Key(''),
+                        key: const Key(''),
                         controller: descriptionController,
                         placeholder: 'Description',
                         contentPadding:

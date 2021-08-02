@@ -3,10 +3,14 @@ import 'package:flux/src/core/constant/variables.dart';
 import 'package:flux/src/features/theme/theme.dart';
 
 class GridLayoutTool extends StatelessWidget {
+  const GridLayoutTool({
+    Key? key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final Size screen = MediaQuery.of(context).size;
-    final double margin = Variables.kSize16;
+    final screen = MediaQuery.of(context).size;
+    const margin = Variables.kSize16;
 
     return IgnorePointer(
       ignoring: true,

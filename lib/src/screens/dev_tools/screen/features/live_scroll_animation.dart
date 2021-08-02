@@ -41,7 +41,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
             onPressed: () {
               AppRouter.router.navigateTo(
                 context,
-                '${LocationKeys.DEV_TOOLS}/${LocationKeys.CREATE_FEATURE}',
+                '${RouteKeys.devTools}/${RouteKeys.createFeature}',
               );
             },
           ),

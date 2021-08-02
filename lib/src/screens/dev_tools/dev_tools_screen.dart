@@ -21,7 +21,7 @@ class _DevToolState extends State<DevToolScreen> {
       appBar: AppBar(),
       body: ListView.separated(
         itemCount: items.length,
-        padding: EdgeInsets.all(
+        padding: const EdgeInsets.all(
           Variables.kSize16,
         ),
         itemBuilder: (context, index) {
@@ -47,7 +47,7 @@ class _DevToolState extends State<DevToolScreen> {
           );
         },
         separatorBuilder: (context, index) {
-          return SizedBox(height: Variables.kSize8);
+          return const SizedBox(height: Variables.kSize8);
         },
       ),
     );
@@ -57,11 +57,11 @@ class _DevToolState extends State<DevToolScreen> {
     return <_DevMenuItem>[
       _DevMenuItem(
         title: 'List Scrool Animation',
-        path: '${LocationKeys.DEV_TOOLS}/${LocationKeys.LISTANIMATION}',
+        path: '${RouteKeys.devTools}/${RouteKeys.listAnimation}',
       ),
       _DevMenuItem(
         title: 'Card Payment',
-        path: '${LocationKeys.DEV_TOOLS}/${LocationKeys.CARD_PAYMENT}',
+        path: '${RouteKeys.devTools}/${RouteKeys.cardPayment}',
       ),
     ];
   }

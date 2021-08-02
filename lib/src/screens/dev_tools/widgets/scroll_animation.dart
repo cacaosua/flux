@@ -1,13 +1,13 @@
 part of '../dev_tools.dart';
 
 class ScrollAnimation<T> extends StatelessWidget {
-   ScrollAnimation({
+  const ScrollAnimation({
     Key? key,
     required this.items,
     this.itemSize = 200.0,
     required this.itemBuilder,
     required this.scrollController,
-  });
+  }) : super(key: key);
 
   final List<T> items;
 
