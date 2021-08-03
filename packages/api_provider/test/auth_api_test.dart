@@ -1,7 +1,6 @@
 import 'package:test/test.dart';
 import 'package:api_provider/api_provider.dart';
 
-
 /// tests for AuthApi
 void main() {
   final instance = ApiProvider().getAuthApi();
@@ -13,6 +12,5 @@ void main() {
     test('test loginByEmailOrPhone', () async {
       // TODO
     });
-
   });
 }

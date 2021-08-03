@@ -10,17 +10,16 @@ import 'package:dio/dio.dart';
 import 'package:built_value/json_object.dart';
 
 class AuthApi {
-
   final Dio _dio;
 
   final Serializers _serializers;
 
   const AuthApi(this._dio, this._serializers);
 
-  /// 
+  ///
   ///
   /// Login status
-  Future<Response<JsonObject>> loginByEmailOrPhone({ 
+  Future<Response<JsonObject>> loginByEmailOrPhone({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -44,8 +43,7 @@ class AuthApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-    };
+    final _queryParameters = <String, dynamic>{};
 
     final _response = await _dio.request<Object>(
       _path,
@@ -64,7 +62,6 @@ class AuthApi {
         _response.data!,
         specifiedType: _responseType,
       ) as JsonObject;
-
     } catch (error) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -85,7 +82,6 @@ class AuthApi {
       extra: _response.extra,
     );
   }
-
 }
 
 // ignore_for_file: unused_import, unused_field

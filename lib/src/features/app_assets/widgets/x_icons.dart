@@ -15,7 +15,5 @@ class _XIconsData extends IconData {
 class XIcons {
   const XIcons._();
 
-
-  static const List<IconData> values = <IconData>[
-  ];
+  static const List<IconData> values = <IconData>[];
 }
