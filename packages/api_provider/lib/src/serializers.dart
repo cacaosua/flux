@@ -15,8 +15,6 @@ import 'package:api_provider/src/model/date.dart';
 
 import 'package:api_provider/src/model/error_code.dart';
 
-import 'package:riverpod/riverpod.dart';
-
 part 'serializers.g.dart';
 
 @SerializersFor([
@@ -26,8 +24,8 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addPlugin(StandardJsonPlugin())
       ..add(XDateTimeSerializer())
       ..add(const DateSerializer())
-      // ..add(Iso8601DateTimeSerializer())
-      )
+    // ..add(Iso8601DateTimeSerializer())
+    )
     .build();
 
 Serializers standardSerializers = serializers;

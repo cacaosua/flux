@@ -13,12 +13,8 @@ export 'package:api_provider/src/api/auth_api.dart';
 
 export 'package:api_provider/src/model/error_code.dart';
 
-
 export 'package:api_provider/consts.dart';
 export 'package:dio/dio.dart';
 export 'package:built_value/built_value.dart';
 export 'package:built_collection/built_collection.dart';
 export 'package:built_value/serializer.dart';
-export 'package:alice_lightweight/alice.dart';
-export 'package:alice_lightweight/ui/page/alice_calls_list_screen.dart';
-
