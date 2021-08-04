@@ -1,6 +1,6 @@
 part of '../button.dart';
 
-extension XTextButton on FlatButton {
+extension XTextButton on TextButton {
   static Widget normal({
     Key? key,
     bool disabled = false,
@@ -85,17 +85,17 @@ extension XTextButton on FlatButton {
     required VoidCallback? onPressed,
     required Widget child,
   }) {
-    return FlatButton(
+    return TextButton(
       key: key,
       onPressed: disabled ? null : onPressed,
-      padding: EdgeInsets.zero,
-      shape: shape,
-      textColor: color,
-      color: backgroundColor,
-      splashColor: splashColor,
-      highlightColor: highlightColor,
-      disabledColor: disabledColor,
-      disabledTextColor: disabledTextColor,
+      // padding: EdgeInsets.zero,
+      // shape: shape,
+      // textColor: color,
+      // color: backgroundColor,
+      // splashColor: splashColor,
+      // highlightColor: highlightColor,
+      // disabledColor: disabledColor,
+      // disabledTextColor: disabledTextColor,
       child: child,
     );
   }

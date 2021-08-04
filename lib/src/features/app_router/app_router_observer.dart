@@ -28,7 +28,7 @@ class AppRouterObserver extends RouteObserver<ModalRoute<dynamic>> {
 
   void _log(String state, String value) {
     if (kDebugMode) {
-      print('[D] ::: RouteMiddleware :: ${state} :: ${value}');
+      log('[D] ::: RouteMiddleware :: ${state} :: ${value}');
     }
   }
 }

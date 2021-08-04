@@ -77,7 +77,6 @@ class _BubbleCustomPaintState extends State<BubbleCustomPaint>
 
   Future<Null> init() async {
     image = await loadUiImage('lib/assets/images/inLove.png');
-    print(image);
   }
 
   // Future<ImageInfo> getImageInfo(BuildContext context) async {

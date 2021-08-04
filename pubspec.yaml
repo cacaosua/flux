@@ -46,6 +46,7 @@ dependencies:
     path: packages/api_provider
   app_config: 
     path: packages/app_config
+  flutter_svg: ^0.22.0
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +59,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
   lints: ^1.0.1
+  r_flutter: ^0.8.0
+  flutter_launcher_icons: ^0.9.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -102,3 +105,27 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_icons:
+  image_path_android: "lib/assets/app_icons/android_app_icon.png"
+  image_path_ios: "lib/assets/app_icons/ios_app_icon.png"
+  android: true # can specify file name here e.g. "ic_launcher"
+  ios: true # can specify file name here e.g. "My-Launcher-Icon"
+  adaptive_icon_background: "lib/assets/app_icons/adaptive_icon_background.png" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "lib/assets/app_icons/adaptive_icon_foreground.png" # only available for Android 8.0 devices and above
+
+r_flutter:
+  package: lib/src/features/app_assets
+  # use localization built-in from flutter package
+  # intl: lib/i18n/en.arb
+  ignore:
+    - lib/assets/images/
+    - lib/assets/images/2.0x
+    - lib/assets/images/3.0x
+    - lib/assets/icons/
+    # - lib/assets/svg/
+    # - lib/i18n
+  asset_classes:
+    ".svg":
+      import: package:nelo/src/features/app_assets/app_assets.dart
+      class: SvgFile

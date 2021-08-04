@@ -7,20 +7,20 @@ import 'package:riverpod/riverpod.dart';
 
 final fireStoreProvider = Provider<FireStoreService>(
   (ref) {
-    return FireStoreService(ref.read);
+    return FireStoreService(ref);
   },
 );
 
 class FireStoreService {
   static final _fireStore = FirebaseFirestore.instance;
 
-  final Reader _read;
+  final ProviderRef ref;
   final _log = Logger('FireStoreService');
 
   bool _initialized = false;
 
   FireStoreService(
-    this._read,
+    this.ref,
   );
 
   void setup() {
