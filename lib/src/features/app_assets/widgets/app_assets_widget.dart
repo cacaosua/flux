@@ -5,7 +5,10 @@ part of '../app_assets.dart';
 /// Here we used SvgFile to automatically convert svg assets into widgets
 class SvgFile extends StatelessWidget {
   final String path;
-  const SvgFile(this.path);
+  const SvgFile({
+    Key? key,
+    required this.path,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +18,6 @@ class SvgFile extends StatelessWidget {
 
 extension BuildContextIntl on BuildContext {
   AppIntl get intl {
-    return AppIntl.of(this)!;
+    return AppIntl.of(this);
   }
 }

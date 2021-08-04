@@ -3,8 +3,8 @@
 import 'package:flutter/widgets.dart';
 
 @immutable
-class _XIconsData extends IconData {
-  const _XIconsData(int codePoint)
+class XIconsData extends IconData {
+  const XIconsData(int codePoint)
       : super(
           codePoint,
           fontFamily: 'XIcons',

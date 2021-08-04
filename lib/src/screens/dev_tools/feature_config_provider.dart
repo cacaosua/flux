@@ -3,7 +3,6 @@ part of 'dev_tools.dart';
 final fetchFeatureConfig = FutureProvider.autoDispose<bool>((ref) async {
   final fireStore = ref.read(fireStoreProvider);
   final data = await fireStore.fetchFeatureConfig();
-  print(data);
   return data;
 });
 
