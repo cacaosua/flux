@@ -65,7 +65,7 @@ class ScrollAnimation<T> extends StatelessWidget {
                 ),
               );
             },
-            childCount: Character.characters.length,
+            childCount: items.length,
           ),
         )
       ],

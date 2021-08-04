@@ -68,6 +68,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [Character](doc/Character.md)
  - [ErrorCode](doc/ErrorCode.md)
 
 

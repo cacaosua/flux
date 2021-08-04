@@ -36,43 +36,26 @@ class FireStoreService {
     _initialized = true;
   }
 
-  Future<bool> fetchFeatureConfig() async {
+  Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>>
+      fetchFeatureConfig() async {
     try {
       final documentSnapshot =
           await _fireStore.collection('featureConfig').get();
-      if (documentSnapshot.docs.isNotEmpty) {
-        log('${documentSnapshot.docs}');
-        // for (dynamic doc in documentSnapshot.docs) {
-        //   if (doc is QueryDocumentSnapshot<Map<String, dynamic>>) {
-        //     data.add(FeatureConfigModel.fromJson(
-        //       Map<String, Object>.from(doc.data()),
-        //     ));
-        //   }
-        // }
-      }
-    } catch (exception) {
-      log('[Exception in fetchFeatureConfig] ${exception}');
+      return documentSnapshot.docs;
+    } catch (e) {
+      print(e);
+      return [];
     }
-
-    return Future.value(false);
   }
 
-  Future<void> createFeatureConfig(
-    String uuid,
-    String title,
-    String description,
-  ) async {
+  Future<bool> createFeatureConfig(Map<String, dynamic> character) async {
     try {
-      final documentSnapshot = await _fireStore.collection('featureConfig');
-      documentSnapshot.add({
-        'uuid': uuid,
-        'title': title,
-        'description': description,
-        'image': '',
-        'status': false,
-      });
-    } catch (exception) {
-      log('[Exception in fetchFeatureConfig] ${exception}');
+      final documentSnapshot = _fireStore.collection('featureConfig');
+      await documentSnapshot.add(character);
+      return true;
+    } catch (e) {
+      print(e);
+      return false;
     }
   }
 }

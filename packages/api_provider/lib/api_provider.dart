@@ -11,6 +11,7 @@ export 'package:api_provider/src/model/date.dart';
 
 export 'package:api_provider/src/api/auth_api.dart';
 
+export 'package:api_provider/src/model/character.dart';
 export 'package:api_provider/src/model/error_code.dart';
 
 export 'package:api_provider/consts.dart';
