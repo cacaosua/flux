@@ -106,7 +106,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
           topRight: Radius.circular(20.0),
         ),
       ),
-      color: Colors.black87,
+      color: Colors.grey.withOpacity(0.7),
       child: Container(
         height: itemSize,
         padding: const EdgeInsets.symmetric(
