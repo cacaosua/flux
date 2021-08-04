@@ -116,10 +116,10 @@ flutter_icons:
 
 r_flutter:
   package: lib/src/features/app_assets
-  # use localization built-in from flutter package
+  # !!! use localization built-in from flutter package
   # intl: lib/i18n/en.arb
   ignore:
-    - lib/assets/images/
+    # - lib/assets/images/ !!! do not uncomment this line
     - lib/assets/images/2.0x
     - lib/assets/images/3.0x
     - lib/assets/icons/

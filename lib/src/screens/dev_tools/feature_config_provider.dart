@@ -90,7 +90,7 @@ class FeatureConfig extends StateNotifier<bool> {
       'id': uuid.v4(),
       'title': title,
       'description': description,
-      'image': 'lib/assets/images/1.png',
+      'image': 'assets/images/character-001.png',
       'status': status,
     };
 

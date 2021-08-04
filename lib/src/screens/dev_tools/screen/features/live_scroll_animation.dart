@@ -127,7 +127,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
               ),
             ),
             Image.asset(
-              'lib/assets/images/1.png',
+              'assets/images/character-001.png',
             ),
           ],
         ),
