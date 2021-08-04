@@ -72,8 +72,9 @@ scripts:
   generate:assets:
     run: |
       melos exec -c 1 --scope="flux" -- "
-        flutter pub run r_flutter:generate
+        flutter pub run r_flutter:generate && exit 0
       "
+    description: Run Assets class generator
 
   generate:launcher_icons:
     run: |
