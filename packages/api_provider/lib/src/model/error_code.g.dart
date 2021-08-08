@@ -7,94 +7,94 @@ part of 'error_code.dart';
 // **************************************************************************
 
 const ErrorCode _$unsupported = const ErrorCode._('unsupported');
-const ErrorCode _$SystemError = const ErrorCode._('SystemError');
-const ErrorCode _$NetworkUnavailable = const ErrorCode._('NetworkUnavailable');
-const ErrorCode _$UserAlreadyExists = const ErrorCode._('UserAlreadyExists');
-const ErrorCode _$PhoneNumberNotVerified =
-    const ErrorCode._('PhoneNumberNotVerified');
-const ErrorCode _$LoginUserNotFound = const ErrorCode._('LoginUserNotFound');
-const ErrorCode _$EmailOrPhoneNumberIsRequired =
-    const ErrorCode._('EmailOrPhoneNumberIsRequired');
-const ErrorCode _$UserSuspended = const ErrorCode._('UserSuspended');
-const ErrorCode _$UserLoggedInOnAnotherDevice =
-    const ErrorCode._('UserLoggedInOnAnotherDevice');
-const ErrorCode _$RegisterExistAccount =
-    const ErrorCode._('RegisterExistAccount');
-const ErrorCode _$WrongOTP = const ErrorCode._('WrongOTP');
-const ErrorCode _$ExpiredOTP = const ErrorCode._('ExpiredOTP');
-const ErrorCode _$RegisterDuplicateUserName =
-    const ErrorCode._('RegisterDuplicateUserName');
-const ErrorCode _$RegisterRequiredEmailOrPhone =
-    const ErrorCode._('RegisterRequiredEmailOrPhone');
-const ErrorCode _$RegisterRequiredLastName =
-    const ErrorCode._('RegisterRequiredLastName');
-const ErrorCode _$RegisterRequiredFirstName =
-    const ErrorCode._('RegisterRequiredFirstName');
-const ErrorCode _$EmailNotVerified = const ErrorCode._('EmailNotVerified');
-const ErrorCode _$UserIsBlocked = const ErrorCode._('UserIsBlocked');
-const ErrorCode _$PasswordNotCorrect = const ErrorCode._('PasswordNotCorrect');
-const ErrorCode _$NewPasswordSameOldPassword =
-    const ErrorCode._('NewPasswordSameOldPassword');
-const ErrorCode _$UserPurchasedThisTicket =
-    const ErrorCode._('UserPurchasedThisTicket');
-const ErrorCode _$LiveStreamHasEnded = const ErrorCode._('LiveStreamHasEnded');
-const ErrorCode _$PaypalError = const ErrorCode._('PaypalError');
-const ErrorCode _$AdsError = const ErrorCode._('AdsError');
-const ErrorCode _$Cancel = const ErrorCode._('Cancel');
+const ErrorCode _$systemError = const ErrorCode._('systemError');
+const ErrorCode _$networkUnavailable = const ErrorCode._('networkUnavailable');
+const ErrorCode _$userAlreadyExists = const ErrorCode._('userAlreadyExists');
+const ErrorCode _$phoneNumberNotVerified =
+    const ErrorCode._('phoneNumberNotVerified');
+const ErrorCode _$loginUserNotFound = const ErrorCode._('loginUserNotFound');
+const ErrorCode _$emailOrPhoneNumberIsRequired =
+    const ErrorCode._('emailOrPhoneNumberIsRequired');
+const ErrorCode _$userSuspended = const ErrorCode._('userSuspended');
+const ErrorCode _$userLoggedInOnAnotherDevice =
+    const ErrorCode._('userLoggedInOnAnotherDevice');
+const ErrorCode _$registerExistAccount =
+    const ErrorCode._('registerExistAccount');
+const ErrorCode _$wrongOTP = const ErrorCode._('wrongOTP');
+const ErrorCode _$expiredOTP = const ErrorCode._('expiredOTP');
+const ErrorCode _$registerDuplicateUserName =
+    const ErrorCode._('registerDuplicateUserName');
+const ErrorCode _$registerRequiredEmailOrPhone =
+    const ErrorCode._('registerRequiredEmailOrPhone');
+const ErrorCode _$registerRequiredLastName =
+    const ErrorCode._('registerRequiredLastName');
+const ErrorCode _$registerRequiredFirstName =
+    const ErrorCode._('registerRequiredFirstName');
+const ErrorCode _$emailNotVerified = const ErrorCode._('emailNotVerified');
+const ErrorCode _$userIsBlocked = const ErrorCode._('userIsBlocked');
+const ErrorCode _$passwordNotCorrect = const ErrorCode._('passwordNotCorrect');
+const ErrorCode _$newPasswordSameOldPassword =
+    const ErrorCode._('newPasswordSameOldPassword');
+const ErrorCode _$userPurchasedThisTicket =
+    const ErrorCode._('userPurchasedThisTicket');
+const ErrorCode _$liveStreamHasEnded = const ErrorCode._('liveStreamHasEnded');
+const ErrorCode _$paypalError = const ErrorCode._('paypalError');
+const ErrorCode _$adsError = const ErrorCode._('adsError');
+const ErrorCode _$cancel = const ErrorCode._('cancel');
 const ErrorCode _$noError = const ErrorCode._('noError');
 
 ErrorCode _$valueOf(String name) {
   switch (name) {
     case 'unsupported':
       return _$unsupported;
-    case 'SystemError':
-      return _$SystemError;
-    case 'NetworkUnavailable':
-      return _$NetworkUnavailable;
-    case 'UserAlreadyExists':
-      return _$UserAlreadyExists;
-    case 'PhoneNumberNotVerified':
-      return _$PhoneNumberNotVerified;
-    case 'LoginUserNotFound':
-      return _$LoginUserNotFound;
-    case 'EmailOrPhoneNumberIsRequired':
-      return _$EmailOrPhoneNumberIsRequired;
-    case 'UserSuspended':
-      return _$UserSuspended;
-    case 'UserLoggedInOnAnotherDevice':
-      return _$UserLoggedInOnAnotherDevice;
-    case 'RegisterExistAccount':
-      return _$RegisterExistAccount;
-    case 'WrongOTP':
-      return _$WrongOTP;
-    case 'ExpiredOTP':
-      return _$ExpiredOTP;
-    case 'RegisterDuplicateUserName':
-      return _$RegisterDuplicateUserName;
-    case 'RegisterRequiredEmailOrPhone':
-      return _$RegisterRequiredEmailOrPhone;
-    case 'RegisterRequiredLastName':
-      return _$RegisterRequiredLastName;
-    case 'RegisterRequiredFirstName':
-      return _$RegisterRequiredFirstName;
-    case 'EmailNotVerified':
-      return _$EmailNotVerified;
-    case 'UserIsBlocked':
-      return _$UserIsBlocked;
-    case 'PasswordNotCorrect':
-      return _$PasswordNotCorrect;
-    case 'NewPasswordSameOldPassword':
-      return _$NewPasswordSameOldPassword;
-    case 'UserPurchasedThisTicket':
-      return _$UserPurchasedThisTicket;
-    case 'LiveStreamHasEnded':
-      return _$LiveStreamHasEnded;
-    case 'PaypalError':
-      return _$PaypalError;
-    case 'AdsError':
-      return _$AdsError;
-    case 'Cancel':
-      return _$Cancel;
+    case 'systemError':
+      return _$systemError;
+    case 'networkUnavailable':
+      return _$networkUnavailable;
+    case 'userAlreadyExists':
+      return _$userAlreadyExists;
+    case 'phoneNumberNotVerified':
+      return _$phoneNumberNotVerified;
+    case 'loginUserNotFound':
+      return _$loginUserNotFound;
+    case 'emailOrPhoneNumberIsRequired':
+      return _$emailOrPhoneNumberIsRequired;
+    case 'userSuspended':
+      return _$userSuspended;
+    case 'userLoggedInOnAnotherDevice':
+      return _$userLoggedInOnAnotherDevice;
+    case 'registerExistAccount':
+      return _$registerExistAccount;
+    case 'wrongOTP':
+      return _$wrongOTP;
+    case 'expiredOTP':
+      return _$expiredOTP;
+    case 'registerDuplicateUserName':
+      return _$registerDuplicateUserName;
+    case 'registerRequiredEmailOrPhone':
+      return _$registerRequiredEmailOrPhone;
+    case 'registerRequiredLastName':
+      return _$registerRequiredLastName;
+    case 'registerRequiredFirstName':
+      return _$registerRequiredFirstName;
+    case 'emailNotVerified':
+      return _$emailNotVerified;
+    case 'userIsBlocked':
+      return _$userIsBlocked;
+    case 'passwordNotCorrect':
+      return _$passwordNotCorrect;
+    case 'newPasswordSameOldPassword':
+      return _$newPasswordSameOldPassword;
+    case 'userPurchasedThisTicket':
+      return _$userPurchasedThisTicket;
+    case 'liveStreamHasEnded':
+      return _$liveStreamHasEnded;
+    case 'paypalError':
+      return _$paypalError;
+    case 'adsError':
+      return _$adsError;
+    case 'cancel':
+      return _$cancel;
     case 'noError':
       return _$noError;
     default:
@@ -104,60 +104,60 @@ ErrorCode _$valueOf(String name) {
 
 final BuiltSet<ErrorCode> _$values = new BuiltSet<ErrorCode>(const <ErrorCode>[
   _$unsupported,
-  _$SystemError,
-  _$NetworkUnavailable,
-  _$UserAlreadyExists,
-  _$PhoneNumberNotVerified,
-  _$LoginUserNotFound,
-  _$EmailOrPhoneNumberIsRequired,
-  _$UserSuspended,
-  _$UserLoggedInOnAnotherDevice,
-  _$RegisterExistAccount,
-  _$WrongOTP,
-  _$ExpiredOTP,
-  _$RegisterDuplicateUserName,
-  _$RegisterRequiredEmailOrPhone,
-  _$RegisterRequiredLastName,
-  _$RegisterRequiredFirstName,
-  _$EmailNotVerified,
-  _$UserIsBlocked,
-  _$PasswordNotCorrect,
-  _$NewPasswordSameOldPassword,
-  _$UserPurchasedThisTicket,
-  _$LiveStreamHasEnded,
-  _$PaypalError,
-  _$AdsError,
-  _$Cancel,
+  _$systemError,
+  _$networkUnavailable,
+  _$userAlreadyExists,
+  _$phoneNumberNotVerified,
+  _$loginUserNotFound,
+  _$emailOrPhoneNumberIsRequired,
+  _$userSuspended,
+  _$userLoggedInOnAnotherDevice,
+  _$registerExistAccount,
+  _$wrongOTP,
+  _$expiredOTP,
+  _$registerDuplicateUserName,
+  _$registerRequiredEmailOrPhone,
+  _$registerRequiredLastName,
+  _$registerRequiredFirstName,
+  _$emailNotVerified,
+  _$userIsBlocked,
+  _$passwordNotCorrect,
+  _$newPasswordSameOldPassword,
+  _$userPurchasedThisTicket,
+  _$liveStreamHasEnded,
+  _$paypalError,
+  _$adsError,
+  _$cancel,
   _$noError,
 ]);
 
 class _$ErrorCodeMeta {
   const _$ErrorCodeMeta();
   ErrorCode get unsupported => _$unsupported;
-  ErrorCode get SystemError => _$SystemError;
-  ErrorCode get NetworkUnavailable => _$NetworkUnavailable;
-  ErrorCode get UserAlreadyExists => _$UserAlreadyExists;
-  ErrorCode get PhoneNumberNotVerified => _$PhoneNumberNotVerified;
-  ErrorCode get LoginUserNotFound => _$LoginUserNotFound;
-  ErrorCode get EmailOrPhoneNumberIsRequired => _$EmailOrPhoneNumberIsRequired;
-  ErrorCode get UserSuspended => _$UserSuspended;
-  ErrorCode get UserLoggedInOnAnotherDevice => _$UserLoggedInOnAnotherDevice;
-  ErrorCode get RegisterExistAccount => _$RegisterExistAccount;
-  ErrorCode get WrongOTP => _$WrongOTP;
-  ErrorCode get ExpiredOTP => _$ExpiredOTP;
-  ErrorCode get RegisterDuplicateUserName => _$RegisterDuplicateUserName;
-  ErrorCode get RegisterRequiredEmailOrPhone => _$RegisterRequiredEmailOrPhone;
-  ErrorCode get RegisterRequiredLastName => _$RegisterRequiredLastName;
-  ErrorCode get RegisterRequiredFirstName => _$RegisterRequiredFirstName;
-  ErrorCode get EmailNotVerified => _$EmailNotVerified;
-  ErrorCode get UserIsBlocked => _$UserIsBlocked;
-  ErrorCode get PasswordNotCorrect => _$PasswordNotCorrect;
-  ErrorCode get NewPasswordSameOldPassword => _$NewPasswordSameOldPassword;
-  ErrorCode get UserPurchasedThisTicket => _$UserPurchasedThisTicket;
-  ErrorCode get LiveStreamHasEnded => _$LiveStreamHasEnded;
-  ErrorCode get PaypalError => _$PaypalError;
-  ErrorCode get AdsError => _$AdsError;
-  ErrorCode get Cancel => _$Cancel;
+  ErrorCode get systemError => _$systemError;
+  ErrorCode get networkUnavailable => _$networkUnavailable;
+  ErrorCode get userAlreadyExists => _$userAlreadyExists;
+  ErrorCode get phoneNumberNotVerified => _$phoneNumberNotVerified;
+  ErrorCode get loginUserNotFound => _$loginUserNotFound;
+  ErrorCode get emailOrPhoneNumberIsRequired => _$emailOrPhoneNumberIsRequired;
+  ErrorCode get userSuspended => _$userSuspended;
+  ErrorCode get userLoggedInOnAnotherDevice => _$userLoggedInOnAnotherDevice;
+  ErrorCode get registerExistAccount => _$registerExistAccount;
+  ErrorCode get wrongOTP => _$wrongOTP;
+  ErrorCode get expiredOTP => _$expiredOTP;
+  ErrorCode get registerDuplicateUserName => _$registerDuplicateUserName;
+  ErrorCode get registerRequiredEmailOrPhone => _$registerRequiredEmailOrPhone;
+  ErrorCode get registerRequiredLastName => _$registerRequiredLastName;
+  ErrorCode get registerRequiredFirstName => _$registerRequiredFirstName;
+  ErrorCode get emailNotVerified => _$emailNotVerified;
+  ErrorCode get userIsBlocked => _$userIsBlocked;
+  ErrorCode get passwordNotCorrect => _$passwordNotCorrect;
+  ErrorCode get newPasswordSameOldPassword => _$newPasswordSameOldPassword;
+  ErrorCode get userPurchasedThisTicket => _$userPurchasedThisTicket;
+  ErrorCode get liveStreamHasEnded => _$liveStreamHasEnded;
+  ErrorCode get paypalError => _$paypalError;
+  ErrorCode get adsError => _$adsError;
+  ErrorCode get cancel => _$cancel;
   ErrorCode get noError => _$noError;
   ErrorCode valueOf(String name) => _$valueOf(name);
   BuiltSet<ErrorCode> get values => _$values;
@@ -173,58 +173,58 @@ Serializer<ErrorCode> _$errorCodeSerializer = new _$ErrorCodeSerializer();
 class _$ErrorCodeSerializer implements PrimitiveSerializer<ErrorCode> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'unsupported': -999999,
-    'SystemError': -999,
-    'NetworkUnavailable': -2,
-    'UserAlreadyExists': 1018,
-    'PhoneNumberNotVerified': 1011,
-    'LoginUserNotFound': 1008,
-    'EmailOrPhoneNumberIsRequired': 1007,
-    'UserSuspended': 1024,
-    'UserLoggedInOnAnotherDevice': 1025,
-    'RegisterExistAccount': 40001,
-    'WrongOTP': 1015,
-    'ExpiredOTP': 1016,
-    'RegisterDuplicateUserName': 1001,
-    'RegisterRequiredEmailOrPhone': 1002,
-    'RegisterRequiredLastName': 1003,
-    'RegisterRequiredFirstName': 1004,
-    'EmailNotVerified': 1010,
-    'UserIsBlocked': 1012,
-    'PasswordNotCorrect': 1021,
-    'NewPasswordSameOldPassword': 1022,
-    'UserPurchasedThisTicket': 8000,
-    'LiveStreamHasEnded': 8001,
-    'PaypalError': -998,
-    'AdsError': -997,
-    'Cancel': 3001,
+    'systemError': -999,
+    'networkUnavailable': -2,
+    'userAlreadyExists': 1018,
+    'phoneNumberNotVerified': 1011,
+    'loginUserNotFound': 1008,
+    'emailOrPhoneNumberIsRequired': 1007,
+    'userSuspended': 1024,
+    'userLoggedInOnAnotherDevice': 1025,
+    'registerExistAccount': 40001,
+    'wrongOTP': 1015,
+    'expiredOTP': 1016,
+    'registerDuplicateUserName': 1001,
+    'registerRequiredEmailOrPhone': 1002,
+    'registerRequiredLastName': 1003,
+    'registerRequiredFirstName': 1004,
+    'emailNotVerified': 1010,
+    'userIsBlocked': 1012,
+    'passwordNotCorrect': 1021,
+    'newPasswordSameOldPassword': 1022,
+    'userPurchasedThisTicket': 8000,
+    'liveStreamHasEnded': 8001,
+    'paypalError': -998,
+    'adsError': -997,
+    'cancel': 3001,
     'noError': 88888,
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     -999999: 'unsupported',
-    -999: 'SystemError',
-    -2: 'NetworkUnavailable',
-    1018: 'UserAlreadyExists',
-    1011: 'PhoneNumberNotVerified',
-    1008: 'LoginUserNotFound',
-    1007: 'EmailOrPhoneNumberIsRequired',
-    1024: 'UserSuspended',
-    1025: 'UserLoggedInOnAnotherDevice',
-    40001: 'RegisterExistAccount',
-    1015: 'WrongOTP',
-    1016: 'ExpiredOTP',
-    1001: 'RegisterDuplicateUserName',
-    1002: 'RegisterRequiredEmailOrPhone',
-    1003: 'RegisterRequiredLastName',
-    1004: 'RegisterRequiredFirstName',
-    1010: 'EmailNotVerified',
-    1012: 'UserIsBlocked',
-    1021: 'PasswordNotCorrect',
-    1022: 'NewPasswordSameOldPassword',
-    8000: 'UserPurchasedThisTicket',
-    8001: 'LiveStreamHasEnded',
-    -998: 'PaypalError',
-    -997: 'AdsError',
-    3001: 'Cancel',
+    -999: 'systemError',
+    -2: 'networkUnavailable',
+    1018: 'userAlreadyExists',
+    1011: 'phoneNumberNotVerified',
+    1008: 'loginUserNotFound',
+    1007: 'emailOrPhoneNumberIsRequired',
+    1024: 'userSuspended',
+    1025: 'userLoggedInOnAnotherDevice',
+    40001: 'registerExistAccount',
+    1015: 'wrongOTP',
+    1016: 'expiredOTP',
+    1001: 'registerDuplicateUserName',
+    1002: 'registerRequiredEmailOrPhone',
+    1003: 'registerRequiredLastName',
+    1004: 'registerRequiredFirstName',
+    1010: 'emailNotVerified',
+    1012: 'userIsBlocked',
+    1021: 'passwordNotCorrect',
+    1022: 'newPasswordSameOldPassword',
+    8000: 'userPurchasedThisTicket',
+    8001: 'liveStreamHasEnded',
+    -998: 'paypalError',
+    -997: 'adsError',
+    3001: 'cancel',
     88888: 'noError',
   };
 

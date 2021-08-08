@@ -15,9 +15,3 @@ class SvgFile extends StatelessWidget {
     return SvgPicture.asset(path);
   }
 }
-
-extension BuildContextIntl on BuildContext {
-  AppIntl get intl {
-    return AppIntl.of(this);
-  }
-}

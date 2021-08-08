@@ -5,13 +5,12 @@ class AppSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: GestureDetector(
-          child: Text(
-            'Logo',
-            style: theme.textTheme.headline5,
+          child: TextElement(
+            text: (_) => 'Logo',
+            style: (textTheme) => textTheme.headline5,
           ),
           onLongPress: () {
             AppRouter.router.navigateTo(

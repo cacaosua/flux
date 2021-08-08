@@ -1,6 +1,4 @@
-.gitignore
 README.md
-analysis_options.yaml
 doc/AuthApi.md
 doc/Character.md
 doc/ErrorCode.md
@@ -17,7 +15,3 @@ lib/src/model/character.dart
 lib/src/model/date.dart
 lib/src/model/error_code.dart
 lib/src/serializers.dart
-pubspec.yaml
-test/auth_api_test.dart
-test/character_test.dart
-test/error_code_test.dart

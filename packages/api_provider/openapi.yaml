@@ -67,30 +67,30 @@ components:
         - 3001
         - 88888
       x-enum-varnames:
-        - SystemError
-        - NetworkUnavailable
-        - UserAlreadyExists
-        - PhoneNumberNotVerified
-        - LoginUserNotFound
-        - EmailOrPhoneNumberIsRequired
-        - UserSuspended
-        - UserLoggedInOnAnotherDevice
-        - RegisterExistAccount
-        - WrongOTP
-        - ExpiredOTP
-        - RegisterDuplicateUserName
-        - RegisterRequiredEmailOrPhone
-        - RegisterRequiredLastName
-        - RegisterRequiredFirstName
-        - EmailNotVerified
-        - UserIsBlocked
-        - PasswordNotCorrect
-        - NewPasswordSameOldPassword
-        - UserPurchasedThisTicket
-        - LiveStreamHasEnded
-        - PaypalError
-        - AdsError
-        - Cancel
+        - systemError
+        - networkUnavailable
+        - userAlreadyExists
+        - phoneNumberNotVerified
+        - loginUserNotFound
+        - emailOrPhoneNumberIsRequired
+        - userSuspended
+        - userLoggedInOnAnotherDevice
+        - registerExistAccount
+        - wrongOTP
+        - expiredOTP
+        - registerDuplicateUserName
+        - registerRequiredEmailOrPhone
+        - registerRequiredLastName
+        - registerRequiredFirstName
+        - emailNotVerified
+        - userIsBlocked
+        - passwordNotCorrect
+        - newPasswordSameOldPassword
+        - userPurchasedThisTicket
+        - liveStreamHasEnded
+        - paypalError
+        - adsError
+        - cancel
         - noError
     Character:
       type: object

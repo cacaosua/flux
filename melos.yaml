@@ -3,7 +3,8 @@ name: flux
 packages:
   - packages/**
   - examples/**
-  - "*"
+  - ./*
+  - flux
 
 ignore:
   # TODO Excluded pending CI fixes
@@ -28,6 +29,14 @@ ide:
     # use_recommended_settings: true
 
 scripts:
+  newcomer:
+    run: |
+      melos exec --scope="flux" -- \
+        brew install starship
+        pub global activate melos
+        pub global activate mason
+        pub global activate coverage
+
   # we voluntarily do not use melos inside goldens
   # postbootstrap: |
   #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/input && 
@@ -121,3 +130,14 @@ scripts:
     select-package:
       flutter: true
       dir-exists: test
+
+  test:selective_unit_test:
+    run: melos exec --dir-exists="test" --fail-fast -- flutter test --no-pub --coverage
+    description: Run Flutter tests for a specific package in this project.
+    select-package:
+      flutter: true
+      dir-exists: test
+
+  postclean: >
+    melos exec -- \
+      rm -rf ./build ./android/.gradle ./ios/.symlinks ./ios/Pods ./android/.idea ./.idea ./.dart-tool/build

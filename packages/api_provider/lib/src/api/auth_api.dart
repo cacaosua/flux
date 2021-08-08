@@ -84,4 +84,4 @@ class AuthApi {
   }
 }
 
-// ignore_for_file: unused_import, unused_field
+// ignore_for_file: unused_import, unused_field, prefer_const_declarations

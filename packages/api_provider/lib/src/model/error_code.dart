@@ -16,105 +16,105 @@ class ErrorCode extends EnumClass {
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: -999)
-  static const ErrorCode SystemError = _$SystemError;
+  static const ErrorCode systemError = _$systemError;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: -2)
-  static const ErrorCode NetworkUnavailable = _$NetworkUnavailable;
+  static const ErrorCode networkUnavailable = _$networkUnavailable;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1018)
-  static const ErrorCode UserAlreadyExists = _$UserAlreadyExists;
+  static const ErrorCode userAlreadyExists = _$userAlreadyExists;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1011)
-  static const ErrorCode PhoneNumberNotVerified = _$PhoneNumberNotVerified;
+  static const ErrorCode phoneNumberNotVerified = _$phoneNumberNotVerified;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1008)
-  static const ErrorCode LoginUserNotFound = _$LoginUserNotFound;
+  static const ErrorCode loginUserNotFound = _$loginUserNotFound;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1007)
-  static const ErrorCode EmailOrPhoneNumberIsRequired =
-      _$EmailOrPhoneNumberIsRequired;
+  static const ErrorCode emailOrPhoneNumberIsRequired =
+      _$emailOrPhoneNumberIsRequired;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1024)
-  static const ErrorCode UserSuspended = _$UserSuspended;
+  static const ErrorCode userSuspended = _$userSuspended;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1025)
-  static const ErrorCode UserLoggedInOnAnotherDevice =
-      _$UserLoggedInOnAnotherDevice;
+  static const ErrorCode userLoggedInOnAnotherDevice =
+      _$userLoggedInOnAnotherDevice;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 40001)
-  static const ErrorCode RegisterExistAccount = _$RegisterExistAccount;
+  static const ErrorCode registerExistAccount = _$registerExistAccount;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1015)
-  static const ErrorCode WrongOTP = _$WrongOTP;
+  static const ErrorCode wrongOTP = _$wrongOTP;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1016)
-  static const ErrorCode ExpiredOTP = _$ExpiredOTP;
+  static const ErrorCode expiredOTP = _$expiredOTP;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1001)
-  static const ErrorCode RegisterDuplicateUserName =
-      _$RegisterDuplicateUserName;
+  static const ErrorCode registerDuplicateUserName =
+      _$registerDuplicateUserName;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1002)
-  static const ErrorCode RegisterRequiredEmailOrPhone =
-      _$RegisterRequiredEmailOrPhone;
+  static const ErrorCode registerRequiredEmailOrPhone =
+      _$registerRequiredEmailOrPhone;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1003)
-  static const ErrorCode RegisterRequiredLastName = _$RegisterRequiredLastName;
+  static const ErrorCode registerRequiredLastName = _$registerRequiredLastName;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1004)
-  static const ErrorCode RegisterRequiredFirstName =
-      _$RegisterRequiredFirstName;
+  static const ErrorCode registerRequiredFirstName =
+      _$registerRequiredFirstName;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1010)
-  static const ErrorCode EmailNotVerified = _$EmailNotVerified;
+  static const ErrorCode emailNotVerified = _$emailNotVerified;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1012)
-  static const ErrorCode UserIsBlocked = _$UserIsBlocked;
+  static const ErrorCode userIsBlocked = _$userIsBlocked;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1021)
-  static const ErrorCode PasswordNotCorrect = _$PasswordNotCorrect;
+  static const ErrorCode passwordNotCorrect = _$passwordNotCorrect;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 1022)
-  static const ErrorCode NewPasswordSameOldPassword =
-      _$NewPasswordSameOldPassword;
+  static const ErrorCode newPasswordSameOldPassword =
+      _$newPasswordSameOldPassword;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 8000)
-  static const ErrorCode UserPurchasedThisTicket = _$UserPurchasedThisTicket;
+  static const ErrorCode userPurchasedThisTicket = _$userPurchasedThisTicket;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 8001)
-  static const ErrorCode LiveStreamHasEnded = _$LiveStreamHasEnded;
+  static const ErrorCode liveStreamHasEnded = _$liveStreamHasEnded;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: -998)
-  static const ErrorCode PaypalError = _$PaypalError;
+  static const ErrorCode paypalError = _$paypalError;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: -997)
-  static const ErrorCode AdsError = _$AdsError;
+  static const ErrorCode adsError = _$adsError;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 3001)
-  static const ErrorCode Cancel = _$Cancel;
+  static const ErrorCode cancel = _$cancel;
 
   /// ErrorCode
   @BuiltValueEnumConst(wireNumber: 88888)

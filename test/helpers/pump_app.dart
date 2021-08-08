@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flux/src/app/app_l10n.dart';
+import 'package:flux/src/widgets/text_element/text_element.dart';
 
 extension PumpApp on WidgetTester {
   Future<void> pumpApp(Widget widget) {
