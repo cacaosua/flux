@@ -13,10 +13,11 @@
         "--flavor",
         "development",
         "--target",
-        "lib/main_development.dart",
+        // "lib/main_development.dart",
         "lib/src/widgets/text_element/text_element_preview.dart",
-        "--verbose",
-      ]
+        // "--verbose",
+      ],
+      "showMemoryUsage": true
     },
     {
       "name": "Launch staging",
@@ -28,7 +29,8 @@
         "staging",
         "--target",
         "lib/main_staging.dart",
-      ]
+      ],
+      "showMemoryUsage": true
     },
     {
       "name": "Launch production",
@@ -40,7 +42,8 @@
         "production",
         "--target",
         "lib/main_production.dart",
-      ]
+      ],
+      "showMemoryUsage": true
     }
   ]
 }

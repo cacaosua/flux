@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'text_element.dart';
 
@@ -11,6 +12,11 @@ class _MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final styles = TextElement.styles(context);
     return MaterialApp(
+      localizationsDelegates: const [
+        AppIntl.delegate,
+        GlobalMaterialLocalizations.delegate,
+      ],
+      supportedLocales: AppIntl.supportedLocales,
       home: Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
@@ -22,7 +28,7 @@ class _MyApp extends StatelessWidget {
                   Card(
                     margin: const EdgeInsets.all(16.0),
                     child: TextElement(
-                      text: (_) => style.debugLabel ?? '',
+                      text: (_) => style.toStringShort(),
                       style: (_) => style,
                     ),
                   ),
