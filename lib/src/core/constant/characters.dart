@@ -1,5 +1,3 @@
-
-
 // class Character {
 //   final String? title;
 //   final String? description;

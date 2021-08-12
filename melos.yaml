@@ -105,6 +105,11 @@ scripts:
         )
       "
 
+  build:web:
+    run: |
+      flutter build web --release --target lib/main_development.dart
+    description: Build web
+
   test:
     run: |
       melos run test:dart --no-select

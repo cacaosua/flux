@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/node,java,kotlin,objective-c,swift,dart,flutter,android,androidstudio,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,java,kotlin,objective-c,swift,dart,flutter,android,androidstudio,xcode
+# Created by https://www.toptal.com/developers/gitignore/api/node,java,kotlin,objective-c,swift,dart,flutter,android,androidstudio,xcode,firebase
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,java,kotlin,objective-c,swift,dart,flutter,android,androidstudio,xcode,firebase
 
 ### Android ###
 # Built application files
@@ -127,6 +127,15 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
 
 ### Flutter ###
 # Flutter/Dart/Pub related
@@ -586,6 +595,6 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
-# End of https://www.toptal.com/developers/gitignore/api/node,java,kotlin,objective-c,swift,dart,flutter,android,androidstudio,xcode
+# End of https://www.toptal.com/developers/gitignore/api/node,java,kotlin,objective-c,swift,dart,flutter,android,androidstudio,xcode,firebase
 
 **/package-lock.json
