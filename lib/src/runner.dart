@@ -22,15 +22,17 @@ class Runner {
       // await crashlytics.recordFlutterError(errorDetails);
       originalOnError?.call(errorDetails);
     };
-    Isolate.current.addErrorListener(RawReceivePort(
-      (dynamic pair) async {
-        //   // final isolateError = pair as List<dynamic>;
-        //   // _app.onError(
-        //   //   isolateError.first.toString(),
-        //   //   stack: isolateError.last.toString(),
-        //   // );
-      },
-    ).sendPort);
+    if (!kIsWeb) {
+      Isolate.current.addErrorListener(RawReceivePort(
+        (dynamic pair) async {
+          //   // final isolateError = pair as List<dynamic>;
+          //   // _app.onError(
+          //   //   isolateError.first.toString(),
+          //   //   stack: isolateError.last.toString(),
+          //   // );
+        },
+      ).sendPort);
+    }
 
     /// Disabling red screen of death in release mode
     if (!kDebugMode) {
@@ -50,8 +52,7 @@ class Runner {
 
     // Beamer.setPathUrlStrategy();
 
-    // Run app
-    return runZonedGuarded(() {
+    final runAppFunc = () {
       runApp(
         ProviderScope(
           overrides: const [
@@ -63,9 +64,20 @@ class Runner {
           child: const App(),
         ),
       );
-    }, (Object error, StackTrace stackTrace) {
-      // _app.onError(error, stack: stackTrace);
-      // crashlytics.recordError(error, stackTrace);
-    });
+    };
+
+    if (kIsWeb) {
+      runAppFunc.call();
+      return;
+    }
+
+    // Run app
+    runZonedGuarded(
+      runAppFunc,
+      (Object error, StackTrace stackTrace) {
+        // _app.onError(error, stack: stackTrace);
+        // crashlytics.recordError(error, stackTrace);
+      },
+    );
   }
 }
