@@ -36,6 +36,7 @@ scripts:
         pub global activate melos
         pub global activate mason
         pub global activate coverage
+        pub global activate flutter_gen
 
   # we voluntarily do not use melos inside goldens
   # postbootstrap: |
@@ -80,9 +81,7 @@ scripts:
 
   generate:assets:
     run: |
-      melos exec -c 1 --scope="flux" -- "
-        flutter pub run r_flutter:generate && exit 0
-      "
+      fluttergen -c pubspec.yaml
     description: Run Assets class generator
 
   generate:launcher_icons:
@@ -109,6 +108,19 @@ scripts:
     run: |
       flutter build web --release --target lib/main_development.dart
     description: Build web
+
+  fb:emulator:start:
+    run: |
+      export GOOGLE_APPLICATION_CREDENTIALS=".firebase-configs/flux-dev-7d354-1a42fbae8175.json"
+      firebase emulators:start --only hosting
+    description: |
+      Run emulator locally
+
+  fb:hosting:deploy:
+    run: |
+      firebase deploy --only hosting
+    description: |
+      Run firebase deploy hosting
 
   test:
     run: |

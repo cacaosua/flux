@@ -108,10 +108,10 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
     ...
 
     <key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>es</string>
-	</array>
+  <array>
+    <string>en</string>
+    <string>es</string>
+  </array>
 
     ...
 ```
@@ -176,6 +176,18 @@ flutter create --template=package package_name
     ```bash
     melos bs # or 'melos bootstrap'
     ````
+
+## Firebase
+
+### Local Emulator
+
+- Run Emulator locally
+  - refs: https://firebase.google.com/docs/functions/local-emulator
+  - set up admin credentials for emulated functions:
+  ```bash
+  export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+  firebase emulators:start
+  ```
 
 [coverage_badge]: coverage_badge.svg
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html

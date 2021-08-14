@@ -21,6 +21,7 @@
     "ignore": [
       "firebase.json",
       "**/.*",
+      "__/firebase/**/*",
       "**/node_modules/**"
     ]
   }
