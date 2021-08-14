@@ -1,10 +1,11 @@
-class Variables {
-  Variables._();
+class LayoutConstants {
+  LayoutConstants._();
 
   // Font
   static const kBaseFontFamily = 'ProductSans';
 
   // Bases
+  static const double kSize2 = 2.0;
   static const double kSize4 = 4.0;
   static const double kSize8 = 8.0;
   static const double kSize12 = 12.0;

@@ -50,6 +50,8 @@ dependencies:
   storybook_flutter: ^0.5.1
   resizable_widget: ^1.0.5
   vrouter: ^1.2.0+11
+  nil: ^1.1.1
+  flare_flutter: ^3.0.2
 
 dev_dependencies:
   flutter_test:
@@ -80,8 +82,13 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/
-    - lib/assets/images/
+    - assets/
+    - assets/color/
+    - assets/flare/
+    - assets/images/
+    # - assets/images/icons/
+    - assets/svg/
+    - assets/json/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -110,15 +117,15 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
 flutter_icons:
-  image_path_android: "lib/assets/app_icons/android_app_icon.png"
-  image_path_ios: "lib/assets/app_icons/ios_app_icon.png"
+  image_path_android: "assets/app_icons/android_app_icon.png"
+  image_path_ios: "assets/app_icons/ios_app_icon.png"
   android: true # can specify file name here e.g. "ic_launcher"
   ios: true # can specify file name here e.g. "My-Launcher-Icon"
-  adaptive_icon_background: "lib/assets/app_icons/adaptive_icon_background.png" # only available for Android 8.0 devices and above
-  adaptive_icon_foreground: "lib/assets/app_icons/adaptive_icon_foreground.png" # only available for Android 8.0 devices and above
+  adaptive_icon_background: "assets/app_icons/adaptive_icon_background.png" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "assets/app_icons/adaptive_icon_foreground.png" # only available for Android 8.0 devices and above
 
 flutter_gen:
-  output: lib/src/features/app_assets # Optional (default: lib/gen/)
+  output: lib/src/features/app_assets/widgets # Optional (default: lib/gen/)
   line_length: 80   # Optional (default: 80)
   null_safety: true # Optional (default: true)
 
@@ -141,8 +148,8 @@ flutter_gen:
     enabled: true
 
   colors:
-    enabled: false
-    # inputs:
-    #   - assets/color/colors.xml
+    enabled: true
+    inputs:
+      - assets/color/colors.xml
     #   - assets/color/colors2.xml
     #   - assets/color/colors2.xml # duplicated

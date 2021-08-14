@@ -22,7 +22,7 @@ class _DevToolState extends State<DevToolScreen> {
       body: ListView.separated(
         itemCount: items.length,
         padding: const EdgeInsets.all(
-          Variables.kSize16,
+          LayoutConstants.kSize16,
         ),
         itemBuilder: (context, index) {
           final menu = items[index];
@@ -31,7 +31,7 @@ class _DevToolState extends State<DevToolScreen> {
 
           return SizedBox(
             width: double.infinity,
-            child: XPrimaryButton.normal(
+            child: AppButton.primary(
               onPressed: () {
                 if (menu.onPressed is Function) {
                   return menu.onPressed!(context);
@@ -47,7 +47,7 @@ class _DevToolState extends State<DevToolScreen> {
           );
         },
         separatorBuilder: (context, index) {
-          return const SizedBox(height: Variables.kSize8);
+          return const SizedBox(height: LayoutConstants.kSize8);
         },
       ),
     );
