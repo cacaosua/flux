@@ -16,6 +16,9 @@ jobs:
           flutter-version: '2.2.1'
       - name: Install melos
         run: dart pub global activate melos
+      - name: Set environment variables
+        run: |
+          echo "$HOME/.pub-cache/bin/" >> $GITHUB_PATH
       - name: Build web
         run: 'melos run build:web'
       - uses: FirebaseExtended/action-hosting-deploy@v0
