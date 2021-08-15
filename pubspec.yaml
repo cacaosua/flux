@@ -52,6 +52,7 @@ dependencies:
   vrouter: ^1.2.0+11
   nil: ^1.1.1
   flare_flutter: ^3.0.2
+  flutter_form_builder: ^6.0.1
 
 dev_dependencies:
   flutter_test:

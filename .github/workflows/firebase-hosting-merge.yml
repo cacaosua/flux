@@ -12,9 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1.5.0
+        with:
+          flutter-version: '2.2.1'
       - name: Install melos
         run: dart pub global activate melos
-      - run: 'melos run build:web'
+      - name: Build web
+        run: 'melos run build:web'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
