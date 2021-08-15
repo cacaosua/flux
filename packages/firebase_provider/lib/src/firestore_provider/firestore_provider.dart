@@ -41,7 +41,7 @@ class FireStoreService {
           await _fireStore.collection('featureConfig').get();
       return documentSnapshot.docs;
     } catch (e) {
-      print(e);
+      _log.warning(e.toString());
       return [];
     }
   }
@@ -52,7 +52,7 @@ class FireStoreService {
       await documentSnapshot.add(character);
       return true;
     } catch (e) {
-      print(e);
+      _log.warning(e.toString());
       return false;
     }
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flux/src/core/constant/variables.dart';
+import 'package:flux/src/widgets/layout_constants.dart';
 import 'package:flux/src/features/theme/theme.dart';
 
 class GridLayoutTool extends StatelessWidget {
@@ -10,7 +10,7 @@ class GridLayoutTool extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screen = MediaQuery.of(context).size;
-    const margin = Variables.kSize16;
+    const margin = LayoutConstants.kSize16;
 
     return IgnorePointer(
       ignoring: true,

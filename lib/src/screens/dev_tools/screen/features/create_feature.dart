@@ -130,7 +130,7 @@ class _CreateFeatureState extends State<CreateFeature> {
                   width: double.infinity,
                   child: Consumer(
                     builder: (context, ref, _) {
-                      return XPrimaryButton.normal(
+                      return AppButton.primary(
                         onPressed: () {
                           final title = ref.read(titleFeatureConfig).state;
                           final description =

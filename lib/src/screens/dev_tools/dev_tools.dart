@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flux/src/core/constant/variables.dart';
+import 'package:flux/src/widgets/layout_constants.dart';
 import 'package:flux/src/features/app_router/app_router.dart';
 import 'package:flux/src/features/theme/theme.dart';
 import 'package:flux/src/widgets/button.dart';
