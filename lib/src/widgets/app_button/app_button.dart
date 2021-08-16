@@ -51,40 +51,42 @@ class AppButton {
     type ??= AppButtonType.secondary;
     size ??= AppButtonSize.normal;
 
-    return Builder(builder: (context) {
-      final originalStyle = AppButtonTypeX(type!).getOriginalStyle(context);
+    return Builder(
+      builder: (context) {
+        final originalStyle = AppButtonTypeX(type!).getOriginalStyle(context);
 
-      ButtonStyle buttonStyle = (style ?? const ButtonStyle()).merge(
-        originalStyle,
-      );
-
-      if (size == AppButtonSize.small) {
-        buttonStyle = buttonStyle.copyWith(
-          textStyle: MaterialStateProperty.all(
-            const TextStyle(
-              fontSize: 16.0,
-            ),
-          ),
-          padding: MaterialStateProperty.all(
-            const EdgeInsets.symmetric(
-              vertical: 12.0,
-              horizontal: LayoutConstants.kSize8,
-            ),
-          ),
+        ButtonStyle buttonStyle = (originalStyle ?? const ButtonStyle()).merge(
+          style,
         );
-      }
 
-      return _internal(
-        key: key,
-        disabled: disabled,
-        onPressed: onPressed,
-        style: buttonStyle,
-        focusNode: focusNode,
-        autofocus: autofocus,
-        clipBehavior: clipBehavior,
-        child: child,
-      );
-    });
+        if (size == AppButtonSize.small) {
+          buttonStyle = buttonStyle.copyWith(
+            // textStyle: MaterialStateProperty.all(
+            //   const TextStyle(
+            //     fontSize: LayoutConstants.kSize16,
+            //   ),
+            // ),
+            padding: MaterialStateProperty.all(
+              const EdgeInsets.symmetric(
+                vertical: LayoutConstants.kSize8,
+                horizontal: LayoutConstants.kSize16,
+              ),
+            ),
+          );
+        }
+
+        return _internal(
+          key: key,
+          disabled: disabled,
+          onPressed: onPressed,
+          style: buttonStyle,
+          focusNode: focusNode,
+          autofocus: autofocus,
+          clipBehavior: clipBehavior,
+          child: child,
+        );
+      },
+    );
   }
 
   static Widget primary({

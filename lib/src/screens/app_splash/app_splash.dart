@@ -1,37 +1,7 @@
-part of 'splash.dart';
+import 'package:firebase_provider/firebase_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flux/src/features/app_router/app_router.dart';
+import 'package:flux/src/widgets/text/text_widget.dart';
 
-class AppSplash extends StatelessWidget {
-  const AppSplash({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: GestureDetector(
-          child: TextElement(
-            text: (_) => 'Logo',
-            style: (textTheme) => textTheme.headline5,
-          ),
-          onLongPress: () {
-            AppRouter.router.navigateTo(
-              context,
-              AppRoutes.devTools,
-            );
-          },
-        ),
-      ),
-      body: Consumer(
-        builder: (context, ref, child) {
-          final value = ref.watch(firebaseProvider);
-
-          return value.maybeWhen(
-            error: (err, stack) {
-              return Text('Error: $err');
-            },
-            orElse: () => const Text('Home page'),
-          );
-        },
-      ),
-    );
-  }
-}
+part 'app_splash_screen.dart';

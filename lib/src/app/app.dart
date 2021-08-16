@@ -9,7 +9,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flux/src/features/app_router/app_router.dart';
-import 'package:flux/src/widgets/text_element/text_element.dart';
+
+import 'app_intl.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
