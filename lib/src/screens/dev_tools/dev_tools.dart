@@ -13,9 +13,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flux/src/widgets/layout_constants.dart';
 import 'package:flux/src/features/app_router/app_router.dart';
 import 'package:flux/src/features/theme/theme.dart';
-import 'package:flux/src/widgets/button.dart';
+import 'package:flux/src/widgets/app_button/app_button.dart';
 import 'package:flux/src/widgets/form.dart';
-import 'package:flux/src/widgets/screen_loading_widget.dart';
+import 'package:flux/src/widgets/loading_screen_widget.dart';
 import 'package:uuid/uuid.dart';
 
 part 'dev_tools_screen.dart';

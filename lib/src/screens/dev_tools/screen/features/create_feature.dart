@@ -162,7 +162,7 @@ class _CreateFeatureState extends State<CreateFeature> {
             if (!loading) {
               return const SizedBox();
             }
-            return const ScreenLoading();
+            return const LoadingScreenWidget();
           },
         ),
       ],

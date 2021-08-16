@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flux/src/features/theme/theme.dart';
 
-class AppBackDropWidget extends StatelessWidget {
+class BackDropWidget extends StatelessWidget {
   final Widget? child;
   final bool? center;
 
-  const AppBackDropWidget({
+  const BackDropWidget({
     Key? key,
     this.child,
     this.center,

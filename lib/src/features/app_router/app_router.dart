@@ -6,7 +6,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flux/src/screens/app_splash/splash.dart';
+import 'package:flux/src/screens/app_splash/app_splash.dart';
 import 'package:flux/src/screens/dev_tools/dev_tools.dart';
 
 export 'package:fluro/fluro.dart';
@@ -80,7 +80,7 @@ class AppRouter extends FluroRouter {
 AppRouterHandler rootHandler(GlobalKey<NavigatorState> navigatorKey) {
   return AppRouterHandler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-      return const AppSplash();
+      return const AppSplashScreen();
     },
   );
 }
