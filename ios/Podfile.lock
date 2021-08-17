@@ -37,18 +37,24 @@ PODS:
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.5.0):
     - GoogleUtilities/Environment
+  - move_to_background (0.0.1):
+    - Flutter
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - url_launcher (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `8.3.0`)
   - Flutter (from `Flutter`)
+  - move_to_background (from `.symlinks/plugins/move_to_background/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
 SPEC REPOS:
   trunk:
@@ -70,6 +76,10 @@ EXTERNAL SOURCES:
     :tag: 8.3.0
   Flutter:
     :path: Flutter
+  move_to_background:
+    :path: ".symlinks/plugins/move_to_background/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
 
 CHECKOUT OPTIONS:
   FirebaseFirestore:
@@ -86,8 +96,10 @@ SPEC CHECKSUMS:
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   GoogleDataTransport: 85fd18ff3019bb85d3f2c551d04c481dedf71fc9
   GoogleUtilities: eea970f4a389963963bffe8d8fabe43540678b9c
+  move_to_background: 39a5b79b26d577b0372cbe8a8c55e7aa9fcd3a2d
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
 
 PODFILE CHECKSUM: 2c9526845b20f3dfc6855759925c36c4d98c66f4
 
