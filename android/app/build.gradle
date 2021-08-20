@@ -111,7 +111,7 @@ android {
 
             manifestPlaceholders.appNameSuffix = " DEV"
             manifestPlaceholders.appSchemeUrl = "flux-dev"
-            manifestPlaceholders.appSchemeUrl2 = "flux-mcv"
+            manifestPlaceholders.appSchemeUrl2 = "flux"
             manifestPlaceholders.firebaseEmulatorSuiteEnabled = true
         }
         staging {
@@ -121,7 +121,7 @@ android {
 
             manifestPlaceholders.appNameSuffix = " STG"
             manifestPlaceholders.appSchemeUrl = "flux-qa"
-            manifestPlaceholders.appSchemeUrl2 = "flux-mcv"
+            manifestPlaceholders.appSchemeUrl2 = "flux"
             manifestPlaceholders.firebaseEmulatorSuiteEnabled = true
         }
         production {
@@ -131,7 +131,7 @@ android {
 
             manifestPlaceholders.appNameSuffix = ""
             manifestPlaceholders.appSchemeUrl = "flux"
-            manifestPlaceholders.appSchemeUrl2 = "flux-mcv"
+            manifestPlaceholders.appSchemeUrl2 = "flux"
             manifestPlaceholders.firebaseEmulatorSuiteEnabled = false
         }
     }
