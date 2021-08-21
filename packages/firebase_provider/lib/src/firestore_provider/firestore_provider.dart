@@ -38,7 +38,7 @@ class FireStoreService {
       fetchFeatureConfig() async {
     try {
       final documentSnapshot =
-          await _fireStore.collection('featureConfig').get();
+          await _fireStore.collection('featureConfig').orderBy('title').get();
       return documentSnapshot.docs;
     } catch (e) {
       _log.warning(e.toString());
@@ -46,10 +46,73 @@ class FireStoreService {
     }
   }
 
-  Future<bool> createFeatureConfig(Map<String, dynamic> character) async {
+  Future<String> createFeatureConfig(Map<String, dynamic> character) async {
     try {
       final documentSnapshot = _fireStore.collection('featureConfig');
-      await documentSnapshot.add(character);
+      final result = await documentSnapshot.add(character);
+      return result.id;
+    } catch (e) {
+      _log.warning(e.toString());
+      return '';
+    }
+  }
+
+  Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>> filterFeatureConfig(
+    String status,
+  ) async {
+    try {
+      final documentSnapshot = await _fireStore
+          .collection('featureConfig')
+          .where('status', isEqualTo: status)
+          .get();
+      return documentSnapshot.docs;
+    } catch (e) {
+      _log.warning(e.toString());
+      return [];
+    }
+  }
+
+  Future<bool> deleteFeatureConfig(
+    String id,
+  ) async {
+    try {
+      await _fireStore.collection('featureConfig').doc(id).delete();
+      return true;
+    } catch (e) {
+      _log.warning(e.toString());
+      return false;
+    }
+  }
+
+  Future<DocumentSnapshot<Map<String, dynamic>>> featureConfigDetails(
+    String id,
+  ) async {
+    return await _fireStore.collection('featureConfig').doc(id).get();
+  }
+
+  Future<bool> updateFeatureConfig(
+    String id,
+    Map<String, dynamic> character,
+  ) async {
+    try {
+      final documentSnapshot = _fireStore.collection('featureConfig');
+      await documentSnapshot.doc(id).update(character);
+
+      return true;
+    } catch (e) {
+      _log.warning(e.toString());
+      return false;
+    }
+  }
+
+  Future<bool> updateFeatureConfigStatus(
+    String id,
+    String value,
+  ) async {
+    try {
+      final documentSnapshot = _fireStore.collection('featureConfig');
+      await documentSnapshot.doc(id).update({'status': value});
+
       return true;
     } catch (e) {
       _log.warning(e.toString());

@@ -8,6 +8,8 @@ part of 'character.dart';
 
 class _$Character extends Character {
   @override
+  final String? id;
+  @override
   final String? title;
   @override
   final String? description;
@@ -26,7 +28,8 @@ class _$Character extends Character {
       (new CharacterBuilder()..update(updates)).build();
 
   _$Character._(
-      {this.title,
+      {this.id,
+      this.title,
       this.description,
       this.image,
       this.status,
@@ -46,6 +49,7 @@ class _$Character extends Character {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Character &&
+        id == other.id &&
         title == other.title &&
         description == other.description &&
         image == other.image &&
@@ -61,7 +65,9 @@ class _$Character extends Character {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, title.hashCode), description.hashCode),
+                    $jc(
+                        $jc($jc($jc(0, id.hashCode), title.hashCode),
+                            description.hashCode),
                         image.hashCode),
                     status.hashCode),
                 successful.hashCode),
@@ -72,6 +78,7 @@ class _$Character extends Character {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Character')
+          ..add('id', id)
           ..add('title', title)
           ..add('description', description)
           ..add('image', image)
@@ -85,6 +92,10 @@ class _$Character extends Character {
 
 class CharacterBuilder implements Builder<Character, CharacterBuilder> {
   _$Character? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _title;
   String? get title => _$this._title;
@@ -121,6 +132,7 @@ class CharacterBuilder implements Builder<Character, CharacterBuilder> {
   CharacterBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _title = $v.title;
       _description = $v.description;
       _image = $v.image;
@@ -148,6 +160,7 @@ class CharacterBuilder implements Builder<Character, CharacterBuilder> {
   _$Character build() {
     final _$result = _$v ??
         new _$Character._(
+            id: id,
             title: title,
             description: description,
             image: image,

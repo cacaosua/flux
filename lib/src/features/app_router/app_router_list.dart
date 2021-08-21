@@ -8,6 +8,8 @@ abstract class AppRoutes {
 
   static const devTools = '${RouteKeys.devTools}';
   static const $devTools = '${RouteKeys.devTools}/:${RouteVars.devToolsView}';
+  static const $$devTools =
+      '${RouteKeys.devTools}/:${RouteVars.devToolsView}/:id';
 
   static const devToolsListAnimation =
       '${RouteKeys.devTools}/${RouteKeys.listAnimation}';

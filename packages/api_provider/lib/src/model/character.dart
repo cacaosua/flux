@@ -14,6 +14,9 @@ part 'character.g.dart';
 
 abstract class Character
     implements Built<Character, CharacterBuilder>, BaseModel {
+  @BuiltValueField(wireName: r'id')
+  String? get id;
+
   @BuiltValueField(wireName: r'title')
   String? get title;
 
@@ -56,6 +59,12 @@ class _$CharacterSerializer implements StructuredSerializer<Character> {
   Iterable<Object?> serialize(Serializers serializers, Character object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
+    if (object.id != null) {
+      result
+        ..add(r'id')
+        ..add(serializers.serialize(object.id,
+            specifiedType: const FullType(String)));
+    }
     if (object.title != null) {
       result
         ..add(r'title')
@@ -94,6 +103,10 @@ class _$CharacterSerializer implements StructuredSerializer<Character> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case r'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case r'title':
           result.title = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;

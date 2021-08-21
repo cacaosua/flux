@@ -10,6 +10,7 @@ abstract class RouteKeys {
 
   static const listAnimation = 'listAnimation';
   static const createFeature = 'createFeature';
+  static const updateFeature = 'updateFeature';
 
   static const cardPayment = 'card-payment';
   static const bubble = 'bubble';
@@ -21,6 +22,7 @@ abstract class RouteVars {
 
   static const listanimation = 'listAnimation';
   static const createFeature = 'createFeature';
+  static const updateFeature = 'updateFeature';
 
   static const cardPayment = 'card-payment';
   static const bubble = 'bubble';
