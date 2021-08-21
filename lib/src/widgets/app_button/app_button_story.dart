@@ -76,7 +76,7 @@ extension AppButtonStories on Story {
                 Option('Small', AppButtonSize.small),
               ],
             ),
-            child: TextElement(
+            child: TextWidget(
               text: (_) {
                 return k.text(
                   label: 'Text',
@@ -105,7 +105,7 @@ extension AppButtonStories on Story {
                     ..._buttonList.map(
                       (button) {
                         return ListTile(
-                          title: TextElement(
+                          title: TextWidget(
                             text: (_) {
                               return button.text;
                             },
@@ -116,7 +116,7 @@ extension AppButtonStories on Story {
                           subtitle: AppButton.create(
                             type: button.type,
                             size: button.size,
-                            child: TextElement(
+                            child: TextWidget(
                               text: (_) {
                                 return k.text(
                                   label: 'Text',

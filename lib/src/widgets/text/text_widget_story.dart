@@ -4,7 +4,7 @@ import 'package:storybook_flutter/storybook_flutter.dart';
 
 import 'text_widget.dart';
 
-extension TextElementX on TextElement {
+extension TextElementX on TextWidget {
   static List<_TextStyleOptions> values(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return [
@@ -56,7 +56,7 @@ extension TextStories on Story {
                     (context, index) {
                       final value = values[index];
                       return ListTile(
-                        title: TextElement(
+                        title: TextWidget(
                           text: (_) {
                             return value.text;
                           },
@@ -64,7 +64,7 @@ extension TextStories on Story {
                             return textTheme.subtitle1;
                           },
                         ),
-                        subtitle: TextElement(
+                        subtitle: TextWidget(
                           text: (_) {
                             return k.text(
                               label: 'Text',

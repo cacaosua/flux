@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flux/src/app/app_intl.dart';
-import 'package:flux/src/widgets/app_button/app_button_preview.dart';
-import 'package:flux/src/widgets/text/text_widget_preview.dart';
+import 'package:flux/src/layouts/adaptive/adaptive_column_story.dart';
+import 'package:flux/src/layouts/adaptive/adaptive_container_story.dart';
+import 'package:flux/src/layouts/expanding_content/expanding_content_story.dart';
+import 'package:flux/src/widgets/app_button/app_button_story.dart';
+import 'package:flux/src/widgets/text/text_widget_story.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 void main() {
@@ -44,6 +47,9 @@ class MyApp extends StatelessWidget {
       children: [
         ...TextStories.of(context),
         ...AppButtonStories.of(context),
+        ...ExpandingContentStories.of(context),
+        ...AdaptiveColumnStories.of(context),
+        ...AdaptiveContainerStories.of(context),
       ],
     );
   }
