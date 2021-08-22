@@ -131,7 +131,7 @@ doc/api/
 ### Firebase ###
 .idea
 **/node_modules/*
-**/.firebaserc
+# **/.firebaserc
 
 ### Firebase Patch ###
 .runtimeconfig.json
