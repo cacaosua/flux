@@ -109,6 +109,11 @@ scripts:
       flutter build web --release --target lib/main_development.dart
     description: Build web
 
+  build:web:story:
+    run: |
+      flutter build web --release --target lib/src/app_storyboard/app_storyboard.dart
+    description: Build web story
+
   fb:emulator:start:
     run: |
       export GOOGLE_APPLICATION_CREDENTIALS=".firebase-configs/flux-dev-7d354-1a42fbae8175.json"
@@ -118,9 +123,15 @@ scripts:
 
   fb:hosting:deploy:
     run: |
-      firebase deploy --only hosting
+      firebase deploy --only hosting:app
     description: |
-      Run firebase deploy hosting
+      Run firebase deploy hosting app
+
+  fb:hosting:deploy:story:
+    run: |
+      firebase deploy --only hosting:story
+    description: |
+      Run firebase deploy hosting story
 
   test:
     run: |

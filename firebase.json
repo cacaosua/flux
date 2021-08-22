@@ -16,13 +16,26 @@
       "enabled": true
     }
   },
-  "hosting": {
-    "public": "build/web",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "__/firebase/**/*",
-      "**/node_modules/**"
-    ]
-  }
+  "hosting": [
+    {
+      "target": "app",
+      "public": "build/web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "__/firebase/**/*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "story",
+      "public": "build/web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "__/firebase/**/*",
+        "**/node_modules/**"
+      ]
+    }
+  ]
 }
