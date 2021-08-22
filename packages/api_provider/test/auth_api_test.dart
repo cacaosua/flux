@@ -3,7 +3,7 @@ import 'package:api_provider/api_provider.dart';
 
 /// tests for AuthApi
 void main() {
-  final instance = ApiProvider().getAuthApi();
+  // final instance = ApiProvider().getAuthApi();
 
   group(AuthApi, () {
     // Login status

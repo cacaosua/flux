@@ -3,7 +3,7 @@ import 'package:api_provider/api_provider.dart';
 
 // tests for Character
 void main() {
-  final instance = CharacterBuilder();
+  // final instance = CharacterBuilder();
   // TODO add properties to the builder and call build()
 
   group(Character, () {
