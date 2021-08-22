@@ -10,127 +10,67 @@ class ListScrollAnimation extends StatefulWidget {
 }
 
 class _ListScrollAnimationState extends State<ListScrollAnimation> {
-  final scrollController = ScrollController();
-
-  void onListener() {
-    setState(() {});
-  }
-
   @override
   void initState() {
-    scrollController.addListener(onListener);
     super.initState();
   }
 
   @override
   void dispose() {
-    scrollController.removeListener(onListener);
     super.dispose();
   }
 
-  final itemSize = 200.0;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Feature List'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              AppRouter.router.navigateTo(
-                context,
-                '${RouteKeys.devTools}/${RouteKeys.createFeature}',
+    return Stack(
+      children: [
+        Scaffold(
+          appBar: AppBar(
+            title: const Text('Feature List'),
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: () {
+                  AppRouter.router.navigateTo(
+                    context,
+                    '${RouteKeys.devTools}/${RouteKeys.createFeature}',
+                  );
+                },
+              ),
+            ],
+          ),
+          body: Consumer(
+            builder: (context, ref, _) {
+              final data = ref.watch(fetchFeatureConfig);
+
+              return data.when(
+                loading: () => const Center(
+                  child: LoadingScreenWidget(),
+                ),
+                error: (err, stack) => const Text('error'),
+                data: (data) {
+                  return _buildContent();
+                },
               );
             },
           ),
-        ],
-      ),
-      body: Consumer(
-        builder: (context, ref, _) {
-          final data = ref.watch(fetchFeatureConfig);
-
-          return data.when(
-            loading: () => const Center(
-              child: Text('loading'),
-            ),
-            error: (err, stack) => const Text('error'),
-            data: (data) {
-              return Consumer(builder: (context, ref, _) {
-                final featureConfigList =
-                    ref.watch(featureConfigListProvider).state;
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: ScrollAnimation<Character>(
-                          items: featureConfigList,
-                          scrollController: scrollController,
-                          itemBuilder: (context, item, index) {
-                            if (index != 0) {
-                              return Container(
-                                decoration: const BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      blurRadius: 20.0,
-                                      offset: Offset(10.0, 10.0),
-                                    ),
-                                  ],
-                                ),
-                                child: _buildCard(item),
-                              );
-                            }
-                            return _buildCard(item);
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              });
-            },
-          );
-        },
-      ),
+        ),
+        const LoadingFeatureWidget(),
+      ],
     );
   }
 
-  Widget _buildCard(Character item) {
-    return Card(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20.0),
-          topRight: Radius.circular(20.0),
-        ),
-      ),
-      color: Colors.grey.withOpacity(0.7),
-      child: Container(
-        height: itemSize,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16.0,
-          vertical: 8.0,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    item.title!,
-                  ),
-                ],
-              ),
-            ),
-            Image.asset(
-              'assets/images/character-001.png',
-            ),
-          ],
-        ),
+  Widget _buildContent() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          FilterFeatureWidget(),
+          Expanded(
+            child: ListFeatureWidget(),
+          ),
+        ],
       ),
     );
   }

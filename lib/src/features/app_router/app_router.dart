@@ -62,7 +62,7 @@ class AppRouter extends FluroRouter {
       clearStack: clearStack,
       maintainState: maintainState,
       rootNavigator: rootNavigator,
-      transition: transition,
+      transition: transition ?? TransitionType.native,
       transitionDuration: transitionDuration,
       transitionBuilder: transitionBuilder,
       routeSettings: routeSettings,

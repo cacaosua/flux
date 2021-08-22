@@ -1,21 +1,29 @@
 part of '../../dev_tools.dart';
 
-class CreateFeature extends StatefulWidget {
-  const CreateFeature({
+class CreateOrUpdateFeature extends StatefulWidget {
+  const CreateOrUpdateFeature({
     Key? key,
+    this.featureId,
   }) : super(key: key);
 
+  final String? featureId;
+
   @override
-  _CreateFeatureState createState() => _CreateFeatureState();
+  _CreateOrUpdateFeatureState createState() => _CreateOrUpdateFeatureState();
 }
 
-class _CreateFeatureState extends State<CreateFeature> {
-  TextEditingController titleController = TextEditingController();
-  TextEditingController descriptionController = TextEditingController();
+class _CreateOrUpdateFeatureState extends State<CreateOrUpdateFeature> {
+  final _formKey = GlobalKey<FormBuilderState>();
+  Map<String, dynamic> initialValue = const <String, dynamic>{};
 
   @override
   void initState() {
     super.initState();
+    initialValue = {
+      'title': '',
+      'description': '',
+      'status': 'disable',
+    };
   }
 
   @override
@@ -28,135 +36,38 @@ class _CreateFeatureState extends State<CreateFeature> {
     return Stack(
       children: [
         Scaffold(
+          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             title: const Text('Create feature'),
           ),
           body: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                AppFormField(
-                  label: 'Title',
-                  require: true,
-                  textFormField: Consumer(
-                    builder: (context, ref, _) {
-                      ref.watch(titleFeatureConfig).state;
+              padding: const EdgeInsets.all(16.0),
+              child: widget.featureId?.isNotEmpty ?? false
+                  ? Consumer(
+                      builder: (context, ref, _) {
+                        final data = ref.watch(
+                            fetchFeatureDetailsProvider(widget.featureId!));
 
-                      return FluxTextFormField(
-                        key: const Key(''),
-                        controller: titleController,
-                        placeholder: 'Title',
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 16.0),
-                        validatorCallBack: (String value) {
-                          return '';
-                        },
-                        onShowPassword: () {},
-                        onChanged: (String value) {
-                          ref.read(titleFeatureConfig).state = value;
-                        },
-                      );
-                    },
-                  ),
-                ),
-                AppFormField(
-                  label: 'Description',
-                  require: true,
-                  textFormField: Consumer(
-                    builder: (context, ref, _) {
-                      ref.watch(descriptionFeatureConfig).state;
-
-                      return FluxTextFormField(
-                        key: const Key(''),
-                        controller: descriptionController,
-                        placeholder: 'Description',
-                        contentPadding:
-                            const EdgeInsets.symmetric(horizontal: 16.0),
-                        validatorCallBack: (String value) {
-                          return '';
-                        },
-                        onShowPassword: () {},
-                        onChanged: (String value) {
-                          ref.read(descriptionFeatureConfig).state = value;
-                        },
-                      );
-                    },
-                  ),
-                ),
-                AppFormField(
-                  label: 'Feature status',
-                  require: true,
-                  textFormField: Consumer(
-                    builder: (context, ref, _) {
-                      final data = ref.watch(statusFeatureConfig).state;
-
-                      return Container(
-                        width: double.infinity,
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 5,
-                        ),
-                        decoration: BoxDecoration(
-                          color: XColors.secondary.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: DropdownButton<String>(
-                          value: data,
-                          icon: const Icon(Icons.arrow_drop_down),
-                          iconSize: 42,
-                          underline: const SizedBox(),
-                          onChanged: (value) {
-                            ref.watch(statusFeatureConfig).state =
-                                value ?? FeatureStatus.disable.name();
+                        return data.when(
+                          loading: () => const Center(
+                            child: LoadingScreenWidget(),
+                          ),
+                          error: (err, stack) => const Text('error'),
+                          data: (data) {
+                            initialValue = data.toJson();
+                            return _buildForm();
                           },
-                          items: <String>[
-                            FeatureStatus.enable.name(),
-                            FeatureStatus.disable.name(),
-                            FeatureStatus.done.name(),
-                          ].map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(height: 16.0),
-                SizedBox(
-                  height: 48.0,
-                  width: double.infinity,
-                  child: Consumer(
-                    builder: (context, ref, _) {
-                      return AppButton.primary(
-                        onPressed: () {
-                          final title = ref.read(titleFeatureConfig).state;
-                          final description =
-                              ref.read(descriptionFeatureConfig).state;
-
-                          if (title.isEmpty || description.isEmpty) {
-                            return;
-                          }
-
-                          ref
-                              .watch(featureConfigProvider.notifier)
-                              .createFeature();
-                        },
-                        child: const Text('Create feature'),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
+                        );
+                      },
+                    )
+                  : _buildForm()),
         ),
         Consumer(
           builder: (context, ref, child) {
-            ref.listen(featureConfigProvider, (value) {
-              Navigator.of(context).pop();
+            ref.listen(callApiSuccess, (bool value) {
+              if (value) {
+                Navigator.of(context).pop();
+              }
             });
             final loading = ref.watch(awaitCreateFeatureProvider).state;
             if (!loading) {
@@ -166,6 +77,89 @@ class _CreateFeatureState extends State<CreateFeature> {
           },
         ),
       ],
+    );
+  }
+
+  Widget _buildForm() {
+    return FormBuilder(
+      key: _formKey,
+      initialValue: initialValue,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      child: Column(
+        children: [
+          FormBuilderTextField(
+            name: 'title',
+            decoration: const InputDecoration(labelText: 'Title'),
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(context),
+            ]),
+          ),
+          FormBuilderTextField(
+            name: 'description',
+            decoration: const InputDecoration(labelText: 'Description'),
+            validator: FormBuilderValidators.compose([
+              FormBuilderValidators.required(context),
+            ]),
+          ),
+          const SizedBox(height: 10),
+          FormBuilderDropdown(
+            name: 'status',
+            decoration: const InputDecoration(
+              labelText: 'Status',
+            ),
+            // initialValue: 'Male',
+            allowClear: true,
+            hint: const Text('Select status'),
+            validator: FormBuilderValidators.compose(
+                [FormBuilderValidators.required(context)]),
+
+            items: [
+              FeatureStatus.enable.name(),
+              FeatureStatus.disable.name(),
+              FeatureStatus.done.name(),
+            ]
+                .map((gender) => DropdownMenuItem(
+                      value: gender,
+                      child: Text('$gender'),
+                    ))
+                .toList(),
+          ),
+          const SizedBox(height: 10),
+          SizedBox(
+            height: 48.0,
+            width: double.infinity,
+            child: Consumer(
+              builder: (context, ref, _) {
+                return AppButton.primary(
+                  onPressed: () {
+                    final checkValidate =
+                        _formKey.currentState?.saveAndValidate() ?? false;
+
+                    if (checkValidate) {
+                      if (widget.featureId?.isNotEmpty ?? false) {
+                        ref.watch(featureConfigProvider).updateFeature(
+                              widget.featureId!,
+                              _formKey.currentState!.value,
+                            );
+                        return;
+                      }
+
+                      ref.watch(featureConfigProvider).createFeature(
+                            _formKey.currentState!.value,
+                          );
+                    }
+                  },
+                  child: Text(
+                    widget.featureId?.isNotEmpty ?? false
+                        ? 'Update feature'
+                        : 'Create feature',
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
