@@ -14,14 +14,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: subosito/flutter-action@v1.5.0
         with:
           flutter-version: '2.2.1'
-      - name: Install melos
-        run: dart pub global activate melos
-      - name: Set environment variables
+
+      - name: Install global packages
         run: |
-          echo "$HOME/.pub-cache/bin/" >> $GITHUB_PATH
+          dart pub global activate melos
+
+      - name: Add pub cache bin to PATH
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
+      - name: Add pub cache to PATH
+        run: echo "PUB_CACHE="$HOME/.pub-cache"" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: melos bootstrap
+
       - name: Build web
         run: 'melos run build:web'
       - uses: FirebaseExtended/action-hosting-deploy@v0
@@ -40,11 +50,20 @@ jobs:
       - uses: subosito/flutter-action@v1.5.0
         with:
           flutter-version: '2.2.1'
-      - name: Install melos
-        run: dart pub global activate melos
-      - name: Set environment variables
+
+      - name: Install global packages
         run: |
-          echo "$HOME/.pub-cache/bin/" >> $GITHUB_PATH
+          dart pub global activate melos
+
+      - name: Add pub cache bin to PATH
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
+      - name: Add pub cache to PATH
+        run: echo "PUB_CACHE="$HOME/.pub-cache"" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: melos bootstrap
+
       - name: Build web
         run: 'melos run build:web:story'
       - uses: FirebaseExtended/action-hosting-deploy@v0

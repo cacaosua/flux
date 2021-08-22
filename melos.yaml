@@ -49,10 +49,16 @@ scripts:
   #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/golden && 
   #   flutter pub get
 
+  format:
+    run: |
+      melos exec -c 1 -- "
+        flutter format --set-exit-if-changed lib test
+      "
+
   analyze:
     run: |
       melos exec -c 1 -- "
-        flutter analyze .
+        flutter analyze lib test
       "
     description: |
       Run `dart analyze` in all packages.
@@ -142,6 +148,7 @@ scripts:
   test:dart:
     run: |
       melos exec  -c 1 --fail-fast -- "
+        dart pub global activate coverage
         dart test --coverage="coverage"
         format_coverage --lcov --in=coverage --out=coverage.lcov --packages=.packages --report-on=lib
       "

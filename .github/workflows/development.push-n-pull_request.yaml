@@ -14,6 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - uses: subosito/flutter-action@v1.5.0
         with:
           flutter-version: '2.2.1'
@@ -21,9 +22,7 @@ jobs:
 
       - name: Install global packages
         run: |
-          melos exec --scope="flux" -- \
-            pub global activate melos
-            pub global activate coverage
+          dart pub global activate melos
 
       - name: Add pub cache bin to PATH
         run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
@@ -35,13 +34,10 @@ jobs:
         run: melos bootstrap
 
       - name: Format
-        run: flutter format --set-exit-if-changed lib test
+        run: melos run format
 
       - name: Analyze
-        run: |
-          run: melos exec -- "
-            flutter analyze lib test
-          "
+        run: melos run analyze
 
       - name: Run tests
         run: melos run test
