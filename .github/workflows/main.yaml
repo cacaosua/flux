@@ -15,6 +15,10 @@ jobs:
       - name: Install melos
         run: dart pub global activate melos
 
+      - name: Set environment variables
+        run: |
+          echo "$HOME/.pub-cache/bin/" >> $GITHUB_PATH
+
       - name: Install Dependencies
         run: flutter packages get
 
@@ -25,7 +29,7 @@ jobs:
         run: flutter analyze lib test
 
       - name: Run tests
-        run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
+        run: melos run test
 
       - name: Check Code Coverage
         uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
