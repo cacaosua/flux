@@ -6,34 +6,45 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        channel:
+          # - dev
+          - stable
+
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1.5.0
         with:
           flutter-version: '2.2.1'
+          # channel: ${{ matrix.channel }}
 
-      - name: Install melos
-        run: dart pub global activate melos
-
-      - name: Set environment variables
+      - name: Install global packages
         run: |
-          echo "$HOME/.pub-cache/bin/" >> $GITHUB_PATH
+          melos exec --scope="flux" -- \
+            pub global activate melos
+            pub global activate coverage
 
-      - name: Install Dependencies
-        run: flutter packages get
+      - name: Add pub cache bin to PATH
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
+
+      - name: Add pub cache to PATH
+        run: echo "PUB_CACHE="$HOME/.pub-cache"" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: melos bootstrap
 
       - name: Format
         run: flutter format --set-exit-if-changed lib test
 
       - name: Analyze
-        run: flutter analyze lib test
+        run: |
+          run: melos exec -- "
+            flutter analyze lib test
+          "
 
       - name: Run tests
         run: melos run test
 
-      - name: Check Code Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
-        with:
-          path: "./coverage/lcov.info"
-          min_coverage: 80
-          exclude: "**/*_observer.dart **/change.dart"
+      - name: Upload coverage to codecov
+        run: curl -s https://codecov.io/bash | bash
