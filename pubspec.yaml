@@ -55,6 +55,7 @@ dependencies:
   flutter_form_builder: ^6.0.1
   shape_of_view_null_safe: ^2.0.0
   adaptive_components: ^0.0.2
+  equatable: ^2.0.3
 
 dev_dependencies:
   flutter_test:
