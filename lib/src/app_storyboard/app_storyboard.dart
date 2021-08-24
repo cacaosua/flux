@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flux/modules/tic_tac_toe/screens/game/game_story.dart';
 import 'package:flux/src/app/app_intl.dart';
 import 'package:flux/src/layouts/adaptive/adaptive_column_story.dart';
 import 'package:flux/src/layouts/adaptive/adaptive_container_story.dart';
@@ -10,7 +12,11 @@ import 'package:flux/src/widgets/text/text_widget_story.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,8 +28,7 @@ class MyApp extends StatelessWidget {
       storyWrapperBuilder: (context, story, child) {
         return Stack(
           children: [
-            Container(
-              padding: story.padding,
+            ColoredBox(
               color: Theme.of(context).canvasColor,
               child: Center(child: child),
             ),
@@ -50,6 +55,7 @@ class MyApp extends StatelessWidget {
         ...ExpandingContentStories.of(context),
         ...AdaptiveColumnStories.of(context),
         ...AdaptiveContainerStories.of(context),
+        ...TicTacToeGameStories.of(context),
       ],
     );
   }
