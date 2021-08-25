@@ -110,10 +110,10 @@ scripts:
         )
       "
 
-  build:web:
+  build:web:app:
     run: |
       flutter build web --release --target lib/main_development.dart
-    description: Build web
+    description: Build web app
 
   build:web:story:
     run: |
