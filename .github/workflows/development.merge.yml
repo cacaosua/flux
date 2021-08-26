@@ -112,14 +112,16 @@ jobs:
         run: melos run build:web:${{ matrix.build.target }}
         continue-on-error: true
 
-      - run: build:android:development
+      - name: Build android
+        run: melos run build:android:development
         if: ${{ matrix.build.platform == 'android' }}
         continue-on-error: true
 
       # - run: flutter build appbundle
       #   continue-on-error: true
 
-      - run: build:ios:development
+      - name: Build iOS
+        run: melos run build:ios:development
         if: ${{ matrix.build.platform == 'ios' }}
         continue-on-error: true
 
