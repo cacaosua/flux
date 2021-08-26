@@ -120,6 +120,14 @@ scripts:
       flutter build web --release --target lib/src/app_storyboard/app_storyboard.dart
     description: Build web story
 
+  build:android:development:
+    run: |
+      flutter build apk --flavor development --target lib/main_development.dart
+
+  build:ios:development:
+    run: |
+      flutter build ios --flavor development --target lib/main_development.dart --no-codesign
+
   fb:emulator:start:
     run: |
       export GOOGLE_APPLICATION_CREDENTIALS=".firebase-configs/flux-dev-7d354-1a42fbae8175.json"
