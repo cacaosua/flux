@@ -134,12 +134,17 @@ jobs:
         working-directory: android
 
       - name: Build android
-        run: melos run build:android:development
         if: ${{ matrix.build.platform == 'android' }}
+        run: melos run build:android:development
         continue-on-error: true
 
       # - run: flutter build appbundle
       #   continue-on-error: true
+
+      - name: Upload to Firebase App Distribution
+        if: ${{ matrix.build.platform == 'android' }}
+        run: |
+          firebase appdistribution:distribute "build/app/outputs/flutter-apk/app-development-release.apk" --app ${{ secrets.FIREBASE_ANDROID_APP_ID }} --release-notes "Bug fixes and improvements" --groups "testers" --debug
 
       - name: Build iOS
         run: melos run build:ios:development
