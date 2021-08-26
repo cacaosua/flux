@@ -143,6 +143,8 @@ jobs:
 
       - name: Upload to Firebase App Distribution
         if: ${{ matrix.build.platform == 'android' }}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           firebase appdistribution:distribute "build/app/outputs/flutter-apk/app-development-release.apk" --app ${{ secrets.FIREBASE_ANDROID_APP_ID }} --release-notes "Bug fixes and improvements" --groups "testers" --debug
 
