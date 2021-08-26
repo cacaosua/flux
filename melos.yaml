@@ -122,13 +122,19 @@ scripts:
 
   build:android:development:
     run: |
-      flutter build apk --flavor development --target lib/main_development.dart \
-      --dart-define=test.alice.enabled=true \
-      --verbose
+      flutter build apk \
+      --flavor development \
+      --target lib/main_development.dart \
+    # --verbose
 
   build:ios:development:
     run: |
-      flutter build ios --flavor development --target lib/main_development.dart --no-codesign --verbose
+      flutter build ios \
+      --flavor development \
+      --target lib/main_development.dart \
+      --dart-define test.alice.enabled=true \
+      --no-codesign \
+    # --verbose
 
   fb:emulator:start:
     run: |
