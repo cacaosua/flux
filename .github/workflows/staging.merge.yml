@@ -11,12 +11,21 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    environment: staging
+
+    strategy:
+      matrix:
+        channel:
+          # - dev
+          - stable
+
     steps:
       - uses: actions/checkout@v2
 
       - uses: subosito/flutter-action@v1.5.0
         with:
           flutter-version: '2.2.1'
+          # channel: ${{ matrix.channel }}
 
       - name: Install global packages
         run: |
@@ -32,10 +41,11 @@ jobs:
         run: melos bootstrap
 
       - name: Build web
-        run: 'melos run build:web'
+        run: 'melos run build:web:app'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLUX_DEV_7D354 }}'
           channelId: live
           projectId: flux-dev-7d354
+          target: app

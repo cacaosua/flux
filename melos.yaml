@@ -110,15 +110,31 @@ scripts:
         )
       "
 
-  build:web:
+  build:web:app:
     run: |
       flutter build web --release --target lib/main_development.dart
-    description: Build web
+    description: Build web app
 
   build:web:story:
     run: |
       flutter build web --release --target lib/src/app_storyboard/app_storyboard.dart
     description: Build web story
+
+  build:android:development:
+    run: |
+      flutter build apk \
+      --flavor development \
+      --target lib/main_development.dart \
+    # --verbose
+
+  build:ios:development:
+    run: |
+      flutter build ios \
+      --flavor development \
+      --target lib/main_development.dart \
+      --dart-define test.alice.enabled=true \
+      --no-codesign \
+    # --verbose
 
   fb:emulator:start:
     run: |
