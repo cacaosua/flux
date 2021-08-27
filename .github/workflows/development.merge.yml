@@ -57,19 +57,15 @@ jobs:
         build:
           - platform: android
             runs-os: macos-latest
-            path: build/android
             target: app
           # - platform: ios
           #   runs-os: macos-latest
-          #   path: build/ios
           #   target: app
           - platform: web
             runs-os: ubuntu-latest
-            path: build/web
             target: app
           - platform: web
             runs-os: ubuntu-latest
-            path: build/web
             target: story
 
     steps:
