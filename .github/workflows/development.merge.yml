@@ -11,16 +11,16 @@ on:
     paths:
       - '.github/workflows/**'
 
-  pull_request:
-    branches: 
-      - app-develop
-    paths:
-      - '.github/workflows/**'
-      - 'pubspec.yaml'
-      - 'pubspec.lock'
-      - 'lib/**'
-      - 'ios/**'
-      - 'android/**'
+  # pull_request:
+  #   branches: 
+  #     - app-develop
+  #   paths:
+  #     - '.github/workflows/**'
+  #     - '**/pubspec.yaml'
+  #     - '**/pubspec.lock'
+  #     - '**/lib/**'
+  #     - '**/ios/**'
+  #     - '**/android/**'
 
 jobs:
   generate-changelog:
