@@ -2,9 +2,9 @@
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.renderWhitespace": "all",
-    "dart.env": {
-        "CHROME_EXECUTABLE": "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge Canary"
-    },
+    // "dart.env": {
+    //     "CHROME_EXECUTABLE": "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
+    // },
     "[dart]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
@@ -26,7 +26,7 @@
         "**/l10n.yaml": true,
         "**/mason.yaml": true,
         "**/.git": true,
-        "**/.github": true,
+        // "**/.github": true,
         "**/.mason": true,
         // "**/coverage": true,
         // "**/scripts": true,
