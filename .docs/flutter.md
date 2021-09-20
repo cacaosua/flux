@@ -109,7 +109,7 @@ header: '1. What is Flutter?'
 <iframe width="100%" height="500px" src="https://dartpad.dev/embed-flutter.html?theme=&amp;null_safety=true&id=9677a59dba30af792ba6d129b8a58f63"></iframe>
 
 <!--
-footer: ''
+footer: 'https://dartpad.dev/embed-flutter.html?theme=&amp;null_safety=true&id=9677a59dba30af792ba6d129b8a58f63'
 -->
 
 ---
@@ -387,7 +387,7 @@ header: '2. User Interface'
 <iframe width="100%" height="500px" src="https://dartpad.dev/embed-flutter.html?theme=&amp;null_safety=true&id=e84496279c4f535c42613d827029aad4"></iframe>
 
 <!--
-footer: ''
+footer: 'https://dartpad.dev/embed-flutter.html?theme=&amp;null_safety=true&id=e84496279c4f535c42613d827029aad4'
 -->
 
 ---
@@ -403,7 +403,7 @@ header: '2. User Interface'
 <iframe width="100%" height="500px" src="https://dartpad.dev/embed-flutter.html?theme=&amp;null_safety=true&id=48be1c817d6f84f1cb39f06975bccfc5"></iframe>
 
 <!--
-footer: ''
+footer: 'https://dartpad.dev/embed-flutter.html?theme=&amp;null_safety=true&id=48be1c817d6f84f1cb39f06975bccfc5'
 -->
 
 ---
