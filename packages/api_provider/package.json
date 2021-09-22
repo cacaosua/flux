@@ -4,14 +4,14 @@
   "description": "Multi-file boilerplate for Open API Specification.",
   "main": "index.js",
   "scripts": {
-    "lint1": "npx @redocly/openapi-cli bundle src/openapi.yaml",
-    "lint": "npm run bundle && spectral lint build/openapi.yaml",
+    "lint1": "npx @redocly/openapi-cli bundle openapi.yaml",
+    "lint": "npm run bundle && npx @stoplight/spectral lint build/openapi.yaml",
     "build": "npx @openapitools/openapi-generator-cli generate --config \"./bin/configs/config.yaml\"",
     "buildv": "npx @openapitools/openapi-generator-cli generate --config \"./bin/configs/config.yaml\" --skip-validate-spec",
     "bundle1": "npx @apidevtools/swagger-cli bundle src/openapi.yaml --outfile build/openapi.yaml --type yaml",
     "bundle": "npx @redocly/openapi-cli bundle src/openapi.yaml -o build/openapi.yaml --ext yaml",
-    "preview": "npm run bundle && redoc-cli serve build/openapi.yaml --options.onlyRequiredInSamples",
-    "html": "npm run bundle && redoc-cli bundle build/openapi.yaml  --output build/index.html --options.onlyRequiredInSamples",
+    "preview": "npm run bundle && npx redoc-cli serve build/openapi.yaml --options.onlyRequiredInSamples",
+    "html": "npm run bundle && npx redoc-cli bundle build/openapi.yaml  --output build/index.html --options.onlyRequiredInSamples",
     "clean": "rm -r build",
     "deploy": "./ci/deploy.sh"
   },
@@ -23,12 +23,5 @@
   "bugs": {
     "url": "https://github.com/dgarcia360/openapi-boilerplate/issues"
   },
-  "homepage": "https://github.com/dgarcia360/openapi-boilerplate#readme",
-  "dependencies": {
-    "@apidevtools/swagger-cli": "^4.0.4",
-    "@openapitools/openapi-generator-cli": "^2.2.6",
-    "@redocly/openapi-cli": "^1.0.0-beta.44",
-    "@stoplight/spectral": "^5.3.0",
-    "redoc-cli": "^0.10.3"
-  }
+  "homepage": "https://github.com/dgarcia360/openapi-boilerplate#readme"
 }
