@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "flux-dev-7d354"
+  },
+  "targets": {
+    "flux-dev-7d354": {
+      "hosting": {
+        "app": [
+          "flux-dev-7d354"
+        ],
+        "story": [
+          "flux-dev-storybook-7d354"
+        ]
+      }
+    }
+  }
+}

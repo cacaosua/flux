@@ -3,8 +3,7 @@ name: flux
 packages:
   - packages/**
   - examples/**
-  - ./*
-  - flux
+  - ./**
 
 ignore:
   # TODO Excluded pending CI fixes
@@ -40,19 +39,25 @@ scripts:
 
   # we voluntarily do not use melos inside goldens
   # postbootstrap: |
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/input && 
-  #   flutter pub get && 
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/golden && 
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/input &&
   #   flutter pub get &&
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/input && 
-  #   flutter pub get && 
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/golden && 
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/golden &&
+  #   flutter pub get &&
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/input &&
+  #   flutter pub get &&
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/golden &&
   #   flutter pub get
+
+  format:
+    run: |
+      melos exec -c 1 -- "
+        flutter format --set-exit-if-changed lib test
+      "
 
   analyze:
     run: |
       melos exec -c 1 -- "
-        flutter analyze .
+        flutter analyze lib test
       "
     description: |
       Run `dart analyze` in all packages.
@@ -104,10 +109,31 @@ scripts:
         )
       "
 
-  build:web:
+  build:web:app:
     run: |
       flutter build web --release --target lib/main_development.dart
-    description: Build web
+    description: Build web app
+
+  build:web:story:
+    run: |
+      flutter build web --release --target lib/src/app_storyboard/app_storyboard.dart
+    description: Build web story
+
+  build:android:development:
+    run: |
+      flutter build apk \
+      --flavor development \
+      --target lib/main_development.dart \
+    # --verbose
+
+  build:ios:development:
+    run: |
+      flutter build ios \
+      --flavor development \
+      --target lib/main_development.dart \
+      --dart-define test.alice.enabled=true \
+      --no-codesign \
+    # --verbose
 
   fb:emulator:start:
     run: |
@@ -118,9 +144,15 @@ scripts:
 
   fb:hosting:deploy:
     run: |
-      firebase deploy --only hosting
+      firebase deploy --only hosting:app
     description: |
-      Run firebase deploy hosting
+      Run firebase deploy hosting app
+
+  fb:hosting:deploy:story:
+    run: |
+      firebase deploy --only hosting:story
+    description: |
+      Run firebase deploy hosting story
 
   test:
     run: |
@@ -131,7 +163,9 @@ scripts:
   test:dart:
     run: |
       melos exec  -c 1 --fail-fast -- "
-        \$MELOS_ROOT_PATH/scripts/coverage.sh
+        dart pub global activate coverage
+        dart test --coverage="coverage"
+        format_coverage --lcov --in=coverage --out=coverage.lcov --packages=.packages --report-on=lib
       "
     description: Run Dart tests for a specific package in this project.
     select-package:
@@ -156,5 +190,7 @@ scripts:
       dir-exists: test
 
   postclean: >
-    melos exec -- \
+    melos exec -- "
+      flutter clean
       rm -rf ./build ./android/.gradle ./ios/.symlinks ./ios/Pods ./android/.idea ./.idea ./.dart-tool/build
+    "

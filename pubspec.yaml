@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -28,31 +28,49 @@ dependencies:
 
   intl: ^0.17.0
 
+  firebase_provider:
+    path: packages/firebase_provider
+  api_provider:
+    path: packages/api_provider
+  app_config:
+    path: packages/app_config
+  app_theme:
+    path: packages/app_theme
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   fluro: ^2.0.3
-  flutter_riverpod: ^1.0.0-dev.6
-  hooks_riverpod: ^1.0.0-dev.6
-  riverpod: ^1.0.0-dev.6
+  flutter_riverpod: ^1.0.0-dev.7
   logging: ^1.0.1
   uuid: ^3.0.4
-  # app_env: 
-  #   path: packages/app_env
-  firebase_provider: 
-    path: packages/firebase_provider
-  # app_env: 
-  #   path: packages/app_env
-  api_provider: 
-    path: packages/api_provider
-  app_config: 
-    path: packages/app_config
   flutter_svg: ^0.22.0
   storybook_flutter: ^0.5.1
   resizable_widget: ^1.0.5
-  vrouter: ^1.2.0+11
+  # vrouter: ^1.2.0+11
   nil: ^1.1.1
   flare_flutter: ^3.0.2
   flutter_form_builder: ^6.0.1
+  shape_of_view_null_safe: ^2.0.0
+  adaptive_components: ^0.0.2
+  equatable: ^2.0.3
+  shared_preferences: ^2.0.8
+  flutter_secure_storage: ^4.2.1
+  flutter_html: ^2.1.2
+  pretty_dio_logger: ^1.2.0-beta-1
+  internet_connection_checker: ^0.0.1+2
+  connectivity_plus: ^1.1.0
+  url_launcher: ^6.0.11
+  store_redirect: ^2.0.0
+  device_info: ^2.0.2
+  platform_device_id: ^1.0.1
+  package_info: ^2.0.2
+  image_picker: 0.8.4+2
+  image_cropper: ^1.4.1
+  share: ^2.0.4
+  transparent_image: ^2.0.0
+  shimmer: ^2.0.0
+  flutter_portal: ^0.4.0
+  after_layout: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -67,13 +85,13 @@ dev_dependencies:
   flutter_launcher_icons: ^0.9.1
   build_runner: ^2.1.1
   flutter_gen_runner: ^3.1.1
+  test: ^1.16.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -93,10 +111,8 @@ flutter:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -127,7 +143,7 @@ flutter_icons:
 
 flutter_gen:
   output: lib/src/features/app_assets/widgets # Optional (default: lib/gen/)
-  line_length: 80   # Optional (default: 80)
+  line_length: 80 # Optional (default: 80)
   null_safety: true # Optional (default: true)
 
   integrations:
@@ -141,7 +157,6 @@ flutter_gen:
 
     # Assets.images_chip
     # style: snake-case
-
     # Assets.images.chip (default style)
     # style: dot-delimiter
 

@@ -1,6 +1,6 @@
 openapi: 3.0.0
 servers:
-  - url: 'https://{environment}.netlove.com.vn'
+  - url: "https://{environment}.netlove.com.vn"
     variables:
       environment:
         default: api
@@ -16,7 +16,7 @@ info:
   title: OpenAPI Petstore
   license:
     name: Apache-2.0
-    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
 paths:
   /identity/auth/status:
     post:
@@ -29,7 +29,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
@@ -95,6 +95,8 @@ components:
     Character:
       type: object
       properties:
+        id:
+          type: string
         title:
           type: string
         description:
@@ -121,12 +123,12 @@ components:
             description: Error
             properties:
               errorCode:
-                $ref: '#/components/schemas/ErrorCode'
+                $ref: "#/components/schemas/ErrorCode"
                 nullable: true
               errorMessage:
                 type: string
                 nullable: true
-                default: ''
+                default: ""
               data:
                 type: object
                 additionalProperties: true
@@ -149,9 +151,9 @@ components:
             description: Error
             properties:
               errorCode:
-                $ref: '#/components/schemas/ErrorCode'
+                $ref: "#/components/schemas/ErrorCode"
                 nullable: true
               errorMessage:
                 type: string
                 nullable: true
-                default: ''
+                default: ""

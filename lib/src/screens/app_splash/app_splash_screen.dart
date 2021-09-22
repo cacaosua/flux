@@ -8,7 +8,7 @@ class AppSplashScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: GestureDetector(
-          child: TextElement(
+          child: TextWidget(
             text: (locale) => locale.splashAppBarTitle,
             style: (textTheme) => textTheme.headline5,
           ),
