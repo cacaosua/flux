@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
-// import 'package:flux/src/layouts/expanding_content/expanding_content.dart';
+// import 'package:flux/src/app_layouts/expanding_content/expanding_content.dart';
 // import 'package:flux/src/widgets/app_button/app_button.dart';
 // import 'package:flux/src/widgets/text/text_widget.dart';
 // import 'package:storybook_flutter/storybook_flutter.dart';

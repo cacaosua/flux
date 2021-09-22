@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flux/src/features/app_router/app_router.dart';
+import 'package:flux/src/features/theme/theme.dart';
 import 'package:logging/logging.dart';
 
 import 'package:flutter_gen/gen_l10n/app_intl.dart';
@@ -40,26 +41,43 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: _rootNavigatorKey,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.blue,
-        ).copyWith(
-          secondary: Colors.green,
-        ),
-        textTheme: const TextTheme(bodyText2: TextStyle(color: Colors.purple)),
-      ),
-      onGenerateRoute: AppRouter.router.generator,
-      localizationsDelegates: const [
-        AppIntlX.delegate,
-        GlobalMaterialLocalizations.delegate,
-      ],
-      supportedLocales: AppIntlX.supportedLocales,
-      // debugShowMaterialGrid: true,
-      // showSemanticsDebugger: true,
-      // debugShowCheckedModeBanner: true,
-      builder: _buildNavigator,
+    return ThemeTransitionWidget(
+      builder: (BuildContext context, ThemeMode themeMode) {
+        return MaterialApp(
+          // Providing a restorationScopeId allows the Navigator built by the
+          // MaterialApp to restore the navigation stack when a user leaves and
+          // returns to the app after it has been killed while running in the
+          // background.
+          restorationScopeId: 'app',
+
+          navigatorKey: _rootNavigatorKey,
+
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.blue,
+            ).copyWith(
+              secondary: Colors.green,
+            ),
+            textTheme:
+                const TextTheme(bodyText2: TextStyle(color: Colors.purple)),
+          ),
+          themeMode: themeMode,
+
+          // debugShowMaterialGrid: true,
+          // showSemanticsDebugger: true,
+          // debugShowCheckedModeBanner: true,
+          builder: _buildNavigator,
+          onGenerateRoute: AppRouter.router.generator,
+
+          localizationsDelegates: const [
+            AppIntlX.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: AppIntlX.supportedLocales,
+        );
+      },
     );
   }
 

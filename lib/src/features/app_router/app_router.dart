@@ -21,14 +21,11 @@ class AppRouterHandler extends Handler {
   AppRouterHandler({
     HandlerType type = HandlerType.route,
     required HandlerFunc handlerFunc,
-  }) : super(
-          type: type,
-          handlerFunc: handlerFunc,
-        );
+  }) : super(type: type, handlerFunc: handlerFunc);
 }
 
 class AppRouter extends FluroRouter {
-  static final AppRouter router = AppRouter._();
+  static final router = AppRouter._();
 
   AppRouter._();
 
@@ -72,15 +69,7 @@ class AppRouter extends FluroRouter {
   static void configureRoutes(
     GlobalKey<NavigatorState> navigatorKey,
   ) {
-    router.define(AppRoutes.root, handler: rootHandler(navigatorKey));
+    AppSplash.configureRoutes(router);
     DevTools.configureRoutes(router);
   }
-}
-
-AppRouterHandler rootHandler(GlobalKey<NavigatorState> navigatorKey) {
-  return AppRouterHandler(
-    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-      return const AppSplashScreen();
-    },
-  );
 }
