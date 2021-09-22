@@ -8,9 +8,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flux/src/features/app_router/app_router.dart';
+import 'package:logging/logging.dart';
 
-import 'app_intl.dart';
+import 'package:flutter_gen/gen_l10n/app_intl.dart';
+
+// ignore: uri_does_not_exist
+export 'package:flutter_gen/gen_l10n/app_intl.dart';
+
+part 'app_intl.dart';
+part 'app_provider_observer.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -44,10 +52,10 @@ class _AppState extends State<App> {
       ),
       onGenerateRoute: AppRouter.router.generator,
       localizationsDelegates: const [
-        AppIntl.delegate,
+        AppIntlX.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
-      supportedLocales: AppIntl.supportedLocales,
+      supportedLocales: AppIntlX.supportedLocales,
       // debugShowMaterialGrid: true,
       // showSemanticsDebugger: true,
       // debugShowCheckedModeBanner: true,

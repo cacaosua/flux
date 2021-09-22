@@ -1,6 +1,6 @@
 ---
 marp: true
-title: Flutter
+title: Get started with Flutter
 # _class: lead
 paginate: true
 backgroundColor: #fff
@@ -190,7 +190,9 @@ header: '2. User Interface'
 - `Everything` is a `Widget`
   - But don’t put everything in one Widget!
 - References:
-  https://romain-rastel.medium.com/everything-is-a-widget-but-dont-put-everything-in-a-widget-32f89b5c8bdb
+  - [Everything is a Widget, but don’t put everything in one Widget!](https://romain-rastel.medium.com/everything-is-a-widget-but-dont-put-everything-in-a-widget-32f89b5c8bdb)
+  - [Flutter: Extract widget to function or new widget class](https://medium.com/halkbank-mobile-tech/flutter-best-practices-1-d7a0fb1fdb6c)
+  - [Splitting widgets to methods is an antipattern](https://iiro.dev/splitting-widgets-to-methods-performance-antipattern/)
   
   
 > Everything Should Be Made as Simple as Possible, But Not Simpler

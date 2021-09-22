@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flux/src/app/app_intl.dart';
+import 'package:flux/src/app/app.dart';
 
 /// References
 ///  - https://material.io/design/typography/the-type-system.html#type-scale
@@ -33,7 +33,7 @@ class TextWidget extends StatelessWidget {
 
     if (selectable ?? false) {
       assert(overflow == null, "overflow is unsupported for SelectableText");
-      final data = text(AppIntl.of(context));
+      final data = text(AppIntlX.of(context));
       return SelectableText(
         data,
         style: customStyle,
@@ -44,7 +44,7 @@ class TextWidget extends StatelessWidget {
     }
 
     return Text(
-      text(AppIntl.of(context)),
+      text(AppIntlX.of(context)),
       style: customStyle,
       textAlign: align,
       overflow: overflow,

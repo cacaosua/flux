@@ -59,10 +59,6 @@ class _DevToolState extends State<DevToolScreen> {
         title: 'List Scrool Animation',
         path: '${RouteKeys.devTools}/${RouteKeys.listAnimation}',
       ),
-      _DevMenuItem(
-        title: 'Card Payment',
-        path: '${RouteKeys.devTools}/${RouteKeys.cardPayment}',
-      ),
     ];
   }
 }

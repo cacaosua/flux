@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flux/modules/tic_tac_toe/screens/game/game_story.dart';
-import 'package:flux/src/app/app_intl.dart';
+import 'package:flux/src/app/app.dart';
 import 'package:flux/src/layouts/adaptive/adaptive_column_story.dart';
 import 'package:flux/src/layouts/adaptive/adaptive_container_story.dart';
 import 'package:flux/src/layouts/expanding_content/expanding_content_story.dart';
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         );
       },
       localizationDelegates: const [
-        AppIntl.delegate,
+        AppIntlX.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
       children: [

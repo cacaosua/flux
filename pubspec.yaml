@@ -28,6 +28,15 @@ dependencies:
 
   intl: ^0.17.0
 
+  firebase_provider: 
+    path: packages/firebase_provider
+  api_provider: 
+    path: packages/api_provider
+  app_config: 
+    path: packages/app_config
+  app_theme: 
+    path: packages/app_theme
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   fluro: ^2.0.3
@@ -36,16 +45,6 @@ dependencies:
   riverpod: ^1.0.0-dev.6
   logging: ^1.0.1
   uuid: ^3.0.4
-  # app_env: 
-  #   path: packages/app_env
-  firebase_provider: 
-    path: packages/firebase_provider
-  # app_env: 
-  #   path: packages/app_env
-  api_provider: 
-    path: packages/api_provider
-  app_config: 
-    path: packages/app_config
   flutter_svg: ^0.22.0
   storybook_flutter: ^0.5.1
   resizable_widget: ^1.0.5

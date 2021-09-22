@@ -192,4 +192,5 @@ scripts:
 
   postclean: >
     melos exec -- \
+      flutter clean
       rm -rf ./build ./android/.gradle ./ios/.symlinks ./ios/Pods ./android/.idea ./.idea ./.dart-tool/build

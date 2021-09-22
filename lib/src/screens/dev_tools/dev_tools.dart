@@ -25,7 +25,6 @@ part 'widgets/bubble.dart';
 part 'widgets/scroll_animation.dart';
 part 'screen/features/live_scroll_animation.dart';
 part 'screen/features/create_feature.dart';
-part 'screen/card_payment/card_payment.dart';
 part 'screen/features/filter_feature.dart';
 part 'screen/features/list_feature.dart';
 part 'screen/features/loading_feature.dart';
@@ -50,8 +49,6 @@ class DevTools {
           case RouteKeys.updateFeature:
             final id = params['id']?.first ?? '';
             return CreateOrUpdateFeature(featureId: id);
-          case RouteKeys.cardPayment:
-            return const CardPayment();
 
           default:
         }

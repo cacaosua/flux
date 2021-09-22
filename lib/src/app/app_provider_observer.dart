@@ -1,5 +1,4 @@
-import 'package:logging/logging.dart';
-import 'package:riverpod/riverpod.dart';
+part of 'app.dart';
 
 class AppProviderObserver extends ProviderObserver {
   AppProviderObserver({
