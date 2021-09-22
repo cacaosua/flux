@@ -84,8 +84,8 @@ jobs:
 
       - uses: subosito/flutter-action@v1.5.0
         with:
-          flutter-version: "2.5.0"
-          # channel: ${{ matrix.channel }}
+#           flutter-version: "2.5.0"
+          channel: ${{ matrix.channel }}
 
       - name: Install global packages
         run: |
