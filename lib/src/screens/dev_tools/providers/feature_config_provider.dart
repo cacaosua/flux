@@ -1,4 +1,4 @@
-part of 'dev_tools.dart';
+part of '../dev_tools.dart';
 
 enum FeatureStatus {
   all,
@@ -18,7 +18,7 @@ final fetchFeatureConfig =
   final fireStore = ref.read(fireStoreProvider);
   final data = await fireStore.fetchFeatureConfig();
   if (data.isNotEmpty) {
-    ref.read(featureConfigListProvider).state = convertFeatureList(data);
+    // ref.read(featureConfigListProvider).state = convertFeatureList(data);
   }
 
   return [];
@@ -169,22 +169,22 @@ class FeatureConfig {
   }
 
   Future<void> _filterFeature() async {
-    final fireStore = ref.read(fireStoreProvider);
-    final status = ref.read(filterCurrentStatusProvider).state;
-    List<QueryDocumentSnapshot<Map<String, dynamic>>> result = [];
+    // final fireStore = ref.read(fireStoreProvider);
+    // final status = ref.read(filterCurrentStatusProvider).state;
+    // List<QueryDocumentSnapshot<Map<String, dynamic>>> result = [];
 
-    if (status == FeatureStatus.all) {
-      result = await fireStore.fetchFeatureConfig();
-    } else {
-      result = await fireStore.filterFeatureConfig(status.name());
-    }
+    // if (status == FeatureStatus.all) {
+    //   result = await fireStore.fetchFeatureConfig();
+    // } else {
+    //   result = await fireStore.filterFeatureConfig(status.name());
+    // }
 
-    if (result.isNotEmpty) {
-      ref.read(featureConfigListProvider).state = convertFeatureList(result);
-      return;
-    }
+    // if (result.isNotEmpty) {
+    //   ref.read(featureConfigListProvider).state = convertFeatureList(result);
+    //   return;
+    // }
 
-    ref.read(featureConfigListProvider).state = [];
+    // ref.read(featureConfigListProvider).state = [];
   }
 
   Future<void> deleteFeature(String id) async {
@@ -230,19 +230,19 @@ final fetchFeatureDetailsProvider =
   name: 'liveStreamProvider',
 );
 
-List<Character> convertFeatureList(
-  List<QueryDocumentSnapshot<Map<String, dynamic>>> result,
-) {
-  List<Character> featureList = [];
-  for (QueryDocumentSnapshot<Map<String, dynamic>> item in result) {
-    featureList.add(
-      Character.fromJson(
-        {
-          "id": item.id,
-          ...Map<String, Object>.from(item.data()),
-        },
-      ),
-    );
-  }
-  return featureList.toList();
-}
+// List<Character> convertFeatureList(
+//   // List<QueryDocumentSnapshot<Map<String, dynamic>>> result,
+// ) {
+//   List<Character> featureList = [];
+//   for (QueryDocumentSnapshot<Map<String, dynamic>> item in result) {
+//     featureList.add(
+//       Character.fromJson(
+//         {
+//           "id": item.id,
+//           ...Map<String, Object>.from(item.data()),
+//         },
+//       ),
+//     );
+//   }
+//   return featureList.toList();
+// }

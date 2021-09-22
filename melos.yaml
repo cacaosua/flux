@@ -3,8 +3,7 @@ name: flux
 packages:
   - packages/**
   - examples/**
-  - ./*
-  - flux
+  - ./**
 
 ignore:
   # TODO Excluded pending CI fixes
@@ -40,13 +39,13 @@ scripts:
 
   # we voluntarily do not use melos inside goldens
   # postbootstrap: |
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/input && 
-  #   flutter pub get && 
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/golden && 
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/input &&
   #   flutter pub get &&
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/input && 
-  #   flutter pub get && 
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/golden && 
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/golden &&
+  #   flutter pub get &&
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/input &&
+  #   flutter pub get &&
+  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/golden &&
   #   flutter pub get
 
   format:
@@ -191,5 +190,7 @@ scripts:
       dir-exists: test
 
   postclean: >
-    melos exec -- \
+    melos exec -- "
+      flutter clean
       rm -rf ./build ./android/.gradle ./ios/.symlinks ./ios/Pods ./android/.idea ./.idea ./.dart-tool/build
+    "

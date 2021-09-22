@@ -25,7 +25,8 @@ class _HomeScreenState extends State<HomeScreen> {
   // normal property
   final int propInt = 0;
 
-  // private by default
+  // private by default, keep it as example
+  // ignore: unused_field
   final int _propInt2 = 0;
   int _counter = 0;
 

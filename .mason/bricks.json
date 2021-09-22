@@ -1,1 +1,5 @@
-{"bricks/screen":"/Users/nguyenlamzx/Workspace/git/nelo/mcv-flutter/bricks/screen","bricks/widget":"/Users/nguyenlamzx/Workspace/git/nelo/mcv-flutter/bricks/widget","bricks/feature":"/Users/nguyenlamzx/Workspace/git/nelo/mcv-flutter/bricks/feature"}
+{
+  "screen_6e5d022e1a58628f95d521d3c857a1ce280618eb055657529e29605f969f129d": "/Users/nguyenlamzx/Workspace/flux/app/bricks/screen",
+  "widget_c1d10ee2f7785f54587c18b1f91b1d828cdceb9f2c4c84fbc78e34b95e5d6921": "/Users/nguyenlamzx/Workspace/flux/app/bricks/widget",
+  "feature_c40dca6a9002ac677b314b77d591beaf37ad542d9936e1879f035cb09a612ec2": "/Users/nguyenlamzx/Workspace/flux/app/bricks/feature"
+}

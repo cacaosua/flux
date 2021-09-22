@@ -12,7 +12,6 @@ abstract class RouteKeys {
   static const createFeature = 'createFeature';
   static const updateFeature = 'updateFeature';
 
-  static const cardPayment = 'card-payment';
   static const bubble = 'bubble';
 }
 
