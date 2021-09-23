@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
-const _section = 'App - Layouts';
-
 extension AdaptiveColumnStories on Story {
-  static List<Story> of(BuildContext context) {
+  static List<Story> of(BuildContext context, {required String title}) {
     return [
       Story(
-        section: _section,
+        section: title,
         name: 'Adaptive Column',
         builder: (_, k) {
           return AdaptiveColumn(

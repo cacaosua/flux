@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flux/modules/todo/screens/home/home.dart';
+import 'package:flux/modules/counter/screens/home/home.dart';
 
 void main() {
   runApp(
     const ProviderScope(
-      child: TodoApp(),
+      child: CounterApp(),
     ),
   );
 }
 
-class TodoApp extends StatelessWidget {
-  const TodoApp({
+class CounterApp extends StatelessWidget {
+  const CounterApp({
     Key? key,
   }) : super(key: key);
 
@@ -19,11 +19,10 @@ class TodoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Todo',
-      // showPerformanceOverlay: true,
       theme: ThemeData(
         primaryColor: Colors.deepPurpleAccent[700],
       ),
-      home: const HomeScreen(),
+      home: const HomeScreen(title: null),
     );
   }
 }

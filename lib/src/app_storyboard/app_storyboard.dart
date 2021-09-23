@@ -1,3 +1,4 @@
+import 'package:app_theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,7 +8,7 @@ import 'package:flux/src/app/app.dart';
 import 'package:flux/src/app_layouts/adaptive/adaptive_column_story.dart';
 import 'package:flux/src/app_layouts/adaptive/adaptive_container_story.dart';
 import 'package:flux/src/app_layouts/expanding_content/expanding_content_story.dart';
-import 'package:flux/src/widgets/app_button/app_button_story.dart';
+import 'package:flux/src/widgets/button/button_story.dart';
 import 'package:flux/src/widgets/text/text_widget_story.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
@@ -25,6 +26,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Storybook(
+      theme: DjThemeData.light,
+      darkTheme: DjThemeData.dark,
       storyWrapperBuilder: (context, story, child) {
         return Stack(
           children: [
@@ -50,11 +53,11 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       children: [
-        ...TextStories.of(context),
-        ...AppButtonStories.of(context),
-        ...ExpandingContentStories.of(context),
-        ...AdaptiveColumnStories.of(context),
-        ...AdaptiveContainerStories.of(context),
+        ...TextStories.of(context, title: 'Typography'),
+        ...ButtonStories.of(context, title: 'Buttons'),
+        ...ExpandingContentStories.of(context, title: 'Layouts'),
+        ...AdaptiveColumnStories.of(context, title: 'Layouts'),
+        ...AdaptiveContainerStories.of(context, title: 'Layouts'),
         ...TicTacToeGameStories.of(context),
       ],
     );

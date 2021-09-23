@@ -142,7 +142,7 @@ class _ListFeatureState extends State<ListFeatureWidget> {
         return Row(
           children: [
             if (item.status != FeatureStatus.done.name()) ...[
-              AppButton.primary(
+              ElevatedButtonX.normal(
                 onPressed: () {
                   AppRouter.router.navigateTo(
                     context,
@@ -155,7 +155,7 @@ class _ListFeatureState extends State<ListFeatureWidget> {
                 width: 10.0,
               ),
             ],
-            AppButton.primary(
+            ElevatedButtonX.normal(
               onPressed: () {
                 showDialog(
                   context: context,
@@ -173,13 +173,13 @@ class _ListFeatureState extends State<ListFeatureWidget> {
                         overflow: TextOverflow.ellipsis,
                       ),
                       actions: [
-                        AppButton.primary(
+                        ElevatedButtonX.normal(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
                           child: const Text('Không xoá nha'),
                         ),
-                        AppButton.primary(
+                        ElevatedButtonX.normal(
                           onPressed: () {
                             ref
                                 .read(featureConfigProvider)

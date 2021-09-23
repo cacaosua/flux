@@ -22,7 +22,7 @@ class FilterFeatureWidget extends StatelessWidget {
             Wrap(
               spacing: 10.0,
               children: [
-                AppButton.primary(
+                ElevatedButtonX.normal(
                   onPressed: () {
                     ref.read(filterCurrentStatusProvider).state =
                         FeatureStatus.all;
@@ -30,7 +30,7 @@ class FilterFeatureWidget extends StatelessWidget {
                   },
                   child: const Text('All'),
                 ),
-                AppButton.primary(
+                ElevatedButtonX.normal(
                   onPressed: () {
                     ref.read(filterCurrentStatusProvider).state =
                         FeatureStatus.enable;
@@ -38,7 +38,7 @@ class FilterFeatureWidget extends StatelessWidget {
                   },
                   child: const Text('Enable'),
                 ),
-                AppButton.primary(
+                ElevatedButtonX.normal(
                   onPressed: () {
                     ref.read(filterCurrentStatusProvider).state =
                         FeatureStatus.disable;
@@ -46,7 +46,7 @@ class FilterFeatureWidget extends StatelessWidget {
                   },
                   child: const Text('Disable'),
                 ),
-                AppButton.primary(
+                ElevatedButtonX.normal(
                   onPressed: () {
                     ref.read(filterCurrentStatusProvider).state =
                         FeatureStatus.done;

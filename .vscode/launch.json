@@ -13,9 +13,10 @@
         "--flavor",
         "development",
         "--target",
-        "lib/main_development.dart",
-        // "lib/src/app_storyboard/app_storyboard.dart",
-        // "lib/modules/todo/todo.dart",
+        // "lib/main_development.dart",
+        "lib/src/app_storyboard/app_storyboard.dart",
+        // "lib/modules/counter/todo.dart",
+        // "lib/modules/todos/lib/main.dart",
         "--verbose",
       ],
       "showMemoryUsage": true

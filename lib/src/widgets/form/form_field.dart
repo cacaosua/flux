@@ -1,4 +1,4 @@
-part of '../form.dart';
+part of 'form.dart';
 
 class AppFormField extends StatelessWidget {
   const AppFormField({

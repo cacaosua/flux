@@ -38,15 +38,8 @@ scripts:
         pub global activate flutter_gen
 
   # we voluntarily do not use melos inside goldens
-  # postbootstrap: |
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/input &&
-  #   flutter pub get &&
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/notifiers/golden &&
-  #   flutter pub get &&
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/input &&
-  #   flutter pub get &&
-  #   cd MELOS_ROOT_PATH/packages/riverpod_cli/fixtures/unified_syntax/golden &&
-  #   flutter pub get
+  postbootstrap: |
+    flutter pub get
 
   format:
     run: |
@@ -189,8 +182,6 @@ scripts:
       flutter: true
       dir-exists: test
 
-  postclean: >
-    melos exec -- "
-      flutter clean
-      rm -rf ./build ./android/.gradle ./ios/.symlinks ./ios/Pods ./android/.idea ./.idea ./.dart-tool/build
-    "
+  postclean:
+    run: |
+      flutter clean && rm -rf ./build ./android/.gradle ./ios/.symlinks ./ios/Pods ./android/.idea ./.idea ./.dart-tool/build

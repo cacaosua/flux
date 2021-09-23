@@ -1,10 +1,3 @@
-// Copyright (c) 2021, Very Good Ventures
-// https://verygood.ventures
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -13,6 +6,7 @@ import 'package:flux/src/features/app_router/app_router.dart';
 import 'package:flux/src/features/theme/theme.dart';
 import 'package:logging/logging.dart';
 
+// ignore: uri_does_not_exist
 import 'package:flutter_gen/gen_l10n/app_intl.dart';
 
 // ignore: uri_does_not_exist

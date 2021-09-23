@@ -27,7 +27,15 @@ class CounterNotifier extends StateNotifier<int> {
 
   increment() {
     final delta = _ref.read(detalProvider).state;
-    state += delta;
+
+    // GOOD
+    int newState = state + delta;
+
+    if (newState > 10) {
+      newState = 10;
+    }
+
+    state = newState;
   }
 
   decrement() {

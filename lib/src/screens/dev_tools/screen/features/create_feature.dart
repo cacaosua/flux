@@ -130,7 +130,7 @@ class _CreateOrUpdateFeatureState extends State<CreateOrUpdateFeature> {
             width: double.infinity,
             child: Consumer(
               builder: (context, ref, _) {
-                return AppButton.primary(
+                return ElevatedButtonX.normal(
                   onPressed: () {
                     final checkValidate =
                         _formKey.currentState?.saveAndValidate() ?? false;

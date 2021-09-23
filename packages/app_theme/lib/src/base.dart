@@ -121,6 +121,55 @@ class BaseThemeData {
           color: _darkFillColor,
         ),
       ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          primary: colorScheme.primary,
+          padding: const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 24,
+          ),
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(8),
+          // ),
+          shape: const StadiumBorder(),
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          primary: colorScheme.primary,
+          onPrimary: colorScheme.background,
+          padding: const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 24,
+          ),
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(8),
+          // ),
+          shape: const StadiumBorder(),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          primary: colorScheme.primary,
+          onSurface: colorScheme.primary,
+          padding: const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 24,
+          ),
+          // side: BorderSide(
+          //     // color: XColors.primary,
+          //     ),
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(8),
+          // ),
+          backgroundColor: colorScheme.background,
+          shape: const StadiumBorder(),
+          side: BorderSide(
+            width: 2.0,
+            color: colorScheme.primary,
+          ),
+        ),
+      ),
     );
   }
 }

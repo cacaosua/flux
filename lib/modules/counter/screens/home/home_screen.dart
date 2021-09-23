@@ -1,20 +1,33 @@
 part of 'home.dart';
 
 class HomeScreen extends StatelessWidget {
+  final String? _title;
+
   const HomeScreen({
     Key? key,
-  }) : super(key: key);
+    String? title,
+  })  : _title = title ?? 'Home',
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Consumer(
+          builder: (context, ref, child) {
+            final counter = ref.watch(countProvider);
+            return Text('${_title} + ${counter}');
+          },
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              'Delta',
+              style: Theme.of(context).textTheme.headline4,
+            ),
             Consumer(
               builder: (context, ref, child) {
                 final delta = ref.watch(detalProvider).state;
@@ -42,11 +55,12 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: Consumer(
         builder: (context, ref, child) {
+          var read = ref.read(detalProvider);
           return Row(
             children: [
               FloatingActionButton(
                 onPressed: () {
-                  ref.read(detalProvider).state += 1;
+                  read.state += 1;
                 },
                 tooltip: 'Increment Delta',
                 child: const Icon(Icons.add),

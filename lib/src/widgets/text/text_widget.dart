@@ -9,6 +9,7 @@ import 'package:flux/src/app/app.dart';
 /// image https://lh3.googleusercontent.com/GhGMLbfqPXdUgmnflT52VWNSned4U5jLOpTIXZWEDQfwvZGZC2EI0iO0wKxptigoYW79v2PhIdmjTjWDgfdHF8TzcldhSc9pA4BBLhE=w1064-v0
 
 class TextWidget extends StatelessWidget {
+  // ignore: undefined_class
   final String Function(AppIntl localize) text;
   final TextStyle? Function(TextTheme textTheme)? style;
   final TextAlign? align;

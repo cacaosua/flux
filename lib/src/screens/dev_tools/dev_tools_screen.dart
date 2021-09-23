@@ -31,7 +31,7 @@ class _DevToolState extends State<DevToolScreen> {
 
           return SizedBox(
             width: double.infinity,
-            child: AppButton.primary(
+            child: ElevatedButtonX.normal(
               onPressed: () {
                 if (menu.onPressed is Function) {
                   return menu.onPressed!(context);

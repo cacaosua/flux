@@ -17,7 +17,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flux/src/widgets/layout_constants.dart';
 import 'package:flux/src/features/app_router/app_router.dart';
 import 'package:flux/src/features/theme/theme.dart';
-import 'package:flux/src/widgets/app_button/app_button.dart';
+import 'package:flux/src/widgets/button/button.dart';
 import 'package:flux/src/widgets/loading_screen_widget.dart';
 
 part 'dev_tools_screen.dart';
