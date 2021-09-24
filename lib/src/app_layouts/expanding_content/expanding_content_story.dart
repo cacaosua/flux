@@ -4,11 +4,11 @@ import 'package:flux/src/app_layouts/expanding_content/expanding_content.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 extension ExpandingContentStories on Story {
-  static List<Story> of(BuildContext context, {required String title}) {
+  static List<Story> of(BuildContext context, {required String section}) {
     return [
       Story(
-        section: title,
-        name: 'Expanding Content',
+        section: section,
+        name: 'Layout - Expanding',
         builder: (_, k) {
           return ExpandingContent(
             children: [

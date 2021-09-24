@@ -4,11 +4,11 @@ import 'package:flutter/widgets.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 extension AdaptiveColumnStories on Story {
-  static List<Story> of(BuildContext context, {required String title}) {
+  static List<Story> of(BuildContext context, {required String section}) {
     return [
       Story(
-        section: title,
-        name: 'Adaptive Column',
+        section: section,
+        name: 'Layout - Adaptive Column',
         builder: (_, k) {
           return AdaptiveColumn(
             children: [

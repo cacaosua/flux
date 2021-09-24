@@ -4,11 +4,11 @@ import 'package:flutter/widgets.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 extension AdaptiveContainerStories on Story {
-  static List<Story> of(BuildContext context, {required String title}) {
+  static List<Story> of(BuildContext context, {required String section}) {
     return [
       Story(
-        section: title,
-        name: 'Adaptive Container',
+        section: section,
+        name: 'Layout - Adaptive Container',
         builder: (_, k) {
           return Column(
             children: [

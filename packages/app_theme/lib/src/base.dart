@@ -1,15 +1,12 @@
 library app_theme;
 
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
 final lightTheme = ThemeData(
   brightness: Brightness.light,
 );
 
 class BaseThemeData {
-  // BaseThemeData._internal();
-
   @protected
   static const _lightFillColor = Colors.black;
 
@@ -51,27 +48,6 @@ class BaseThemeData {
     brightness: Brightness.dark,
   );
 
-  static const _regular = FontWeight.w400;
-  static const _medium = FontWeight.w500;
-  static const _semiBold = FontWeight.w600;
-  static const _bold = FontWeight.w700;
-
-  static const _textTheme = const TextTheme(
-    // headline1
-    // headline2
-    // headline3
-    headline4: TextStyle(fontWeight: _bold, fontSize: 20.0),
-    headline5: TextStyle(fontWeight: _medium, fontSize: 16.0),
-    headline6: TextStyle(fontWeight: _bold, fontSize: 16.0),
-    subtitle1: TextStyle(fontWeight: _medium, fontSize: 16.0),
-    bodyText1: TextStyle(fontWeight: _regular, fontSize: 14.0),
-    bodyText2: TextStyle(fontWeight: _regular, fontSize: 16.0),
-    caption: TextStyle(fontWeight: _semiBold, fontSize: 16.0),
-    button: TextStyle(fontWeight: _semiBold, fontSize: 14.0),
-    subtitle2: TextStyle(fontWeight: _medium, fontSize: 14.0),
-    overline: TextStyle(fontWeight: _medium, fontSize: 12.0),
-  );
-
   static final light = create(
     lightColorScheme,
     _lightFocusColor,
@@ -92,9 +68,13 @@ class BaseThemeData {
     required Color lightFillColor,
     required Color darkFillColor,
   }) {
-    return ThemeData(
+    final base = ThemeData.light();
+
+    final textTheme = _buildTextTheme(base.textTheme);
+
+    return base.copyWith(
       colorScheme: colorScheme,
-      textTheme: _textTheme,
+      textTheme: textTheme,
       // Matches manifest.json colors and background color.
       primaryColor: const Color(0xFF030303),
       appBarTheme: AppBarTheme(
@@ -117,7 +97,7 @@ class BaseThemeData {
           lightFillColor.withOpacity(0.80),
           darkFillColor,
         ),
-        contentTextStyle: _textTheme.subtitle1?.apply(
+        contentTextStyle: textTheme.subtitle1?.apply(
           color: _darkFillColor,
         ),
       ),
@@ -169,6 +149,67 @@ class BaseThemeData {
             color: colorScheme.primary,
           ),
         ),
+      ),
+    );
+  }
+
+  static TextTheme _buildTextTheme(TextTheme base) {
+    return base.copyWith(
+      headline1: base.headline1?.copyWith(
+        fontWeight: FontWeight.w300,
+        fontSize: 96,
+      ),
+      headline2: base.headline2?.copyWith(
+        fontWeight: FontWeight.w400,
+        fontSize: 60,
+      ),
+      headline3: base.headline3?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 48,
+      ),
+      headline4: base.headline4?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 34,
+      ),
+      headline5: base.headline5?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 24,
+      ),
+      headline6: base.headline6?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 20,
+      ),
+      subtitle1: base.subtitle1?.copyWith(
+        fontWeight: FontWeight.w500,
+        fontSize: 16,
+        // letterSpacing: letterSpacingOrNone(0.5),
+      ),
+      subtitle2: base.subtitle2?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 12,
+        // color: craneGrey,
+      ),
+      bodyText1: base.bodyText1?.copyWith(
+        fontWeight: FontWeight.w500,
+        fontSize: 16,
+      ),
+      bodyText2: base.bodyText2?.copyWith(
+        fontWeight: FontWeight.w400,
+        fontSize: 14,
+      ),
+      button: base.button?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 13,
+        // letterSpacing: letterSpacingOrNone(0.8),
+      ),
+      caption: base.caption?.copyWith(
+        fontWeight: FontWeight.w500,
+        fontSize: 12,
+        // color: craneGrey,
+      ),
+      overline: base.overline?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 12,
       ),
     );
   }

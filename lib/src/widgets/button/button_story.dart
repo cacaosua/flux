@@ -4,11 +4,11 @@ import 'package:flux/src/widgets/button/button.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
 extension ButtonStories on Story {
-  static List<Story> of(BuildContext context, {required String title}) {
+  static List<Story> of(BuildContext context, {required String section}) {
     return [
       Story(
-        section: title,
-        name: 'Button - All States',
+        section: section,
+        name: 'Button',
         builder: (_, k) {
           final text = k.text(
             label: 'Text',

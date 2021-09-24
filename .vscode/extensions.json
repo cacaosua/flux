@@ -5,5 +5,6 @@
     "dart-code.dart-code",
     "dart-code.flutter",
     "robert-brunhage.flutter-riverpod-snippets",
+    "RedVanWorkshop.explorer-exclude-vscode-extension",
   ]
 }

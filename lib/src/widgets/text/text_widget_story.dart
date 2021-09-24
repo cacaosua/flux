@@ -36,12 +36,12 @@ class _TextStyleOptions {
 }
 
 extension TextStories on Story {
-  static List<Story> of(BuildContext context, {required String title}) {
+  static List<Story> of(BuildContext context, {required String section}) {
     final values = TextElementX.values(context);
     return [
       Story(
-        section: title,
-        name: 'Text - All styles',
+        section: section,
+        name: 'Typography',
         builder: (_, k) {
           return CustomScrollView(
             primary: false,

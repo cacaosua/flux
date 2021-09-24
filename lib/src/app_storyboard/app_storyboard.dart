@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flux/modules/tic_tac_toe/screens/game/game_story.dart';
+import 'package:flux/modules/todos/lib/todo_story.dart';
 import 'package:flux/src/app/app.dart';
 import 'package:flux/src/app_layouts/adaptive/adaptive_column_story.dart';
 import 'package:flux/src/app_layouts/adaptive/adaptive_container_story.dart';
@@ -53,12 +54,13 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       children: [
-        ...TextStories.of(context, title: 'Typography'),
-        ...ButtonStories.of(context, title: 'Buttons'),
-        ...ExpandingContentStories.of(context, title: 'Layouts'),
-        ...AdaptiveColumnStories.of(context, title: 'Layouts'),
-        ...AdaptiveContainerStories.of(context, title: 'Layouts'),
-        ...TicTacToeGameStories.of(context),
+        ...TextStories.of(context, section: 'Style Guides'),
+        ...ExpandingContentStories.of(context, section: 'Style Guides'),
+        ...AdaptiveColumnStories.of(context, section: 'Style Guides'),
+        ...AdaptiveContainerStories.of(context, section: 'Style Guides'),
+        ...ButtonStories.of(context, section: 'Common Widgets'),
+        ...TicTacToeGameStories.of(context, section: 'Examples'),
+        ...TodoStories.of(context, section: 'Examples'),
       ],
     );
   }
