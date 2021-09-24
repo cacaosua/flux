@@ -1,0 +1,15 @@
+
+type: object
+description: UpdateProfileParameters
+properties:
+  firstName:
+    $ref: ../../components/schemas/.Common.yaml#/FirstName
+  lastName:
+    $ref: ../../components/schemas/.Common.yaml#/LastName
+  userName:
+    $ref: ../../components/schemas/.Common.yaml#/UserName
+  avatarImage:
+    type: MultipartFile
+required:
+  - firstName
+  - lastName

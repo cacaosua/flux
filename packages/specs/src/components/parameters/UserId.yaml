@@ -1,0 +1,7 @@
+
+name: userId
+in: header
+required: true
+schema:
+  type: string
+example: "0ac6ca85-f171-421f-8d65-6c3a0665a841"

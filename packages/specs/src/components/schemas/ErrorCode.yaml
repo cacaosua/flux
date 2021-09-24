@@ -1,0 +1,58 @@
+
+type: integer
+description: ErrorCode
+enum:
+  - -999 # SystemError
+  - -2 # NetworkUnavailable
+  - 1018 # UserAlreadyExists
+  - 1011 # PhoneNumberNotVerified
+  - 1008 # LoginUserNotFound
+  - 1007 # EmailOrPhoneNumberIsRequired
+  # - 1010 # LoginEmailNotVerify
+  - 1024 # UserSuspended
+  - 1025 # UserLoggedInOnAnotherDevice
+  - 40001 # RegisterExistAccount
+  - 1015 # WrongOTP
+  - 1016 # ExpiredOTP
+  - 1001 # RegisterDuplicateUserName
+  - 1002 # RegisterRequiredEmailOrPhone
+  - 1003 # RegisterRequiredLastName
+  - 1004 # RegisterRequiredFirstName
+  - 1010 # EmailNotVerified
+  - 1012 # UserIsBlocked
+  - 1021 # PasswordNotCorrect
+  - 1022 # NewPasswordSameOldPassword
+  - 8000 # UserPurchasedThisTicket
+  - 8001 # LiveStreamHasEnded
+  - -998 # PaypalError
+  - -997 # AdsError
+  - 3001 # Cancel
+  - 88888 # noError
+
+x-enum-varnames:
+  - SystemError
+  - NetworkUnavailable
+  - UserAlreadyExists
+  - PhoneNumberNotVerified
+  - LoginUserNotFound
+  - EmailOrPhoneNumberIsRequired
+  # - LoginEmailNotVerify
+  - UserSuspended
+  - UserLoggedInOnAnotherDevice
+  - RegisterExistAccount
+  - WrongOTP
+  - ExpiredOTP
+  - RegisterDuplicateUserName
+  - RegisterRequiredEmailOrPhone
+  - RegisterRequiredLastName
+  - RegisterRequiredFirstName
+  - EmailNotVerified
+  - UserIsBlocked
+  - PasswordNotCorrect
+  - NewPasswordSameOldPassword
+  - UserPurchasedThisTicket
+  - LiveStreamHasEnded
+  - PaypalError
+  - AdsError
+  - Cancel
+  - noError

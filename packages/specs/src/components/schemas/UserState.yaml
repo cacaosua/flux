@@ -1,0 +1,9 @@
+
+type: string
+description: state of user
+enum:
+  - nonSignedIn
+  - signUp
+  - verifyOtp
+  - signedIn
+  - inHome

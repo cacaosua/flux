@@ -1,0 +1,49 @@
+post:
+  summary: Login Form Encoded
+  operationId: loginFormEncoded
+  description: Info for a specific pet
+  tags:
+    - Auth
+  parameters:
+    - $ref: "../../components/parameters/AppId.yaml"
+  security:
+    - bearerAuth: []
+  # requestBody:
+  #   description: Optional description in *Markdown*
+  #   required: true
+  #   content:
+  #     application/x-www-form-urlencoded:
+  #       schema:
+  #         $ref: ../../components/requestBody/LoginEncodedParameters.yaml
+
+  responses:
+    200:
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Error
+            properties:
+              errorCode:
+                $ref: ../../components/schemas/ErrorCode.yaml
+              access_token:
+                type: string
+              refresh_token:
+                type: string
+                default: ""
+              expires_in:
+                type: integer
+                default: 0
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

@@ -1,0 +1,33 @@
+
+type: string
+description: FSLabel
+enum:
+  - users
+  - UserId
+  - InactiveDevices
+  - DeviceId
+  - devicesLogoutIssue
+  - externalStreamId
+  - errorLiveStream
+  - appConfigs
+  - remoteConfigs
+  - iOSBuildNumberForceUpdate
+  - iOSCurrentBuildNumber
+  - isDisablePhoneLogin
+  - interactions
+  - emoticons
+  - comments
+  - latestComments
+  - id
+  - views
+  - status
+  - isDisabledComment
+  - content
+  - createdAt
+  - user
+  - totalReactions
+  - totalUserChosen
+  - advertisement
+  - avatar
+  - firstName
+  - lastName

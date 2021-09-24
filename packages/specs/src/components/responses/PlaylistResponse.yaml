@@ -1,0 +1,24 @@
+type: object
+description: PlaylistResponseModel
+properties:
+  from:
+    type: integer
+  index:
+    type: integer
+  size:
+    type: integer
+  count:
+    type: integer
+  pages:
+    type: integer
+  # items:
+  #   type: array
+  #   items:
+  #     $ref: ../schemas/PlaylistModel.yaml
+  #   default: []
+  hasPrevious:
+    type: boolean
+    default: false
+  hasNext:
+    type: boolean
+    default: false

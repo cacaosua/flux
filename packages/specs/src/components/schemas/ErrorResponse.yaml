@@ -1,0 +1,16 @@
+type: object
+required:
+  - message
+  - code
+properties:
+  message:
+    type: string
+  code:
+    type: string
+    example:
+      value: API{id}
+      variables:
+        id:
+          type: integer
+          minimum: 100
+          maximum: 999

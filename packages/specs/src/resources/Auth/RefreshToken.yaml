@@ -1,0 +1,28 @@
+post:
+  operationId: refreshToken
+  description: refresh token after a priod
+
+  tags:
+    - Auth
+
+  parameters:
+    - $ref: ../../components/parameters/AppId.yaml
+
+  security:
+    - bearerAuth: []
+
+  requestBody:
+    description: Optional description in *Markdown*
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/requestBody/RefreshTokenParameters.yaml
+
+  responses:
+    200:
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/responses/RefreshTokenResponse.yaml

@@ -1,0 +1,14 @@
+
+
+description: RefreshTokenResponse
+type: object
+properties:
+  errorCode:
+    $ref: ../../components/schemas/ErrorCode.yaml
+    nullable: true
+  errorMessage:
+    $ref: ../../components/schemas/.Common.yaml#/ErrorMessage
+  successful:
+    $ref: ../../components/schemas/.Common.yaml#/Successful
+  result:
+    $ref: ../../components/responses/Credentials.yaml

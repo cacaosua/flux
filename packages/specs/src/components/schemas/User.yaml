@@ -1,0 +1,38 @@
+type: object
+description: User model data
+properties:
+  phoneNumber:
+    $ref: ../../components/schemas/.Common.yaml#/PhoneNumber
+  email:
+    $ref: ../../components/schemas/.Common.yaml#/Email
+  userName:
+    $ref: ../../components/schemas/.Common.yaml#/UserName
+  username:
+    $ref: ../../components/schemas/.Common.yaml#/UserName
+  password:
+    type: string
+  fullName:
+    type: string
+  displayName:
+    type: string
+  firstName:
+    $ref: ../../components/schemas/.Common.yaml#/FirstName
+  lastName:
+    $ref: ../../components/schemas/.Common.yaml#/LastName
+  avatarUrl:
+    type: string
+  avatar:
+    type: string
+  userId:
+    type: string
+  isReceiveNotification:
+    $ref: ../../components/schemas/.Common.yaml#/IsReceiveNotification
+  status:
+    type: string
+    default: ""
+    example: SUSPENDED
+  registerTime:
+    type: string
+    format: date-time
+  providerType:
+    $ref: ./ProviderType.yaml

@@ -1,0 +1,58 @@
+get:
+  operationId: historyPayment
+  summary: Get history payment
+  description: Get history payment
+
+  tags:
+    - Payment
+
+  parameters:
+    - $ref: ../../components/parameters/AppId.yaml
+    - name: page
+      in: query
+      required: true
+      schema:
+        type: integer
+      example: 1
+    - name: pageSize
+      in: query
+      required: true
+      schema:
+        type: integer
+      example: 10
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    default:
+      $ref: ../../components/responses/Error.yaml
+    200:
+      description: Get history payment success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              successful:
+                type: boolean
+                default: false
+              # result:
+              #   $ref: ../../components/schemas/HistoryPaymentModel.yaml
+              errorCode:
+                $ref: ../../components/schemas/ErrorCode.yaml
+              errorMessage:
+                type: string
+                default: ""
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

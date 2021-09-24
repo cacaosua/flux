@@ -1,0 +1,6 @@
+
+name: platform
+in: header
+required: true
+schema:
+  $ref: ../schemas/PlatformParameter.yaml

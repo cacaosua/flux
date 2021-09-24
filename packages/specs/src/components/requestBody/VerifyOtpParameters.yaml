@@ -1,0 +1,28 @@
+
+
+type: object
+description: data
+properties:
+  phoneNumber:
+    type: string
+  email:
+    type: string
+  client_id:
+    $ref: ../../components/schemas/.Common.yaml#/ClientId
+  client_secret:
+    $ref: ../../components/schemas/.Common.yaml#/ClientSecret
+  scope:
+    $ref: ../../components/schemas/.Common.yaml#/Scope
+  device_id:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceId
+  device_type:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceType
+  verifyCode:
+    $ref: ../../components/schemas/.Common.yaml#/VerifyCode
+
+  password:
+    type: string
+
+required: [password, client_id, client_secret, scope]
+
+

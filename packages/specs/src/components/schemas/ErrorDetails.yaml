@@ -1,0 +1,20 @@
+
+ErrorDetails:
+  type: object
+  description: ChannelModel
+  properties:
+    error:
+      $ref: ./ErrorCode.yaml
+  
+AuthenError:
+  allOf:
+    - $ref: '#/ErrorDetails'
+    - type: object
+      properties:
+        unblockAt:
+          type: string
+          format: date-time
+
+PaymentError:
+  allOf:
+    - $ref: '#/ErrorDetails'

@@ -1,0 +1,25 @@
+
+type: object
+description: data
+properties:
+  GrantType:
+    type: string
+    default: external
+    example: external
+  client_id:
+    $ref: ../../components/schemas/.Common.yaml#/ClientId
+  client_secret:
+    $ref: ../../components/schemas/.Common.yaml#/ClientSecret
+  scope:
+    $ref: ../../components/schemas/.Common.yaml#/Scope
+  ExternalToken:
+    type: string
+    description: token from social sign-in service
+  Provider:
+    type: string
+  device_id:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceId
+  device_type:
+    $ref: ../../components/schemas/.Common.yaml#/DeviceType
+
+required: [GrantType, client_id, client_secret, scope, ExternalToken, Provider, device_id, device_type]

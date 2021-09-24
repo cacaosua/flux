@@ -1,0 +1,22 @@
+
+type: object
+description: CreateCommentModel
+properties:
+  id:
+    type: string
+    default: ''
+  videoId:
+    type: string
+    default: ''
+  userId:
+    type: string
+    default: ''
+  commentContent:
+    type: string
+    default: ''
+  editable:
+    type: boolean
+    default: false
+  createdAt:
+    type: string
+    format: date-time

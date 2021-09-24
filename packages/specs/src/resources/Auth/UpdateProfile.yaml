@@ -1,0 +1,35 @@
+post:
+  operationId: updateProfile
+  description: Update Profile
+  tags:
+    - Auth
+
+  parameters:
+    - $ref: ../../components/parameters/AppId.yaml
+
+  security:
+    - bearerAuth: []
+
+  requestBody:
+    description: Optional description in *Markdown*
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          $ref: ../../components/requestBody/UpdateProfileParameters.yaml
+        encoding:
+          avatarImage:
+            # only accept png/jpeg
+            contentType: image/png, image/jpeg
+            headers:
+              X-Rate-Limit-Limit:
+                description: The number of allowed requests in the current period
+                schema:
+                  type: integer
+  responses:
+    "200":
+      description: Expected response to a valid request
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/responses/UpdateProfileResponse.yaml

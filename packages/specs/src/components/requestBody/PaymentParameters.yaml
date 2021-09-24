@@ -1,0 +1,32 @@
+
+type: object
+description: PaymentParameters
+properties:
+  LiveStreamId:
+    type: string
+    default: ''
+  Username:
+    type: string
+    default: ''
+  paymentMethod:
+    type: string
+    default: ''
+  amount:
+    type: number
+    format: double
+    nullable: true
+  paymentMethodNonce:
+    type: string
+    default: ''
+  deviceData:
+    type: string
+    default: ''
+  phoneNumber:
+    type: string
+    default: ''
+  momoToken:
+    type: string
+    default: ''
+required:
+  - LiveStreamId
+  - Username

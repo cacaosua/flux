@@ -1,0 +1,43 @@
+post:
+  operationId: verifyOTP
+  description: Register
+  tags:
+    - Auth
+
+  parameters:
+    - $ref: ../../components/parameters/AppId.yaml
+
+  security:
+    - bearerAuth: []
+
+  requestBody:
+    description: Optional description in *Markdown*
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/requestBody/VerifyOtpParameters.yaml
+
+  responses:
+    200:
+      description: Response Default
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Error
+            properties:
+              errorCode:
+                $ref: ../../components/schemas/ErrorCode.yaml
+                nullable: true
+              errorMessage:
+                type: string
+                nullable: true
+                default: ""
+              result:
+                $ref: ../../components/responses/Credentials.yaml
+              # data:
+              #   type: object
+              #   additionalProperties: true
+              #   nullable: true
+              #   default: {}

@@ -1,0 +1,28 @@
+
+type: object
+description: ChannelResponseModel
+properties:
+  isDisabledComment:
+    type: boolean
+    default: false
+  from:
+    type: integer
+  index:
+    type: integer
+  size:
+    type: integer
+  count:
+    type: integer
+  pages:
+    type: integer
+  items: 
+    type: array
+    items:
+      $ref: ../schemas/CommentModel.yaml
+    default: []
+  hasPrevious:
+    type: boolean
+    default: false
+  hasNext:
+    type: boolean
+    default: false

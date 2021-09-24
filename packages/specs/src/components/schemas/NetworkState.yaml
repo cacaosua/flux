@@ -1,0 +1,16 @@
+
+
+NetworkState:
+  type: string
+  enum:
+    - online
+    - offline
+
+NetworkStateResult:
+  type: object
+  properties:
+    time:
+      type: string
+      format: date-time
+    state:
+      $ref: ../../components/schemas/NetworkState.yaml#/NetworkState

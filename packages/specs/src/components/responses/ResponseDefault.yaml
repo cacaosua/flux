@@ -1,0 +1,21 @@
+
+
+description: Response Default
+content:
+  application/json:
+    schema:
+      type: object
+      description: Error
+      properties:
+        errorCode:
+          $ref: ../schemas/ErrorCode.yaml
+          nullable: true
+        errorMessage:
+          type: string
+          nullable: true
+          default: ''
+        data:
+          type: object
+          additionalProperties: true
+          nullable: true
+          default: {}

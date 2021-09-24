@@ -1,0 +1,30 @@
+
+type: integer
+description: LoadingState
+enum:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+
+x-enum-varnames:
+  - New
+  - Loading
+  - LoadingMore
+  - PullToRefresh
+  - InvalidToken
+  - Finish
+  - Error
+  - Empty
+  - End
+  - UserSuspended
+  - UserHasLoggedInAnotherDevice
+
+default: 0

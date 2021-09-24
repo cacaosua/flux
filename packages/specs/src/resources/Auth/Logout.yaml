@@ -1,0 +1,37 @@
+post:
+  summary: Log out service
+  operationId: logout
+  description: Handle logging out an account
+  tags:
+    - Auth
+  parameters:
+    - $ref: ../../components/parameters/AppId.yaml
+
+  # requestBody:
+  # description: Optional description in *Markdown*
+  # required: true
+  # content:
+  #   application/json:
+  #     schema:
+  #       $ref: ../../components/requestBody/LoginSocialParameters.yaml
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    default:
+      $ref: ../../components/responses/ResponseDefault.yaml
+    200:
+      $ref: ../../components/responses/Error.yaml
+    201:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    400:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    401:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    403:
+      $ref: ../../components/responses/UnauthorizedError.yaml
+    500:
+      $ref: ../../components/responses/UnexpectedError.yaml
+    503:
+      $ref: ../../components/responses/UnexpectedError.yaml

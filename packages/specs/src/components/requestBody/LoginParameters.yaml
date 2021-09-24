@@ -1,0 +1,10 @@
+
+allOf:
+  - $ref: ../../components/requestBody/AuthParameters.yaml
+  - type: object
+    description: data
+    properties:
+      client_id:
+        $ref: ../../components/schemas/.Common.yaml#/ClientId
+        description: used in login account
+    required: [client_id]

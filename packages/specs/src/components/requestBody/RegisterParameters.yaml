@@ -1,0 +1,12 @@
+
+allOf:
+  - $ref: ../../components/requestBody/AuthParameters.yaml
+  - type: object
+    description: data
+    properties:
+      clientId:
+        $ref: ../../components/schemas/.Common.yaml#/ClientId
+        description: used in register account
+    required: [clientId]
+
+

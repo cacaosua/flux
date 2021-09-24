@@ -1,0 +1,25 @@
+
+type: object
+description: UserCommentLiveStreamParameters
+properties: 
+  id:
+    type: string
+    default: ''
+  username:
+    type: string
+    default: ''
+  firstName:
+    type: string
+    default: ''
+  lastName:
+    type: string
+    default: ''
+  avatar:
+    type: string
+    default: ''
+required:
+  - id
+  - username
+  - firstName
+  - lastName
+  - avatar

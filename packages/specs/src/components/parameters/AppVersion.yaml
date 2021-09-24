@@ -1,0 +1,8 @@
+
+name: app-version
+description: AppVersion
+in: header
+required: true
+schema:
+  type: string
+example: '1.3.0'

@@ -1,0 +1,7 @@
+
+type: object
+description: ClientTokenModel
+properties:
+  token:
+    type: string
+    default: ''    
