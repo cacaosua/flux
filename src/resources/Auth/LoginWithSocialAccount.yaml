@@ -5,7 +5,7 @@ post:
   tags:
     - Auth
   parameters:
-    - $ref: ../../components/parameters/header/AppId.yaml
+    - $ref: ../../components/parameters/AppId.yaml
 
   requestBody:
     description: Optional description in *Markdown*
@@ -14,7 +14,7 @@ post:
       application/json:
         schema:
           $ref: ../../components/requestBody/LoginSocialParameters.yaml
-    
+
   security:
     - bearerAuth: []
   responses:
@@ -37,8 +37,8 @@ post:
                 $ref: ../../components/schemas/ErrorCode.yaml
               errorMessage:
                 type: string
-                default: ''
-    
+                default: ""
+
     201:
       $ref: ../../components/responses/UnauthorizedError.yaml
     400:
@@ -51,9 +51,6 @@ post:
       $ref: ../../components/responses/UnexpectedError.yaml
     503:
       $ref: ../../components/responses/UnexpectedError.yaml
-
-
-
 # post:
 #   tags:
 #     - Authentication
@@ -61,8 +58,6 @@ post:
 #   responses:
 #     '200':
 #       description: OK
-
-
 
 # func login(_ params: NSDictionary, completionHandler: @escaping AFRequest.CompletionHandler ) {
 # 	AFRequest.post(endPoint: EndPoints.Auth.Login, params: params, completionHandler: completionHandler)

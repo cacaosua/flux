@@ -6,7 +6,7 @@ post:
     - Auth
 
   parameters:
-    - $ref: ../../components/parameters/header/AppId.yaml
+    - $ref: ../../components/parameters/AppId.yaml
 
   security:
     - bearerAuth: []
@@ -39,8 +39,8 @@ post:
                     properties:
                       unblockAt:
                         type: string
-                        default: ''
-    
+                        default: ""
+
     201:
       $ref: ../../components/responses/UnauthorizedError.yaml
     400:
@@ -53,4 +53,3 @@ post:
       $ref: ../../components/responses/UnexpectedError.yaml
     503:
       $ref: ../../components/responses/UnexpectedError.yaml
-

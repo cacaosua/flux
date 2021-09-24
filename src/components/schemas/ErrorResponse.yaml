@@ -1,8 +1,7 @@
-
 type: object
 required:
-- message
-- code
+  - message
+  - code
 properties:
   message:
     type: string
@@ -15,20 +14,3 @@ properties:
           type: integer
           minimum: 100
           maximum: 999
-enum:
-  - ErrorAws100Response:
-      example: [{
-        code: 'ERROR_AWS_100',
-        message: 'Error Aws 100',
-        parameters: {
-          name: 'nelo'
-        }
-      }]
-  - ErrorAws101Response:
-      example: [{
-        code: 'ERROR_AWS_101',
-        message: 'Error Aws 101',
-        parameters: {
-          name: 'nelo'
-        }
-      }]

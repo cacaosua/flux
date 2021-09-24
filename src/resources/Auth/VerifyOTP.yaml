@@ -5,7 +5,7 @@ post:
     - Auth
 
   parameters:
-    - $ref: ../../components/parameters/header/AppId.yaml
+    - $ref: ../../components/parameters/AppId.yaml
 
   security:
     - bearerAuth: []
@@ -33,7 +33,7 @@ post:
               errorMessage:
                 type: string
                 nullable: true
-                default: ''
+                default: ""
               result:
                 $ref: ../../components/responses/Credentials.yaml
               # data:

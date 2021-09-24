@@ -1,9 +1,0 @@
-type: string
-description: AdSource
-enum:
-  - OVERLAY_INSTANT
-  - OVERLAY_AUTO
-
-x-enum-varnames:
-  - instant
-  - auto

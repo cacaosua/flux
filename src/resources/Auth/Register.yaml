@@ -6,7 +6,7 @@ post:
     - Auth
 
   parameters:
-    - $ref: ../../components/parameters/header/AppId.yaml
+    - $ref: ../../components/parameters/AppId.yaml
 
   security:
     - bearerAuth: []
@@ -40,7 +40,6 @@ post:
     #                   unblockAt:
     #                     type: string
     #                     default: ''
-    
     # 201:
     #   $ref: ../../components/responses/UnauthorizedError.yaml
     # 400:
@@ -53,9 +52,6 @@ post:
     #   $ref: ../../components/responses/UnexpectedError.yaml
     # 503:
     #   $ref: ../../components/responses/UnexpectedError.yaml
-
-
-
 # func login(_ params: NSDictionary, completionHandler: @escaping AFRequest.CompletionHandler ) {
 # 	AFRequest.post(endPoint: EndPoints.Auth.Login, params: params, completionHandler: completionHandler)
 # }

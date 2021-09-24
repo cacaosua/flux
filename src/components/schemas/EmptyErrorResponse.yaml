@@ -1,9 +1,0 @@
-
-
-type: object
-description: EmptyErrorResponse
-
-allOf:
-  - $ref: ./ErrorResponse.yaml
-  - type: object
-    example: []

@@ -1,4 +1,3 @@
-
 post:
   operationId: payment
   summary: Payment
@@ -8,7 +7,7 @@ post:
     - Payment
 
   parameters:
-    - $ref: ../../components/parameters/header/AppId.yaml
+    - $ref: ../../components/parameters/AppId.yaml
 
   security:
     - bearerAuth: []
@@ -34,13 +33,13 @@ post:
               successful:
                 type: boolean
                 default: false
-              result:
-                $ref: ../../components/responses/PaymentResponses.yaml
+              # result:
+              #   $ref: ../../components/responses/PaymentResponses.yaml
               errorCode:
                 $ref: ../../components/schemas/ErrorCode.yaml
               errorMessage:
                 type: string
-                default: ''
+                default: ""
     # 201:
     #   $ref: ../../components/responses/UnauthorizedError.yaml
     # 400:

@@ -5,17 +5,17 @@ post:
   tags:
     - Auth
   parameters:
-    - $ref: "../../components/parameters/header/AppId.yaml"
+    - $ref: "../../components/parameters/AppId.yaml"
   security:
     - bearerAuth: []
-  requestBody:
-    description: Optional description in *Markdown*
-    required: true
-    content:
-      application/x-www-form-urlencoded:
-        schema:
-          $ref: ../../components/requestBody/LoginEncodedParameters.yaml
-          
+  # requestBody:
+  #   description: Optional description in *Markdown*
+  #   required: true
+  #   content:
+  #     application/x-www-form-urlencoded:
+  #       schema:
+  #         $ref: ../../components/requestBody/LoginEncodedParameters.yaml
+
   responses:
     200:
       description: Expected response to a valid request
@@ -31,7 +31,7 @@ post:
                 type: string
               refresh_token:
                 type: string
-                default: ''
+                default: ""
               expires_in:
                 type: integer
                 default: 0
@@ -47,4 +47,3 @@ post:
       $ref: ../../components/responses/UnexpectedError.yaml
     503:
       $ref: ../../components/responses/UnexpectedError.yaml
-

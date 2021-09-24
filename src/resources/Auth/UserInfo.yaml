@@ -6,21 +6,21 @@ get:
   tags:
     - Auth
   parameters:
-    - $ref: ../../components/parameters/header/AppId.yaml
+    - $ref: ../../components/parameters/AppId.yaml
     - name: deviceId
       in: query
       required: true
       schema:
         type: string
-      example: 'deviceId'
-      default: ''
+      example: "deviceId"
+      default: ""
     - name: deviceType
       in: query
       required: true
       schema:
         type: string
-      example: 'deviceType'
-      default: ''
+      example: "deviceType"
+      default: ""
 
   responses:
     default:
@@ -41,7 +41,7 @@ get:
                 $ref: ../../components/schemas/ErrorCode.yaml
               errorMessage:
                 type: string
-                default: ''
+                default: ""
     201:
       $ref: ../../components/responses/UnauthorizedError.yaml
     400:

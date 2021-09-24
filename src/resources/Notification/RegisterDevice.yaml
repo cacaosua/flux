@@ -1,4 +1,3 @@
-
 post:
   operationId: registerDevice
   description: Register device with Cloud message, APNs or FCM
@@ -6,7 +5,7 @@ post:
     - Notification
 
   parameters:
-    - $ref: ../../components/parameters/header/AppId.yaml
+    - $ref: ../../components/parameters/AppId.yaml
 
   security:
     - bearerAuth: []
@@ -20,7 +19,7 @@ post:
           $ref: ../../components/requestBody/RegisterDeviceParameters.yaml
 
   responses:
-    '200':
+    "200":
       description: Expected response to a valid request
       content:
         application/json:

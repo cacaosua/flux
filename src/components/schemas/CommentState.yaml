@@ -1,4 +1,3 @@
-
 type: object
 description: Comment Status
 properties:
@@ -10,11 +9,4 @@ properties:
     default: false
   commentId:
     type: string
-    default: ''
-  initCommentLiveStream:
-    type: boolean
-    default: false
-  addCommentLiveStream:
-    type: boolean
-    default: false
-  
+    default: ""
