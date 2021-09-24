@@ -1,6 +1,6 @@
 openapi: 3.0.0
 servers:
-  - url: 'https://{environment}.netlove.com.vn'
+  - url: "https://{environment}.newapp.com.vn"
     variables:
       environment:
         default: api
@@ -16,7 +16,7 @@ info:
   title: OpenAPI Petstore
   license:
     name: Apache-2.0
-    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
 paths:
   /identity/auth/status:
     post:
@@ -25,7 +25,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -34,9 +34,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoginParameters'
+              $ref: "#/components/schemas/LoginParameters"
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
@@ -44,7 +44,7 @@ paths:
                 type: object
                 properties:
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   data:
                     type: object
                     properties:
@@ -53,21 +53,21 @@ paths:
                         properties:
                           unblockAt:
                             type: string
-                            default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                            default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /connect/token:
     post:
       summary: Login Form Encoded
@@ -76,7 +76,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -85,9 +85,9 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/LoginEncodedParameters'
+              $ref: "#/components/schemas/LoginEncodedParameters"
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
@@ -96,27 +96,27 @@ paths:
                 description: Error
                 properties:
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   access_token:
                     type: string
                   refresh_token:
                     type: string
-                    default: ''
+                    default: ""
                   expires_in:
                     type: integer
                     default: 0
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
   /identity/auth/login/oauth2:
     post:
       summary: Login status
@@ -125,18 +125,18 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       requestBody:
         description: Optional description in *Markdown*
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoginSocialParameters'
+              $ref: "#/components/schemas/LoginSocialParameters"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
@@ -147,27 +147,27 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/Credentials'
+                    $ref: "#/components/schemas/Credentials"
                     nullable: true
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /identity/authenticated/auth/logout:
     post:
       summary: Log out service
@@ -176,26 +176,26 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/Error'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "200":
+          $ref: "#/components/responses/Error"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /identity/auth/register:
     post:
       summary: Register
@@ -204,7 +204,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -213,10 +213,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegisterParameters'
+              $ref: "#/components/schemas/RegisterParameters"
       responses:
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /identity/account/verify:
     post:
       operationId: verifyOTP
@@ -224,7 +224,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -233,9 +233,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/VerifyOtpParameters'
+              $ref: "#/components/schemas/VerifyOtpParameters"
       responses:
-        '200':
+        "200":
           description: Response Default
           content:
             application/json:
@@ -244,14 +244,14 @@ paths:
                 description: Error
                 properties:
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                     nullable: true
                   errorMessage:
                     type: string
                     nullable: true
-                    default: ''
+                    default: ""
                   result:
-                    $ref: '#/components/schemas/Credentials'
+                    $ref: "#/components/schemas/Credentials"
   /identity/account/password/forgot:
     post:
       operationId: forgotPassword
@@ -260,7 +260,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -269,12 +269,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ForgotPasswordParameters'
+              $ref: "#/components/schemas/ForgotPasswordParameters"
       responses:
-        '200':
+        "200":
           description: Forgot Password success
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /identity/account/password/check-recovery-code:
     post:
       operationId: verifyforgotPassword
@@ -283,7 +283,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -292,9 +292,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/VerifyForgotPasswordParameters'
+              $ref: "#/components/schemas/VerifyForgotPasswordParameters"
       responses:
-        '200':
+        "200":
           description: Verify Forgot Password success
           content:
             application/json:
@@ -305,14 +305,14 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/VerifyOtpForgotPasswordResponseModel'
+                    $ref: "#/components/schemas/VerifyOtpForgotPasswordResponseModel"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
+                    default: ""
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /identity/account/password/set-new-password:
     post:
       operationId: changePassword
@@ -321,7 +321,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -330,12 +330,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ChangePasswordParameters'
+              $ref: "#/components/schemas/ChangePasswordParameters"
       responses:
-        '200':
+        "200":
           description: Change Password success
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /identity/account/resend-verify-code:
     post:
       operationId: resentOTP
@@ -344,7 +344,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -353,24 +353,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ResentOtpParameters'
+              $ref: "#/components/schemas/ResentOtpParameters"
       responses:
-        '200':
+        "200":
           description: Get video success
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /identity/auth/refresh-token:
     post:
       operationId: refreshToken
@@ -378,7 +378,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -387,14 +387,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RefreshTokenParameters'
+              $ref: "#/components/schemas/RefreshTokenParameters"
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RefreshTokenResponse'
+                $ref: "#/components/schemas/RefreshTokenResponse"
   /users/users/profile/me:
     get:
       operationId: userInfo
@@ -403,23 +403,23 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: deviceId
           in: query
           required: true
           schema:
             type: string
           example: deviceId
-          default: ''
+          default: ""
         - name: deviceType
           in: query
           required: true
           schema:
             type: string
           example: deviceType
-          default: ''
+          default: ""
       responses:
-        '200':
+        "200":
           description: Get User Info
           content:
             application/json:
@@ -430,26 +430,26 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/User'
+                    $ref: "#/components/schemas/User"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/Error'
+          $ref: "#/components/responses/Error"
   /identity/authenticated/auth/change-password:
     post:
       operationId: profileChangePassword
@@ -458,7 +458,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -467,24 +467,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PasswordParameters'
+              $ref: "#/components/schemas/PasswordParameters"
       responses:
-        '200':
+        "200":
           description: Profile change password success
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/Error'
+          $ref: "#/components/responses/Error"
   /users/users/profile:
     post:
       operationId: updateProfile
@@ -492,7 +492,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -501,22 +501,22 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/UpdateProfileParameters'
+              $ref: "#/components/schemas/UpdateProfileParameters"
             encoding:
               avatarImage:
-                contentType: 'image/png, image/jpeg'
+                contentType: "image/png, image/jpeg"
                 headers:
                   X-Rate-Limit-Limit:
                     description: The number of allowed requests in the current period
                     schema:
                       type: integer
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateProfileResponse'
+                $ref: "#/components/schemas/UpdateProfileResponse"
   /users/users/settings:
     post:
       operationId: updatePNSetting
@@ -524,7 +524,7 @@ paths:
       tags:
         - Auth
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -533,14 +533,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdatePNSettingsParameters'
+              $ref: "#/components/schemas/UpdatePNSettingsParameters"
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdatePNSettingsResponse'
+                $ref: "#/components/schemas/UpdatePNSettingsResponse"
   /video/video/home-screen:
     get:
       operationId: getHomeData
@@ -549,33 +549,33 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/PlaylistModel'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                  $ref: "#/components/schemas/PlaylistModel"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/video/{playlistId}/{videoId}/{videoOrderingCriteria}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/video/{playlistId}/{videoId}/{videoOrderingCriteria}":
     get:
       operationId: getVideoDetail
       summary: Video details
@@ -583,7 +583,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: playlistId
           in: path
           required: true
@@ -600,32 +600,32 @@ paths:
           in: path
           required: true
           schema:
-            $ref: '#/components/schemas/OrderCriteria'
+            $ref: "#/components/schemas/OrderCriteria"
           example: 1
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get video success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VideoModel'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                $ref: "#/components/schemas/VideoModel"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/emotion/{videoId}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/emotion/{videoId}":
     post:
       operationId: emotion
       summary: Emotion
@@ -633,7 +633,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: videoId
           in: path
           required: true
@@ -651,22 +651,22 @@ paths:
               type: boolean
               default: false
       responses:
-        '200':
+        "200":
           description: Emotion success
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /video/channel/landing/200/1:
     get:
       operationId: getChannel
@@ -675,31 +675,31 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get channel landing success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChannelResponse'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                $ref: "#/components/schemas/ChannelResponse"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/channel/landing/{channelId}/200/1':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/channel/landing/{channelId}/200/1":
     get:
       operationId: getChannelPlayListDetails
       summary: Get Channel Playlist Details
@@ -707,7 +707,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: channelId
           in: path
           required: true
@@ -717,27 +717,27 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get channel playlist success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PlaylistResponse'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                $ref: "#/components/schemas/PlaylistResponse"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/playlists/{playlistId}?sortBy={videoOrderingCriteria}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/playlists/{playlistId}?sortBy={videoOrderingCriteria}":
     get:
       operationId: getPlayListVideo
       summary: Get play list video
@@ -745,7 +745,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: playlistId
           in: path
           required: true
@@ -756,12 +756,12 @@ paths:
           in: path
           required: true
           schema:
-            $ref: '#/components/schemas/OrderCriteria'
+            $ref: "#/components/schemas/OrderCriteria"
           example: 1
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get play list video success
           content:
             application/json:
@@ -774,28 +774,28 @@ paths:
                   result:
                     type: array
                     items:
-                      $ref: '#/components/schemas/VideoModel'
+                      $ref: "#/components/schemas/VideoModel"
                     default: []
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/comment/{videoId}/{pageSize}/{pageNumber}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/comment/{videoId}/{pageSize}/{pageNumber}":
     get:
       operationId: getVideoComment
       summary: Get Video Comment
@@ -803,7 +803,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: videoId
           in: path
           required: true
@@ -825,26 +825,26 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get Video Comment success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CommentResponse'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                $ref: "#/components/schemas/CommentResponse"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /video/comment:
     post:
       operationId: createComment
@@ -853,7 +853,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -862,9 +862,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateCommentParameters'
+              $ref: "#/components/schemas/CreateCommentParameters"
       responses:
-        '200':
+        "200":
           description: Create Comment success
           content:
             application/json:
@@ -875,27 +875,27 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/CreateCommentModel'
+                    $ref: "#/components/schemas/CreateCommentModel"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/comment/{updateId}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/comment/{updateId}":
     put:
       operationId: updateComment
       summary: Update Comment
@@ -903,7 +903,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: updateId
           in: path
           required: true
@@ -918,25 +918,25 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateCommentParameters'
+              $ref: "#/components/schemas/UpdateCommentParameters"
       responses:
-        '200':
+        "200":
           description: Update Comment success
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/comment/{deleteId}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/comment/{deleteId}":
     delete:
       operationId: deleteComment
       summary: Delete Comment
@@ -944,7 +944,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: deleteId
           in: path
           required: true
@@ -954,22 +954,22 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Delete Comment success
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /video/video/delete-video-saved:
     post:
       operationId: deleteVideoSaved
@@ -978,26 +978,26 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Delete video saved success
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /video/video/list-saved/100/1:
     get:
       operationId: getSaveVideo
@@ -1006,11 +1006,11 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get save video success
           content:
             application/json:
@@ -1021,26 +1021,26 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/SettingLoadMoreModel'
+                    $ref: "#/components/schemas/SettingLoadMoreModel"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/Error'
+          $ref: "#/components/responses/Error"
   /video/video/unsaved:
     post:
       operationId: unSaveVideo
@@ -1049,7 +1049,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -1058,9 +1058,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SaveVideoParameters'
+              $ref: "#/components/schemas/SaveVideoParameters"
       responses:
-        '200':
+        "200":
           description: Remove save video success
           content:
             application/json:
@@ -1073,24 +1073,24 @@ paths:
                   result:
                     type: object
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /video/video/saved:
     post:
       operationId: saveVideo
@@ -1099,7 +1099,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -1108,9 +1108,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SaveVideoParameters'
+              $ref: "#/components/schemas/SaveVideoParameters"
       responses:
-        '200':
+        "200":
           description: Save video success
           content:
             application/json:
@@ -1123,24 +1123,24 @@ paths:
                   result:
                     type: object
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /video/video/histories:
     get:
       operationId: history
@@ -1149,7 +1149,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: pageSize
           in: query
           required: true
@@ -1165,7 +1165,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get history video
           content:
             application/json:
@@ -1176,26 +1176,26 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/SettingLoadMoreModel'
+                    $ref: "#/components/schemas/SettingLoadMoreModel"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
   /video/video/histories/clear-all:
     delete:
       operationId: deleteVideoHistory
@@ -1204,11 +1204,11 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Delete history success
           content:
             application/json:
@@ -1221,25 +1221,25 @@ paths:
                   result:
                     type: object
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/video/mobile/{pageSize}/{pageNumber}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/video/mobile/{pageSize}/{pageNumber}":
     get:
       operationId: search
       summary: Search data
@@ -1247,7 +1247,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: pageSize
           in: path
           required: true
@@ -1269,7 +1269,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get video success
           content:
             application/json:
@@ -1298,7 +1298,7 @@ paths:
                       items:
                         type: array
                         items:
-                          $ref: '#/components/schemas/VideoModel'
+                          $ref: "#/components/schemas/VideoModel"
                       hasPrevious:
                         type: boolean
                         default: false
@@ -1307,21 +1307,21 @@ paths:
                         type: boolean
                         default: false
                         example: false
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/video/mobile/suggestion/{pageSize}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/video/mobile/suggestion/{pageSize}":
     get:
       operationId: searchVideoAutoCompleted
       summary: Search video auto completed data
@@ -1329,7 +1329,7 @@ paths:
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: pageSize
           in: path
           required: true
@@ -1345,7 +1345,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Search video auto completed data success
           content:
             application/json:
@@ -1360,29 +1360,29 @@ paths:
                     items:
                       type: string
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
+                    default: ""
         default:
-          $ref: '#/components/responses/ResponseDefault'
-  '/video/contents/{screenCover}':
+          $ref: "#/components/responses/ResponseDefault"
+  "/video/contents/{screenCover}":
     get:
       operationId: getScreenCover
       description: Get screen cover
       tags:
         - Video
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: screenCover
           in: path
           required: true
           schema:
-            $ref: '#/components/schemas/ScreenCover'
+            $ref: "#/components/schemas/ScreenCover"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           content:
             application/json:
               schema:
@@ -1392,23 +1392,23 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/CoverModel'
+                    $ref: "#/components/schemas/CoverModel"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
-                    $ref: '#/components/schemas/ErrorMessage'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    $ref: "#/components/schemas/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
   /payment/transactions/me:
     get:
       operationId: historyPayment
@@ -1417,7 +1417,7 @@ paths:
       tags:
         - Payment
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: page
           in: query
           required: true
@@ -1433,7 +1433,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get history payment success
           content:
             application/json:
@@ -1444,26 +1444,26 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/HistoryPaymentModel'
+                    $ref: "#/components/schemas/HistoryPaymentModel"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/Error'
+          $ref: "#/components/responses/Error"
   /payment/tickets:
     post:
       operationId: payment
@@ -1472,7 +1472,7 @@ paths:
       tags:
         - Payment
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -1481,9 +1481,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PaymentParameters'
+              $ref: "#/components/schemas/PaymentParameters"
       responses:
-        '200':
+        "200":
           description: Payment success
           content:
             application/json:
@@ -1494,14 +1494,14 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/PaymentResponses'
+                    $ref: "#/components/schemas/PaymentResponses"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
+                    default: ""
         default:
-          $ref: '#/components/responses/Error'
+          $ref: "#/components/responses/Error"
   /payment/currencies/convert:
     get:
       operationId: conversionRate
@@ -1510,7 +1510,7 @@ paths:
       tags:
         - Payment
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: amount
           in: query
           required: true
@@ -1520,7 +1520,7 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Conversion rate success
           content:
             application/json:
@@ -1531,14 +1531,14 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/ConvertionRateResponse'
+                    $ref: "#/components/schemas/ConvertionRateResponse"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
+                    default: ""
         default:
-          $ref: '#/components/responses/Error'
+          $ref: "#/components/responses/Error"
   /payment/tokens/braintree:
     get:
       operationId: getClientToken
@@ -1547,11 +1547,11 @@ paths:
       tags:
         - Payment
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get Client Token success
           content:
             application/json:
@@ -1562,14 +1562,14 @@ paths:
                     type: boolean
                     default: false
                   result:
-                    $ref: '#/components/schemas/ClientToken'
+                    $ref: "#/components/schemas/ClientToken"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
+                    default: ""
         default:
-          $ref: '#/components/responses/Error'
+          $ref: "#/components/responses/Error"
   /live-stream/schedules:
     get:
       operationId: getLiveStreamSchedules
@@ -1577,38 +1577,38 @@ paths:
       tags:
         - LiveStream
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get livestream schedules successful
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/VideoModel'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
-  '/live-stream/schedules/{liveStreamId}':
+                  $ref: "#/components/schemas/VideoModel"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
+  "/live-stream/schedules/{liveStreamId}":
     get:
       operationId: livestream
       description: Get live stream details
       tags:
         - LiveStream
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: liveStreamId
           in: path
           required: true
@@ -1623,12 +1623,12 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get livestream schedules successful
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LiveStreamModel'
+                $ref: "#/components/schemas/LiveStreamModel"
   /interaction/views:
     post:
       operationId: joinLiveStream
@@ -1636,7 +1636,7 @@ paths:
       tags:
         - LiveStream
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -1647,9 +1647,9 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/JoinLiveStreamParameters'
+                $ref: "#/components/schemas/JoinLiveStreamParameters"
       responses:
-        '200':
+        "200":
           description: Join live stream successful
   /interaction/emoticons:
     post:
@@ -1658,7 +1658,7 @@ paths:
       tags:
         - LiveStream
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -1669,9 +1669,9 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/PostEmotion'
+                $ref: "#/components/schemas/PostEmotion"
       responses:
-        '200':
+        "200":
           description: Post emoticons successful
   /interaction/comments:
     post:
@@ -1680,7 +1680,7 @@ paths:
       tags:
         - LiveStream
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -1691,9 +1691,9 @@ paths:
             schema:
               type: array
               items:
-                $ref: '#/components/schemas/CreateCommentLiveStreamParameters'
+                $ref: "#/components/schemas/CreateCommentLiveStreamParameters"
       responses:
-        '200':
+        "200":
           description: Comment Live Stream successful
           content:
             application/json:
@@ -1706,20 +1706,20 @@ paths:
                   result:
                     type: array
                     items:
-                      $ref: '#/components/schemas/CommentLiveStreamResponse'
+                      $ref: "#/components/schemas/CommentLiveStreamResponse"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
+                    default: ""
   /notification/notification/register-device:
     post:
       operationId: registerDevice
-      description: 'Register device with Cloud message, APNs or FCM'
+      description: "Register device with Cloud message, APNs or FCM"
       tags:
         - Notification
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       requestBody:
@@ -1728,22 +1728,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegisterDeviceParameters'
+              $ref: "#/components/schemas/RegisterDeviceParameters"
       responses:
-        '200':
+        "200":
           description: Expected response to a valid request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RegisterDeviceResponse'
+                $ref: "#/components/schemas/RegisterDeviceResponse"
   /ads/advertisements/active:
     get:
       operationId: getAds
-      description: 'Get Abs for home, channels and search'
+      description: "Get Abs for home, channels and search"
       tags:
         - Advertisement
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
         - name: orderBy
           in: query
           schema:
@@ -1760,17 +1760,17 @@ paths:
           in: query
           required: true
           schema:
-            $ref: '#/components/schemas/AdsScreen'
+            $ref: "#/components/schemas/AdsScreen"
           default: HOME
         - name: platform
           in: query
           required: true
           schema:
-            $ref: '#/components/schemas/DevicePlatform'
+            $ref: "#/components/schemas/DevicePlatform"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get User Info
           content:
             application/json:
@@ -1783,23 +1783,23 @@ paths:
                   result:
                     type: array
                     items:
-                      $ref: '#/components/schemas/AdsModel'
+                      $ref: "#/components/schemas/AdsModel"
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
-                    $ref: '#/components/schemas/ErrorMessage'
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    $ref: "#/components/schemas/ErrorMessage"
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
   /survey/programs/active:
     get:
       operationId: getProgram
@@ -1808,11 +1808,11 @@ paths:
       tags:
         - Survey
       parameters:
-        - $ref: '#/components/parameters/AppId'
+        - $ref: "#/components/parameters/AppId"
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Get Program success
           content:
             application/json:
@@ -1825,137 +1825,137 @@ paths:
                   result:
                     type: array
                     items:
-                      $ref: '#/components/schemas/SurveyModel'
+                      $ref: "#/components/schemas/SurveyModel"
                     default: []
                   errorCode:
-                    $ref: '#/components/schemas/ErrorCode'
+                    $ref: "#/components/schemas/ErrorCode"
                   errorMessage:
                     type: string
-                    default: ''
-        '201':
-          $ref: '#/components/responses/UnauthorizedError'
-        '400':
-          $ref: '#/components/responses/UnauthorizedError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '403':
-          $ref: '#/components/responses/UnauthorizedError'
-        '500':
-          $ref: '#/components/responses/UnexpectedError'
-        '503':
-          $ref: '#/components/responses/UnexpectedError'
+                    default: ""
+        "201":
+          $ref: "#/components/responses/UnauthorizedError"
+        "400":
+          $ref: "#/components/responses/UnauthorizedError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "403":
+          $ref: "#/components/responses/UnauthorizedError"
+        "500":
+          $ref: "#/components/responses/UnexpectedError"
+        "503":
+          $ref: "#/components/responses/UnexpectedError"
         default:
-          $ref: '#/components/responses/ResponseDefault'
+          $ref: "#/components/responses/ResponseDefault"
 components:
   schemas:
     AuthenError-ref:
-      $ref: '#/components/schemas/AuthenError'
+      $ref: "#/components/schemas/AuthenError"
     AdSource-ref:
-      $ref: '#/components/schemas/AdSource'
+      $ref: "#/components/schemas/AdSource"
     AdsScreen-ref:
-      $ref: '#/components/schemas/AdsScreen'
+      $ref: "#/components/schemas/AdsScreen"
     AppsFlyerEvent-ref:
-      $ref: '#/components/schemas/AppsFlyerEvent'
+      $ref: "#/components/schemas/AppsFlyerEvent"
     AppsFlyerEventParameters-ref:
-      $ref: '#/components/schemas/AppsFlyerEventParameters'
+      $ref: "#/components/schemas/AppsFlyerEventParameters"
     AppUpdateStatus-ref:
-      $ref: '#/components/schemas/AppUpdateStatus'
+      $ref: "#/components/schemas/AppUpdateStatus"
     ChannelModel-ref:
-      $ref: '#/components/schemas/ChannelModel'
+      $ref: "#/components/schemas/ChannelModel"
     ChannelRenderType-ref:
-      $ref: '#/components/schemas/ChannelRenderType'
+      $ref: "#/components/schemas/ChannelRenderType"
     CommentModel-ref:
-      $ref: '#/components/schemas/CommentModel'
+      $ref: "#/components/schemas/CommentModel"
     CoverModel-ref:
-      $ref: '#/components/schemas/CoverModel'
+      $ref: "#/components/schemas/CoverModel"
     DeepLink-ref:
-      $ref: '#/components/schemas/DeepLink'
+      $ref: "#/components/schemas/DeepLink"
     DeepLinkResult-ref:
-      $ref: '#/components/schemas/DeepLinkResult'
+      $ref: "#/components/schemas/DeepLinkResult"
     DeepLinkResultPayloadDeeplink-ref:
-      $ref: '#/components/schemas/DeepLinkResultPayloadDeeplink'
+      $ref: "#/components/schemas/DeepLinkResultPayloadDeeplink"
     DeepLinkStatus-ref:
-      $ref: '#/components/schemas/DeepLinkStatus'
+      $ref: "#/components/schemas/DeepLinkStatus"
     EmailCredentials-ref:
-      $ref: '#/components/schemas/EmailCredentials'
+      $ref: "#/components/schemas/EmailCredentials"
     EmptyErrorResponse-ref:
-      $ref: '#/components/schemas/EmptyErrorResponse'
+      $ref: "#/components/schemas/EmptyErrorResponse"
     ErrorCode-ref:
-      $ref: '#/components/schemas/ErrorCode'
+      $ref: "#/components/schemas/ErrorCode"
     ErrorResponse-ref:
-      $ref: '#/components/schemas/ErrorResponse'
+      $ref: "#/components/schemas/ErrorResponse"
     ExpandingState-ref:
-      $ref: '#/components/schemas/ExpandingState'
+      $ref: "#/components/schemas/ExpandingState"
     ExternalProvider-ref:
-      $ref: '#/components/schemas/ExternalProvider'
+      $ref: "#/components/schemas/ExternalProvider"
     FBSRemoteConfigs-ref:
-      $ref: '#/components/schemas/FBSRemoteConfigs'
+      $ref: "#/components/schemas/FBSRemoteConfigs"
     FSLabel-ref:
-      $ref: '#/components/schemas/FSLabel'
+      $ref: "#/components/schemas/FSLabel"
     HomeContent-ref:
-      $ref: '#/components/schemas/HomeContent'
+      $ref: "#/components/schemas/HomeContent"
     Keys-ref:
-      $ref: '#/components/schemas/Keys'
+      $ref: "#/components/schemas/Keys"
     LiveStreamStatus-ref:
-      $ref: '#/components/schemas/LiveStreamStatus'
+      $ref: "#/components/schemas/LiveStreamStatus"
     LiveStreamState-ref:
-      $ref: '#/components/schemas/LiveStreamState'
+      $ref: "#/components/schemas/LiveStreamState"
     LiveStreamBanner-ref:
-      $ref: '#/components/schemas/LiveStreamBanner'
+      $ref: "#/components/schemas/LiveStreamBanner"
     LoadingState-ref:
-      $ref: '#/components/schemas/LoadingState'
+      $ref: "#/components/schemas/LoadingState"
     MobileCredentials-ref:
-      $ref: '#/components/schemas/MobileCredentials'
+      $ref: "#/components/schemas/MobileCredentials"
     MomoPaymentParam-ref:
-      $ref: '#/components/schemas/MomoPaymentParam'
+      $ref: "#/components/schemas/MomoPaymentParam"
     NotificationName-ref:
-      $ref: '#/components/schemas/NotificationName'
+      $ref: "#/components/schemas/NotificationName"
     NetworkStateResult-ref:
-      $ref: '#/components/schemas/NetworkStateResult'
+      $ref: "#/components/schemas/NetworkStateResult"
     OrderCriteria-ref:
-      $ref: '#/components/schemas/OrderCriteria'
+      $ref: "#/components/schemas/OrderCriteria"
     PaymentModel-ref:
-      $ref: '#/components/schemas/PaymentModel'
+      $ref: "#/components/schemas/PaymentModel"
     PlatformParameter-ref:
-      $ref: '#/components/schemas/PlatformParameter'
+      $ref: "#/components/schemas/PlatformParameter"
     PlaylistModel-ref:
-      $ref: '#/components/schemas/PlaylistModel'
+      $ref: "#/components/schemas/PlaylistModel"
     PlaylistRenderType-ref:
-      $ref: '#/components/schemas/PlaylistRenderType'
+      $ref: "#/components/schemas/PlaylistRenderType"
     ProviderType-ref:
-      $ref: '#/components/schemas/ProviderType'
+      $ref: "#/components/schemas/ProviderType"
     StatusCode-ref:
-      $ref: '#/components/schemas/StatusCode'
+      $ref: "#/components/schemas/StatusCode"
     TransactionModel-ref:
-      $ref: '#/components/schemas/TransactionModel'
+      $ref: "#/components/schemas/TransactionModel"
     ThumbnailVariant-ref:
-      $ref: '#/components/schemas/ThumbnailVariant'
+      $ref: "#/components/schemas/ThumbnailVariant"
     User-ref:
-      $ref: '#/components/schemas/User'
+      $ref: "#/components/schemas/User"
     UserState-ref:
-      $ref: '#/components/schemas/UserState'
+      $ref: "#/components/schemas/UserState"
     VideoModal-ref:
-      $ref: '#/components/schemas/VideoModel'
+      $ref: "#/components/schemas/VideoModel"
     VideoParamsModel-ref:
-      $ref: '#/components/schemas/VideoParamsModel'
+      $ref: "#/components/schemas/VideoParamsModel"
     ChannelListDetails-ref:
-      $ref: '#/components/schemas/ChannelListDetails'
+      $ref: "#/components/schemas/ChannelListDetails"
     PaymentError-ref:
-      $ref: '#/components/schemas/PaymentError'
+      $ref: "#/components/schemas/PaymentError"
     PaypalParameter-ref:
-      $ref: '#/components/schemas/PaypalParameter'
+      $ref: "#/components/schemas/PaypalParameter"
     MoMoParameters-ref:
-      $ref: '#/components/schemas/MoMoParameters'
+      $ref: "#/components/schemas/MoMoParameters"
     CommentState-ref:
-      $ref: '#/components/schemas/CommentState'
+      $ref: "#/components/schemas/CommentState"
     GetLiveStreamStatus-ref:
-      $ref: '#/components/schemas/GetLiveStreamStatus'
+      $ref: "#/components/schemas/GetLiveStreamStatus"
     CommentLiveStreamModel-ref:
-      $ref: '#/components/schemas/CommentLiveStreamModel'
+      $ref: "#/components/schemas/CommentLiveStreamModel"
     LiveStreamFireStoreParameters-ref:
-      $ref: '#/components/schemas/LiveStreamFireStoreParameters'
+      $ref: "#/components/schemas/LiveStreamFireStoreParameters"
     PostEmotion-ref:
-      $ref: '#/components/schemas/PostEmotion'
+      $ref: "#/components/schemas/PostEmotion"
     AuthParameters:
       type: object
       description: data
@@ -1980,12 +1980,12 @@ components:
       example: mobile
     LoginParameters:
       allOf:
-        - $ref: '#/components/schemas/AuthParameters'
+        - $ref: "#/components/schemas/AuthParameters"
         - type: object
           description: data
           properties:
             client_id:
-              $ref: '#/components/schemas/ClientId'
+              $ref: "#/components/schemas/ClientId"
               description: used in login account
           required:
             - client_id
@@ -2075,22 +2075,22 @@ components:
         username:
           type: string
           example:
-            - 'netlove-${email}'
-            - 'netlove-${phoneNumber}'
+            - "newapp-${email}"
+            - "newapp-${phoneNumber}"
         password:
           type: string
         client_id:
-          $ref: '#/components/schemas/ClientId'
+          $ref: "#/components/schemas/ClientId"
         client_secret:
-          $ref: '#/components/schemas/ClientSecret'
+          $ref: "#/components/schemas/ClientSecret"
         scope:
-          $ref: '#/components/schemas/Scope'
+          $ref: "#/components/schemas/Scope"
         grant_type:
-          $ref: '#/components/schemas/GrantType'
+          $ref: "#/components/schemas/GrantType"
         device_id:
-          $ref: '#/components/schemas/DeviceId'
+          $ref: "#/components/schemas/DeviceId"
         device_type:
-          $ref: '#/components/schemas/DeviceType'
+          $ref: "#/components/schemas/DeviceType"
       required:
         - username
         - password
@@ -2111,20 +2111,20 @@ components:
           default: external
           example: external
         client_id:
-          $ref: '#/components/schemas/ClientId'
+          $ref: "#/components/schemas/ClientId"
         client_secret:
-          $ref: '#/components/schemas/ClientSecret'
+          $ref: "#/components/schemas/ClientSecret"
         scope:
-          $ref: '#/components/schemas/Scope'
+          $ref: "#/components/schemas/Scope"
         ExternalToken:
           type: string
           description: token from social sign-in service
         Provider:
           type: string
         device_id:
-          $ref: '#/components/schemas/DeviceId'
+          $ref: "#/components/schemas/DeviceId"
         device_type:
-          $ref: '#/components/schemas/DeviceType'
+          $ref: "#/components/schemas/DeviceType"
       required:
         - GrantType
         - client_id
@@ -2140,10 +2140,10 @@ components:
       properties:
         access_token:
           type: string
-          default: ''
+          default: ""
         refresh_token:
           type: string
-          default: ''
+          default: ""
         expires_in:
           type: integer
           default: 0
@@ -2153,23 +2153,23 @@ components:
           default: now
         token_type:
           type: string
-          default: ''
+          default: ""
           example: Bearer
         scope:
           type: string
-          default: ''
+          default: ""
           example: offline_access openid
         unblockAt:
           type: string
           format: date-time
     RegisterParameters:
       allOf:
-        - $ref: '#/components/schemas/AuthParameters'
+        - $ref: "#/components/schemas/AuthParameters"
         - type: object
           description: data
           properties:
             clientId:
-              $ref: '#/components/schemas/ClientId'
+              $ref: "#/components/schemas/ClientId"
               description: used in register account
           required:
             - clientId
@@ -2184,17 +2184,17 @@ components:
         email:
           type: string
         client_id:
-          $ref: '#/components/schemas/ClientId'
+          $ref: "#/components/schemas/ClientId"
         client_secret:
-          $ref: '#/components/schemas/ClientSecret'
+          $ref: "#/components/schemas/ClientSecret"
         scope:
-          $ref: '#/components/schemas/Scope'
+          $ref: "#/components/schemas/Scope"
         device_id:
-          $ref: '#/components/schemas/DeviceId'
+          $ref: "#/components/schemas/DeviceId"
         device_type:
-          $ref: '#/components/schemas/DeviceType'
+          $ref: "#/components/schemas/DeviceType"
         verifyCode:
-          $ref: '#/components/schemas/VerifyCode'
+          $ref: "#/components/schemas/VerifyCode"
         password:
           type: string
       required:
@@ -2206,7 +2206,7 @@ components:
       type: object
       properties:
         client_id:
-          $ref: '#/components/schemas/ClientId'
+          $ref: "#/components/schemas/ClientId"
         phoneNumber:
           type: string
         email:
@@ -2234,11 +2234,11 @@ components:
         confirmPassword:
           type: string
         client_id:
-          $ref: '#/components/schemas/ClientId'
+          $ref: "#/components/schemas/ClientId"
         client_secret:
-          $ref: '#/components/schemas/ClientSecret'
+          $ref: "#/components/schemas/ClientSecret"
         scope:
-          $ref: '#/components/schemas/Scope'
+          $ref: "#/components/schemas/Scope"
         token:
           type: string
     ResentOtpParameters:
@@ -2251,19 +2251,19 @@ components:
     RefreshToken:
       type: string
       format: uuid
-      default: ''
+      default: ""
     RefreshTokenParameters:
       type: object
       description: RefreshTokenParameters
       properties:
         client_id:
-          $ref: '#/components/schemas/ClientId'
+          $ref: "#/components/schemas/ClientId"
         client_secret:
-          $ref: '#/components/schemas/ClientSecret'
+          $ref: "#/components/schemas/ClientSecret"
         scope:
-          $ref: '#/components/schemas/Scope'
+          $ref: "#/components/schemas/Scope"
         refresh_token:
-          $ref: '#/components/schemas/RefreshToken'
+          $ref: "#/components/schemas/RefreshToken"
       required:
         - client_id
         - client_secret
@@ -2272,7 +2272,7 @@ components:
     ErrorMessage:
       name: errorMessage
       type: string
-      default: ''
+      default: ""
     Successful:
       name: successful
       type: boolean
@@ -2282,32 +2282,32 @@ components:
       type: object
       properties:
         errorCode:
-          $ref: '#/components/schemas/ErrorCode'
+          $ref: "#/components/schemas/ErrorCode"
           nullable: true
         errorMessage:
-          $ref: '#/components/schemas/ErrorMessage'
+          $ref: "#/components/schemas/ErrorMessage"
         successful:
-          $ref: '#/components/schemas/Successful'
+          $ref: "#/components/schemas/Successful"
         result:
-          $ref: '#/components/schemas/Credentials'
+          $ref: "#/components/schemas/Credentials"
     PhoneNumber:
       type: string
-      default: ''
+      default: ""
     Email:
       type: string
-      default: ''
+      default: ""
     UserName:
       name: userName
       type: string
-      default: ''
+      default: ""
     FirstName:
       name: firstName
       type: string
-      default: ''
+      default: ""
     LastName:
       name: lastName
       type: string
-      default: ''
+      default: ""
     IsReceiveNotification:
       type: boolean
       default: false
@@ -2324,13 +2324,13 @@ components:
       description: User model data
       properties:
         phoneNumber:
-          $ref: '#/components/schemas/PhoneNumber'
+          $ref: "#/components/schemas/PhoneNumber"
         email:
-          $ref: '#/components/schemas/Email'
+          $ref: "#/components/schemas/Email"
         userName:
-          $ref: '#/components/schemas/UserName'
+          $ref: "#/components/schemas/UserName"
         username:
-          $ref: '#/components/schemas/UserName'
+          $ref: "#/components/schemas/UserName"
         password:
           type: string
         fullName:
@@ -2338,9 +2338,9 @@ components:
         displayName:
           type: string
         firstName:
-          $ref: '#/components/schemas/FirstName'
+          $ref: "#/components/schemas/FirstName"
         lastName:
-          $ref: '#/components/schemas/LastName'
+          $ref: "#/components/schemas/LastName"
         avatarUrl:
           type: string
         avatar:
@@ -2348,25 +2348,25 @@ components:
         userId:
           type: string
         isReceiveNotification:
-          $ref: '#/components/schemas/IsReceiveNotification'
+          $ref: "#/components/schemas/IsReceiveNotification"
         status:
           type: string
-          default: ''
-          example: NETLOVE_SUSPENDED
+          default: ""
+          example: SUSPENDED
         registerTime:
           type: string
           format: date-time
         providerType:
-          $ref: '#/components/schemas/ProviderType'
+          $ref: "#/components/schemas/ProviderType"
     PasswordParameters:
       type: object
       properties:
         oldPassword:
           type: string
-          default: ''
+          default: ""
         newPassword:
           type: string
-          default: ''
+          default: ""
       required:
         - oldPassword
         - newPassword
@@ -2375,11 +2375,11 @@ components:
       description: UpdateProfileParameters
       properties:
         firstName:
-          $ref: '#/components/schemas/FirstName'
+          $ref: "#/components/schemas/FirstName"
         lastName:
-          $ref: '#/components/schemas/LastName'
+          $ref: "#/components/schemas/LastName"
         userName:
-          $ref: '#/components/schemas/UserName'
+          $ref: "#/components/schemas/UserName"
         avatarImage:
           type: MultipartFile
       required:
@@ -2390,20 +2390,20 @@ components:
       description: UpdateProfileResponse
       properties:
         errorCode:
-          $ref: '#/components/schemas/ErrorCode'
+          $ref: "#/components/schemas/ErrorCode"
           nullable: true
         errorMessage:
-          $ref: '#/components/schemas/ErrorMessage'
+          $ref: "#/components/schemas/ErrorMessage"
         result:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
         successful:
-          $ref: '#/components/schemas/Successful'
+          $ref: "#/components/schemas/Successful"
     UpdatePNSettingsParameters:
       type: object
       description: UpdatePNSettingsParameters
       properties:
         isReceiveNotification:
-          $ref: '#/components/schemas/IsReceiveNotification'
+          $ref: "#/components/schemas/IsReceiveNotification"
       required:
         - isReceiveNotification
     UpdatePNSettingsResponse:
@@ -2411,11 +2411,11 @@ components:
       description: UpdatePNSettingsResponse
       properties:
         errorCode:
-          $ref: '#/components/schemas/ErrorCode'
+          $ref: "#/components/schemas/ErrorCode"
           nullable: true
         errorMessage:
-          $ref: '#/components/schemas/ErrorMessage'
-          default: ''
+          $ref: "#/components/schemas/ErrorMessage"
+          default: ""
         result:
           type: object
           properties:
@@ -2423,7 +2423,7 @@ components:
               type: string
               format: uuid
             isReceiveNotification:
-              $ref: '#/components/schemas/IsReceiveNotification'
+              $ref: "#/components/schemas/IsReceiveNotification"
     ContentType:
       type: integer
       description: ContentType
@@ -2457,7 +2457,7 @@ components:
         - 3
         - 4
       x-enum-varnames:
-        - NetLoveLive
+        - Live
         - Upcoming
         - Unpublish
         - Completed
@@ -2483,16 +2483,16 @@ components:
             type: string
         thumbnailSeleted:
           type: string
-          default: ''
+          default: ""
         trailerUrl:
           type: string
         liveStreamUrl:
           type: string
         status:
-          $ref: '#/components/schemas/LiveStreamStatus'
+          $ref: "#/components/schemas/LiveStreamStatus"
         linkShare:
           type: string
-          default: ''
+          default: ""
         secretKey:
           type: string
         url:
@@ -2504,7 +2504,7 @@ components:
           default: 0
         playlistId:
           type: string
-          default: '0'
+          default: "0"
         playlistName:
           type: string
         createdAt:
@@ -2522,7 +2522,7 @@ components:
         relatedVideos:
           type: array
           items:
-            $ref: '#/components/schemas/VideoModel'
+            $ref: "#/components/schemas/VideoModel"
         totalEmotions:
           type: integer
           default: 0
@@ -2531,7 +2531,7 @@ components:
           default: 0
         videoOrderingCriteria:
           default: 3
-          $ref: '#/components/schemas/OrderCriteria'
+          $ref: "#/components/schemas/OrderCriteria"
         isDropHeart:
           type: boolean
           default: false
@@ -2548,7 +2548,7 @@ components:
         comments:
           type: array
           items:
-            $ref: '#/components/schemas/CommentModel'
+            $ref: "#/components/schemas/CommentModel"
           default: []
         numberOfComments:
           type: integer
@@ -2556,7 +2556,7 @@ components:
         otherVideos:
           type: array
           items:
-            $ref: '#/components/schemas/VideoModel'
+            $ref: "#/components/schemas/VideoModel"
           default: []
         channelName:
           type: string
@@ -2587,24 +2587,24 @@ components:
         userId:
           type: string
         userName:
-          $ref: '#/components/schemas/UserName'
-          default: ''
+          $ref: "#/components/schemas/UserName"
+          default: ""
         firstName:
-          $ref: '#/components/schemas/FirstName'
+          $ref: "#/components/schemas/FirstName"
         lastName:
-          $ref: '#/components/schemas/LastName'
+          $ref: "#/components/schemas/LastName"
         email:
-          $ref: '#/components/schemas/Email'
-          default: ''
+          $ref: "#/components/schemas/Email"
+          default: ""
         phoneNumber:
-          $ref: '#/components/schemas/PhoneNumber'
-          default: ''
+          $ref: "#/components/schemas/PhoneNumber"
+          default: ""
         commentContent:
           type: string
-          default: ''
+          default: ""
         avatarUrl:
           type: string
-          default: ''
+          default: ""
         createdAt:
           type: string
           format: date-time
@@ -2613,7 +2613,7 @@ components:
           format: date-time
         fullName:
           type: string
-          default: ''
+          default: ""
         isHidden:
           type: boolean
           default: false
@@ -2629,39 +2629,39 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         channelName:
           type: string
-          default: ''
+          default: ""
         channelDescription:
           type: string
-          default: ''
+          default: ""
         playlistId:
           type: string
-          default: ''
+          default: ""
         channelId:
           type: string
-          default: ''
+          default: ""
         contentType:
-          $ref: '#/components/schemas/ContentType'
+          $ref: "#/components/schemas/ContentType"
         viewingType:
-          $ref: '#/components/schemas/PlaylistRenderType'
+          $ref: "#/components/schemas/PlaylistRenderType"
         displayName:
           type: string
-          default: ''
+          default: ""
         videos:
           type: array
           items:
-            $ref: '#/components/schemas/VideoModel'
+            $ref: "#/components/schemas/VideoModel"
           default: []
         videoOrderingCriteria:
-          $ref: '#/components/schemas/OrderCriteria'
+          $ref: "#/components/schemas/OrderCriteria"
         numberOfVideos:
           type: integer
           default: 0
         thumbnailUrl:
           type: string
-          default: ''
+          default: ""
         createAt:
           type: string
           format: date-time
@@ -2683,13 +2683,13 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         channelName:
           type: string
-          default: ''
+          default: ""
         channelDescription:
           type: string
-          default: ''
+          default: ""
         channelCovers:
           type: object
           properties:
@@ -2725,7 +2725,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/ChannelModel'
+            $ref: "#/components/schemas/ChannelModel"
           default: []
         hasPrevious:
           type: boolean
@@ -2750,7 +2750,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/PlaylistModel'
+            $ref: "#/components/schemas/PlaylistModel"
           default: []
         hasPrevious:
           type: boolean
@@ -2778,7 +2778,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/CommentModel'
+            $ref: "#/components/schemas/CommentModel"
           default: []
         hasPrevious:
           type: boolean
@@ -2791,26 +2791,26 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         username:
-          $ref: '#/components/schemas/UserName'
-          default: ''
+          $ref: "#/components/schemas/UserName"
+          default: ""
         firstName:
-          $ref: '#/components/schemas/FirstName'
+          $ref: "#/components/schemas/FirstName"
         lastName:
-          $ref: '#/components/schemas/LastName'
+          $ref: "#/components/schemas/LastName"
         avatarUrl:
           type: string
-          default: ''
+          default: ""
         displayName:
           type: string
-          default: ''
+          default: ""
         email:
-          $ref: '#/components/schemas/Email'
-          default: ''
+          $ref: "#/components/schemas/Email"
+          default: ""
         phoneNumber:
-          $ref: '#/components/schemas/PhoneNumber'
-          default: ''
+          $ref: "#/components/schemas/PhoneNumber"
+          default: ""
       required:
         - id
         - username
@@ -2825,15 +2825,15 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         videoId:
           type: string
-          default: ''
+          default: ""
         commentContent:
           type: string
-          default: ''
+          default: ""
         user:
-          $ref: '#/components/schemas/UserCommentParameters'
+          $ref: "#/components/schemas/UserCommentParameters"
       required:
         - id
         - videoId
@@ -2845,16 +2845,16 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         videoId:
           type: string
-          default: ''
+          default: ""
         userId:
           type: string
-          default: ''
+          default: ""
         commentContent:
           type: string
-          default: ''
+          default: ""
         editable:
           type: boolean
           default: false
@@ -2866,12 +2866,12 @@ components:
       properties:
         videoId:
           type: string
-          default: ''
+          default: ""
         commentContent:
           type: string
-          default: ''
+          default: ""
         user:
-          $ref: '#/components/schemas/UserCommentParameters'
+          $ref: "#/components/schemas/UserCommentParameters"
       required:
         - id
         - videoId
@@ -2883,16 +2883,16 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         title:
           type: string
-          default: ''
+          default: ""
         totalView:
           type: integer
           default: 0
         playlistId:
           type: string
-          default: ''
+          default: ""
         createdAt:
           type: string
           format: date-time
@@ -2905,7 +2905,7 @@ components:
             type: string
         group:
           type: string
-          default: ''
+          default: ""
     SettingLoadMoreModel:
       type: object
       description: SettingLoadMoreModel
@@ -2923,7 +2923,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/SettingVideoModel'
+            $ref: "#/components/schemas/SettingVideoModel"
           default: []
         hasPrevious:
           type: boolean
@@ -2936,7 +2936,7 @@ components:
       properties:
         videoId:
           type: string
-          default: ''
+          default: ""
       required:
         - videoId
     ScreenCover:
@@ -2950,16 +2950,16 @@ components:
       properties:
         title:
           type: string
-          default: ''
+          default: ""
         des:
           type: string
-          default: ''
+          default: ""
         image:
           type: string
-          default: ''
+          default: ""
         link:
           type: string
-          default: ''
+          default: ""
         validLink:
           type: boolean
           default: false
@@ -2970,25 +2970,25 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         liveStreamId:
           type: string
-          default: ''
+          default: ""
         liveStreamTitle:
           type: string
-          default: ''
+          default: ""
         liveStreamThumbnail:
           type: string
-          default: ''
+          default: ""
         ticketImg:
           type: string
-          default: ''
+          default: ""
         ticketPrice:
           type: integer
           default: 0
         paymentMethod:
           type: string
-          default: ''
+          default: ""
         liveStreamStartTime:
           type: string
           format: date-time
@@ -2997,7 +2997,7 @@ components:
           format: date-time
         createdBy:
           type: string
-          default: ''
+          default: ""
     HistoryPaymentModel:
       type: object
       description: HistoryPaymentModel
@@ -3015,7 +3015,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/HistoryPaymentItemModel'
+            $ref: "#/components/schemas/HistoryPaymentItemModel"
           default: []
         hasPrevious:
           type: boolean
@@ -3029,29 +3029,29 @@ components:
       properties:
         LiveStreamId:
           type: string
-          default: ''
+          default: ""
         Username:
           type: string
-          default: ''
+          default: ""
         paymentMethod:
           type: string
-          default: ''
+          default: ""
         amount:
           type: number
           format: double
           nullable: true
         paymentMethodNonce:
           type: string
-          default: ''
+          default: ""
         deviceData:
           type: string
-          default: ''
+          default: ""
         phoneNumber:
           type: string
-          default: ''
+          default: ""
         momoToken:
           type: string
-          default: ''
+          default: ""
       required:
         - LiveStreamId
         - Username
@@ -3061,20 +3061,20 @@ components:
       properties:
         liveStreamId:
           type: string
-          default: ''
+          default: ""
         ticketCode:
           type: string
-          default: ''
+          default: ""
     ConvertionRateResponse:
       type: object
       description: ConvertionRateResponse
       properties:
         exchangeRateId:
           type: string
-          default: ''
+          default: ""
         currencyCode:
           type: string
-          default: ''
+          default: ""
         rates:
           type: number
           format: double
@@ -3096,58 +3096,58 @@ components:
       properties:
         token:
           type: string
-          default: ''
+          default: ""
     LiveStreamModel:
       type: object
       description: LiveStreamModel
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         startTime:
           type: string
           format: date-time
         title:
           type: string
-          default: ''
+          default: ""
         description:
           type: string
-          default: ''
+          default: ""
         source:
           type: string
-          default: ''
+          default: ""
         externalStreamId:
           type: string
-          default: ''
+          default: ""
         price:
           type: integer
           default: 0
         thumbnail:
           type: string
-          default: ''
+          default: ""
         liveStreamStatus:
-          $ref: '#/components/schemas/LiveStreamStatus'
+          $ref: "#/components/schemas/LiveStreamStatus"
         livestreamUrl:
           type: string
-          default: ''
+          default: ""
         trailerUrl:
           type: string
-          default: ''
+          default: ""
         isPurchased:
           type: boolean
           default: false
         ticketCode:
           type: string
-          default: ''
+          default: ""
         ticketImg:
           type: string
-          default: ''
+          default: ""
         secretKey:
           type: string
-          default: ''
+          default: ""
         linkShare:
           type: string
-          default: ''
+          default: ""
         emoticons:
           type: array
           items:
@@ -3155,32 +3155,32 @@ components:
             properties:
               id:
                 type: string
-                default: ''
+                default: ""
               iconUrl:
                 type: string
-                default: ''
+                default: ""
               name:
                 type: string
-                default: ''
+                default: ""
     UserJoinLiveStreamParameters:
       type: object
       description: UserJoinLiveStreamParameters
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         username:
           type: string
-          default: ''
+          default: ""
         firstName:
           type: string
-          default: ''
+          default: ""
         lastName:
           type: string
-          default: ''
+          default: ""
         phoneNumber:
           type: string
-          default: ''
+          default: ""
       required:
         - id
         - username
@@ -3191,21 +3191,21 @@ components:
       properties:
         liveStreamId:
           type: string
-          default: ''
+          default: ""
         liveStreamName:
           type: string
-          default: ''
+          default: ""
         liveStreamStartDate:
           type: string
-          default: ''
+          default: ""
         deviceId:
           type: string
-          default: ''
+          default: ""
         deviceName:
           type: string
-          default: ''
+          default: ""
         user:
-          $ref: '#/components/schemas/UserJoinLiveStreamParameters'
+          $ref: "#/components/schemas/UserJoinLiveStreamParameters"
         createdAt:
           type: string
       required:
@@ -3232,19 +3232,19 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         username:
           type: string
-          default: ''
+          default: ""
         firstName:
           type: string
-          default: ''
+          default: ""
         lastName:
           type: string
-          default: ''
+          default: ""
         avatar:
           type: string
-          default: ''
+          default: ""
       required:
         - id
         - username
@@ -3256,15 +3256,15 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         liveStreamId:
           type: string
-          default: ''
+          default: ""
         content:
           type: string
-          default: ''
+          default: ""
         user:
-          $ref: '#/components/schemas/UserCommentLiveStreamParameters'
+          $ref: "#/components/schemas/UserCommentLiveStreamParameters"
         createdAt:
           type: string
       required:
@@ -3278,10 +3278,10 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         content:
           type: string
-          default: ''
+          default: ""
     DeviceToken:
       name: deviceToken
       type: string
@@ -3298,11 +3298,11 @@ components:
       description: RegisterDeviceParameters
       properties:
         deviceId:
-          $ref: '#/components/schemas/DeviceId'
+          $ref: "#/components/schemas/DeviceId"
         deviceToken:
-          $ref: '#/components/schemas/DeviceToken'
+          $ref: "#/components/schemas/DeviceToken"
         platform:
-          $ref: '#/components/schemas/DevicePlatform'
+          $ref: "#/components/schemas/DevicePlatform"
       required:
         - deviceId
         - deviceToken
@@ -3312,12 +3312,12 @@ components:
       description: RegisterDeviceResponse
       properties:
         errorCode:
-          $ref: '#/components/schemas/ErrorCode'
+          $ref: "#/components/schemas/ErrorCode"
           nullable: true
         errorMessage:
-          $ref: '#/components/schemas/ErrorMessage'
+          $ref: "#/components/schemas/ErrorMessage"
         successful:
-          $ref: '#/components/schemas/Successful'
+          $ref: "#/components/schemas/Successful"
     AdsScreen:
       type: string
       description: AdsScreen
@@ -3332,12 +3332,12 @@ components:
       properties:
         id:
           type: string
-          default: '1'
+          default: "1"
         zone:
           type: string
-          default: ''
+          default: ""
         place:
-          $ref: '#/components/schemas/AdsScreen'
+          $ref: "#/components/schemas/AdsScreen"
           default: HOME
         createdAt:
           type: string
@@ -3347,11 +3347,11 @@ components:
           default: true
         adsUnit:
           type: string
-          default: ''
+          default: ""
           description: default for iOS
         androidAdsUnit:
           type: string
-          default: ''
+          default: ""
           description: used for android
         adsSources:
           type: string
@@ -3368,19 +3368,19 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         title:
           type: string
-          default: ''
+          default: ""
         isActive:
           type: boolean
           default: false
         imageUrl:
           type: string
-          default: ''
+          default: ""
         registerUrl:
           type: string
-          default: ''
+          default: ""
         createdAt:
           type: string
           format: date-time
@@ -3389,10 +3389,10 @@ components:
       description: ChannelModel
       properties:
         error:
-          $ref: '#/components/schemas/ErrorCode'
+          $ref: "#/components/schemas/ErrorCode"
     AuthenError:
       allOf:
-        - $ref: '#/components/schemas/ErrorDetails'
+        - $ref: "#/components/schemas/ErrorDetails"
         - type: object
           properties:
             unblockAt:
@@ -3431,7 +3431,6 @@ components:
         - af_first_view
         - media_minus_dailymotion
         - livestream_minus_youtube
-        - livestream_minus_netlove
         - af_purchase
         - completed_purchase
     AppsFlyerEventParameters:
@@ -3487,18 +3486,18 @@ components:
         media_source:
           type: string
         type:
-          $ref: '#/components/schemas/DeepLinkResultPayloadDeeplinkTypeEnum'
+          $ref: "#/components/schemas/DeepLinkResultPayloadDeeplinkTypeEnum"
         id:
           type: string
           description: >
             value of channelId if type == "channel" value of playlistId if type
             == "playlist" value of videoId if type == "video" value of
             livestreamId if type == "livestream"
-          default: ''
+          default: ""
         deep_link_value:
           type: string
           description: deeplink's value
-          default: ''
+          default: ""
         is_deferred:
           type: boolean
           default: false
@@ -3519,7 +3518,7 @@ components:
           type: string
           format: date-time
         data:
-          $ref: '#/components/schemas/DeepLinkResultPayloadDeeplink'
+          $ref: "#/components/schemas/DeepLinkResultPayloadDeeplink"
     DeepLinkResultStatusEnum:
       type: string
       enum:
@@ -3538,7 +3537,7 @@ components:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/DeepLinkResultPayloadStatusEnum'
+          $ref: "#/components/schemas/DeepLinkResultPayloadStatusEnum"
           default: NOTFOUND
         deepLink:
           type: string
@@ -3547,9 +3546,9 @@ components:
       description: DeepLinkResult
       properties:
         status:
-          $ref: '#/components/schemas/DeepLinkResultStatusEnum'
+          $ref: "#/components/schemas/DeepLinkResultStatusEnum"
         payload:
-          $ref: '#/components/schemas/DeepLinkResultPayload'
+          $ref: "#/components/schemas/DeepLinkResultPayload"
     DeepLinkStatus:
       type: object
       properties:
@@ -3557,7 +3556,7 @@ components:
           type: boolean
           default: false
         deeplink:
-          $ref: '#/components/schemas/DeepLink'
+          $ref: "#/components/schemas/DeepLink"
       required:
         - enabled
         - deeplink
@@ -3580,7 +3579,7 @@ components:
         code:
           type: string
           example:
-            value: 'API{id}'
+            value: "API{id}"
             variables:
               id:
                 type: integer
@@ -3603,7 +3602,7 @@ components:
       type: object
       description: EmptyErrorResponse
       allOf:
-        - $ref: '#/components/schemas/ErrorResponse'
+        - $ref: "#/components/schemas/ErrorResponse"
         - type: object
           example: []
     ExpandingState:
@@ -3655,10 +3654,10 @@ components:
           example: com.facebook.katana
         privacyAndPolicyLink:
           type: string
-          example: 'https://www.new_project.ph/app/privacy-and-policy.html?hide-ui'
+          example: "https://www.new_project.ph/app/privacy-and-policy.html?hide-ui"
         termAndConditionsLink:
           type: string
-          example: 'https://www.new_project.ph/app/terms-and-conditions.html?hide-ui'
+          example: "https://www.new_project.ph/app/terms-and-conditions.html?hide-ui"
         localizationVersion:
           type: string
           example: 1.3.5
@@ -3714,29 +3713,29 @@ components:
             - ads
     HomeLiveStream:
       allOf:
-        - $ref: '#/components/schemas/HomeContentType'
-        - $ref: '#/components/schemas/VideoModel'
+        - $ref: "#/components/schemas/HomeContentType"
+        - $ref: "#/components/schemas/VideoModel"
     HomeAds:
       allOf:
-        - $ref: '#/components/schemas/HomeContentType'
-        - $ref: '#/components/schemas/AdsModel'
+        - $ref: "#/components/schemas/HomeContentType"
+        - $ref: "#/components/schemas/AdsModel"
     HomePlaylist:
       allOf:
-        - $ref: '#/components/schemas/HomeContentType'
-        - $ref: '#/components/schemas/PlaylistModel'
+        - $ref: "#/components/schemas/HomeContentType"
+        - $ref: "#/components/schemas/PlaylistModel"
     HomeContent:
       type: object
       properties: null
       discriminator:
         propertyName: contentType
         mapping:
-          livestream: '#/components/schemas/HomeLiveStream'
-          playlist: '#/components/schemas/HomeAds'
-          ads: '#/components/schemas/HomePlaylist'
+          livestream: "#/components/schemas/HomeLiveStream"
+          playlist: "#/components/schemas/HomeAds"
+          ads: "#/components/schemas/HomePlaylist"
       oneOf:
-        - $ref: '#/components/schemas/HomeLiveStream'
-        - $ref: '#/components/schemas/HomeAds'
-        - $ref: '#/components/schemas/HomePlaylist'
+        - $ref: "#/components/schemas/HomeLiveStream"
+        - $ref: "#/components/schemas/HomeAds"
+        - $ref: "#/components/schemas/HomePlaylist"
     Keys:
       type: string
       description: Keys
@@ -3803,11 +3802,11 @@ components:
         videos:
           type: array
           items:
-            $ref: '#/components/schemas/VideoModel'
+            $ref: "#/components/schemas/VideoModel"
           default: []
           nullable: false
         cover:
-          $ref: '#/components/schemas/CoverModel'
+          $ref: "#/components/schemas/CoverModel"
           default: {}
     LoadingState:
       type: integer
@@ -3882,26 +3881,26 @@ components:
           type: string
           format: date-time
         state:
-          $ref: '#/components/schemas/NetworkState'
+          $ref: "#/components/schemas/NetworkState"
     PaymentModel:
       type: object
       description: PaymentModel
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         thumbnailUrl:
           type: string
-          default: ''
+          default: ""
         ticketImage:
           type: string
-          default: ''
+          default: ""
         title:
           type: string
-          default: ''
+          default: ""
         channel:
           type: string
-          default: ''
+          default: ""
         liveStreamTime:
           type: string
           format: date-time
@@ -3910,7 +3909,7 @@ components:
           default: 0
         liveStreamId:
           type: string
-          default: ''
+          default: ""
     PlatformParameter:
       type: string
       description: PlatformParameter
@@ -3945,25 +3944,25 @@ components:
       properties:
         id:
           type: string
-          default: ''
+          default: ""
         liveStreamId:
           type: string
-          default: ''
+          default: ""
         title:
           type: string
-          default: ''
+          default: ""
         paymentMethod:
           type: string
-          default: ''
+          default: ""
         price:
           type: integer
           default: 0
         thumbnailUrl:
           type: string
-          default: ''
+          default: ""
         ticketImage:
           type: string
-          default: ''
+          default: ""
         liveStreamStartTime:
           type: string
           format: date-time
@@ -3987,7 +3986,7 @@ components:
         - url_240
         - url_360
         - url_480
-      example: 'https://s1.dmcdn.net/v/SqB6s1WI9z6Sli26z/x180'
+      example: "https://s1.dmcdn.net/v/SqB6s1WI9z6Sli26z/x180"
     UserState:
       type: string
       description: state of user
@@ -4003,56 +4002,56 @@ components:
       properties:
         videoId:
           type: string
-          default: ''
+          default: ""
         playlistId:
           type: string
-          default: ''
+          default: ""
         videoOrderingCriteria:
-          $ref: '#/components/schemas/OrderCriteria'
+          $ref: "#/components/schemas/OrderCriteria"
     ChannelListDetails:
       type: object
       description: ChannelListDetails
       properties:
         channelName:
           type: string
-          default: ''
+          default: ""
         banner:
           type: string
-          default: ''
+          default: ""
         description:
           type: string
-          default: ''
+          default: ""
     PaymentError:
       allOf:
-        - $ref: '#/components/schemas/ErrorDetails'
+        - $ref: "#/components/schemas/ErrorDetails"
     PaypalParameter:
       type: object
       properties:
         nonce:
           type: string
-          default: ''
+          default: ""
         amountUSD:
           type: number
           format: double
           default: 0
         username:
           type: string
-          default: ''
+          default: ""
         liveStreamId:
           type: string
-          default: ''
+          default: ""
         deviceId:
           type: string
-          default: ''
+          default: ""
     MoMoParameters:
       type: object
       properties:
         phoneNumber:
           type: string
-          default: ''
+          default: ""
         token:
           type: string
-          default: ''
+          default: ""
     CommentState:
       type: object
       description: Comment Status
@@ -4065,7 +4064,7 @@ components:
           default: false
         commentId:
           type: string
-          default: ''
+          default: ""
         initCommentLiveStream:
           type: boolean
           default: false
@@ -4078,12 +4077,12 @@ components:
       properties:
         liveStreamId:
           type: string
-          default: ''
+          default: ""
         liveStreamStatus:
-          $ref: '#/components/schemas/LiveStreamStatus'
+          $ref: "#/components/schemas/LiveStreamStatus"
         error:
           type: string
-          default: ''
+          default: ""
     CommentLiveStreamModel:
       type: object
       description: CommentLiveStreamModel
@@ -4093,7 +4092,7 @@ components:
         content:
           type: string
         user:
-          $ref: '#/components/schemas/User'
+          $ref: "#/components/schemas/User"
     LiveStreamFireStoreParameters:
       type: object
       description: LiveStreamFireStoreParameters
@@ -4105,11 +4104,11 @@ components:
         comments:
           type: array
           items:
-            $ref: '#/components/schemas/CommentLiveStreamModel'
+            $ref: "#/components/schemas/CommentLiveStreamModel"
         latestComments:
           type: array
           items:
-            $ref: '#/components/schemas/CommentLiveStreamModel'
+            $ref: "#/components/schemas/CommentLiveStreamModel"
         id:
           type: string
         source:
@@ -4141,7 +4140,7 @@ components:
       required: true
       schema:
         type: string
-      example: NetLove
+      example: NewApp
   responses:
     ResponseDefault:
       description: Response Default
@@ -4152,12 +4151,12 @@ components:
             description: Error
             properties:
               errorCode:
-                $ref: '#/components/schemas/ErrorCode'
+                $ref: "#/components/schemas/ErrorCode"
                 nullable: true
               errorMessage:
                 type: string
                 nullable: true
-                default: ''
+                default: ""
               data:
                 type: object
                 additionalProperties: true
@@ -4180,9 +4179,9 @@ components:
             description: Error
             properties:
               errorCode:
-                $ref: '#/components/schemas/ErrorCode'
+                $ref: "#/components/schemas/ErrorCode"
                 nullable: true
               errorMessage:
                 type: string
                 nullable: true
-                default: ''
+                default: ""

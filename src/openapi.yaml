@@ -1,13 +1,13 @@
 openapi: 3.0.0
 servers:
-  - url: https://{environment}.netlove.com.vn
+  - url: https://{environment}.newapp.com.vn
     variables:
       environment:
-        default: api    # Production server
+        default: api # Production server
         enum:
-          - api         # Production server
-          - api-dev     # Development server
-          - api-qa      # Testing server
+          - api # Production server
+          - api-dev # Development server
+          - api-qa # Testing server
 info:
   description: >-
     This is a sample server Petstore server. For this sample, you can use the api key
@@ -16,7 +16,7 @@ info:
   title: OpenAPI Petstore
   license:
     name: Apache-2.0
-    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
 
 paths:
   # Auth
@@ -59,7 +59,7 @@ paths:
   /video/emotion/{videoId}:
     $ref: ./resources/Video/MarkVideoEmotion.yaml
   /video/channel/landing/200/1:
-    $ref: ./resources/Video/getChannel.yaml 
+    $ref: ./resources/Video/getChannel.yaml
   /video/channel/landing/{channelId}/200/1:
     $ref: ./resources/Video/ChannelPlaylistDetail.yaml
   /video/playlists/{playlistId}?sortBy={videoOrderingCriteria}:
@@ -91,7 +91,6 @@ paths:
     $ref: ./resources/Video/SearchVideoAutoCompleted.yaml
   /video/contents/{screenCover}:
     $ref: ./resources/Video/Cover.yaml
-    
 
   # Payment
   /payment/transactions/me:
@@ -102,8 +101,7 @@ paths:
     $ref: ./resources/Payment/conversionRate.yaml
   /payment/tokens/braintree:
     $ref: ./resources/Payment/clientToken.yaml
-    
-    
+
   # LiveStream
   /live-stream/schedules:
     $ref: ./resources/LiveStream/Schedules.yaml
@@ -117,7 +115,6 @@ paths:
     $ref: ./resources/LiveStream/PostEmoticons.yaml
   /interaction/comments:
     $ref: ./resources/LiveStream/CreateCommentLiveStream.yaml
-
 
   # Notification
   /notification/notification/register-device:
@@ -135,7 +132,6 @@ paths:
   # Survey
   /survey/programs/active:
     $ref: ./resources/Survey/Program.yaml
-
 
 components:
   schemas:
@@ -254,9 +250,6 @@ components:
     PostEmotion-ref:
       $ref: ./components/requestBody/PostEmotion.yaml
 
-      
-
   securitySchemes:
     bearerAuth:
       $ref: ./components/securitySchemes/BearerAuth.yaml
-    

@@ -1,4 +1,3 @@
-
 type: object
 description: User model data
 properties:
@@ -30,8 +29,8 @@ properties:
     $ref: ../../components/schemas/.Common.yaml#/IsReceiveNotification
   status:
     type: string
-    default: ''
-    example: NETLOVE_SUSPENDED
+    default: ""
+    example: SUSPENDED
   registerTime:
     type: string
     format: date-time

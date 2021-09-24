@@ -1,14 +1,13 @@
-
 type: integer
 description: LiveStreamStatus
 enum:
-  - 1 # NetLoveLive
+  - 1 # Live
   - 2 # Upcoming
   - 3 # Unpublish
   - 4 # Completed
 
 x-enum-varnames:
-  - NetLoveLive
+  - Live
   - Upcoming
   - Unpublish
   - Completed
