@@ -15,6 +15,3 @@ lib/src/model/character.dart
 lib/src/model/date.dart
 lib/src/model/error_code.dart
 lib/src/serializers.dart
-test/auth_api_test.dart
-test/character_test.dart
-test/error_code_test.dart

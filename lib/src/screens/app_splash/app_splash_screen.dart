@@ -10,7 +10,6 @@ class AppSplashScreen extends StatelessWidget {
         title: GestureDetector(
           child: TextWidget(
             text: (locale) => locale.splashAppBarTitle,
-            style: (textTheme) => textTheme.headline5,
           ),
           onLongPress: () {
             AppRouter.router.navigateTo(

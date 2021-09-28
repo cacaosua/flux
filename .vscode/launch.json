@@ -13,10 +13,7 @@
         "--flavor",
         "development",
         "--target",
-        // "lib/main_development.dart",
-        "lib/src/app_storyboard/app_storyboard.dart",
-        // "lib/modules/counter/todo.dart",
-        // "lib/modules/todos/lib/main.dart",
+        "lib/main_development.dart",
         "--verbose",
       ],
       "showMemoryUsage": true
@@ -46,6 +43,41 @@
         "lib/main_production.dart",
       ],
       "showMemoryUsage": true
+    },
+    {
+      "name": "Launch development",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart",
+      "args": [
+        "--flavor",
+        "development",
+        "--target",
+        "lib/main_storyboard.dart",
+        "--verbose",
+      ],
+      "showMemoryUsage": true
+    },
+    {
+      "name": "Examples - Counter",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "examples/counter",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "Examples - Todos",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "examples/todos",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "Examples - TicTacToe",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "examples/tic_tac_toe",
+      "program": "lib/main.dart"
     }
   ]
 }

@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flux/src/features/app_router/app_router.dart';
-import 'package:flux/src/features/theme/theme.dart';
+import 'package:flux/src/core/app_router/app_router.dart';
+import 'package:flux/src/core/theme/theme.dart';
 import 'package:logging/logging.dart';
 
 // ignore: uri_does_not_exist
@@ -12,7 +12,7 @@ import 'package:flutter_gen/gen_l10n/app_intl.dart';
 // ignore: uri_does_not_exist
 export 'package:flutter_gen/gen_l10n/app_intl.dart';
 
-part 'app_intl.dart';
+part '../core/app_intl.dart';
 part 'app_provider_observer.dart';
 
 class App extends StatefulWidget {
@@ -27,9 +27,8 @@ class _AppState extends State<App> {
 
   @override
   void initState() {
-    AppRouter.configureRoutes(
-      _rootNavigatorKey,
-    );
+    AppRouter.configureRoutes();
+
     super.initState();
   }
 

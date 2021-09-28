@@ -64,7 +64,7 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const loadingIcon = CupertinoActivityIndicator(
-      // color: XColors.primary,
+      // color: ColorConstants.primary,
       radius: 20,
     );
 

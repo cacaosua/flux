@@ -25,7 +25,7 @@ class AppFormLabel extends StatelessWidget {
             const TextSpan(
               text: ' *',
               style: TextStyle(
-                color: XColors.primary,
+                color: ColorConstants.primary,
               ),
             ),
         ],

@@ -1,7 +1,7 @@
 {
-    "@@locale": "en",
-    "splashAppBarTitle": "Flux",
-    "@splashAppBarTitle": {
-        "description": "Text shown in the AppBar of the Splash Screen"
-    }
+  "@@locale": "en",
+  "splashAppBarTitle": "Flux",
+  "@splashAppBarTitle": {
+    "description": "Text shown in the AppBar of the Splash Screen"
+  }
 }

@@ -71,10 +71,16 @@ class BaseThemeData {
     final base = ThemeData.light();
 
     final textTheme = _buildTextTheme(base.textTheme);
+    final primaryTextTheme = _buildTextTheme(base.primaryTextTheme);
 
     return base.copyWith(
       colorScheme: colorScheme,
       textTheme: textTheme,
+      primaryTextTheme: primaryTextTheme,
+      // textSelectionTheme: const TextSelectionThemeData(
+      //   selectionColor: cranePurple700,
+      // ),
+
       // Matches manifest.json colors and background color.
       primaryColor: const Color(0xFF030303),
       appBarTheme: AppBarTheme(
@@ -137,7 +143,7 @@ class BaseThemeData {
             horizontal: 24,
           ),
           // side: BorderSide(
-          //     // color: XColors.primary,
+          //     // color: ColorConstants.primary,
           //     ),
           // shape: RoundedRectangleBorder(
           //   borderRadius: BorderRadius.circular(8),

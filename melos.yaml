@@ -88,6 +88,7 @@ scripts:
         flutter pub get
         flutter pub run flutter_launcher_icons:main
       "
+    description: Run launcher_icons generator
 
   generate:api_provider:
     run: |
@@ -101,6 +102,21 @@ scripts:
           flutter format lib test
         )
       "
+    description: Run ApiProvider generator
+
+  generate:marvel_api_provider:
+    run: |
+      melos exec -c 1 --scope="marvel_api_provider" -- "
+        cd packages/marvel_api_provider
+        (
+          rm -rf doc && rm -rf lib/src && rm -rf test
+          npm run buildv --verbose
+          flutter pub get
+          flutter packages pub run build_runner build --delete-conflicting-outputs
+          flutter format lib test
+        )
+      "
+    description: Run ApiProvider generator
 
   build:web:app:
     run: |

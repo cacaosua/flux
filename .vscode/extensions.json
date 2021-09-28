@@ -6,5 +6,7 @@
     "dart-code.flutter",
     "robert-brunhage.flutter-riverpod-snippets",
     "RedVanWorkshop.explorer-exclude-vscode-extension",
+    "42Crunch.vscode-openapi",
+    "marp-team.marp-vscode",
   ]
 }

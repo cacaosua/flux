@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flux/src/features/theme/theme.dart';
+import 'package:flux/src/core/theme/theme.dart';
 
 class BackDropWidget extends StatelessWidget {
   final Widget? child;
@@ -22,7 +22,7 @@ class BackDropWidget extends StatelessWidget {
       return Container(
         height: constrains.maxHeight,
         alignment: alignment,
-        color: XColors.backdrop,
+        color: ColorConstants.backdrop,
         child: child,
       );
     });
