@@ -24,7 +24,7 @@ class AppSplashScreen extends StatelessWidget {
           final value = ref.watch(firebaseProvider);
 
           return value.maybeWhen(
-            error: (err, stack) {
+            error: (err, stack, AsyncData) {
               return Text('Error: $err');
             },
             orElse: () => const Text('Home page'),
