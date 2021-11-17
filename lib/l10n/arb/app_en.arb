@@ -3,5 +3,9 @@
   "splashAppBarTitle": "Flux",
   "@splashAppBarTitle": {
     "description": "Text shown in the AppBar of the Splash Screen"
+  },
+  "titleHomePage": "Test cai coi",
+  "@titleHomePage": {
+    "description": "Title on home pages"
   }
 }

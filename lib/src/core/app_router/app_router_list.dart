@@ -6,6 +6,8 @@ abstract class AppRoutes {
   static const root = '/';
   static const splash = '${RouteKeys.splash}';
 
+  static const search = '${RouteKeys.search}';
+
   static const devTools = '${RouteKeys.devTools}';
   static const $devTools = '${RouteKeys.devTools}/:${RouteVars.devToolsView}';
   static const $$devTools =

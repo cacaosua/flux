@@ -15,6 +15,22 @@ export 'package:flutter_gen/gen_l10n/app_intl.dart';
 part '../core/app_intl.dart';
 part 'app_provider_observer.dart';
 
+const MaterialColor white = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFFFFFFFF),
+    100: const Color(0xFFFFFFFF),
+    200: const Color(0xFFFFFFFF),
+    300: const Color(0xFFFFFFFF),
+    400: const Color(0xFFFFFFFF),
+    500: const Color(0xFFFFFFFF),
+    600: const Color(0xFFFFFFFF),
+    700: const Color(0xFFFFFFFF),
+    800: const Color(0xFFFFFFFF),
+    900: const Color(0xFFFFFFFF),
+  },
+);
+
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
 
@@ -47,7 +63,7 @@ class _AppState extends State<App> {
 
           theme: ThemeData(
             colorScheme: ColorScheme.fromSwatch(
-              primarySwatch: Colors.blue,
+              primarySwatch: white,
             ).copyWith(
               secondary: Colors.green,
             ),

@@ -4,6 +4,8 @@ abstract class RouteKeys {
   static const splash = 'splash';
   static const home = 'home';
 
+  static const search = 'search';
+
   static const devTools = 'dev-tools';
   static const devToolsview = 'devToolsView';
   static const alice = 'alice';

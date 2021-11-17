@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flux/src/screens/app_splash/app_splash.dart';
+import 'package:flux/src/screens/search/app_search.dart';
 // import 'package:flux/src/screens/dev_tools/dev_tools.dart';
 
 export 'package:fluro/fluro.dart';
@@ -31,7 +32,7 @@ class AppRouter extends FluroRouter {
 
   static void configureRoutes() {
     AppSplash.configureRoutes(router);
-
+    AppSearch.configureRoutes(router);
     // not for production
     // DevTools.configureRoutes(router);
   }

@@ -3,7 +3,7 @@ part of 'form.dart';
 class AppFormField extends StatelessWidget {
   const AppFormField({
     Key? key,
-    required this.label,
+    this.label = '',
     required this.textFormField,
     this.require = false,
     this.style,
@@ -16,6 +16,10 @@ class AppFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (label.isEmpty) {
+      return textFormField;
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
