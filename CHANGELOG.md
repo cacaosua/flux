@@ -15,6 +15,25 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`flux_widgets` - `v0.1.0+3`](#flux_widgets---v0103)
+
+---
+
+#### `flux_widgets` - `v0.1.0+3`
+
+
+## 2022-09-19
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`flux` - `v0.1.0+4`](#flux---v0104)
 
 ---
