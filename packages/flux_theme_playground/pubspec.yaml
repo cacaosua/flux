@@ -1,11 +1,11 @@
-name: flux
+name: flux_theme_playground
 description: A Very Good Project created by Very Good CLI.
 version: 1.0.0+1
 publish_to: none
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
-  flutter: 3.3.2
+  flutter: 3.3.1
 
 dependencies:
   bloc: ^8.1.0
@@ -14,9 +14,6 @@ dependencies:
   flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
-  flux_theme:
-    path: ../flux_theme
-  go_router: ^4.3.0
   intl: ^0.17.0
 
 dev_dependencies:
