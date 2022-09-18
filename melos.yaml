@@ -1,0 +1,104 @@
+name: flux
+
+packages:
+  - "packages/**"
+
+ignore:
+  - "mobile_services"
+
+sdkPath: .fvm/flutter_sdk
+
+ide:
+  intellij:
+    false
+
+command:
+  version:
+    # Generate commit links in package changelogs.
+    linkToCommits: false
+    updateGitTagRefs: true
+    # # Only allow versioning to happen on main branch.
+    # branch: master
+    # Additionally build a changelog at the root of the workspace.
+    workspaceChangelog: true
+
+  bootstrap:
+    # It seems so that running "pub get" in parallel has some issues (like
+    # https://github.com/dart-lang/pub/issues/3404). Disabling this feature
+    # makes the CI much more stable.
+    runPubGetInParallel: false
+
+    # Recommended option for projects with Dart 2.17.0 or greater.
+    #
+    # This enables a new mechanism for linking local packages, which integrates
+    # better with other tooling (e.g. dart tool, flutter tool, IDE plugins) than the
+    # mechanism currently being used by default. Please read the documentation for
+    # usePubspecOverrides before enabling this feature. 
+    #
+    # See https://melos.invertase.dev/getting-started#setup
+    usePubspecOverrides: true
+
+### globalPackagesUsed:
+###   - dart pub global activate coverage
+
+scripts:
+  format:
+    run: melos exec -- "flutter format . --set-exit-if-changed"
+    description: Run `flutter format .` in all packages
+
+  analyze:
+    description: "Run `flutter analyze` in a specific package."
+    select-package:
+      scope: "flux*"
+    run: >
+      melos exec -- "fvm flutter analyze ."
+
+  
+
+  generate:
+    run: melos run generate:dart && melos run generate:flutter
+    description: Build all generated files for Dart & Flutter packages in this project.
+
+  generate:dart:
+    run: melos exec -c 1 --depends-on="build_runner" --no-flutter -- "dart run build_runner build --delete-conflicting-outputs"
+    description: Build all generated files for Dart packages in this project.
+
+  generate:flutter:
+    run: melos exec -c 1 --depends-on="build_runner" --flutter -- "flutter pub run build_runner build --delete-conflicting-outputs"
+    description: Build all generated files for Flutter packages in this project.
+
+  test:
+    run: melos run test:dart --no-select && melos run test:flutter --no-select
+    description: Run all Dart & Flutter tests in this project.
+
+  test:dart:
+    run: melos exec  -c 1 --fail-fast -- "\$MELOS_ROOT_PATH/scripts/coverage.sh"
+    description: Run Dart tests for a specific package in this project.
+    select-package:
+      flutter: false
+      dir-exists: test
+
+  test:flutter:
+    run: melos exec --dir-exists="test" -c 1 --fail-fast -- "flutter test --coverage"
+    description: Run Flutter tests for a specific package in this project.
+    select-package:
+      flutter: true
+      dir-exists: test
+
+  coverage:
+    description: "Run `coverage` in a specific package."
+    select-package:
+      scope: "flux*"
+      flutter: true
+    run: >
+      melos exec -c 4 -- "
+        flutter test --coverage ./lib
+        lcov -r coverage/lcov.info '*/__test*__/*' -o coverage/lcov_cleaned.info
+        genhtml coverage/lcov_cleaned.info --output=coverage
+      "
+
+  
+  clean:deep:
+    description: Clean things very deeply, can be used to establish "pristine checkout" status.
+    run: >
+      git clean -x -d -f -q

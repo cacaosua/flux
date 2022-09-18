@@ -1,0 +1,58 @@
+{
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true,
+    },
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "dart.sdkPath": ".fvm/flutter_sdk/bin",
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  // Remove .fvm files from search
+  "search.exclude": {
+    "**/.fvm": true
+  },
+  // Remove from file watching
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "platforms": "android, ios",
+    "Fastfile": "Fastfile, fastlane_config.yaml",
+    "pubspec.yaml": ".flutter-plugins, .packages, .dart_tool, .flutter-plugins-dependencies, .metadata, .packages, pubspec.lock, build.yaml, analysis_options.yaml, all_lint_rules.yaml, l10n.yaml, melos.yaml, mason.yaml, .gitlab-ci.yml, mason-lock.json, pubspec_overrides.yaml",
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*, .gitconfig",
+    "README.*": "authors, backers.md, changelog*, citation*, code_of_conduct.md, codeowners, contributing.md, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme.*, README_android.md, README_ios.md, security.md, sponsors.md",
+    "*.dart": "$(capture).g.dart, $(capture).freezed.dart",
+    "define_*.yaml": "define_$(capture).yaml, *.$(capture)",
+    // "*.dart": "$(capture).g.dart, $(capture).freezed.dart, $(capture)_cubit.dart, $(capture)_state.dart, $(capture)_page.dart, $(capture)_repository.dart",
+  },
+  "dart.runPubGetOnPubspecChanges": "never",
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "**/Thumbs.db": false,
+    "**/.dart_tool": false,
+    "**/.github": false,
+    "**/.vscode": false,
+    "**/.fvm": false,
+    "**/.flutter-plugins-dependencies": false,
+    "**/.flutter-plugins": false,
+    "**/.packages": false,
+    "**/coverage": false
+  },
+  "explorerExclude.backup": {}
+}

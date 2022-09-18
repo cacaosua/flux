@@ -1,0 +1,9 @@
+name: flux_lints
+version: 1.0.0
+description: Set of lint rules for Counter Dart and Flutter projects
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  very_good_analysis: ^3.0.1

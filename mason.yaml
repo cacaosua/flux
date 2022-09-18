@@ -1,0 +1,7 @@
+bricks:
+  screen:
+    path: bricks/screen
+  widget:
+    path: bricks/widget
+  feature:
+    path: bricks/feature

@@ -1,0 +1,91 @@
+stages: # List of stages for jobs, and their order of execution
+  - analyze
+  - test
+  - coverage
+  - semantic-version
+
+default:
+  image: cirrusci/flutter:latest
+
+cache:
+  paths:
+    - /flutter/bin/cache/dart-sdk
+
+code_quality:
+  stage: analyze
+  before_script:
+    # - brew install lcov
+    - pub global activate dart_code_metrics
+    - export PATH="$PATH":"$HOME/.pub-cache/bin"
+  script:
+    - flutter --version
+    - flutter analyze
+    - metrics lib -r codeclimate  > gl-code-quality-report.json
+  rules:
+    - if: $CI_COMMIT_BRANCH == "develop" && $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      allow_failure: true
+
+  artifacts:
+    reports:
+      codequality: gl-code-quality-report.json
+
+test-all:
+  stage: test
+  script:
+    - export PATH="$PATH":"$HOME/.pub-cache/bin"
+    - pub global activate junitreport
+    - flutter test --machine --coverage | tojunit -o report.xml
+  only:
+    refs:
+      - main
+      - develop
+  artifacts:
+    paths:
+      - coverage
+    reports:
+      junit: report.xml
+
+test-dev:
+  stage: test
+  script:
+    - export PATH="$PATH":"$HOME/.pub-cache/bin"
+    - pub global activate junitreport
+    - flutter test --machine | tojunit -o report.xml
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  artifacts:
+    reports:
+      junit: report.xml
+
+coverage: # This job runs in the test stage.
+  stage: coverage # It only starts when the job in the build stage completes successfully.
+  script:
+    - flutter test --coverage ./lib 
+    - lcov -r coverage/lcov.info '*/__test*__/*' -o coverage/lcov_cleaned.info
+    - genhtml coverage/lcov_cleaned.info --output=coverage
+  only:
+    refs:
+      - main
+      - develop
+  coverage: '/lines\.*: \d+\.\d+\%/'
+  artifacts:
+    paths:
+      - coverage
+  tags:
+    - shared
+
+semantic-version:
+  image: node:16
+  stage: semantic-version
+  only:
+    refs:
+      - main
+      - develop
+  script:
+    - touch CHANGELOG.md
+    - npm install @semantic-release/gitlab @semantic-release/changelog
+    - npx semantic-release
+  artifacts:
+    paths:
+      - CHANGELOG.md

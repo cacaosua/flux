@@ -1,0 +1,13 @@
+include: package:very_good_analysis/analysis_options.3.0.1.yaml
+
+linter:
+  rules:
+    public_member_api_docs: false
+
+    # We want to have sorted imports, to keep our imports clean.
+    directives_ordering: true
+
+    # The following lints are for a consistent code style.
+    sort_constructors_first: true
+    prefer_single_quotes: true
+    # use_super_parameters: true
