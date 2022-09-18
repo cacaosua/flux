@@ -1,5 +1,5 @@
 name: flux_lints
-version: 0.0.1+1
+version: 0.0.1+2
 description: Set of lint rules for Counter Dart and Flutter projects
 
 environment:
