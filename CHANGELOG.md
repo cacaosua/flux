@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`flux` - `v0.1.0+4`](#flux---v0104)
+
+---
+
+#### `flux` - `v0.1.0+4`
+
+ - Bump "flux" to `0.1.0+4`.
+
+
+## 2022-09-19
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`flux` - `v0.1.0+3`](#flux---v0103)
 
 ---
