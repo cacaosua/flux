@@ -15,12 +15,11 @@ dependencies:
   intl: ^0.17.0
 
 dev_dependencies:
-  flux_lints:
-    path: ../flux_lints
   flutter_test:
     sdk: flutter
+  flux_lints:
+    path: ../flux_lints
   mocktail: ^0.3.0
 
 flutter:
   uses-material-design: true
-  generate: true
