@@ -1,4 +1,4 @@
-name: flux
+name: flux_theme
 description: A Very Good Project created by Very Good CLI.
 version: 1.0.0+1
 publish_to: none
@@ -8,26 +8,18 @@ environment:
   flutter: 3.3.2
 
 dependencies:
-  bloc: ^8.1.0
+  flex_color_scheme: ^6.0.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
-  flux_theme:
-    path: ../flux_theme
-  go_router: ^4.3.0
   intl: ^0.17.0
 
 dev_dependencies:
-  bloc_test: ^9.1.0
   flutter_test:
     sdk: flutter
   flux_lints:
     path: ../flux_lints
-  mocktail: ^0.3.0
-  very_good_analysis: ^3.0.1
 
 flutter:
   uses-material-design: true
-  generate: true
