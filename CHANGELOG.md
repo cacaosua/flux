@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`flux_lints` - `v0.0.2+2`](#flux_lints---v0022)
+
+---
+
+#### `flux_lints` - `v0.0.2+2`
+
+ - Bump "flux_lints" to `0.0.2+2`.
+
+
+## 2022-09-19
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`flux_widgets` - `v0.1.0+3`](#flux_widgets---v0103)
 
 ---
