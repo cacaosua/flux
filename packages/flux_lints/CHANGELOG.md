@@ -1,3 +1,7 @@
+## 0.0.2+3
+
+ - **FIX**: remove unused code.
+
 ---
 type: changelog
 ---
