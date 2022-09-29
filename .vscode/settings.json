@@ -54,5 +54,75 @@
     "**/.packages": false,
     "**/coverage": false
   },
-  "explorerExclude.backup": {}
+  "explorerExclude.backup": {},
+  "foam.graph.style": {
+    // https://foambubble.github.io/foam/user/features/graph-visualization
+    "background": "#202020",
+    "fontSize": 12,
+    "highlightedForeground": "#f9c74f",
+    "node": {
+        "note": "#277da1",
+        "placeholder": "#545454",
+        "app": "red",
+        "feature": "purple",
+        "changelog": "lightblue",
+        "lints": "lightgreen",
+    }
+  },
+  "foam.files.ignore": [
+    "**/.vscode/**/*",
+    "**/_layouts/**/*",
+    "**/_site/**/*",
+    "**/node_modules/**/*",
+    // "**/packages/**/*",
+    "**/ios/**/*",
+    "**/android/**/*"
+  ],
+  "better-comments.tags": [
+    {
+      "tag": "FIXME",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "TODO",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
 }

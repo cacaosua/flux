@@ -1,3 +1,9 @@
+---
+type: changelog
+---
+
+# Change Log
+
 ## 0.0.2+2
 
  - Bump "flux_lints" to `0.0.2+2`.

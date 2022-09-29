@@ -1,3 +1,9 @@
-# 0.1.0+1
+---
+type: changelog
+---
+
+# Change Log
+
+## 0.1.0+1
 
 - feat: initial commit 🎉

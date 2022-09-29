@@ -1,3 +1,9 @@
+---
+type: changelog
+---
+
+# Change Log
+
 ## 0.1.2+4
 
 ## 0.1.0+3

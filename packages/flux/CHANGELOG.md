@@ -1,3 +1,9 @@
+---
+type: changelog
+---
+
+# Change Log
+
 ## 0.1.0+4
 
  - Bump "flux" to `0.1.0+4`.

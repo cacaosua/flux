@@ -1,0 +1,35 @@
+{
+  "context.select()": {
+    "scope": "dart",
+    "prefix": "/select",
+    "body": [
+      "final $4 = context.select<${1:Subject}Cubit, ${2:ReturnType}>(",
+      "\t(${3:cubit}) => $3.state.${4:field},",
+      ");",
+    ],
+  },
+  "create.lib": {
+    "scope": "dart",
+    "prefix": "/create library",
+    "body": [
+      "library app.$1;",
+      "",
+    ],
+  },
+  "create.part": {
+    "scope": "dart",
+    "prefix": ["/create part", "part"],
+    "body": [
+      "part '$1';",
+      "",
+    ],
+  },
+  "create.partOf": {
+    "scope": "dart",
+    "prefix": ["/create part of", "part of"],
+    "body": [
+      "part of $1;",
+      "",
+    ],
+  },
+}

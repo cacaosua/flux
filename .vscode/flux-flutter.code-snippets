@@ -1,0 +1,11 @@
+{
+  "Wrap with Container": {
+    "prefix": "/Wrap with container",
+    "body": [
+      "Container(",
+      "  child: $TM_SELECTED_TEXT",
+      ")"
+    ],
+    "description": ""
+  }
+}

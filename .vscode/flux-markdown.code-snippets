@@ -1,0 +1,110 @@
+{
+  "Meta": {
+    "scope": "markdown",
+    "prefix": "/meta",
+    "description": "Heading 1",
+    "body": [
+      "---",
+      "type: $1",
+      "---",
+    ]
+  },
+  "Heading 1": {
+    "scope": "markdown",
+    "prefix": "/h1",
+    "description": "Heading 1",
+    "body": [
+      "# $TM_SELECTED_TEXT"
+    ]
+  },
+  "Heading 2": {
+    "scope": "markdown",
+    "prefix": "/h2",
+    "description": "Heading 3",
+    "body": [
+      "## $TM_SELECTED_TEXT"
+    ]
+  },
+  "Heading 3": {
+    "scope": "markdown",
+    "prefix": "/h3",
+    "description": "Heading 3",
+    "body": [
+      "### $TM_SELECTED_TEXT"
+    ]
+  },
+  "Insert bold text": {
+    "scope": "markdown",
+    "prefix": "/bold",
+    "body": "**${1:${TM_SELECTED_TEXT}}**$0",
+    "description": "Insert bold text"
+  },
+  "Insert italic text": {
+    "scope": "markdown",
+    "prefix": "/italic",
+    "body": "*${1:${TM_SELECTED_TEXT}}*$0",
+    "description": "Insert italic text"
+  },
+  "Insert quoted text": {
+    "scope": "markdown",
+    "prefix": "/quote",
+    "body": "> ${1:${TM_SELECTED_TEXT}}",
+    "description": "Insert quoted text"
+  },
+  "Insert code": {
+    "scope": "markdown",
+    "prefix": "/code",
+    "body": "`${1:${TM_SELECTED_TEXT}}`$0",
+    "description": "Insert code"
+  },
+  "Insert fenced code block": {
+    "scope": "markdown",
+    "prefix": "/multiline codeblock",
+    "body": [
+      "```${1:language}",
+      "${TM_SELECTED_TEXT}$0",
+      "```"
+    ],
+    "description": "Insert fenced code block"
+  },
+  "Insert unordered list": {
+    "scope": "markdown",
+    "prefix": "/ul",
+    "body": [
+      "- ${1:first}",
+      "- ${2:second}",
+      "- ${3:third}",
+      "$0"
+    ],
+    "description": "Insert unordered list"
+  },
+  "Insert ordered list": {
+    "scope": "markdown",
+    "prefix": "/ol",
+    "body": [
+      "1. ${1:first}",
+      "2. ${2:second}",
+      "3. ${3:third}",
+      "$0"
+    ],
+    "description": "Insert ordered list"
+  },
+  "Insert horizontal rule": {
+    "scope": "markdown",
+    "prefix": "/hr",
+    "body": "----------\n",
+    "description": "Insert horizontal rule"
+  },
+  "Insert link": {
+    "scope": "markdown",
+    "prefix": "link",
+    "body": "[${TM_SELECTED_TEXT:${1:text}}](https://${2:link})$0",
+    "description": "Insert link"
+  },
+  "Insert image": {
+    "scope": "markdown",
+    "prefix": "image",
+    "body": "![${TM_SELECTED_TEXT:${1:alt}}](https://${2:link})$0",
+    "description": "Insert image"
+  }
+}

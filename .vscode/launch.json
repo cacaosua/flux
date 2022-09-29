@@ -5,7 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch development",
+      "name": "Flux development",
+      "presentation": {
+        "hidden": false,
+        "group": "Flux",
+        "order": 1
+      },
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
@@ -16,10 +21,15 @@
         "--target",
         "lib/main_development.dart",
         "--verbose",
-      ]
+      ],
     },
     {
-      "name": "Launch staging",
+      "name": "Flux staging",
+      "presentation": {
+        "hidden": false,
+        "group": "Flux",
+        "order": 1
+      },
       "request": "launch",
       "type": "dart",
       "program": "lib/main_staging.dart",
@@ -33,7 +43,12 @@
       ]
     },
     {
-      "name": "Launch production",
+      "name": "Flux production",
+      "presentation": {
+        "hidden": false,
+        "group": "Flux",
+        "order": 1
+      },
       "request": "launch",
       "type": "dart",
       "program": "lib/main_production.dart",
@@ -45,6 +60,64 @@
         "lib/main_production.dart",
         "--verbose",
       ]
-    }
+    },
+
+    {
+      "name": "Flux Theme Playground development",
+      "presentation": {
+        "hidden": false,
+        "group": "Flux Theme Playground",
+        "order": 1
+      },
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart",
+      "cwd": "packages/flux",
+      "args": [
+        "--flavor",
+        "development",
+        "--target",
+        "lib/main_development.dart",
+        "--verbose",
+      ],
+    },
+    {
+      "name": "Flux Theme Playground staging",
+      "presentation": {
+        "hidden": false,
+        "group": "Flux Theme Playground",
+        "order": 1
+      },
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_staging.dart",
+      "cwd": "packages/flux",
+      "args": [
+        "--flavor",
+        "staging",
+        "--target",
+        "lib/main_staging.dart",
+        "--verbose",
+      ]
+    },
+    {
+      "name": "Flux Theme Playground production",
+      "presentation": {
+        "hidden": false,
+        "group": "Flux Theme Playground",
+        "order": 1
+      },
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_production.dart",
+      "cwd": "packages/flux",
+      "args": [
+        "--flavor",
+        "production",
+        "--target",
+        "lib/main_production.dart",
+        "--verbose",
+      ]
+    },
   ]
 }

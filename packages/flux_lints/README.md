@@ -1,4 +1,11 @@
+---
+type: lints
+---
+
 # flux_lints
+
+[[flux_lints/CHANGELOG]]
+
 This package contains a recommended set of lints for [Flutter](https://flutter.dev) apps, packages,
 and plugins to encourage good coding practices.
 
