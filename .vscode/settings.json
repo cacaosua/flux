@@ -74,9 +74,9 @@
     "**/_layouts/**/*",
     "**/_site/**/*",
     "**/node_modules/**/*",
-    // "**/packages/**/*",
+    "**/packages/flux_api/**/*",
     "**/ios/**/*",
-    "**/android/**/*"
+    "**/android/**/*",
   ],
   "better-comments.tags": [
     {
