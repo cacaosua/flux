@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2022-10-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`flux` - `v0.1.0+6`](#flux---v0106)
+ - [`flux_api` - `v0.1.1`](#flux_api---v011)
+ - [`flux_api_config` - `v0.1.1`](#flux_api_config---v011)
+ - [`flux_theme` - `v0.0.1+4`](#flux_theme---v0014)
+ - [`flux_theme_playground` - `v0.0.1+4`](#flux_theme_playground---v0014)
+ - [`flux_widgets` - `v0.1.2+6`](#flux_widgets---v0126)
+
+---
+
+#### `flux` - `v0.1.0+6`
+
+ - **FIX**: pubspec.lock.
+
+#### `flux_api` - `v0.1.1`
+
+ - **FEAT**: add flux_api & flux_api_config.
+
+#### `flux_api_config` - `v0.1.1`
+
+ - **FEAT**: add flux_api & flux_api_config.
+
+#### `flux_theme` - `v0.0.1+4`
+
+ - **FIX**: pubspec.lock.
+
+#### `flux_theme_playground` - `v0.0.1+4`
+
+ - **FIX**: pubspec.lock.
+
+#### `flux_widgets` - `v0.1.2+6`
+
+ - **FIX**: pubspec.lock.
+
+
 ## 2022-09-30
 
 ### Changes

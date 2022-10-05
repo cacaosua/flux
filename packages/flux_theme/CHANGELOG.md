@@ -1,3 +1,7 @@
+## 0.0.1+4
+
+ - **FIX**: pubspec.lock.
+
 ## 0.0.1+3
 
  - **FIX**: remove unused code.
