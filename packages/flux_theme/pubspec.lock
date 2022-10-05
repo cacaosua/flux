@@ -78,7 +78,7 @@ packages:
       path: "../flux_lints"
       relative: true
     source: path
-    version: "1.0.0"
+    version: "0.0.2+3"
   intl:
     dependency: "direct main"
     description:
@@ -177,4 +177,4 @@ packages:
     version: "3.0.1"
 sdks:
   dart: ">=2.18.0 <3.0.0"
-  flutter: ">=3.3.2"
+  flutter: ">=3.3.1"
