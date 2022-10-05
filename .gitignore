@@ -59,3 +59,5 @@ app.*.map.json
 **/*.cover
 **/.hypothesis/
 **/.pytest_cache/
+
+.mason/bricks.json
