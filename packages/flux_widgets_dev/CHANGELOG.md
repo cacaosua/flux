@@ -1,3 +1,7 @@
+## 0.1.3
+
+ - **FEAT**: add flux_widgets_dev.
+
 ## 0.1.2+6
 
  - **FIX**: pubspec.lock.

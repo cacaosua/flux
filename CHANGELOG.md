@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2022-10-13
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`flux_widgets_dev` - `v0.1.3`](#flux_widgets_dev---v013)
+
+---
+
+#### `flux_widgets_dev` - `v0.1.3`
+
+ - **FEAT**: add flux_widgets_dev.
+
+
 ## 2022-10-06
 
 ### Changes
