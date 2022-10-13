@@ -8,6 +8,6 @@ linter:
     directives_ordering: true
 
     # The following lints are for a consistent code style.
-    sort_constructors_first: true
+    sort_constructors_first: false
     prefer_single_quotes: true
     # use_super_parameters: true
