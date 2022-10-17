@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2022-10-18
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`flux_navigation` - `v0.1.1`](#flux_navigation---v011)
+ - [`flux_navigation_example` - `v1.1.0`](#flux_navigation_example---v110)
+
+---
+
+#### `flux_navigation` - `v0.1.1`
+
+ - **FEAT**: update flux_navigation and example.
+
+#### `flux_navigation_example` - `v1.1.0`
+
+ - **FEAT**: update flux_navigation and example.
+
+
 ## 2022-10-13
 
 ### Changes

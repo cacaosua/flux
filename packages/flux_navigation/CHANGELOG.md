@@ -1,3 +1,7 @@
+## 0.1.1
+
+ - **FEAT**: update flux_navigation and example.
+
 ## 0.1.0+2
 
  - **FIX**: remove unused code.
