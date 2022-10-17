@@ -8,4 +8,11 @@
       ");",
     ],
   },
+  "context.read()": {
+    "scope": "dart",
+    "prefix": "/read",
+    "body": [
+      "final ${1} = context.read<${1}>();",
+    ],
+  },
 }

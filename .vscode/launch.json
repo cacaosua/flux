@@ -119,5 +119,13 @@
         "--verbose",
       ]
     },
+    {
+      "name": "flux_navigation example",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "cwd": "packages/flux_navigation/example",
+      "deviceId": "chrome"
+    },
   ]
 }

@@ -1,5 +1,6 @@
 {
   "Wrap with Container": {
+    "scope": "dart",
     "prefix": "/Wrap with container",
     "body": [
       "Container(",
