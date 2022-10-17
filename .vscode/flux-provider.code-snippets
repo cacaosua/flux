@@ -1,0 +1,11 @@
+{
+  "context.select()": {
+    "scope": "dart",
+    "prefix": "/select",
+    "body": [
+      "final $4 = context.select<${1:Subject}Cubit, ${2:ReturnType}>(",
+      "\t(${3:cubit}) => $3.state.${4:field},",
+      ");",
+    ],
+  },
+}
