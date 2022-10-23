@@ -1,7 +1,8 @@
 bricks:
-  screen:
-    path: bricks/screen
-  widget:
-    path: bricks/widget
-  feature:
-    path: bricks/feature
+  # screen:
+  #   path: bricks/screen
+  # widget:
+  #   path: bricks/widget
+  # feature:
+  #   path: bricks/feature
+  r13n: "^0.1.0-dev.4"
