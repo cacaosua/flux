@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2022-10-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`flux` - `v0.1.0+7`](#flux---v0107)
+ - [`flux_localizations` - `v0.1.0+3`](#flux_localizations---v0103)
+ - [`flux_navigation` - `v0.1.2`](#flux_navigation---v012)
+ - [`flux_navigation_example` - `v1.1.1`](#flux_navigation_example---v111)
+ - [`flux_theme` - `v0.0.1+5`](#flux_theme---v0015)
+ - [`flux_theme_playground` - `v0.0.1+5`](#flux_theme_playground---v0015)
+ - [`flux_widgets` - `v0.1.2+7`](#flux_widgets---v0127)
+ - [`flux_widgets_dev` - `v0.1.3+1`](#flux_widgets_dev---v0131)
+
+---
+
+#### `flux` - `v0.1.0+7`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
+#### `flux_localizations` - `v0.1.0+3`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
+#### `flux_navigation` - `v0.1.2`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+ - **FIX**: remove unused code.
+ - **FEAT**: update flux_navigation and example.
+
+#### `flux_navigation_example` - `v1.1.1`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
+#### `flux_theme` - `v0.0.1+5`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
+#### `flux_theme_playground` - `v0.0.1+5`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
+#### `flux_widgets` - `v0.1.2+7`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
+#### `flux_widgets_dev` - `v0.1.3+1`
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
+
 ## 2022-10-18
 
 ### Changes

@@ -1,3 +1,7 @@
+## 0.1.0+7
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
 ## 0.1.0+6
 
  - **FIX**: pubspec.lock.

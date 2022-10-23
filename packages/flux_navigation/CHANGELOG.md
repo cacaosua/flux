@@ -1,3 +1,9 @@
+## 0.1.2
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+ - **FIX**: remove unused code.
+ - **FEAT**: update flux_navigation and example.
+
 ## 0.1.1
 
  - **FEAT**: update flux_navigation and example.

@@ -1,3 +1,7 @@
+## 0.1.3+1
+
+ - **FIX**: use flutter 3.3.0 intead 3.3.1.
+
 ## 0.1.3
 
  - **FEAT**: add flux_widgets_dev.
