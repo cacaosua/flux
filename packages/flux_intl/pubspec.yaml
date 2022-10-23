@@ -1,6 +1,6 @@
-name: flux_localizations
+name: flux_intl
 description: A Very Good Project created by Very Good CLI.
-version: 0.1.0+3
+version: 0.1.0+2
 publish_to: none
 
 environment:

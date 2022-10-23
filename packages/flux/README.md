@@ -10,6 +10,7 @@ type: app
 
 [[packages/flux/CHANGELOG]]
 [[packages/flux_lints/README]]
+[[packages/flux_intl/README]]
 [[packages/flux_localizations/README]]
 [[packages/flux_navigation/README]]
 [[packages/flux_theme/README]]

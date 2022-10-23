@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flux_localizations/flux_localizations.dart';
+import 'package:flux_intl/flux_intl.dart';
 
 void main() {
-  group('FluxLocalizations', () {
+  group('FluxIntl', () {
     test('can be instantiated', () {
-      expect(FluxLocalizations(), isNotNull);
+      expect(FluxIntl(), isNotNull);
     });
   });
 }

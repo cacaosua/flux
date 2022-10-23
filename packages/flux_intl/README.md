@@ -8,7 +8,7 @@ type: feature
 [![Powered by Mason](https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge)](https://github.com/felangel/mason)
 [![License: MIT][license_badge]][license_link]
 
-[[flux_localizations/CHANGELOG]]
+[[flux_intl/CHANGELOG]]
 
 A Very Good Project created by Very Good CLI.
 
@@ -16,11 +16,11 @@ A Very Good Project created by Very Good CLI.
 
 **❗ In order to start using Flux Localizations you must have the [Flutter SDK][flutter_install_link] installed on your machine.**
 
-Add `flux_localizations` to your `pubspec.yaml`:
+Add `flux_intl` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flux_localizations:
+  flux_intl:
 ```
 
 Install it:
