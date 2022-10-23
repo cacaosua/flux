@@ -16,5 +16,8 @@ const pubName = 'flux_api';
   inputSpecFile: 'openapi-spec.yaml',
   generatorName: Generator.dio,
   outputDirectory: '../${pubName}',
+  alwaysRun: true,
+  overwriteExistingFiles: true,
+  fetchDependencies: true,
 )
 class FluxApiConfig extends OpenapiGeneratorConfig {}

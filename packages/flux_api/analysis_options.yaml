@@ -7,3 +7,7 @@ analyzer:
     implicit-casts: false
   exclude:
     - test/*.dart
+
+linter:
+  rules:
+    unused_import: false

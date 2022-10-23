@@ -1,6 +1,5 @@
 .gitignore
 README.md
-analysis_options.yaml
 doc/Activities.md
 doc/Activity.md
 doc/ActivityContinuation.md
@@ -388,5 +387,3 @@ lib/src/model/transfer.dart
 lib/src/model/unlockable_api_error.dart
 lib/src/model/unlockable_event.dart
 lib/src/serializers.dart
-pubspec.yaml
-test/lock_item_test.dart
