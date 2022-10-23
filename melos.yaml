@@ -56,27 +56,61 @@ scripts:
   
 
   generate:
-    run: melos run generate:dart && melos run generate:flutter
     description: Build all generated files for Dart & Flutter packages in this project.
+    run: >
+      melos run generate:dart
+      && melos run generate:flutter
 
   generate:dart:
-    run: melos exec -c 1 --depends-on="build_runner" --no-flutter -- "dart run build_runner build --delete-conflicting-outputs"
     description: Build all generated files for Dart packages in this project.
+    run: >
+      melos exec -c 1 --depends-on="build_runner" --no-flutter -- \
+      "dart run build_runner build --delete-conflicting-outputs"
 
   generate:flutter:
-    run: melos exec -c 1 --depends-on="build_runner" --flutter -- "flutter pub run build_runner build --delete-conflicting-outputs"
     description: Build all generated files for Flutter packages in this project.
+    run: >
+      melos exec -c 1 --depends-on="build_runner" --flutter -- \
+        "flutter pub run build_runner build --delete-conflicting-outputs"
+
+  generate:flux_api:
+    description: Build all generated files for Flutter packages in this project.
+    run: >
+      melos run generate:flux_api:code_gen
+      && melos generate:flux_api:code_gen
+
+  generate:flux_api_config:code_gen:
+    description: Build all generated files for Flutter packages in this project.
+    select-package:
+      scope:
+        - flux_api_config
+    exec:
+      concurrency: 1
+      failFast: true
+    run: >
+      flutter pub run build_runner build --delete-conflicting-outputs
+
+  generate:flux_api:code_gen:
+    description: Build all generated files for Flutter packages in this project.
+    select-package:
+      scope:
+        - flux_api
+    exec:
+      concurrency: 1
+      failFast: true
+    run: >
+      flutter pub run build_runner build --delete-conflicting-outputs
 
   test:
     run: melos run test:dart --no-select && melos run test:flutter --no-select
     description: Run all Dart & Flutter tests in this project.
 
   test:dart:
-    run: melos exec  -c 1 --fail-fast -- "\$MELOS_ROOT_PATH/scripts/coverage.sh"
     description: Run Dart tests for a specific package in this project.
     select-package:
       flutter: false
       dir-exists: test
+    run: melos exec  -c 1 --fail-fast -- "\$MELOS_ROOT_PATH/scripts/coverage.sh"
 
   test:flutter:
     run: melos exec --dir-exists="test" -c 1 --fail-fast -- "flutter test --coverage"

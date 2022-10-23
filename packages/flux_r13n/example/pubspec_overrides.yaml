@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: flux_lints
+dependency_overrides:
+  flux_lints:
+    path: ../../flux_lints
+  flux_r13n:
+    path: ../
