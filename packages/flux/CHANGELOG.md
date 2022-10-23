@@ -1,3 +1,7 @@
+## 0.1.1
+
+ - **FEAT**: add flux_r13n.
+
 ## 0.1.0+7
 
  - **FIX**: use flutter 3.3.0 intead 3.3.1.
