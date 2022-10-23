@@ -76,7 +76,7 @@ scripts:
   generate:flux_api:
     description: Build all generated files for Flutter packages in this project.
     run: >
-      melos run generate:flux_api:code_gen
+      melos run generate:flux_api_config:code_gen
       && melos generate:flux_api:code_gen
 
   generate:flux_api_config:code_gen:
