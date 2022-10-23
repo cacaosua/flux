@@ -15,6 +15,37 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`flux_api` - `v0.1.1+1`](#flux_api---v0111)
+ - [`flux_api_config` - `v0.1.1+1`](#flux_api_config---v0111)
+ - [`flux_r13n_hooks` - `v0.0.1`](#flux_r13n_hooks---v001)
+
+---
+
+#### `flux_api` - `v0.1.1+1`
+
+ - **FIX**: flux_api_config.
+
+#### `flux_api_config` - `v0.1.1+1`
+
+ - **FIX**: flux_api_config.
+
+#### `flux_r13n_hooks` - `v0.0.1`
+
+ - **FEAT**: add flux_r13n.
+
+
+## 2022-10-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`example` - `v1.1.0`](#example---v110)
  - [`flux` - `v0.1.1`](#flux---v011)
  - [`flux_lints` - `v0.0.3`](#flux_lints---v003)
