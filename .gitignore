@@ -60,4 +60,8 @@ app.*.map.json
 **/.hypothesis/
 **/.pytest_cache/
 
+# Dart / Mason
 .mason/bricks.json
+
+# Flutter / FVM
+.fvm/flutter_sdk
