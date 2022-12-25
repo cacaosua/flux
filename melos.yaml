@@ -136,3 +136,12 @@ scripts:
     description: Clean things very deeply, can be used to establish "pristine checkout" status.
     run: >
       git clean -x -d -f -q
+
+# START TOOLS REGION
+
+  tool:install_mason:
+    run: |
+      brew tap felangel/mason
+      brew install mason
+
+# END TOOLS REGION
