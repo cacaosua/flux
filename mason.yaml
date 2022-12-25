@@ -5,4 +5,3 @@ bricks:
   #   path: bricks/widget
   # feature:
   #   path: bricks/feature
-  flux_r13n: "^0.1.0-dev.4"
