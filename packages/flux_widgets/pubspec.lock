@@ -113,7 +113,7 @@ packages:
       path: "../flux_lints"
       relative: true
     source: path
-    version: "0.0.2+3"
+    version: "0.0.3"
   freezed_annotation:
     dependency: transitive
     description:

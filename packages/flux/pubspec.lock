@@ -160,7 +160,7 @@ packages:
       path: "../flux_lints"
       relative: true
     source: path
-    version: "0.0.2+3"
+    version: "0.0.3"
   flux_theme:
     dependency: "direct main"
     description:
