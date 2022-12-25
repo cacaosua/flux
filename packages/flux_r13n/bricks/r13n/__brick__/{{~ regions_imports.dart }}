@@ -1,2 +1,0 @@
-{{#regions}}
-import 'app_regionalizations_{{code}}.g.dart';{{/regions}}

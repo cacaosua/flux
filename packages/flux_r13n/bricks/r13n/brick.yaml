@@ -1,8 +1,0 @@
-name: flux_r13n
-description: A brick that generates regionalization (flux_r13n) code from arb files. Built by Very Good Ventures.
-repository: https://github.com/VeryGoodOpenSource/flux_r13n
-
-version: 0.1.0-dev.4
-
-environment:
-  mason: ">=0.1.0-dev.28 <0.1.0"

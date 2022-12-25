@@ -1,2 +1,0 @@
-{{#getters}}
-String get {{value}};{{/getters}}
