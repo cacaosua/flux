@@ -1,3 +1,10 @@
+## 0.1.2
+
+ - **FEAT**: remove support windows for now.
+ - **FEAT**: update MinimumOSVersion to 13.
+ - **FEAT**: add support macos.
+ - **DOCS**: update links in docs.
+
 ## 0.1.1
 
  - **FEAT**: add flux_r13n.

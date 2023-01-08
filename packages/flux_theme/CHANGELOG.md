@@ -1,3 +1,7 @@
+## 0.0.1+6
+
+ - **DOCS**: update links in docs.
+
 ## 0.0.1+5
 
  - **FIX**: use flutter 3.3.0 intead 3.3.1.

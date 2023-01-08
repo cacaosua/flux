@@ -15,6 +15,52 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`flux` - `v0.1.2`](#flux---v012)
+ - [`flux_navigation` - `v0.1.2+1`](#flux_navigation---v0121)
+ - [`flux_theme` - `v0.0.1+6`](#flux_theme---v0016)
+ - [`flux_widgets` - `v0.1.2+8`](#flux_widgets---v0128)
+ - [`flux_navigation_example` - `v1.1.2`](#flux_navigation_example---v112)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `flux_navigation_example` - `v1.1.2`
+
+---
+
+#### `flux` - `v0.1.2`
+
+ - **FEAT**: remove support windows for now.
+ - **FEAT**: update MinimumOSVersion to 13.
+ - **FEAT**: add support macos.
+ - **DOCS**: update links in docs.
+
+#### `flux_navigation` - `v0.1.2+1`
+
+ - **DOCS**: update links in docs.
+
+#### `flux_theme` - `v0.0.1+6`
+
+ - **DOCS**: update links in docs.
+
+#### `flux_widgets` - `v0.1.2+8`
+
+ - **DOCS**: update links in docs.
+
+
+## 2023-01-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`flux_api` - `v0.1.2`](#flux_api---v012)
 
 ---
