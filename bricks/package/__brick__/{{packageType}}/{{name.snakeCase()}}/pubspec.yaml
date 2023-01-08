@@ -1,0 +1,25 @@
+name: {{name.snakeCase()}}
+description: A new Flutter package project.
+version: 0.0.1
+homepage: none
+
+publish_to: none
+
+environment:
+  sdk: '{{{environmentDartSDK}}}'
+  flutter: '{{{environmentFlutterSDK}}}'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flux_lints:
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+flutter:
