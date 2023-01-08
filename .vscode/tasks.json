@@ -112,6 +112,16 @@
       }
     },
     {
+      "label": "melos:test:selective_unit_test",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run test:selective_unit_test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
       "label": "melos:coverage",
       "group": "none",
       "type": "shell",
@@ -146,6 +156,16 @@
       "group": "none",
       "type": "shell",
       "command": "melos run tool:melos_tasks",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:postclean",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run postclean",
       "presentation": {
         "reveal": "always",
         "panel": "new"
