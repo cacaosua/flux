@@ -1,0 +1,45 @@
+import 'package:test/test.dart';
+import 'package:nft_api/nft_api.dart';
+
+// tests for LockItem
+void main() {
+  final instance = LockItemBuilder();
+  // TODO add properties to the builder and call build()
+
+  group(LockItem, () {
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // String itemId
+    test('to test the property `itemId`', () async {
+      // TODO
+    });
+
+    // String content
+    test('to test the property `content`', () async {
+      // TODO
+    });
+
+    // String author
+    test('to test the property `author`', () async {
+      // TODO
+    });
+
+    // String signature
+    test('to test the property `signature`', () async {
+      // TODO
+    });
+
+    // DateTime unlockDate
+    test('to test the property `unlockDate`', () async {
+      // TODO
+    });
+
+    // int version
+    test('to test the property `version`', () async {
+      // TODO
+    });
+  });
+}

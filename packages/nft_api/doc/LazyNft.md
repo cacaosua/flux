@@ -1,0 +1,22 @@
+# nft_api.model.LazyNft
+
+## Load the model package
+```dart
+import 'package:nft_api/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**contract** | **String** |  | 
+**tokenId** | **String** |  | 
+**uri** | **String** |  | 
+**creators** | [**BuiltList&lt;ModelPart&gt;**](ModelPart.md) |  | 
+**royalties** | [**BuiltList&lt;ModelPart&gt;**](ModelPart.md) |  | 
+**signatures** | **BuiltList&lt;String&gt;** |  | 
+**atType** | **String** |  | 
+**supply** | **String** |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

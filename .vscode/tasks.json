@@ -52,30 +52,30 @@
       }
     },
     {
-      "label": "melos:generate:flux_api",
+      "label": "melos:generate:nft_api",
       "group": "none",
       "type": "shell",
-      "command": "melos run generate:flux_api",
+      "command": "melos run generate:nft_api",
       "presentation": {
         "reveal": "always",
         "panel": "new"
       }
     },
     {
-      "label": "melos:generate:flux_api_config:code_gen",
+      "label": "melos:generate:nft_api_config:code_gen",
       "group": "none",
       "type": "shell",
-      "command": "melos run generate:flux_api_config:code_gen",
+      "command": "melos run generate:nft_api_config:code_gen",
       "presentation": {
         "reveal": "always",
         "panel": "new"
       }
     },
     {
-      "label": "melos:generate:flux_api:code_gen",
+      "label": "melos:generate:nft_api:code_gen",
       "group": "none",
       "type": "shell",
-      "command": "melos run generate:flux_api:code_gen",
+      "command": "melos run generate:nft_api:code_gen",
       "presentation": {
         "reveal": "always",
         "panel": "new"

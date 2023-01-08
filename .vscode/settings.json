@@ -84,7 +84,7 @@
     "**/_layouts/**/*",
     "**/_site/**/*",
     "**/node_modules/**/*",
-    "**/packages/flux_api/**/*",
+    "**/packages/nft_api/**/*",
     "**/ios/**/*",
     "**/android/**/*",
   ],

@@ -117,11 +117,11 @@ Packages with breaking changes:
 
 Packages with other changes:
 
- - [`flux_api` - `v0.1.2`](#flux_api---v012)
+ - [`nft_api` - `v0.1.2`](#nft_api---v012)
 
 ---
 
-#### `flux_api` - `v0.1.2`
+#### `nft_api` - `v0.1.2`
 
  - **FEAT**: sync with updated spec api.
 
@@ -138,19 +138,19 @@ Packages with breaking changes:
 
 Packages with other changes:
 
- - [`flux_api` - `v0.1.1+1`](#flux_api---v0111)
- - [`flux_api_config` - `v0.1.1+1`](#flux_api_config---v0111)
+ - [`nft_api` - `v0.1.1+1`](#nft_api---v0111)
+ - [`nft_api_config` - `v0.1.1+1`](#nft_api_config---v0111)
  - [`flux_r13n_hooks` - `v0.0.1`](#flux_r13n_hooks---v001)
 
 ---
 
-#### `flux_api` - `v0.1.1+1`
+#### `nft_api` - `v0.1.1+1`
 
- - **FIX**: flux_api_config.
+ - **FIX**: nft_api_config.
 
-#### `flux_api_config` - `v0.1.1+1`
+#### `nft_api_config` - `v0.1.1+1`
 
- - **FIX**: flux_api_config.
+ - **FIX**: nft_api_config.
 
 #### `flux_r13n_hooks` - `v0.0.1`
 
@@ -316,8 +316,8 @@ Packages with breaking changes:
 Packages with other changes:
 
  - [`flux` - `v0.1.0+6`](#flux---v0106)
- - [`flux_api` - `v0.1.1`](#flux_api---v011)
- - [`flux_api_config` - `v0.1.1`](#flux_api_config---v011)
+ - [`nft_api` - `v0.1.1`](#nft_api---v011)
+ - [`nft_api_config` - `v0.1.1`](#nft_api_config---v011)
  - [`flux_theme` - `v0.0.1+4`](#flux_theme---v0014)
  - [`flux_theme_playground` - `v0.0.1+4`](#flux_theme_playground---v0014)
  - [`flux_widgets` - `v0.1.2+6`](#flux_widgets---v0126)
@@ -328,13 +328,13 @@ Packages with other changes:
 
  - **FIX**: pubspec.lock.
 
-#### `flux_api` - `v0.1.1`
+#### `nft_api` - `v0.1.1`
 
- - **FEAT**: add flux_api & flux_api_config.
+ - **FEAT**: add nft_api & nft_api_config.
 
-#### `flux_api_config` - `v0.1.1`
+#### `nft_api_config` - `v0.1.1`
 
- - **FEAT**: add flux_api & flux_api_config.
+ - **FEAT**: add nft_api & nft_api_config.
 
 #### `flux_theme` - `v0.0.1+4`
 

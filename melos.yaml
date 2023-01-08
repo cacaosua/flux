@@ -78,28 +78,28 @@ scripts:
       melos exec -c 1 --depends-on="build_runner" --flutter -- \
         "flutter pub run build_runner build --delete-conflicting-outputs"
 
-  generate:flux_api:
+  generate:nft_api:
     description: Build all generated files for Flutter packages in this project.
     run: >
-      melos run generate:flux_api_config:code_gen
-      && melos generate:flux_api:code_gen
+      melos run generate:nft_api_config:code_gen
+      && melos generate:nft_api:code_gen
 
-  generate:flux_api_config:code_gen:
+  generate:nft_api_config:code_gen:
     description: Build all generated files for Flutter packages in this project.
     select-package:
       scope:
-        - flux_api_config
+        - nft_api_config
     exec:
       concurrency: 1
       failFast: true
     run: >
       flutter pub run build_runner build --delete-conflicting-outputs
 
-  generate:flux_api:code_gen:
+  generate:nft_api:code_gen:
     description: Build all generated files for Flutter packages in this project.
     select-package:
       scope:
-        - flux_api
+        - nft_api
     exec:
       concurrency: 1
       failFast: true
