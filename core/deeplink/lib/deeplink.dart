@@ -1,0 +1,4 @@
+library deeplink;
+
+class Deeplink {
+}
