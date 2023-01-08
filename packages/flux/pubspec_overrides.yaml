@@ -1,6 +1,7 @@
-# melos_managed_dependency_overrides: flux_lints,flux_theme
+
 dependency_overrides:
   flux_lints:
-    path: ../flux_lints
+    path: ../../packages/flux_lints
+
   flux_theme:
     path: ../flux_theme

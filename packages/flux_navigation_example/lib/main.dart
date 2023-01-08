@@ -240,7 +240,6 @@ class PersonScreen extends StatelessWidget {
           for (MapEntry<PersonDetails, String> entry in person.details.entries)
             ListTile(
               title: Text(
-                // TODO(kevmoo): replace `split` with `name` when min SDK is 2.15
                 '${entry.key.toString().split('.').last} - ${entry.value}',
               ),
               trailing: OutlinedButton(

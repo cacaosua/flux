@@ -4,8 +4,8 @@ type: config
 
 # flux_api_config
 
-[[flux_api_config/CHANGELOG]]
-[[flux/flux_api/README]]
+[[dev/flux_api_config/CHANGELOG]]
+[[dev/flux_api/README]]
 
 This package contains a recommended set of lints for [Flutter](https://flutter.dev) apps, packages,
 and plugins to encourage good coding practices.

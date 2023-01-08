@@ -15,7 +15,6 @@ A few resources to get you started if this is your first brick template:
 
 ```bash
 mason make package --name hello
-mason make cubit --useExtendedBloc true --useEquatable true --useHydrated true
 ```
 
 - [Official Mason Documentation][2]

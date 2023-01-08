@@ -24,7 +24,7 @@ To use `flux_lints`, follow these instructions:
 ```yaml
 dev_dependencies:
   flux_lints:
-   path: ../flux_lints
+    path: ../../packages/flux_lints
 ```
 Note: You may need to change the path to the package.
 

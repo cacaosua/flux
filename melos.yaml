@@ -1,7 +1,10 @@
 name: flux
 
 packages:
+  - "core/**"
+  - "features/**"
   - "packages/**"
+  - '*'
 
 ignore:
   - "mobile_services"
@@ -143,5 +146,11 @@ scripts:
     run: |
       brew tap felangel/mason
       brew install mason
+
+  tool:melos_tasks:
+    description:
+      Sync all melos scripts to vscode tasks
+    run: |
+      dart run packages/flux_scripts/lib/melos_tasks_generator.dart
 
 # END TOOLS REGION

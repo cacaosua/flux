@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: flux_lints,flux_navigation
-dependency_overrides:
-  flux_lints:
-    path: ../../flux_lints
-  flux_navigation:
-    path: ..

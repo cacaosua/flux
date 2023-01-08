@@ -3,5 +3,5 @@ bricks:
   #   path: bricks/screen
   # widget:
   #   path: bricks/widget
-  # feature:
-  #   path: bricks/feature
+  package:
+    path: bricks/package

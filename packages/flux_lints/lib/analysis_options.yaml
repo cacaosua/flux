@@ -2,7 +2,7 @@ include: package:very_good_analysis/analysis_options.3.0.1.yaml
 
 analyzer:
   exclude:
-    - bricks/**/__brick__
+    - "**/bricks/**/__brick__"
 
 linter:
   rules:
@@ -15,3 +15,7 @@ linter:
     sort_constructors_first: false
     prefer_single_quotes: true
     # use_super_parameters: true
+
+    unnecessary_brace_in_string_interps: false
+
+    avoid_relative_lib_imports: true

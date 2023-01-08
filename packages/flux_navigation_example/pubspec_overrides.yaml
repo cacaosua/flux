@@ -2,3 +2,6 @@
 dependency_overrides:
   flux_lints:
     path: ../../packages/flux_lints
+
+  flux_navigation: 
+    path: ../flux_navigation
