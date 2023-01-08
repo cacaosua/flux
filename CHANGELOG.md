@@ -15,6 +15,62 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`auth_login` - `v0.0.2`](#auth_login---v002)
+ - [`auth_signup` - `v0.0.2`](#auth_signup---v002)
+ - [`deeplink` - `v0.0.2`](#deeplink---v002)
+ - [`flux_intl` - `v0.1.1`](#flux_intl---v011)
+ - [`localizations` - `v0.0.2`](#localizations---v002)
+ - [`permission` - `v0.0.2`](#permission---v002)
+ - [`permission_att` - `v0.0.2`](#permission_att---v002)
+ - [`push_notification` - `v0.0.2`](#push_notification---v002)
+
+---
+
+#### `auth_login` - `v0.0.2`
+
+ - **FEAT**: add core packages.
+
+#### `auth_signup` - `v0.0.2`
+
+ - **FEAT**: add core packages.
+
+#### `deeplink` - `v0.0.2`
+
+ - **FEAT**: add core packages.
+
+#### `flux_intl` - `v0.1.1`
+
+ - **FEAT**: add core packages.
+
+#### `localizations` - `v0.0.2`
+
+ - **FEAT**: add core packages.
+
+#### `permission` - `v0.0.2`
+
+ - **FEAT**: add core packages.
+
+#### `permission_att` - `v0.0.2`
+
+ - **FEAT**: add core packages.
+
+#### `push_notification` - `v0.0.2`
+
+ - **FEAT**: add core packages.
+
+
+## 2023-01-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`flux` - `v0.1.2`](#flux---v012)
  - [`flux_navigation` - `v0.1.2+1`](#flux_navigation---v0121)
  - [`flux_theme` - `v0.0.1+6`](#flux_theme---v0016)
