@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-01-09
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`flux_api` - `v0.1.2`](#flux_api---v012)
+
+---
+
+#### `flux_api` - `v0.1.2`
+
+ - **FEAT**: sync with updated spec api.
+
+
 ## 2022-10-23
 
 ### Changes
