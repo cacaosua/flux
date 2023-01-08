@@ -11,7 +11,6 @@ import 'package:built_collection/built_collection.dart';
 import 'package:flux_api/src/api_util.dart';
 import 'package:flux_api/src/model/order_bid_status.dart';
 import 'package:flux_api/src/model/order_bids_pagination.dart';
-import 'package:flux_api/src/model/order_indexer_api_error.dart';
 import 'package:flux_api/src/model/platform.dart';
 
 class OrderBidControllerApi {

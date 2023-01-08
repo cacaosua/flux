@@ -8,7 +8,6 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:flux_api/src/api_util.dart';
-import 'package:flux_api/src/model/currency_api_error.dart';
 import 'package:flux_api/src/model/currency_rate.dart';
 
 class CurrencyControllerApi {

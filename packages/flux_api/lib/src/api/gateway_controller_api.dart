@@ -9,7 +9,6 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:flux_api/src/model/create_transaction_request.dart';
-import 'package:flux_api/src/model/gateway_api_error.dart';
 import 'package:flux_api/src/model/log_event.dart';
 
 class GatewayControllerApi {

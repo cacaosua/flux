@@ -8,7 +8,6 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:flux_api/src/api_util.dart';
-import 'package:flux_api/src/model/nft_order_api_error.dart';
 import 'package:flux_api/src/model/nft_order_ownership.dart';
 import 'package:flux_api/src/model/page_nft_order_ownership_item.dart';
 

@@ -2,15 +2,8 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:flux_api/src/model/order_filter_sell_by_maker.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:flux_api/src/model/order_filter_all.dart';
-import 'package:flux_api/src/model/order_filter_sell_by_item.dart';
 import 'package:flux_api/src/model/platform.dart';
-import 'package:flux_api/src/model/order_filter_sell_by_collection.dart';
-import 'package:flux_api/src/model/order_filter_sell.dart';
-import 'package:flux_api/src/model/order_filter_bid_by_maker.dart';
-import 'package:flux_api/src/model/order_filter_bid_by_item.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

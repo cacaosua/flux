@@ -10,7 +10,6 @@ import 'package:dio/dio.dart';
 import 'package:flux_api/src/api_util.dart';
 import 'package:flux_api/src/model/nft_collection.dart';
 import 'package:flux_api/src/model/nft_collections.dart';
-import 'package:flux_api/src/model/nft_order_api_error.dart';
 import 'package:flux_api/src/model/nft_token_id.dart';
 
 class NftOrderCollectionControllerApi {

@@ -3,11 +3,8 @@
 //
 
 import 'package:flux_api/src/model/order_bid_status.dart';
-import 'package:flux_api/src/model/open_sea_v1_order_bid.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:flux_api/src/model/asset.dart';
-import 'package:flux_api/src/model/rarible_v2_order_bid.dart';
-import 'package:flux_api/src/model/legacy_order_bid.dart';
 import 'package:flux_api/src/model/order_open_sea_v1_data_v1.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';

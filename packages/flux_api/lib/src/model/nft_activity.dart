@@ -2,10 +2,7 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:flux_api/src/model/mint.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:flux_api/src/model/transfer.dart';
-import 'package:flux_api/src/model/burn.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

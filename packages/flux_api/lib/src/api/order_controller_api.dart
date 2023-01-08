@@ -11,7 +11,6 @@ import 'package:flux_api/src/api_util.dart';
 import 'package:flux_api/src/model/invert_order_form.dart';
 import 'package:flux_api/src/model/order.dart';
 import 'package:flux_api/src/model/order_form.dart';
-import 'package:flux_api/src/model/order_indexer_api_error.dart';
 import 'package:flux_api/src/model/orders_pagination.dart';
 import 'package:flux_api/src/model/platform.dart';
 import 'package:flux_api/src/model/prepare_order_tx_form.dart';

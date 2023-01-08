@@ -3,10 +3,7 @@
 //
 
 import 'package:built_collection/built_collection.dart';
-import 'package:flux_api/src/model/order_data_legacy.dart';
-import 'package:flux_api/src/model/order_rarible_v2_data_v1.dart';
 import 'package:flux_api/src/model/model_part.dart';
-import 'package:flux_api/src/model/order_open_sea_v1_data_v1.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

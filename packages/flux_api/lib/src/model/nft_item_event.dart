@@ -2,10 +2,8 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:flux_api/src/model/nft_item_update_event.dart';
 import 'package:flux_api/src/model/nft_deleted_item.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:flux_api/src/model/nft_item_delete_event.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

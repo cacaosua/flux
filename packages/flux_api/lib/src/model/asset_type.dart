@@ -2,16 +2,8 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:flux_api/src/model/erc1155_lazy_asset_type.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:flux_api/src/model/generative_art_asset_type.dart';
 import 'package:flux_api/src/model/model_part.dart';
-import 'package:flux_api/src/model/flow_asset_type.dart';
-import 'package:flux_api/src/model/erc1155_asset_type.dart';
-import 'package:flux_api/src/model/erc721_lazy_asset_type.dart';
-import 'package:flux_api/src/model/erc20_asset_type.dart';
-import 'package:flux_api/src/model/erc721_asset_type.dart';
-import 'package:flux_api/src/model/eth_asset_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

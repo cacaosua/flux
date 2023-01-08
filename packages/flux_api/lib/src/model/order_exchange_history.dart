@@ -4,9 +4,7 @@
 
 import 'package:built_collection/built_collection.dart';
 import 'package:flux_api/src/model/asset.dart';
-import 'package:flux_api/src/model/order_cancel.dart';
 import 'package:flux_api/src/model/order_side.dart';
-import 'package:flux_api/src/model/order_side_match.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

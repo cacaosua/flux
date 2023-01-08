@@ -11,7 +11,6 @@ import 'package:flux_api/src/api_util.dart';
 import 'package:flux_api/src/model/activity_sort.dart';
 import 'package:flux_api/src/model/order_activities.dart';
 import 'package:flux_api/src/model/order_activity_filter.dart';
-import 'package:flux_api/src/model/order_indexer_api_error.dart';
 
 class OrderActivityControllerApi {
 

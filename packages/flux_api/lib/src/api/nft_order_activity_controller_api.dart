@@ -12,7 +12,6 @@ import 'package:flux_api/src/api_util.dart';
 import 'package:flux_api/src/model/activities.dart';
 import 'package:flux_api/src/model/activity_filter_types.dart';
 import 'package:flux_api/src/model/activity_sort.dart';
-import 'package:flux_api/src/model/nft_order_api_error.dart';
 
 class NftOrderActivityControllerApi {
 

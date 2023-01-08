@@ -8,7 +8,6 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:flux_api/src/model/lazy_nft.dart';
-import 'package:flux_api/src/model/nft_order_api_error.dart';
 import 'package:flux_api/src/model/nft_order_item.dart';
 
 class NftOrderLazyMintControllerApi {

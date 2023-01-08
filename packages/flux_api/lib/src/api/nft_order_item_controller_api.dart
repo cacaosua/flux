@@ -10,7 +10,6 @@ import 'package:dio/dio.dart';
 import 'package:flux_api/src/api_util.dart';
 import 'package:flux_api/src/model/lazy_nft.dart';
 import 'package:flux_api/src/model/nft_item_meta.dart';
-import 'package:flux_api/src/model/nft_order_api_error.dart';
 import 'package:flux_api/src/model/nft_order_item.dart';
 import 'package:flux_api/src/model/page_nft_order_item.dart';
 

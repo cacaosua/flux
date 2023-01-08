@@ -12,7 +12,6 @@ import 'package:flux_api/src/model/encoded_order.dart';
 import 'package:flux_api/src/model/encoded_order_data.dart';
 import 'package:flux_api/src/model/order_data.dart';
 import 'package:flux_api/src/model/order_form.dart';
-import 'package:flux_api/src/model/order_indexer_api_error.dart';
 
 class OrderEncodeControllerApi {
 

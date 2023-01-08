@@ -2,14 +2,9 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:flux_api/src/model/order_activity_cancel_list.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:flux_api/src/model/asset_type.dart';
 import 'package:flux_api/src/model/order_activity_match_side.dart';
-import 'package:flux_api/src/model/order_activity_match.dart';
-import 'package:flux_api/src/model/order_activity_bid.dart';
-import 'package:flux_api/src/model/order_activity_cancel_bid.dart';
-import 'package:flux_api/src/model/order_activity_list.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

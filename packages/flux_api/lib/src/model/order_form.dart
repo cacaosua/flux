@@ -2,9 +2,6 @@
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
 
-import 'package:flux_api/src/model/legacy_order_form.dart';
-import 'package:flux_api/src/model/open_sea_v1_order_form.dart';
-import 'package:flux_api/src/model/rarible_v2_order_form.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:flux_api/src/model/asset.dart';
 import 'package:flux_api/src/model/order_open_sea_v1_data_v1.dart';

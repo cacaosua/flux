@@ -10,7 +10,6 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:flux_api/src/api_util.dart';
 import 'package:flux_api/src/model/aggregation_data.dart';
-import 'package:flux_api/src/model/order_indexer_api_error.dart';
 import 'package:flux_api/src/model/platform.dart';
 
 class OrderAggregationControllerApi {

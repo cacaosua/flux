@@ -10,7 +10,6 @@ import 'package:dio/dio.dart';
 import 'package:flux_api/src/model/lock_form.dart';
 import 'package:flux_api/src/model/lock_item.dart';
 import 'package:flux_api/src/model/signature_form.dart';
-import 'package:flux_api/src/model/unlockable_api_error.dart';
 
 class LockControllerApi {
 

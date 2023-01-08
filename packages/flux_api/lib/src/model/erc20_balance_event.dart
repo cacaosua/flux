@@ -4,7 +4,6 @@
 
 import 'package:flux_api/src/model/erc20_balance.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:flux_api/src/model/erc20_balance_update_event.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

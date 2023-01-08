@@ -7,7 +7,6 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:flux_api/src/model/erc20_indexer_api_error.dart';
 import 'package:flux_api/src/model/erc20_token.dart';
 
 class Erc20TokenControllerApi {
