@@ -17,8 +17,15 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "dart.sdkPath": ".fvm/flutter_sdk/bin",
+  // "dart.sdkPath": "/opt/homebrew/bin/dart",
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.analysisExcludedFolders": [
+    "bricks",
+  ],
+  "dart.autoImportCompletions": true,
+  "dart.doNotFormat": [
+    "**/*.g.dart",
+  ],
   // Remove .fvm files from search
   "search.exclude": {
     "**/.fvm": true
@@ -49,12 +56,13 @@
     "**/Thumbs.db": true,
     "**/.dart_tool": true,
     "**/.github": true,
-    "**/.vscode": true,
+    "**/.vscode": false,
     "**/.fvm": true,
     "**/.flutter-plugins-dependencies": true,
     "**/.flutter-plugins": true,
     "**/.packages": true,
-    "**/coverage": true
+    "**/coverage": true,
+    "**/.mason": true
   },
   "explorerExclude.backup": {},
   "foam.graph.style": {
@@ -126,5 +134,28 @@
       "bold": false,
       "italic": false
     }
+  ],
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "ios",
+          "commands": [],
+          "shouldRunCommands": false
+        },
+        {
+          "name": "android",
+          "commands": []
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "Root Workspace",
+          "commands": []
+        },
+      ]
+    },
   ],
 }

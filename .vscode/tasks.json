@@ -1,0 +1,155 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "melos:format",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run format",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:analyze",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run analyze",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:generate",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run generate",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:generate:dart",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run generate:dart",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:generate:flutter",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run generate:flutter",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:generate:flux_api",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run generate:flux_api",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:generate:flux_api_config:code_gen",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run generate:flux_api_config:code_gen",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:generate:flux_api:code_gen",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run generate:flux_api:code_gen",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:test",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:test:dart",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run test:dart",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:test:flutter",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run test:flutter",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:coverage",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run coverage",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:clean:deep",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run clean:deep",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:tool:install_mason",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run tool:install_mason",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "melos:tool:melos_tasks",
+      "group": "none",
+      "type": "shell",
+      "command": "melos run tool:melos_tasks",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
