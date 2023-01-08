@@ -12,6 +12,8 @@ type: feature
 
 A Very Good Project created by Very Good CLI.
 
+Use [[flux_lints/README]]
+
 ## Installation 💻
 
 **❗ In order to start using Flux Localizations you must have the [Flutter SDK][flutter_install_link] installed on your machine.**
