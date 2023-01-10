@@ -1,3 +1,4 @@
+
 analyzer:
   language:
     strict-inference: true
@@ -7,7 +8,9 @@ analyzer:
     implicit-casts: false
   exclude:
     - test/*.dart
+  errors:
+    unused_import: ignore
 
 linter:
   rules:
-    unused_import: false
+    
