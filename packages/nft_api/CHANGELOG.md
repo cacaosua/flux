@@ -1,3 +1,7 @@
+## 0.1.2+1
+
+ - **FIX**: code analyze.
+
 ## 0.1.2
 
  - **FEAT**: sync with updated spec api.

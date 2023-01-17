@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-01-18
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nft_api` - `v0.1.2+1`](#nft_api---v0121)
+
+---
+
+#### `nft_api` - `v0.1.2+1`
+
+ - **FIX**: code analyze.
+
+
 ## 2023-01-09
 
 ### Changes
