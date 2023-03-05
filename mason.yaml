@@ -1,7 +1,5 @@
 bricks:
-  # screen:
-  #   path: bricks/screen
-  # widget:
-  #   path: bricks/widget
   package:
-    path: bricks/package
+    path: packages_dev/flux_bricks/bricks/package
+  feature:
+    path: packages_dev/flux_bricks/bricks/feature

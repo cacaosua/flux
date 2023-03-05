@@ -1,0 +1,4 @@
+
+dependency_overrides:
+  flux_lints:
+    path: ../../packages_dev/flux_lints

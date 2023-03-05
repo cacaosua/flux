@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: flux_theme,permission,flux_lints
-dependency_overrides:
-  flux_lints:
-    path: ../../packages/flux_lints
-  permission: 
-    path: ../permission

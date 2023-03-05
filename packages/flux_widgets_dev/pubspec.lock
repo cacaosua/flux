@@ -110,7 +110,7 @@ packages:
   flux_lints:
     dependency: "direct dev"
     description:
-      path: "../flux_lints"
+      path: "../../packages_dev/flux_lints"
       relative: true
     source: path
     version: "0.0.3"

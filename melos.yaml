@@ -1,9 +1,11 @@
 name: flux
 
 packages:
-  - "core/**"
-  - "features/**"
-  - "packages/**"
+  - "apps/*"
+  - "core/*"
+  - "features/*"
+  - "packages/*"
+  - "packages_dev/*"
   - '*'
 
 ignore:
@@ -29,7 +31,7 @@ command:
     # It seems so that running "pub get" in parallel has some issues (like
     # https://github.com/dart-lang/pub/issues/3404). Disabling this feature
     # makes the CI much more stable.
-    runPubGetInParallel: false
+    runPubGetInParallel: true
 
     # Recommended option for projects with Dart 2.17.0 or greater.
     #
@@ -160,7 +162,7 @@ scripts:
     description:
       Sync all melos scripts to vscode tasks
     run: |
-      dart run packages/flux_scripts/lib/melos_tasks_generator.dart
+      dart run packages_dev/flux_scripts/lib/melos_tasks_generator.dart
 
 # END TOOLS REGION
 
