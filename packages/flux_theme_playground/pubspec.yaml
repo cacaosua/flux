@@ -1,6 +1,6 @@
 name: flux_theme_playground
 description: A Very Good Project created by Very Good CLI.
-version: 0.0.1+5
+version: 0.0.1+6
 publish_to: none
 
 environment:

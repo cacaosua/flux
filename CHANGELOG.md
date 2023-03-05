@@ -3,6 +3,117 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-03-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`auth_login` - `v0.0.2+1`](#auth_login---v0021)
+ - [`auth_signup` - `v0.0.2+1`](#auth_signup---v0021)
+ - [`deeplink` - `v0.0.2+1`](#deeplink---v0021)
+ - [`flux` - `v0.1.2+1`](#flux---v0121)
+ - [`flux_bricks` - `v0.0.1+1`](#flux_bricks---v0011)
+ - [`flux_intl` - `v0.1.1+1`](#flux_intl---v0111)
+ - [`flux_lints` - `v0.0.3+1`](#flux_lints---v0031)
+ - [`flux_navigation` - `v0.1.2+2`](#flux_navigation---v0122)
+ - [`flux_navigation_example` - `v1.1.3`](#flux_navigation_example---v113)
+ - [`flux_scripts` - `v0.0.1+1`](#flux_scripts---v0011)
+ - [`flux_theme` - `v0.0.1+7`](#flux_theme---v0017)
+ - [`flux_theme_playground` - `v0.0.1+6`](#flux_theme_playground---v0016)
+ - [`flux_widgets` - `v0.1.2+9`](#flux_widgets---v0129)
+ - [`flux_widgets_dev` - `v0.1.3+2`](#flux_widgets_dev---v0132)
+ - [`localizations` - `v0.0.2+1`](#localizations---v0021)
+ - [`nft_api_config` - `v0.1.1+2`](#nft_api_config---v0112)
+ - [`permission` - `v0.0.2+1`](#permission---v0021)
+ - [`permission_att` - `v0.0.2+1`](#permission_att---v0021)
+ - [`push_notification` - `v0.0.2+1`](#push_notification---v0021)
+
+---
+
+#### `auth_login` - `v0.0.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `auth_signup` - `v0.0.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `deeplink` - `v0.0.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux` - `v0.1.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_bricks` - `v0.0.1+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_intl` - `v0.1.1+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_lints` - `v0.0.3+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_navigation` - `v0.1.2+2`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_navigation_example` - `v1.1.3`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_scripts` - `v0.0.1+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_theme` - `v0.0.1+7`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_theme_playground` - `v0.0.1+6`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_widgets` - `v0.1.2+9`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `flux_widgets_dev` - `v0.1.3+2`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `localizations` - `v0.0.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `nft_api_config` - `v0.1.1+2`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `permission` - `v0.0.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `permission_att` - `v0.0.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+#### `push_notification` - `v0.0.2+1`
+
+ - **REFACTOR**: reorganize folders.
+
+
 ## 2023-01-18
 
 ### Changes

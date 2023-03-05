@@ -1,3 +1,7 @@
+## 0.0.1+7
+
+ - **REFACTOR**: reorganize folders.
+
 ## 0.0.1+6
 
  - **DOCS**: update links in docs.

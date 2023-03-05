@@ -1,3 +1,7 @@
+## 0.1.1+2
+
+ - **REFACTOR**: reorganize folders.
+
 ## 0.1.1+1
 
  - **FIX**: nft_api_config.
