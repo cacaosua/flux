@@ -41,12 +41,15 @@ command:
     # usePubspecOverrides before enabling this feature. 
     #
     # See https://melos.invertase.dev/getting-started#setup
-    usePubspecOverrides: true
+    # usePubspecOverrides: true
 
 ### globalPackagesUsed:
 ###   - dart pub global activate coverage
 
 scripts:
+
+  postbootstrap: |
+    flutter pub get
 
 
   format:
