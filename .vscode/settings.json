@@ -17,7 +17,6 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  // "dart.sdkPath": "/opt/homebrew/bin/dart",
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
   "dart.analysisExcludedFolders": [
     "packages_dev/flux_bricks/bricks/",

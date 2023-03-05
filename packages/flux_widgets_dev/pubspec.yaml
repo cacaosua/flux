@@ -18,8 +18,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flux_lints:
+    path: ../../packages_dev/flux_lints
   mocktail: ^0.3.0
 
 flutter:
