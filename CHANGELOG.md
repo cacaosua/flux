@@ -15,6 +15,47 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`auth_login` - `v0.0.2+2`](#auth_login---v0022)
+ - [`auth_signup` - `v0.0.2+2`](#auth_signup---v0022)
+ - [`flux_bricks` - `v0.0.1+2`](#flux_bricks---v0012)
+ - [`flux_scripts` - `v0.0.1+2`](#flux_scripts---v0012)
+ - [`localizations` - `v0.0.2+2`](#localizations---v0022)
+
+---
+
+#### `auth_login` - `v0.0.2+2`
+
+ - **FIX**: flux_lints path.
+
+#### `auth_signup` - `v0.0.2+2`
+
+ - **FIX**: flux_lints path.
+
+#### `flux_bricks` - `v0.0.1+2`
+
+ - **FIX**: flux_lints path.
+
+#### `flux_scripts` - `v0.0.1+2`
+
+ - **FIX**: flux_lints path.
+
+#### `localizations` - `v0.0.2+2`
+
+ - **FIX**: flux_lints path.
+
+
+## 2023-03-06
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`auth_login` - `v0.0.2+1`](#auth_login---v0021)
  - [`auth_signup` - `v0.0.2+1`](#auth_signup---v0021)
  - [`deeplink` - `v0.0.2+1`](#deeplink---v0021)

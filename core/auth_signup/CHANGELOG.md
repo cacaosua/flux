@@ -1,3 +1,7 @@
+## 0.0.2+2
+
+ - **FIX**: flux_lints path.
+
 ## 0.0.2+1
 
  - **REFACTOR**: reorganize folders.
