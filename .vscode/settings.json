@@ -26,6 +26,29 @@
   "dart.doNotFormat": [
     "**/*.g.dart",
   ],
+  // "terminal.integrated.defaultProfile.osx": "bash",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/bin/bash",
+      "args": [
+        /// settings to load .bashrc from workspaceFolder in vscode only
+        "--rcfile",
+        "${workspaceFolder}/.bashrc",
+        "-l",
+      ],
+    },
+    "zsh": {
+      "path": "/bin/zsh",
+    }
+  },
+  "terminal.integrated.env.osx": {
+    "BASHRC_CONFIG_DIR": "${workspaceFolder}",
+    // "ZDOTDIR": "${workspaceFolder}/.zshrc",
+  },
+  "terminal.integrated.env.windows": {
+    "BASHRC_CONFIG_DIR": "${workspaceFolder}"
+  },
   "search.exclude": {
     "**/.git": true,
     "**/.dart_tool": true,

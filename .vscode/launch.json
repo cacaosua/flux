@@ -124,8 +124,7 @@
       "type": "dart",
       "request": "launch",
       "program": "lib/main.dart",
-      "cwd": "packages/flux_navigation/example",
-      "deviceId": "chrome"
+      "cwd": "packages/flux_navigation_example",
     },
   ]
 }
