@@ -26,9 +26,13 @@
   "dart.doNotFormat": [
     "**/*.g.dart",
   ],
-  // Remove .fvm files from search
   "search.exclude": {
-    "**/.fvm": true
+    "**/.git": true,
+    "**/.dart_tool": true,
+    "**/.fvm": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
   },
   // Remove from file watching
   "files.watcherExclude": {
@@ -85,75 +89,5 @@
     "**/packages/nft_api/**/*",
     "**/ios/**/*",
     "**/android/**/*",
-  ],
-  "better-comments.tags": [
-    {
-      "tag": "FIXME",
-      "color": "#FF2D00",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "?",
-      "color": "#3498DB",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "//",
-      "color": "#474747",
-      "strikethrough": true,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "TODO",
-      "color": "#FF8C00",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "*",
-      "color": "#98C379",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    }
-  ],
-  "restoreTerminals.terminals": [
-    {
-      "splitTerminals": [
-        {
-          "name": "ios",
-          "commands": [],
-          "shouldRunCommands": false
-        },
-        {
-          "name": "android",
-          "commands": []
-        }
-      ]
-    },
-    {
-      "splitTerminals": [
-        {
-          "name": "Root Workspace",
-          "commands": []
-        },
-      ]
-    },
   ],
 }
