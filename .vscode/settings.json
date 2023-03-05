@@ -20,7 +20,7 @@
   // "dart.sdkPath": "/opt/homebrew/bin/dart",
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
   "dart.analysisExcludedFolders": [
-    "bricks",
+    "packages_dev/flux_bricks/bricks/",
   ],
   "dart.autoImportCompletions": true,
   "dart.doNotFormat": [
