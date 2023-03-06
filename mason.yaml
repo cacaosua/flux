@@ -3,3 +3,4 @@ bricks:
     path: packages_dev/flux_bricks/bricks/package
   feature:
     path: packages_dev/flux_bricks/bricks/feature
+  widgetbook_starter: ^0.1.0+2
