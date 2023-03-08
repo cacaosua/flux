@@ -11,11 +11,20 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flux_riverpod:
+    path: ../../packages/flux_riverpod
+
+  service_firebase:
+    path: ../../packages/service_firebase
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flux_lints:
     path: ../../packages_dev/flux_lints
+
+  build_runner: ^2.3.3
+  riverpod_generator: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
