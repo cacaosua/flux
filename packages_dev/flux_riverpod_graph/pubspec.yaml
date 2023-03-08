@@ -1,0 +1,33 @@
+name: flux_riverpod_graph
+description: A new Flutter package project.
+version: 0.0.1
+
+publish_to: none
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  riverpod_graph:
+    git:
+      url: https://github.com/rrousselGit/riverpod.git
+      path: packages/riverpod_graph
+      ref: master
+
+dependency_overrides:
+  analyzer: ">=4.0.0 <4.1.0"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flux_lints:
+    path: ../../packages_dev/flux_lints
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
