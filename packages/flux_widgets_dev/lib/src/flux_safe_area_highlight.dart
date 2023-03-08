@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:spaces/spaces.dart';
+import 'package:flux_widgets/flux_widgets.dart';
 
 /// A card that displays the current value of a counter.
 class FluxSafeAreaHighlight extends StatelessWidget {
   final Widget child;
 
   const FluxSafeAreaHighlight({
-    super.key,
     required this.child,
+    super.key,
   });
 
   @override

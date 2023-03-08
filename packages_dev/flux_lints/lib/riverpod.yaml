@@ -1,0 +1,43 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  plugins:
+    - custom_lint
+  exclude:
+    - "**/.vscode/*"
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/bricks/**/*"
+    - "**/bricks/**/__brick__"
+    - "**/__brick__"
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.config.dart"
+    - "**/*.gen.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "**/dart_env.dart"
+
+custom_lint:
+  rules:
+    # Enable one rule
+    provider_parameters: true
+    # Disable another
+    missing_provider_scope: false
+
+linter:
+  rules:
+    public_member_api_docs: false
+
+    # We want to have sorted imports, to keep our imports clean.
+    directives_ordering: true
+
+    # The following lints are for a consistent code style.
+    sort_constructors_first: false
+    prefer_single_quotes: true
+    # use_super_parameters: true
+
+    unnecessary_brace_in_string_interps: false
+
+    avoid_relative_lib_imports: true
+
+    sort_pub_dependencies: false

@@ -2,8 +2,21 @@ name: flux_lints
 version: 0.0.3+1
 description: Set of lint rules for Counter Dart and Flutter projects
 
+publish_to: none
+
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=2.19.0 <3.0.0"
+
+dependency_overrides:
+  analyzer: ^5.2.0
 
 dependencies:
-  very_good_analysis: ^3.0.1
+  very_good_analysis: ^4.0.0+1
+
+  custom_lint: ^0.2.12
+  riverpod_lint: ^1.1.2
+  freezed_lint:
+    git:
+      url: https://github.com/rrousselGit/freezed.git
+      path: packages/freezed_lint
+      ref: master

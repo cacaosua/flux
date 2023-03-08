@@ -30,5 +30,5 @@ Note: You may need to change the path to the package.
 
 2. Include the rules into your `analysis_options.yaml`
 ```yaml
-include: package:flux_lints/analysis_options.yaml
+include: package:flux_lints/riverpod.yaml
 ```

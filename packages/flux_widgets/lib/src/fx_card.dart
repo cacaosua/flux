@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 /// A card that displays the current value of a counter.
 class FxCard extends StatelessWidget {
   const FxCard({
-    super.key,
     required this.children,
+    super.key,
   });
   final List<Widget> children;
 
@@ -26,7 +26,7 @@ class FxCard extends StatelessWidget {
             ),
             Text(
               '2',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),

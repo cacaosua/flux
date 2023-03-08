@@ -48,8 +48,8 @@ command:
 
 scripts:
 
-  postbootstrap: |
-    flutter pub get
+  # postbootstrap: |
+  #   flutter pub get
 
 
   format:
