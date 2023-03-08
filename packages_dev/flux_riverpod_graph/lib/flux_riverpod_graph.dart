@@ -1,1 +1,3 @@
-library flux_riverpod_graph;
+class FluxRiverpodGraph {
+  FluxRiverpodGraph();
+}
