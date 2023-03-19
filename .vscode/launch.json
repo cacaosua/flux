@@ -14,7 +14,7 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
-      "cwd": "packages/flux",
+      "cwd": "apps/flux",
       "args": [
         "--flavor",
         "development",
@@ -33,7 +33,7 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_staging.dart",
-      "cwd": "packages/flux",
+      "cwd": "apps/flux",
       "args": [
         "--flavor",
         "staging",
@@ -52,7 +52,7 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_production.dart",
-      "cwd": "packages/flux",
+      "cwd": "apps/flux",
       "args": [
         "--flavor",
         "production",
@@ -72,7 +72,7 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
-      "cwd": "packages/flux",
+      "cwd": "apps/flux",
       "args": [
         "--flavor",
         "development",
@@ -91,7 +91,7 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_staging.dart",
-      "cwd": "packages/flux",
+      "cwd": "apps/flux",
       "args": [
         "--flavor",
         "staging",
@@ -110,7 +110,7 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main_production.dart",
-      "cwd": "packages/flux",
+      "cwd": "apps/flux",
       "args": [
         "--flavor",
         "production",

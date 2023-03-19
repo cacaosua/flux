@@ -13,8 +13,12 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flux_navigation:
+    path: ../../packages/flux_navigation
   flux_theme:
     path: ../../packages/flux_theme
+  flux_riverpod:
+    path: ../../packages/flux_riverpod
   intl: ^0.17.0
 
 dev_dependencies:
@@ -22,7 +26,8 @@ dev_dependencies:
     sdk: flutter
   flux_lints:
     path: ../../packages_dev/flux_lints
-  mocktail: ^0.3.0
+  build_runner: any
+  go_router_builder: ^1.1.6
 
 flutter:
   uses-material-design: true

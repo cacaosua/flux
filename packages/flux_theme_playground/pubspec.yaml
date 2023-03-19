@@ -20,7 +20,6 @@ dev_dependencies:
     sdk: flutter
   flux_lints:
     path: ../../packages_dev/flux_lints
-  mocktail: ^0.3.0
 
 flutter:
   uses-material-design: true

@@ -68,4 +68,4 @@ app.*.map.json
 mason-lock.json
 
 # Melos
-# **/pubspec_overrides.yaml
+**/pubspec_overrides.yaml

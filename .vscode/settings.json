@@ -112,4 +112,6 @@
     "**/ios/**/*",
     "**/android/**/*",
   ],
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "editor.fontFamily": "'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
 }
