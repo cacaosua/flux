@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_app_menus",
+  "info": {
+    "displayName": "Menu"
+  },
+  "options": {},
+  "attributes": {
+    "menu": {
+      "type": "string"
+    }
+  }
+}

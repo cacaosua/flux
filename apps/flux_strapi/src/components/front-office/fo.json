@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_fo_fos",
+  "info": {
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

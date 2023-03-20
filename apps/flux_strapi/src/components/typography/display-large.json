@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_typography_display_larges",
+  "info": {
+    "displayName": "Display Large",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "font": {
+      "type": "string"
+    }
+  }
+}

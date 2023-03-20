@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_app_apps",
+  "info": {
+    "displayName": "App",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
